@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+    <!--<![endif]-->
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <title>회원 정보 수정</title>
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="./images/favicon.ico" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+        <meta
+            name="keywords"
+            content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"
+        />
+        <meta name="author" content="FREEHTML5.CO" />
+
+        <meta property="og:title" content="" />
+        <meta property="og:image" content="" />
+        <meta property="og:url" content="" />
+        <meta property="og:site_name" content="" />
+        <meta property="og:description" content="" />
+        <meta name="twitter:title" content="" />
+        <meta name="twitter:image" content="" />
+        <meta name="twitter:url" content="" />
+        <meta name="twitter:card" content="" />
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300" rel="stylesheet" type="text/css" />
+
+        <!-- Animate.css -->
+        <link rel="stylesheet" href="css/animate.css" />
+        <!-- Icomoon Icon Fonts-->
+        <link rel="stylesheet" href="css/icomoon.css" />
+        <!-- Bootstrap  -->
+        <link rel="stylesheet" href="css/bootstrap.css" />
+        <!-- Superfish -->
+        <link rel="stylesheet" href="css/superfish.css" />
+        <!-- Magnific Popup -->
+        <link rel="stylesheet" href="css/magnific-popup.css" />
+        <!-- Date Picker -->
+        <link rel="stylesheet" href="css/bootstrap-datepicker.min.css" />
+        <!-- CS Select -->
+        <link rel="stylesheet" href="css/cs-select.css" />
+        <link rel="stylesheet" href="css/cs-skin-border.css" />
+
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/update.css" />
+
+        <!-- Modernizr JS -->
+        <script src="js/modernizr-2.6.2.min.js"></script>
+        <!-- FOR IE9 below -->
+        <!--[if lt IE 9]>
+            <script src="js/respond.min.js"></script>
+        <![endif]-->
+    </head>
+    <body>
+        <div id="fh5co-wrapper">
+            <div id="fh5co-page">
+                <header id="fh5co-header-section" class="sticky-banner">
+                    <div class="container">
+                        <div class="nav-header">
+                            <a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+                            <a id="fh5co-logo" class="cover-color" href="index.html">
+                                <img class="mg-logo" src="./images/logo1.png" />
+                                산오르미</a
+                            >
+                            <!-- START #fh5co-menu-wrap -->
+                            <nav id="fh5co-menu-wrap" role="navigation">
+                                <ul class="sf-menu" id="fh5co-primary-menu">
+                                    <li><a href="indexAdmin.html">관리자 페이지</a></li>
+                                    <li><a href="contact.html">명산 소개</a></li>
+                                    <li><a href="QnA.html">자주 묻는 질문</a></li>
+                                    <li><a href="tablespage.html">커뮤니티</a></li>
+                                    <li>
+                                        <a href="#" class="fh5co-sub-ddown">로그인</a>
+                                        <ul class="fh5co-sub-menu">
+                                            <li><a href="login.html">로그인</a></li>
+                                            <li><a href="agree.html">회원가입</a></li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="fh5co-sub-ddown">마이페이지</a>
+                                        <ul class="fh5co-sub-menu">
+                                            <li><a href="mypage.html">작성글 확인</a></li>
+                                            <li><a href="update.html">회원정보 수정</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </header>
+
+                <!-- end:header-top -->
+
+                <div id="main">
+                    <div id="fh5co-contact" class="fh5co-section-gray">
+                        <div class="container">
+                            <section class="join_section pdt60">
+                                <h2 class="join_title">회원 정보 수정</h2>
+                                <p class="join_desc mt">Edit Member Information</p>
+
+                                <div class="center400 pdb60">
+                                    <form name="fregister" id="fregister" method="post" autocomplete="off">
+                                        <div class="Idbox">
+                                            <label><span> </span>아이디</label>
+
+                                            <div class="box">
+                                                <input
+                                                    type="text"
+                                                    name="mb_nick"
+                                                    value=""
+                                                    id="reg_mb_nick"
+                                                    class="nickname"
+                                                    required
+                                                    maxlength="20"
+                                                    placeholder="ID (변경 불가)"
+                                                    oninput="init_chk_nick();"
+                                                    autocomplete="off"
+                                                    readonly
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" id="mb_email" name="mb_email" />
+                                        <input type="hidden" id="chk_mb_nick" name="chk_mb_nick" value="" />
+                                        <div class="emailbox">
+                                            <label><span> </span>이름</label>
+                                            <div class="box box1">
+                                                <input
+                                                    type="text"
+                                                    name="mb_email_0"
+                                                    id="mb_email_0"
+                                                    class="email_front"
+                                                    placeholder="성"
+                                                    readonly
+                                                />
+                                                <em class="ctm">&nbsp</em>
+                                                <input
+                                                    type="text"
+                                                    name="mb_email_0"
+                                                    id="mb_email_0"
+                                                    class="email_front"
+                                                    placeholder="이름"
+                                                    readonly
+                                                />
+                                            </div>
+                                        </div>
+
+                                        <input type="hidden" id="mb_email" name="mb_email" />
+                                        <input type="hidden" id="chk_mb_nick" name="chk_mb_nick" value="" />
+                                        <div class="emailbox">
+                                            <label><span> </span>이메일</label>
+                                            <div class="box box1">
+                                                <input
+                                                    type="text"
+                                                    name="mb_email_0"
+                                                    id="mb_email_0"
+                                                    class="email_front"
+                                                    placeholder="이메일 앞자리"
+                                                />
+                                                <em class="ctm">@</em
+                                                ><select
+                                                    style="width: 150px; margin-right: auto"
+                                                    name="selectEmail"
+                                                    id="selectEmail"
+                                                >
+                                                    <option value="1">직접입력</option>
+                                                    <option value="naver.com" selected>naver.com</option>
+                                                    <option value="hanmail.net">hanmail.net</option>
+                                                    <option value="hotmail.com">hotmail.com</option>
+                                                    <option value="nate.com">nate.com</option>
+                                                    <option value="yahoo.co.kr">yahoo.co.kr</option>
+                                                    <option value="empas.com">empas.com</option>
+                                                    <option value="dreamwiz.com">dreamwiz.com</option>
+                                                    <option value="freechal.com">freechal.com</option>
+                                                    <option value="lycos.co.kr">lycos.co.kr</option>
+                                                    <option value="korea.com">korea.com</option>
+                                                    <option value="gmail.com">gmail.com</option>
+                                                    <option value="hanmir.com">hanmir.com</option>
+                                                    <option value="paran.com">paran.com</option>
+                                                </select>
+                                                <input
+                                                    type="text"
+                                                    name="str_email02"
+                                                    id="str_email02"
+                                                    style="width: 400px"
+                                                    placeholder="이메일 뒷자리"
+                                                />
+                                                <!-- <select name="mb_email_1" id="mb_email_1"
+                                    class="email_back">
+                                    <option value="">선택해주세요</option>
+                                    <option value="gmail.com">gmail.com</option>
+                                    <option value="naver.com">naver.com</option>
+                                    <option value="hanmail.net">hanmail.net</option>
+                                    <option value="hotmail.com">hotmail.com</option>
+                                    <option value="nate.com">nate.com</option>
+                                    <option value="1">직접입력</option>
+                                 </select> <input type="text" name="mb_email_self" id="mb_email_self"
+                                    class="email_back_direct" placeholder="직접입력"> -->
+                                            </div>
+                                        </div>
+
+                                        <div class="passwordbox">
+                                            <label><span> </span>비밀번호</label>
+                                            <!-- <p class="req clearfix">
+                                 <small class="ctm txc1 warn">8자 이상의 글자를 입력해주세요.</small>
+                              </p> -->
+                                            <div class="box box2">
+                                                <input
+                                                    type="password"
+                                                    name="mb_password"
+                                                    id="reg_mb_password"
+                                                    required
+                                                    class="password"
+                                                    maxlength="20"
+                                                    placeholder="비밀번호를 입력하세요."
+                                                    autocomplete="off"
+                                                />
+                                                <input
+                                                    type="password"
+                                                    name="mb_password_re"
+                                                    id="reg_mb_password_re"
+                                                    required
+                                                    class="password_re"
+                                                    maxlength="20"
+                                                    placeholder="비밀번호를 다시 입력하세요."
+                                                    autocomplete="off"
+                                                />
+                                            </div>
+                                        </div>
+                                        <div class="receivebox">
+                                            <label><span> </span>메일수신</label>
+                                            <div>
+                                                <input
+                                                    type="checkbox"
+                                                    name="mb_mailling"
+                                                    id="mb_mailling1"
+                                                    value="1"
+                                                /><i></i> <label for="mb_mailling1" class="txc1">수신동의</label>
+                                                <small class="ctm"
+                                                    >※ 수신 설정시 다양한 등산 정보를 받아 보실 수 있습니다.</small
+                                                >
+                                            </div>
+                                        </div>
+                                        <div class="btnbox">
+                                            <input
+                                                type="submit"
+                                                class="join_btn sub"
+                                                value="회원 정보 수정"
+                                                id="btn_regi_submit"
+                                                class="btn_01"
+                                            />
+                                        </div>
+                                    </form>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+                <!-- div id="main" 끝 -->
+
+                <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+                <script type="text/javascript">
+                    //이메일 입력방식 선택
+                    $('#selectEmail').change(function () {
+                        $('#selectEmail option:selected').each(function () {
+                            if ($(this).val() == '1') {
+                                //직접입력일 경우
+                                $('#str_email02').val(''); //값 초기화
+                                $('#str_email02').attr('disabled', false); //활성화
+                            } else {
+                                //직접입력이 아닐경우
+                                $('#str_email02').val($(this).text()); //선택값 입력
+                                $('#str_email02').attr('disabled', true); //비활성화
+                            }
+                        });
+                    });
+                </script>
+
+                <footer>
+                    <div id="footer">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6 col-md-offset-3 text-center">
+                                    <p class="fh5co-social-icons">
+                                        <a href="#"><i class="icon-twitter2"></i></a>
+                                        <a href="#"><i class="icon-facebook2"></i></a>
+                                        <a href="#"><i class="icon-instagram"></i></a>
+                                        <a href="#"><i class="icon-dribbble2"></i></a>
+                                        <a href="#"><i class="icon-youtube"></i></a>
+                                    </p>
+                                    <p>
+                                        Control Co., Ltd. &copy; Website 2023
+                                        <i class="icon-heart3"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- END fh5co-page -->
+        </div>
+        <!-- END fh5co-wrapper -->
+
+        <!-- jQuery -->
+
+        <script src="js/jquery.min.js"></script>
+        <!-- jQuery Easing -->
+        <script src="js/jquery.easing.1.3.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap.min.js"></script>
+        <!-- Waypoints -->
+        <script src="js/jquery.waypoints.min.js"></script>
+        <script src="js/sticky.js"></script>
+
+        <!-- Stellar -->
+        <script src="js/jquery.stellar.min.js"></script>
+        <!-- Superfish -->
+        <script src="js/hoverIntent.js"></script>
+        <script src="js/superfish.js"></script>
+        <!-- Magnific Popup -->
+        <script src="js/jquery.magnific-popup.min.js"></script>
+        <script src="js/magnific-popup-options.js"></script>
+        <!-- Date Picker -->
+        <script src="js/bootstrap-datepicker.min.js"></script>
+        <!-- CS Select -->
+        <script src="js/classie.js"></script>
+        <script src="js/selectFx.js"></script>
+        <!-- Google Map -->
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCefOgb1ZWqYtj7raVSmN4PL2WkTrc-KyA&sensor=false"></script>
+        <script src="js/google_map.js"></script>
+
+        <!-- Main JS -->
+        <script src="js/main.js"></script>
+    </body>
+</html>

@@ -1,0 +1,237 @@
+@charset "UTF-8";
+/* --------------------
+
+1번째로 호출
+
+이 파일은 각 프로젝트마다 변경없이 고정적으로 쓸 공통 css 입니다.
+변경없이 공통적으로 쓸 값들은 이곳에 작성해주세요.
+
+기본값으로 설정된것은
+
+font-family: 'Noto Sans KR', sans-serif;
+color: #333;
+line-height: 100%;
+font-weight: normal;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: -0.5px;
+
+입니다.
+
+공통적인 변경 사항 및 오류 수정이 있을때는
+현재 파일인 reset.css에 작성해주세요.
+
+최종 수정일자 : 21.02.01, 19:10
+-------------------- */
+
+body,
+html {
+    box-sizing: border-box;
+}
+body {
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-size: 16px;
+    color: #333;
+}
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    word-break: keep-all;
+    vertical-align: baseline;
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 100%;
+    outline: none;
+    letter-spacing: -0.5px;
+}
+span {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+/* ------------------------------
+small, em, i, b, strong, u 등 에디터 사용시 글자 관련
+스타일 미적용 방지를 위하여 body, *에서 꺼내고 따로 작성함.
+본문에 위 태그들을 사용 할 경우 ctm 속성 추가해서 사용
+
+꼭! 에디터로 작성된 내용이 안들어가는 객체에만 사용하세요
+------------------------------ */
+.ctm {
+    font-weight: inherit;
+    font-family: inherit;
+    color: inherit;
+    font-style: inherit;
+    text-decoration: none;
+    font-size: inherit;
+}
+
+ol,
+ul,
+dl {
+    list-style: none;
+    outline: none;
+}
+li {
+    list-style: none;
+}
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+    outline: none;
+}
+input,
+select,
+textarea,
+button {
+    box-sizing: border-box;
+}
+input[type='button'],
+input[type='submit'] {
+    border: none;
+    /* background: none; */
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+    outline: none;
+    cursor: pointer;
+}
+::placeholder {
+    font-weight: inherit;
+    color: #ddd;
+    font-size: inherit;
+}
+button,
+a {
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    font-size: inherit;
+    font-weight: inherit;
+    color: inherit;
+}
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 16px;
+    /* background: url(/img/select_arrow.png) no-repeat 98.5% 50%; */
+    background: url(/html/img/select_arrow2.png) no-repeat 98.5% 50%;
+    padding-left: 15px;
+}
+select::-ms-expand {
+    display: none;
+}
+.hidden {
+    position: fixed;
+    left: -100000px;
+}
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: block;
+}
+.clear {
+    clear: both;
+}
+blockquote,
+q {
+    quotes: none;
+    outline: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+    outline: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+    outline: none;
+}
+a {
+    text-decoration: none;
+    outline: none;
+}
+input {
+    /*-webkit-appearance: none;*/
+    -webkit-border-radius: 0;
+    font-size: inherit;
+}
+input:focus {
+    outline: none;
+}
+textarea {
+    resize: none;
+    outline: none;
+}
+input[type='submit'],
+input[type='button'] {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+button[type='submit'],
+button[type='button'] {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+}
+
+.cover-color {
+    color: #1cc88a;
+}
+
+.inner-div {
+    width: 100%;
+}
+
+.inner-box {
+    width: 100%;
+}
+
+.title {
+    font-size: 18px;
+}
+
+@media (max-width: 1023px) {
+    .title {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 767px) {
+    .title {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 639px) {
+    .title {
+        font-size: 12px;
+    }
+}

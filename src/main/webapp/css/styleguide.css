@@ -1,0 +1,270 @@
+@charset "UTF-8";
+/* --------------------
+
+2번째로 호출
+
+이 파일은 각 프로젝트에 따라 변경이 있는 유동적인 개별 css 입니다.
+해당 프로젝트에만 쓰일 색상, 폰트, padding값 등 기본적인것은 이곳에 작성해 주세요.
+
+기본값으로 설정된것은
+
+font-family: 'Noto Sans KR', sans-serif;
+color: #333;
+line-height: 100%;
+font-weight: normal;
+font-size: 16px;
+line-height: 100%;
+letter-spacing: -0.5px;
+
+입니다.
+
+해당 프로젝트에 관련된 변경사항이 있을때는 reset.css대신
+현재 파일인 styleguide.css에 작성해주세요.
+
+-------------------- */
+
+/* --------------------
+
+z-index 현황
+
+div.mobile_bottom : 100 (모바일 하단 5개 대메뉴)
+header : 110
+div.gnb_bg_dummy : 115 (모바일 메뉴 클릭시 뒷배경)
+div.slide_menu : 120 (모바일 메뉴)
+
+-------------------- */
+
+*{
+    font-family: 'Noto Sans KR', sans-serif;
+}
+body{
+    font-size: 16px;
+    color: #333;
+    font-weight: 400;
+    /* 300:Light ,  400:Regular ,  500:Medium ,  700:bold ,  900:Black */
+}
+.center{
+    width: 95%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.center940{
+    width: 95%;
+    max-width: 940px;
+    margin: 0 auto;
+}
+.center400{
+    width: 95%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+/* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); */
+/* box-shadow: 2px 2px 5px rgba(#000, 0.1); */
+::placeholder{color: #8b8b8b;}
+select{color: #8b8b8b;}
+section.test_section{height: 2000px; background-color: yellowgreen;}
+
+
+
+/* ---------------폰트 관련--------------- */
+@font-face {
+    font-family: 'GmarketSansLight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansLight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'GmarketSansBold';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansBold.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.nt{
+    font-family: 'Noto Sans KR', sans-serif;
+    /* 300:Light ,  400:Regular ,  500:Medium ,  700:bold ,  900:Black */
+}
+.mt{
+    font-family: 'Montserrat', sans-serif;
+    /* 100:Thin ,  200:Extra-light ,  300:Light ,  400:Regular ,  500:Medium ,  600:Semi-bold ,  700:Bold ,  800:Extra-bold ,  900:Black */
+}
+.gl{
+    font-family: 'GmarketSansLight';
+}
+.gm{
+    font-family: 'GmarketSansMedium';
+}
+.gb{
+    font-family: 'GmarketSansBold';
+}
+/* ---------------폰트 관련 end--------------- */
+
+
+
+/* ---------------color 관련--------------- */
+.bgc1{
+    background-color: #2897fb;
+}
+.bgc2{
+    background-color: #1cc88a;
+}
+.bgc3{
+    background-color: #1cc88a;
+}
+.txc1{
+    color: #1cc88a;
+}
+.txc2{
+    color: #1cc88a;
+}
+.txc3{
+    color: #1cc88a;
+}
+/* ---------------color 관련 end--------------- */
+
+
+
+/* ---------------padding 관련--------------- */
+.pdt40{
+	padding-top: 40px;
+    box-sizing: border-box;
+}
+@media screen and (max-width:850px){
+    .pdt40{padding-top: 10px;}
+}
+.pdb40{
+	padding-bottom: 40px;
+    box-sizing: border-box;
+}
+@media screen and (max-width:850px){
+    .pdb40{padding-bottom: 10px;}
+}
+.pd40{
+    padding: 40px 0;
+    box-sizing: border-box;
+}
+@media screen and (max-width:850px){
+    .pd40{padding:10px 0;}
+}
+
+.pdt60{
+    padding-top: 60px;
+    box-sizing: border-box;
+}
+@media screen and (max-width:850px){
+    .pdt60{padding-top: 50px;}
+}
+.pdb60{
+    padding-bottom: 60px;
+    box-sizing: border-box;
+}
+@media screen and (max-width:850px){
+    .pdb60{padding-bottom: 50px;}
+}
+.pd60{
+    padding: 60px 0;
+    box-sizing: border-box;
+}
+@media screen and (max-width:850px){
+    .pd60{padding: 30px 0;}
+}
+
+.pdt100{
+    padding-top: 100px;
+    box-sizing: border-box;
+}
+@media screen and (max-width:850px){
+    .pdt100{padding-top: 50px;}
+}
+.pdb100{
+    padding-bottom: 100px;
+    box-sizing: border-box;
+}
+@media screen and (max-width:850px){
+    .pdb100{padding-bottom: 50px;}
+}
+.pd100{
+    padding: 100px 0;
+    box-sizing: border-box;
+}
+@media screen and (max-width:850px){
+    .pd100{padding: 50px 0;}
+}
+
+.pdtn{padding-top: 0 !important;}
+.pdbn{padding-bottom: 0 !important;}
+.pdln{padding-left: 0 !important;}
+.pdrn{padding-right: 0 !important;}
+
+@media screen and (max-width:850px){
+    .pdtn850{padding-top: 0 !important;}
+    .pdbn850{padding-bottom: 0 !important;}
+    .pdln850{padding-left: 0 !important;}
+    .pdrn850{padding-right: 0 !important;}
+}
+/* ---------------padding 관련 end--------------- */
+
+
+
+/* ---------------br 관련--------------- */
+@media screen and (min-width:850px){
+    br.brs{display: none;}
+}
+@media screen and (max-width:850px){
+    br.brl{display: none;}
+}
+/* ---------------br 관련 end--------------- */
+
+
+
+/* ---------------border-top--------------- */
+.bdt{position: relative;}
+.bdt::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #bfbfbf;
+}
+/* ---------------border-top end--------------- */
+
+.img-responsive{
+    max-width:100%;
+    height:auto;
+}
+
+/* toast and loading */ 
+div.loadimgWrap {display:block;position: absolute;top:0;left:0;width: 100%;height: 100%;z-index: 10000;background-color: #f8f9fa;opacity: 0.5;} 
+img.loadimg{display:block;width:60px;position: absolute;top: 50%;left: 50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%,-50%);} 
+.toast{ 
+    font-size:1.4rem;
+	display:none;z-index:10000; width:auto;min-width:250px;height:20px;height:auto;position:fixed;top:50%;left:50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%,-50%); 
+	background-color: rgba(56, 56, 56, .9);color: #F0F0F0;padding:10px;text-align:center;border-radius: 2px; 
+	-webkit-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);-moz-box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1);box-shadow: 0px 0px 24px -1px rgba(56, 56, 56, 1); 
+} 
+
+
+.freeboard{
+	margin-top: 50px;
+	margin-left: 250px;
+	
+}
+.boximpo{
+	padding:10px 200px !important;
+}
+.boximpo2{
+	padding:70px 200px !important;
+}
+.searchfor{
+	margin-top: 50px;
+	margin-left: 600px;
+	
+}
