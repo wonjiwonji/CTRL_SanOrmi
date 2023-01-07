@@ -200,7 +200,7 @@
                   <!-- <div class="col-lg-5 d-none d-lg-block bg-register-image"></div> -->
                   <div class="col-lg-5 d-none d-lg-block ">
                      <img src="./images/m2.jpg"
-                        style="height: 550px; width: 420px; display: flex;">
+                        style="height: 100%; width: 420px; display: flex;">
                   </div>
                   <div class="col-lg-7">
                      <div class="p-5">
@@ -259,7 +259,7 @@
                         <div class="form-group row">
                            <div class="col-sm-6 mb-3 mb-sm-0">
                               <input type="text" class="form-control form-control-user"
-                                 id="exampleAdress" placeholder="우편번호" required />
+                                 id="exampleAdress" placeholder="우편번호" />
                            </div>
 
                            <div class="col-sm-6">
@@ -274,7 +274,7 @@
                         <!-- <form class="user" method="post"> -->
                         <div class="form-group">
                            <input type="text" name="addr1" id="addr1"
-                              class="form-control form-control-user" placeholder="기본 주소">
+                              class="form-control form-control-user" placeholder="기본 주소"/>
                            <!-- <input type="text" name="postal_code" id="postal_code"
                          class="form-control form-control-user" placeholder="주소"> -->
                            <!-- <input type="text" class="form-control form-control-user"
@@ -282,7 +282,7 @@
                         </div>
                         <div class="form-group">
                            <input type="text" name="addr2" id="addr2"
-                              class="form-control form-control-user" placeholder="상세 주소">
+                              class="form-control form-control-user" placeholder="상세 주소"/>
 
                            <!-- <input type="text" class="form-control form-control-user"
                               id="exampleInputDAdress" placeholder="상세주소" required /> -->
@@ -293,24 +293,27 @@
                         <div class="form-group row">
                            <div class="col-sm-6 mb-3 mb-sm-0">
                               <input type="text" name="email_id" id="email_id"
-                                 class="form-control form-control-user" placeholder="@이메일 앞자리">
+                                 class="form-control form-control-user" placeholder="이메일 앞자리">
                            </div>
                            <div class="col-sm-6">
                               <input type="text" name="email_add" id="email_add"
-                                 class="form-control form-control-user" placeholder="이메일 뒷자리">
+                                 class="form-control form-control-user" placeholder="@ 이메일 뒷자리">
                            </div>
                         </div>
                         <div class="form-group">
                            <select name="email_sel" id="email_sel"
                               onchange="change_email();"
-                              class="form-control form-control-user">
+                              class="jw jw-btn-success btn-user btn-block" >
+                              <!-- <button type="button"
+                                 class="jw jw-btn-success btn-user btn-block"
+                                 onclick="id_check();">중복 확인</button> -->
 
                               <option value="">직접입력</option>
                               <option value="naver.com">네이버</option>
                               <option value="gmail.com">지메일</option>
                               <option value="nate.com">네이트</option>
                            </select>
-
+<br>
                         </div>
 
 
@@ -319,12 +322,7 @@
                            <button type="button" onclick="joinform_check();"
                               class="btn btn-success btn-user btn-block">회원 가입</button>
                         </div>
-                        <!-- <input type="button" value="회원 가입"
-                           onclick="location.href='login.html';  " /> -->
-                        <!-- <input type="submit"
-                           href="login.html" class="btn btn-success btn-user btn-block"
-                           value="회원 가입" /> -->
-
+                        
                         <hr />
                         <a href="index.html" class="btn btn-google btn-user btn-block">
                            <i class="fab fa-google fa-fw"></i> 구글로 회원가입
@@ -334,9 +332,9 @@
                         </a>
                         <!-- </form> -->
                         <hr />
-                        <div class="text-center">
+                        <!-- <div class="text-center">
                            <a class="small" href="forgot-password.html">비밀번호 찾기</a>
-                        </div>
+                        </div> -->
                         <div class="text-center">
                            <a class="small" href="login.html">이미 회원이시가요? 로그인으로 이동!</a>
                         </div>

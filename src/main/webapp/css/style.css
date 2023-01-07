@@ -2137,9 +2137,6 @@
     border-radius: 30px;
     overflow: hidden;
   }
-  .fh5co-map {
-    border: 3px solid black;
-  }
   .throw {
     width: 300px;
   }
@@ -2147,6 +2144,10 @@
     padding-top: 10px;
     width: 360px;
   }
+.centers {
+	display: flex;
+	justify-content: center;
+}
   /* .btn {
       background-color: #198754;
       color: black;
@@ -2182,21 +2183,37 @@
     background-color: rgba(88, 95, 90, 0.81);
     border-color: #858796;
   }
-  
-  #map {
-    width: 100%;
+  .fh5co-map {
+    border: 3px solid black;
+	width: 100%;
+    height: 600px;
+    position: relative;
+    margin: auto;
+  }
+  .fh5co-maps {
+    border: 3px solid black;
+	width: 100%;
     height: 600px;
     position: relative;
     margin: auto;
   }
   @media screen and (max-width: 992px) {
-    #map {
+    .fh5co-map {
       width: 100%;
       height: 200px;
     }
   }
-  /* 繹먮슣  */
+  /* 여기부터  */
   
+  .letsgo {
+    height: 500px;  
+}
+  .lolipoli {
+    width: 40%;
+    height: 400px;
+	border: 2px solid black;
+  }
+
   .fontcolor_orange {
     color: #f78536 !important;
     font-family: "Open Sans", Arial, sans-serif;
@@ -2210,7 +2227,7 @@
     font-family: "Open Sans", Arial, sans-serif;
   }
   
-  /* 繹먮슣  */
+  /* 여기까지  */
   
   /* f78536 */
   
