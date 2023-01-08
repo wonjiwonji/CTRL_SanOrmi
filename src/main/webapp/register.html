@@ -224,7 +224,9 @@
                            <div class="col-sm-6">
                               <button type="button"
                                  class="jw jw-btn-success btn-user btn-block"
-                                 onclick="id_check();">중복 확인</button>
+                                 onclick="location.href='error404.html'">
+                                 <!-- onclick="id_check();" 중복확인 아직 구현하지 않아 404페이지로 돌림 -->
+                                 중복 확인</button>
                            </div>
                         </div>
 
@@ -270,7 +272,8 @@
                            </div>
 
                            <div class="col-sm-6">
-                              <button type="button" onclick="search_address();"
+                              <!-- onclick="search_address();" 우편번호 찾기 시 이동할 페이지, 현재 api 구현안돼 404로 돌림 -->
+                              <button type="button" onclick="location.href='error404.html'"
                                  class="jw jw-btn-success btn-user btn-block">우편번호 찾기</button>
 
                               <!-- <input type="submit"

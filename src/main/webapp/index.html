@@ -105,6 +105,19 @@
         <![endif]-->
         <!-- link end -->
         <script src="https://kit.fontawesome.com/2fcc7e0e56.js" crossorigin="anonymous"></script>
+        
+        <!-- scroll up -->
+        <script>
+            var timeOut;
+            function scrollToTop() {
+                if (document.body.scrollTop!=0 || document.documentElement.scrollTop!=0){
+                    window.scrollBy(0,-5000);
+                }
+                else clearTimeout(timeOut);
+            }
+        </script>
+
+
     </head>
     <body>
         <div id="mg-fh5co-wrapper">
@@ -968,13 +981,12 @@
  
              <!-- 지원 끝 -->
 
-                            <div class="like-content" style="position:fixed; bottom: 5px;">
-                                <a href="#">
+                            <div class="like-content back-to-top pointer" style="position:fixed; bottom: 5px;" onclick="scrollToTop();return false;">
+                                <a>
                                 <button class="btn-secondary like-review">
                                     <i class="fa-solid fa-chevron-up"></i>
                                 </button>
                             </a>
-                                <span id="top">위로가기</span>
                             </div>
                             <br>
                             <br>
