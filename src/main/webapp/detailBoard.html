@@ -1,147 +1,146 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>디테일 게시판</title>
+  <head>
+    <meta charset="UTF-8" />
+    <title>디테일 게시판</title>
 
+    <!-- link start -->
+    <!-- Custom fonts for this template -->
+    <link
+      href="vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+      rel="stylesheet"
+    />
 
+    <!-- Custom styles for this template -->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
 
+    <!-- Custom styles for this page -->
+    <link
+      href="vendor/datatables/dataTables.bootstrap4.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/board.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link rel="shortcut icon" href="favicon.ico" />
 
-<!-- link start -->
-<!-- Custom fonts for this template -->
-<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
-	type="text/css" />
-<link
-	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-	rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300"
+      rel="stylesheet"
+      type="text/css"
+    />
 
-<!-- Custom styles for this template -->
-<link href="css/sb-admin-2.min.css" rel="stylesheet" />
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="css/animate.css" />
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <!-- Bootstrap  -->
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <!-- Superfish -->
+    <link rel="stylesheet" href="css/superfish.css" />
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="css/magnific-popup.css" />
+    <!-- Date Picker -->
+    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css" />
+    <!-- CS Select -->
+    <link rel="stylesheet" href="css/cs-select.css" />
+    <link rel="stylesheet" href="css/cs-skin-border.css" />
 
-<!-- Custom styles for this page -->
-<link href="vendor/datatables/dataTables.bootstrap4.min.css"
-	rel="stylesheet" />
-<link rel="stylesheet" href="css/board.css" />
-<link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-	crossorigin="anonymous" />
-<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-<link rel="shortcut icon" href="favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
 
-<link
-	href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300"
-	rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="css/sub_layout.css" />
+    <link rel="stylesheet" href="css/styleguide.css" />
+    <link rel="stylesheet" href="css/community.css" />
+    <link rel="stylesheet" href="css/join.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/like.css" />
+    <!--  모두의 낚시 -->
 
-<!-- Animate.css -->
-<link rel="stylesheet" href="css/animate.css" />
-<!-- Icomoon Icon Fonts-->
-<link rel="stylesheet" href="css/icomoon.css" />
-<!-- Bootstrap  -->
-<link rel="stylesheet" href="css/bootstrap.css" />
-<!-- Superfish -->
-<link rel="stylesheet" href="css/superfish.css" />
-<!-- Magnific Popup -->
-<link rel="stylesheet" href="css/magnific-popup.css" />
-<!-- Date Picker -->
-<link rel="stylesheet" href="css/bootstrap-datepicker.min.css" />
-<!-- CS Select -->
-<link rel="stylesheet" href="css/cs-select.css" />
-<link rel="stylesheet" href="css/cs-skin-border.css" />
+    <!-- Modernizr JS -->
+    <script src="js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    <!-- link end -->
+  </head>
+  <body>
+    <div id="fh5co-wrapper">
+      <div id="fh5co-page">
+        <header id="fh5co-header-section" class="sticky-banner">
+          <div class="container">
+            <div class="nav-header">
+              <a class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+              <a id="fh5co-logo" class="cover-color" href="index.html">
+                <img class="mg-logo" src="./images/logo1.png" alt="ren" />
+                산오르미</a
+              >
+              <!-- START #fh5co-menu-wrap -->
+              <nav id="fh5co-menu-wrap" role="navigation">
+                <ul class="sf-menu" id="fh5co-primary-menu">
+                  <li><a href="indexAdmin.html">관리자 페이지</a></li>
+                  <li><a href="contact.html">명산 소개</a></li>
+                  <li><a href="QnA.html">자주 묻는 질문</a></li>
+                  <li><a href="tablespage.html">커뮤니티</a></li>
+                  <li>
+                    <a class="fh5co-sub-ddown sf-with-ul">로그인</a>
+                    <ul class="fh5co-sub-menu">
+                      <li><a href="login.html">로그인</a></li>
+                      <li><a href="agree.html">회원가입</a></li>
+                    </ul>
+                  </li>
+                  <li>
+                    <a class="fh5co-sub-ddown sf-with-ul">마이페이지</a>
+                    <ul class="fh5co-sub-menu">
+                      <li><a href="mypage.html">작성글 확인</a></li>
+                      <li><a href="update.html">회원정보 수정</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </header>
 
-<link rel="stylesheet" href="css/style.css" />
-
-<link rel="stylesheet" href="css/sub_layout.css" />
-<link rel="stylesheet" href="css/styleguide.css" />
-<link rel="stylesheet" href="css/community.css" />
-<link rel="stylesheet" href="css/join.css" />
-<link rel="stylesheet" href="css/reset.css" />
-<link rel="stylesheet" href="css/like.css" />
-<!--  모두의 낚시 -->
-
-<!-- Modernizr JS -->
-<script src="js/modernizr-2.6.2.min.js"></script>
-<!-- FOR IE9 below -->
-<!--[if lt IE 9]>
-            <script src="js/respond.min.js"></script>
-        <![endif]-->
-<!-- link end -->
-
-
-
-
-</head>
-<body>
-
-
-	<div id="fh5co-wrapper">
-		<div id="fh5co-page">
-            <header id="fh5co-header-section" class="sticky-banner">
-                <div class="container">
-                    <div class="nav-header">
-                        <a class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-                        <a id="fh5co-logo" class="cover-color" href="index.html">
-                            <img class="mg-logo" src="./images/logo1.png" alt="ren" />
-                            산오르미</a
-                        >
-                        <!-- START #fh5co-menu-wrap -->
-                        <nav id="fh5co-menu-wrap" role="navigation">
-                            <ul class="sf-menu" id="fh5co-primary-menu">
-                                <li><a href="indexAdmin.html">관리자 페이지</a></li>
-                                <li><a href="contact.html">명산 소개</a></li>
-                                <li><a href="QnA.html">자주 묻는 질문</a></li>
-                                <li><a href="tablespage.html">커뮤니티</a></li>
-                                <li>
-                                    <a class="fh5co-sub-ddown  sf-with-ul">로그인</a>
-                                    <ul class="fh5co-sub-menu">
-                                        <li><a href="login.html">로그인</a></li>
-                                        <li><a href="agree.html">회원가입</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a class="fh5co-sub-ddown  sf-with-ul">마이페이지</a>
-                                    <ul class="fh5co-sub-menu">
-                                        <li><a href="mypage.html">작성글 확인</a></li>
-                                        <li><a href="update.html">회원정보 수정</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+        <article class="view_wrap pd60">
+          <div class="center clearfix">
+            <section class="left_wrap">
+              <div class="view_title_box">
+                <h3 class="view_title">경기는 날씨고 좀 풀렸네요</h3>
+                <!-- h3 : 제목, strong : 컨텐츠 키워드 -->
+                <div class="view_title_desc">
+                  <!--<b class="view_writer ctm txc3">자유로운영혼</b>-->
+                  <!-- 해당 게시글 작성자 -->
+                  <p>
+                    <small class="view_date ctm"
+                      ><i class="far fa-calendar-alt"></i> 2022-08-10</small
+                    >
+                    <!-- 해당 게시글 작성 날짜 -->
+                    <em class="view_count ctm"
+                      ><i class="far fa-eye"></i> 조회수 48</em
+                    >
+                    <!-- 해당 게시글 조회수 -->
+                    <i class="view_comment ctm"
+                      ><i class="fas fa-comment-dots"></i> 댓글 0</i
+                    >
+                    <!-- 해당 게시글 댓글 -->
+                  </p>
                 </div>
-            </header>
+              </div>
+              <!-- view_title_box -->
 
-
-
-			<article class="view_wrap pd60">
-				<div class="center clearfix">
-
-					<section class="left_wrap">
-
-						<div class="view_title_box">
-							<h3 class="view_title">경기는 날씨고 좀 풀렸네요</h3>
-							<!-- h3 : 제목, strong : 컨텐츠 키워드 -->
-							<div class="view_title_desc">
-								<!--<b class="view_writer ctm txc3">자유로운영혼</b>-->
-								<!-- 해당 게시글 작성자 -->
-								<p>
-									<small class="view_date ctm"><i
-										class="far fa-calendar-alt"></i> 2022-08-10</small>
-									<!-- 해당 게시글 작성 날짜 -->
-									<em class="view_count ctm"><i class="far fa-eye"></i> 조회수
-										48</em>
-									<!-- 해당 게시글 조회수 -->
-									<i class="view_comment ctm"><i class="fas fa-comment-dots"></i>
-										댓글 0</i>
-									<!-- 해당 게시글 댓글 -->
-								</p>
-							</div>
-						</div>
-						<!-- view_title_box -->
-
-						<div class="view_content_box">
-							<!--<h5 class="mt"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.93 28.58">
+              <div class="view_content_box">
+                <!--<h5 class="mt"><span><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31.93 28.58">
     <defs>
         <style>.vcmt_cls-1{fill:none;stroke:#333;stroke-linejoin:bevel;stroke-width:2.5px;}</style>
     </defs>
@@ -155,190 +154,265 @@
         </g>
     </g>
 </svg></span> COMMENT</h5>-->
-							<div class="wr_content">
-								<p></p>
-								<p>수량 엄청 늘었던데 지금 등산가기엔 시기상조겠죠?</p>
-								<p></p>
-							</div>
+                <div class="wr_content">
+                  <p></p>
+                  <p>수량 엄청 늘었던데 지금 등산가기엔 시기상조겠죠?</p>
+                  <p></p>
+                </div>
+              </div>
+              <!-- view_content_box -->
 
+              <div class="button_wrap clearfix">
+                <a
+                  href="https://www.monak.kr/community/list.php?&amp;g=free"
+                  class="btn2 list_btn"
+                  >목록으로</a
+                >
+                <a href="#" class="btn2 modify_btn btn-process" data-role="m"
+                  >수정</a
+                >
+                <a href="#" class="btn2 delete_btn btn-process" data-role="d"
+                  >삭제</a
+                >
+                <a href="./write.php?g=free" class="write_btn m_write_btn"
+                  >작성하기</a
+                >
+              </div>
+            </section>
+            <!-- left_wrap -->
 
-						</div>
-						<!-- view_content_box -->
+            <section class="right_wrap right_wrap1">
+              <style>
+                .com_desc_thumbs {
+                  clear: both;
+                  padding-top: 15px;
+                }
 
-						<div class="button_wrap clearfix">
+                .com_desc_thumbs button {
+                  width: 120px;
+                }
 
-							<a href="https://www.monak.kr/community/list.php?&amp;g=free"
-								class="btn2 list_btn">목록으로</a> <a href="#"
-								class="btn2 modify_btn btn-process" data-role="m">수정</a> <a
-								href="#" class="btn2 delete_btn btn-process" data-role="d">삭제</a>
-							<a href="./write.php?g=free" class="write_btn m_write_btn">작성하기</a>
-						</div>
-					</section>
-					<!-- left_wrap -->
+                .com_desc_thumbs button.btn_best,
+                .com_desc_thumbs button.btn_best_end {
+                  width: 80px;
+                }
+              </style>
+              <div class="view_comment_box">
+                <h5 class="txc2">
+                  댓글 <span>(1)</span>
+                  <span class="vc_icon">
+                    <defs>
+                      <style>
+                        .cmt_m_cls-1 {
+                          fill: #0567bb;
+                        }
+                      </style>
+                    </defs>
+                    <g id="레이어_2" data-name="레이어 2">
+                      <g id="레이어_1-2" data-name="레이어 1">
+                        <path
+                          class="cmt_m_cls-1"
+                          d="M91.33,103.54a4,4,0,0,1-3.53-2.11l-3.72-6.94A22.94,22.94,0,0,1,64.5,83.32a4,4,0,0,1,3.42-6.07h3.26A34.57,34.57,0,0,0,104,53.52a4,4,0,0,1,5.78-2.21A23.1,23.1,0,0,1,98.58,94.49l-3.73,6.94A4,4,0,0,1,91.33,103.54Zm-14-18.73a15,15,0,0,0,6.94,1.68h2.21A4,4,0,0,1,90,88.6l1.33,2.48,1.33-2.48a4,4,0,0,1,3.52-2.11h2.21A15.1,15.1,0,0,0,109.54,61.2,42.51,42.51,0,0,1,77.32,84.81Z"
+                        ></path>
+                        <path
+                          class="cmt_m_cls-1"
+                          d="M56.9,103.54h0a4,4,0,0,1-3.52-2.11L44.7,85.25H42.62A42.63,42.63,0,0,1,42.62,0H71.18a42.63,42.63,0,1,1,0,85.25H69.11l-8.68,16.18A4,4,0,0,1,56.9,103.54ZM42.62,8a34.63,34.63,0,0,0,0,69.25h4.47a4,4,0,0,1,3.52,2.11L56.9,91.08l6.29-11.72a4,4,0,0,1,3.52-2.11h4.47A34.63,34.63,0,0,0,71.18,8Z"
+                        ></path>
+                        <path
+                          class="cmt_m_cls-1"
+                          d="M39.27,42.26A5.29,5.29,0,1,1,34,37,5.28,5.28,0,0,1,39.27,42.26Z"
+                        ></path>
+                        <path
+                          class="cmt_m_cls-1"
+                          d="M62.18,42.26A5.28,5.28,0,1,1,56.9,37,5.27,5.27,0,0,1,62.18,42.26Z"
+                        ></path>
+                        <path
+                          class="cmt_m_cls-1"
+                          d="M85.1,42.26A5.29,5.29,0,1,1,79.82,37,5.28,5.28,0,0,1,85.1,42.26Z"
+                        ></path>
+                      </g> </g
+                  ></span>
+                </h5>
+                <!-- span : 댓글 갯수 -->
+                <ul class="view_comment_list" id="comtUl">
+                  <li class="comt-li" data-ridx="305">
+                    <div id="cont_wrap_305" class="cont-wrap">
+                      <strong class="view_com_writer ctm">
+                        <span
+                          ><svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 1208.32 1180.23"
+                          >
+                            <defs>
+                              <style>
+                                .cmtt_cls-1 {
+                                  fill: #333;
+                                }
+                              </style>
+                            </defs>
+                            <g id="레이어_3" data-name="레이어 2">
+                              <g id="Layer_1" data-name="Layer 1">
+                                <path
+                                  class="cmtt_cls-1"
+                                  d="M173,352.59C175.29,1025.19,836.49,1013,836.49,1013v167.25l371.83-335.16L839.91,493.14l-1.14,178.65S335.66,812.11,173,352.59Z"
+                                ></path>
+                                <path
+                                  class="cmtt_cls-1"
+                                  d="M1009.81,560.84V162.94C1009.81,73.1,936.71,0,846.87,0H162.94C73.1,0,0,73.1,0,162.94V846.87c0,89.85,73.1,163,162.94,163H504.37c-15.94-7-32-14.68-48-23.11a682,682,0,0,1-96.07-61H162.94a78.81,78.81,0,0,1-78.8-78.8V162.94a78.8,78.8,0,0,1,78.8-78.79H846.87a78.79,78.79,0,0,1,78.78,78.79V480.45Z"
+                                ></path>
+                              </g>
+                            </g></svg
+                        ></span>
+                        111
+                      </strong>
+                      <!-- 댓글 작성자 -->
 
-					<section class="right_wrap right_wrap1">
-						<style>
-.com_desc_thumbs {
-	clear: both;
-	padding-top: 15px;
-}
+                      <p class="view_com_content">저도 등산할 때 그래요..</p>
+                      <p id="contimg_305" style="margin-top: 10px"></p>
+                      <p></p>
 
-.com_desc_thumbs button {
-	width: 120px;
-}
+                      <div
+                        class="com_desc clearfix re-top"
+                        id="retop_305"
+                        data-ridx="305"
+                      >
+                        <div class="clearfix">
+                          <small class="view_com_date ctm"
+                            ><i class="far fa-calendar-alt"></i> 2022-12-02
+                            20:39:26</small
+                          >
+                          <!-- 댓글 작성 날짜 -->
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div id="comdt_write" class="view_com_input_box comment-write">
+                  <form
+                    name="freply"
+                    id="freply"
+                    method="post"
+                    onsubmit="return freply_submit(this);"
+                    target="reply"
+                    enctype="multipart/form-data"
+                    autocomplete="off"
+                  >
+                    <input type="hidden" id="cw" name="w" value="" />
+                    <input type="hidden" id="r_idx" name="r_idx" value="" />
+                    <input type="hidden" name="gubun" value="free" />
+                    <input type="hidden" name="key_idx" value="435" />
+                    <input
+                      type="hidden"
+                      name="imgIdx_0"
+                      id="imgIdx_0"
+                      value=""
+                    />
 
-.com_desc_thumbs button.btn_best, .com_desc_thumbs button.btn_best_end {
-	width: 80px;
-}
-</style>
-						<div class="view_comment_box">
+                    <div class="top clearfix">
+                      <input
+                        type="text"
+                        id="no_mb_nick"
+                        name="no_mb_nick"
+                        class="comment_id"
+                        minlength="2"
+                        maxlength="10"
+                        required="required"
+                        value=""
+                        placeholder="닉네임입력"
+                      />
+                      <input
+                        type="password"
+                        id="no_mb_password"
+                        name="no_mb_password"
+                        class="comment_pw"
+                        minlength="8"
+                        maxlength="30"
+                        value=""
+                        required="required"
+                        placeholder="비밀번호입력"
+                      />
+                    </div>
 
-							<h5 class="txc2">
-								댓글 <span>(1)</span> <span class="vc_icon"> <defs>
-									<style>
-.cmt_m_cls-1 {
-	fill: #0567bb;
-}
-</style>
-									</defs> <g id="레이어_2" data-name="레이어 2"> <g id="레이어_1-2"
-										data-name="레이어 1"> <path class="cmt_m_cls-1"
-										d="M91.33,103.54a4,4,0,0,1-3.53-2.11l-3.72-6.94A22.94,22.94,0,0,1,64.5,83.32a4,4,0,0,1,3.42-6.07h3.26A34.57,34.57,0,0,0,104,53.52a4,4,0,0,1,5.78-2.21A23.1,23.1,0,0,1,98.58,94.49l-3.73,6.94A4,4,0,0,1,91.33,103.54Zm-14-18.73a15,15,0,0,0,6.94,1.68h2.21A4,4,0,0,1,90,88.6l1.33,2.48,1.33-2.48a4,4,0,0,1,3.52-2.11h2.21A15.1,15.1,0,0,0,109.54,61.2,42.51,42.51,0,0,1,77.32,84.81Z"></path>
-									<path class="cmt_m_cls-1"
-										d="M56.9,103.54h0a4,4,0,0,1-3.52-2.11L44.7,85.25H42.62A42.63,42.63,0,0,1,42.62,0H71.18a42.63,42.63,0,1,1,0,85.25H69.11l-8.68,16.18A4,4,0,0,1,56.9,103.54ZM42.62,8a34.63,34.63,0,0,0,0,69.25h4.47a4,4,0,0,1,3.52,2.11L56.9,91.08l6.29-11.72a4,4,0,0,1,3.52-2.11h4.47A34.63,34.63,0,0,0,71.18,8Z"></path>
-									<path class="cmt_m_cls-1"
-										d="M39.27,42.26A5.29,5.29,0,1,1,34,37,5.28,5.28,0,0,1,39.27,42.26Z"></path>
-									<path class="cmt_m_cls-1"
-										d="M62.18,42.26A5.28,5.28,0,1,1,56.9,37,5.27,5.27,0,0,1,62.18,42.26Z"></path>
-									<path class="cmt_m_cls-1"
-										d="M85.1,42.26A5.29,5.29,0,1,1,79.82,37,5.28,5.28,0,0,1,85.1,42.26Z"></path>
-									</g> </g></span>
-							</h5>
-							<!-- span : 댓글 갯수 -->
-							<ul class="view_comment_list" id="comtUl">
-								<li class="comt-li" data-ridx="305">
-									<div id="cont_wrap_305" class="cont-wrap">
+                    <div class="bottom">
+                      <textarea
+                        id="rcont"
+                        name="wr_content"
+                        maxlength="65536"
+                        style="resize: none; outline: none"
+                        placeholder="내용을 입력하세요."
+                      ></textarea>
+                    </div>
+                    <div class="button_wrap">
+                      <div class="img-box">
+                        <img
+                          id="img_0"
+                          class="img-responsive"
+                          style="
+                            width: auto;
+                            max-height: 40px;
+                            position: relative;
+                            z-index: 30;
+                          "
+                          alt="사람그림"
+                        />
+                        <label
+                          id="label_0"
+                          for="bf_file_0"
+                          class="img-label"
+                        ></label>
+                        <span id="imgDel_0" class="imgDel" data-val="0"></span>
+                      </div>
+                      <input
+                        type="submit"
+                        class="write_btn"
+                        value="댓글 등록"
+                      />
+                    </div>
+                  </form>
+                </div>
+                <!-- view_com_input_box -->
+              </div>
+              <!-- view_comment_box -->
+            </section>
+          </div>
+          <!-- center -->
 
-										<strong class="view_com_writer ctm"> <span><svg
-													xmlns="http://www.w3.org/2000/svg"
-													viewBox="0 0 1208.32 1180.23">
-    <defs>
-        <style>
-.cmtt_cls-1 {
-	fill: #333;
-}
-</style>
-    </defs>
-    <g id="레이어_3" data-name="레이어 2">
-        <g id="Layer_1" data-name="Layer 1">
-            <path class="cmtt_cls-1"
-														d="M173,352.59C175.29,1025.19,836.49,1013,836.49,1013v167.25l371.83-335.16L839.91,493.14l-1.14,178.65S335.66,812.11,173,352.59Z"></path>
-            <path class="cmtt_cls-1"
-														d="M1009.81,560.84V162.94C1009.81,73.1,936.71,0,846.87,0H162.94C73.1,0,0,73.1,0,162.94V846.87c0,89.85,73.1,163,162.94,163H504.37c-15.94-7-32-14.68-48-23.11a682,682,0,0,1-96.07-61H162.94a78.81,78.81,0,0,1-78.8-78.8V162.94a78.8,78.8,0,0,1,78.8-78.79H846.87a78.79,78.79,0,0,1,78.78,78.79V480.45Z"></path>
-        </g>
-    </g>
-</svg></span> 111
-										</strong>
-										<!-- 댓글 작성자 -->
-
-										<p class="view_com_content">저도 등산할 때 그래요..</p>
-										<p id="contimg_305" style="margin-top: 10px;"></p>
-										<p></p>
-
-										<div class="com_desc clearfix re-top" id="retop_305"
-											data-ridx="305">
-											<div class="clearfix">
-												<small class="view_com_date ctm"><i
-													class="far fa-calendar-alt"></i> 2022-12-02 20:39:26</small>
-												<!-- 댓글 작성 날짜 -->
-											</div>
-
-										</div>
-
-									</div>
-								</li>
-							</ul>
-							<div id="comdt_write" class="view_com_input_box comment-write">
-
-								<form name="freply" id="freply" method="post"
-									onsubmit="return freply_submit(this);" target="reply"
-									enctype="multipart/form-data" autocomplete="off">
-									<input type="hidden" id="cw" name="w" value=""> <input
-										type="hidden" id="r_idx" name="r_idx" value=""> <input
-										type="hidden" name="gubun" value="free"> <input
-										type="hidden" name="key_idx" value="435"> <input
-										type="hidden" name="imgIdx_0" id="imgIdx_0" value="">
-
-									<div class="top clearfix">
-										<input type="text" id="no_mb_nick" name="no_mb_nick"
-											class="comment_id" minlength="2" maxlength="10"
-											required="required" value="" placeholder="닉네임입력"> <input
-											type="password" id="no_mb_password" name="no_mb_password"
-											class="comment_pw" minlength="8" maxlength="30" value=""
-											required="required" placeholder="비밀번호입력">
-									</div>
-
-									<div class="bottom">
-										<textarea id="rcont" name="wr_content" maxlength="65536"
-											style="resize: none; outline: none;" placeholder="내용을 입력하세요."></textarea>
-									</div>
-									<div class="button_wrap">
-										<div class="img-box">
-											<img id="img_0" class="img-responsive"
-												style="width: auto; max-height: 40px; position: relative; z-index: 30;" alt="사람그림">
-											<label id="label_0" for="bf_file_0" class="img-label"></label>
-											<span id="imgDel_0" class="imgDel" data-val="0"></span>
-										</div>
-										<input type="submit" class="write_btn" value="댓글 등록">
-									</div>
-
-								</form>
-
-							</div>
-							<!-- view_com_input_box -->
-						</div>
-						<!-- view_comment_box -->
-
-					</section>
-				</div>
-				<!-- center -->
-
-				<div class="report_popup">
-					<div class="tit">
-						<span class="line1"></span> <span class="line2"></span>
-					</div>
-					<div class="con">
-						<div class="button_wrap tac">
-							<button type="button" class="delete_btn">닫기</button>
-						</div>
-					</div>
-				</div>
-
-			</article>
-
+          <div class="report_popup">
+            <div class="tit">
+              <span class="line1"></span> <span class="line2"></span>
+            </div>
+            <div class="con">
+              <div class="button_wrap tac">
+                <button type="button" class="delete_btn">닫기</button>
+              </div>
+            </div>
+          </div>
+        </article>
 
         <!-- Footer -->
         <footer>
-			<div id="footer">
-			  <div class="container">
-				<div class="row">
-				  <div class="col-md-6 col-md-offset-3 text-center">
-					<p class="fh5co-social-icons">
-					  <span><i class="icon-twitter2"></i></span>
-					  <span><i class="icon-facebook2"></i></span>
-					  <span><i class="icon-instagram"></i></span>
-					  <span><i class="icon-dribbble2"></i></span>
-					  <span><i class="icon-youtube"></i></span>
-					</p>
-					<p>
-					  Control Co., Ltd. &copy; Website 2023
-					  <i class="icon-heart3"></i>
-					</p>
-				  </div>
-				</div>
-			  </div>
-			</div>
-		  </footer>
-		  <!-- End of Footer -->
-		</div></div>
-</body>
+          <div id="footer">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-6 col-md-offset-3 text-center">
+                  <p class="fh5co-social-icons">
+                    <span><i class="icon-twitter2"></i></span>
+                    <span><i class="icon-facebook2"></i></span>
+                    <span><i class="icon-instagram"></i></span>
+                    <span><i class="icon-dribbble2"></i></span>
+                    <span><i class="icon-youtube"></i></span>
+                  </p>
+                  <p>
+                    Control Co., Ltd. &copy; Website 2023
+                    <i class="icon-heart3"></i>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+      </div>
+    </div>
+  </body>
 </html>
