@@ -18,6 +18,21 @@
   }
 }
 
+.btn2 {
+  display: inline-block;
+  border-radius: 4px;
+  width: 120px;
+  height: 40px;
+  box-sizing: border-box;
+  border: 2px solid #1cc88a;
+  font-weight: 500;
+  margin: 0 2px;
+  line-height: 36px;
+  text-align: center;
+  vertical-align: middle;
+  transition: background-color 0.3s, color 0.3s;
+}
+
 .btn-icon-split {
   padding: 0;
   overflow: hidden;
@@ -25,7 +40,7 @@
   align-items: stretch;
   justify-content: center;
   .icon {
-    background: fade-out($black, .85);
+    background: fade-out($black, 0.85);
     display: inline-block;
     padding: $btn-padding-y $btn-padding-x;
   }
