@@ -190,43 +190,43 @@
                                                                         <img
                                                                             alt="DMZ펀치볼둘레길"
                                                                             src="./images/main1.jpg"
-                                                                        />
+                                                                        />첫번째사진이에오
                                                                     </div>
                                                                     <div class="inside">
                                                                         <img
                                                                             alt="점봉산 곰배령 산림생태탐방"
                                                                             src="./images/main2.jpg"
-                                                                        />
+                                                                        />두번째사진이에오
                                                                     </div>
                                                                     <div class="inside">
                                                                         <img
                                                                             alt="한남시험림탐방"
                                                                             src="./images/main3.jpg"
-                                                                        />
+                                                                        />세번째사진이에오
                                                                     </div>
                                                                     <div class="inside">
                                                                         <img
                                                                             alt="백두대간트레일"
                                                                             src="./images/main4.jpg"
-                                                                        />
+                                                                        />네번째사진이에오
                                                                     </div>
                                                                     <div class="inside">
                                                                         <img
                                                                             alt="홍릉숲 탐방"
                                                                             src="./images/main5.jpg"
-                                                                        />
+                                                                        />다섯번째사진이에오
                                                                     </div>
                                                                     <div class="inside">
                                                                         <img
                                                                             alt="울진금강소나무숲길"
                                                                             src="./images/main6.jpg"
-                                                                        />
+                                                                        />여섯번째사진이에오
                                                                     </div>
                                                                     <div class="inside">
                                                                         <img
                                                                             alt="(하동군)하동편백자연휴양림"
                                                                             src="./images/main7.jpg"
-                                                                        />
+                                                                        />일곱번쨰사진이에오
                                                                     </div>
                                                                 </div>
                                                                 <br />
@@ -314,6 +314,60 @@
                     </div>
                 </div>
             </div>
+            
+            <!--슬라이드배너-->
+            
+                <div class="slide-wrapper">
+                    <ul class="slides">
+                        <li  class="li-1"><div id="mg-text"><h2><strong>한라산</strong></h2><br> <h4><strong>산책하기 좋은 곳</strong></h4><br>여기서부터 150.56km</div></li>
+                        <li class="li-2"><div id="mg-text"><h2><strong>한라산</strong></h2><br> <h4><strong>산책하기 좋은 곳</strong></h4><br>여기서부터 150.56km</div></li>
+                        <li class="li-3"><div id="mg-text"><h2><strong>한라산</strong></h2><br> <h4><strong>산책하기 좋은 곳</strong></h4><br>여기서부터 150.56km</div></li>
+                        <li class="li-4"><div id="mg-text"><h2><strong>한라산</strong></h2><br> <h4><strong>산책하기 좋은 곳</strong></h4><br>여기서부터 150.56km</div></li>
+                        <li class="li-5"><div id="mg-text"><h2><strong>한라산</strong></h2><br> <h4><strong>산책하기 좋은 곳</strong></h4><br>여기서부터 150.56km</div></li>
+                    
+                        <li  class="li-1"><div id="mg-text"><h2><strong>한라산</strong></h2><br> <h4><strong>산책하기 좋은 곳</strong></h4><br>여기서부터 150.56km</div></li>
+                        <li class="li-2"><div id="mg-text"><h2><strong>한라산</strong></h2><br> <h4><strong>산책하기 좋은 곳</strong></h4><br>여기서부터 150.56km</div></li>
+                        <li class="li-3"><div id="mg-text"><h2><strong>한라산</strong></h2><br> <h4><strong>산책하기 좋은 곳</strong></h4><br>여기서부터 150.56km</div></li>
+                        <li class="li-4"><div id="mg-text"><h2><strong>한라산</strong></h2><br> <h4><strong>산책하기 좋은 곳</strong></h4><br>여기서부터 150.56km</div></li>
+                        <li class="li-5"><div id="mg-text"><h2><strong>한라산</strong></h2><br> <h4><strong>산책하기 좋은 곳</strong></h4><br>여기서부터 150.56km</div></li>
+                    </ul>
+                </div>
+
+
+
+
+            <script>
+  var ul = document.querySelector('.slides')
+    var slideNumber = document.querySelector('.slides').childElementCount
+    var li = document.querySelector('.slides>li')
+
+    var firstItemClone = ul.firstElementChild.cloneNode(true);
+    ul.appendChild(firstItemClone);
+    ul.style.width = (slideNumber + 1) * 400 + 'px'
+
+    function move(){
+      var i = 0;
+
+      setInterval(function(){
+        ul.style.transition = '0.2s';
+        ul.style.transform = 'translate3d(-'+300*(i+1)+'px, 0px, 0px)';
+
+        i++;
+
+        if (i == slideNumber){
+          setTimeout(function(){
+            ul.style.transition = '0s';
+            ul.style.transform = "translate3d(0px, 0px, 0px)";
+          },201)
+          i = 1;
+        }
+      },3000);
+    }
+
+    document.addEventListener("DOMContentLoaded",function(){
+      move();
+    });
+              </script>
 
             <!-- 칸 시작 -->
             <div class="centers">
@@ -326,8 +380,8 @@
                 <!-- 지도 끝 -->
             </div>
             <!-- 칸 끝 -->
+
             <!-- 게시글 시작 -->
-            <div>
                 <div class="boximpo2">
                     <div class="bottom">
                         <ul class="list_wrap">
@@ -926,6 +980,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
             <img
                 style="
                     display: inline-flex;
@@ -936,7 +991,6 @@
                     height: auto;
                 "
                 src="./images/footer.png"
-				 alt="살려줘"
             />
 
         <!-- END fh5co-page -->
@@ -980,6 +1034,8 @@
         <!-- 슬라이드 추가 -->
         <script src="js/slide.js"></script>
     </body>
+
+
 
     <footer>
         <div id="footer">
