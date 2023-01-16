@@ -2229,6 +2229,31 @@ div.cs-select span {
   font-family: 'Open Sans', Arial, sans-serif;
 }
 
+.btncolor {
+  width: 100px;
+  height: 30px;
+  background-color: #1cc88a;
+  border: 1px solid black;
+}
+
+.btncolor2 {
+  
+  width: 100px;
+  height: 30px;
+  background-color: #1cc88a;
+  border: 1px solid black;
+}
+.btncolor:hover {
+  cursor: pointer;
+  background-color: #00ad7c;
+  color: #f0f1f1;
+}
+
+.btncolor2:hover {
+  cursor: pointer;
+  background-color: #00ad7c;
+  color: #f0f1f1;
+}
 /* 여기까지  */
 
 /* f78536 */
