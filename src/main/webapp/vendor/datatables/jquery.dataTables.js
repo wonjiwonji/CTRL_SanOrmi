@@ -7880,7 +7880,7 @@
 
         return out;
       },
-      1,
+      1
     );
 
     // Return an Api.rows() extended instance, so rows().nodes() etc can be used
