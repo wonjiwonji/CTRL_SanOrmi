@@ -31,5 +31,4 @@ public class EncFilter extends HttpFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 		this.encoding=fConfig.getServletContext().getInitParameter("encoding");
 	}
-
 }
