@@ -10,21 +10,30 @@ public class MemberVO {
 	private String mAddress;
 	private String mName;
 	private Date mDate;
-	private boolean mBan;
+	private int mBanCnt;
+	private int mBoardCnt;
 	
 	
+	
+	public int getmBanCnt() {
+		return mBanCnt;
+	}
+	public void setmBanCnt(int mBanCnt) {
+		this.mBanCnt = mBanCnt;
+	}
+	public int getmBoardCnt() {
+		return mBoardCnt;
+	}
+	public void setmBoardCnt(int mBoardCnt) {
+		this.mBoardCnt = mBoardCnt;
+	}
 	public String getmName() {
 		return mName;
 	}
 	public void setmName(String mName) {
 		this.mName = mName;
 	}
-	public boolean ismBan() {
-		return mBan;
-	}
-	public void setmBan(boolean mBan) {
-		this.mBan = mBan;
-	}
+	
 	public Date getmDate() {
 		return mDate;
 	}
@@ -58,9 +67,11 @@ public class MemberVO {
 	@Override
 	public String toString() {
 		return "MemberVO [id=" + id + ", mPw=" + mPw + ", mEmail=" + mEmail + ", mAddress=" + mAddress + ", mName="
-				+ mName + ", mDate=" + mDate + ", mBan=" + mBan + "]";
+				+ mName + ", mDate=" + mDate + ", mBanCnt=" + mBanCnt + ", mBoardCnt=" + mBoardCnt + "]";
 	}
 	
+	
+
 	
 
 	

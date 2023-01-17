@@ -26,7 +26,6 @@ public class CommentDAO {
 			pstmt.setString(1, cvo.getcContent());
 			pstmt.setString(2, cvo.getcID());
 			pstmt.setInt(3, cvo.getcGroup());
-			pstmt.setDate(4, (Date) cvo.getcDate());
 			
 			int res=pstmt.executeUpdate();	
 			if(res<=0) {

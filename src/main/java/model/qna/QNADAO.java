@@ -14,7 +14,7 @@ public class QNADAO {
 	Connection conn;
 	PreparedStatement pstmt;
 	
-	final String INSERT_QNA="INSERT INTO QNA (Q_TITLE,Q_CONTENT,Q_ID,Q_DATE) VALUES(?,?,?,?)";
+	final String INSERT_QNA="INSERT INTO QNA (Q_TITLE,Q_CONTENT,Q_ID,Q_DATE) VALUES(?,?,?,NOW())";
 	final String UPDATE_QNA="UPDATE QNA SET Q_TITLE=?,Q_CONTENT=? WHERE Q_NUM=?";
 	final String DELETE_QNA="DELETE FROM QNA WHERE Q_NUM=?";
 	final String SELECTONE_QNA="SELECT * FROM QNA WHERE Q_NUM=?";
@@ -27,7 +27,6 @@ public class QNADAO {
 			pstmt.setString(1, qvo.getqTitle());
 			pstmt.setString(2, qvo.getqContent());
 			pstmt.setString(3, qvo.getqId());
-			pstmt.setDate(4, (Date) qvo.getqDate());
 
 			int res=pstmt.executeUpdate();
 			if(res<=0) {
@@ -87,7 +86,6 @@ public class QNADAO {
 					data.setqTitle(rs.getString("Q_TITLE"));
 					data.setqContent(rs.getString("Q_CONTENT"));
 					data.setqId(rs.getString("Q_ID"));
-					data.setqDate(rs.getDate("Q_DATE"));
 				}
 			
 		} catch (SQLException e) {
@@ -108,7 +106,6 @@ public class QNADAO {
 				data.setqTitle(rs.getString("Q_TITLE"));
 				data.setqContent(rs.getString("Q_CONTENT"));
 				data.setqId(rs.getString("Q_ID"));
-				data.setqDate(rs.getDate("Q_DATE"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

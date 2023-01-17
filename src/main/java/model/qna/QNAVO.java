@@ -7,7 +7,7 @@ public class QNAVO {
 	private String qId;
 	private String qTitle;
 	private String qContent;
-	private Date qDate;
+	private int qCnt;
 	
 	public int getqNum() {
 		return qNum;
@@ -33,17 +33,17 @@ public class QNAVO {
 	public void setqContent(String qContent) {
 		this.qContent = qContent;
 	}
-	public Date getqDate() {
-		return qDate;
+	public int getqCnt() {
+		return qCnt;
 	}
-	public void setqDate(Date qDate) {
-		this.qDate = qDate;
+	public void setqCnt(int qCnt) {
+		this.qCnt = qCnt;
 	}
 	
 	@Override
 	public String toString() {
-		return "QNAVO [qNum=" + qNum + ", qId=" + qId + ", qTitle=" + qTitle + ", qContent=" + qContent + ", qDate="
-				+ qDate + "]";
+		return "QNAVO [qNum=" + qNum + ", qId=" + qId + ", qTitle=" + qTitle + ", qContent=" + qContent + ", qCnt="
+				+ qCnt + "]";
 	}
 
 }

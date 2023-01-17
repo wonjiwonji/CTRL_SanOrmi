@@ -9,7 +9,14 @@ public class BoardVO {
 	private String bContent;
 	private String bReplyCnt;
 	private Date bDate;
+	private int bCnt;
 	
+	public int getbCnt() {
+		return bCnt;
+	}
+	public void setbCnt(int bCnt) {
+		this.bCnt = bCnt;
+	}
 	public Date getbDate() {
 		return bDate;
 	}
@@ -46,10 +53,10 @@ public class BoardVO {
 	public void setbReplyCnt(String bReplyCnt) {
 		this.bReplyCnt = bReplyCnt;
 	}
-
 	@Override
 	public String toString() {
 		return "BoardVO [bNum=" + bNum + ", bId=" + bId + ", bTitle=" + bTitle + ", bContent=" + bContent
-				+ ", bReplyCnt=" + bReplyCnt + ", bDate=" + bDate + "]";
+				+ ", bReplyCnt=" + bReplyCnt + ", bDate=" + bDate + ", bCnt=" + bCnt + "]";
 	}
+
 }

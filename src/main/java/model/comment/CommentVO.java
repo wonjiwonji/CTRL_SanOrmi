@@ -9,21 +9,9 @@ public class CommentVO {
 	private int bNum;
 	private int qNum;
 	private int cGroup;
-	private int sqeNo;
-	private Date cDate;
+	private int cSqe;
+	private int cCnt;
 	
-	public Date getcDate() {
-		return cDate;
-	}
-	public int getqNum() {
-		return qNum;
-	}
-	public void setqNum(int qNum) {
-		this.qNum = qNum;
-	}
-	public void setcDate(Date cDate) {
-		this.cDate = cDate;
-	}
 	public int getcNum() {
 		return cNum;
 	}
@@ -48,23 +36,37 @@ public class CommentVO {
 	public void setbNum(int bNum) {
 		this.bNum = bNum;
 	}
+	public int getqNum() {
+		return qNum;
+	}
+	public void setqNum(int qNum) {
+		this.qNum = qNum;
+	}
 	public int getcGroup() {
 		return cGroup;
 	}
 	public void setcGroup(int cGroup) {
 		this.cGroup = cGroup;
 	}
-	public int getSqeNo() {
-		return sqeNo;
+	public int getcSqe() {
+		return cSqe;
 	}
-	public void setSqeNo(int sqeNo) {
-		this.sqeNo = sqeNo;
+	public void setcSqe(int cSqe) {
+		this.cSqe = cSqe;
+	}
+	public int getcCnt() {
+		return cCnt;
+	}
+	public void setcCnt(int cCnt) {
+		this.cCnt = cCnt;
 	}
 	@Override
 	public String toString() {
 		return "CommentVO [cNum=" + cNum + ", cID=" + cID + ", cContent=" + cContent + ", bNum=" + bNum + ", qNum="
-				+ qNum + ", cGroup=" + cGroup + ", sqeNo=" + sqeNo + ", cDate=" + cDate + "]";
+				+ qNum + ", cGroup=" + cGroup + ", cSqe=" + cSqe + ", cCnt=" + cCnt + "]";
 	}
+	
+	
 
 
 }
