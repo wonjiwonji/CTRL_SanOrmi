@@ -355,19 +355,18 @@
 										href="javascript:void(0)"> <span>네이버 로그아웃</span>
 									</a></li>
 								</ul> -->
-								
+
 								<script
 									src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js"
 									charset="utf-8"></script>
-								<a   onclick="naverLogout(); return false;" id="naverIdLogin_loginButton" href="javascript:void(0)"
-									class="btn btn-facebook btn-user btn-block">
-									네이버으로 회원가입
-								</a>
+								<a onclick="naverLogout(); return false;"
+									id="naverIdLogin_loginButton" href="javascript:void(0)"
+									class="btn btn-facebook btn-user btn-block"> 네이버으로 회원가입 </a>
 
 
 								<script>
 
-var naverLogin = new naver.LoginWithNaverId(
+								var naverLogin = new naver.LoginWithNaverId(
 		{
 			clientId: "d7jG1IHGM3go47lJrKGw", //내 애플리케이션 정보에 cliendId를 입력해줍니다.
 			callbackUrl: "http://localhost:8080/ctrl/login.html", // 내 애플리케이션 API설정의 Callback URL 을 입력해줍니다.

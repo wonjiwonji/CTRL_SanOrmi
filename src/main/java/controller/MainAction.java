@@ -12,7 +12,7 @@ public class MainAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("/index.html");
+		forward.setPath("/main.html");
 		forward.setRedirect(false);
 
 		return forward;
