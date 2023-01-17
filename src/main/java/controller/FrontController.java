@@ -27,7 +27,11 @@ public class FrontController extends HttpServlet {
 
 		ActionForward forward=null;
 		if(command.equals("/main.do")) {
-			
+			try {
+				forward=new MainAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		else if(command.equals("/login.do")) {
 
