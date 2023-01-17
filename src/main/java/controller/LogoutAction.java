@@ -3,18 +3,16 @@ package controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.board.BoardDAO;
-import model.board.BoardVO;
-import model.member.MemberDAO;
-
-public class MainAction implements Action {
+public class LogoutAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("/index.html");
-		forward.setRedirect(false);
+		forward.setPath("/main.do");
+		forward.setRedirect(true);
 
+		request.getSession().invalidate();
+		
 		return forward;
 	}
 

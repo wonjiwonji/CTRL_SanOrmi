@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -48,7 +48,7 @@
         <!-- Sidebar - Brand -->
         <a
           class="sidebar-brand d-flex align-items-center justify-content-center"
-          href="indexAdmin.html"
+          href="adminPage.html"
         >
           <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
@@ -61,7 +61,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item active">
-          <a class="nav-link" href="index.html">
+          <a class="nav-link" href="main.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>산오르미 페이지</span></a
           >
@@ -426,7 +426,7 @@
           </div>
           <!-- /.container-fluid -->
         </div>
-        
+
         <!-- End of Main Content -->
 
         <!-- Footer -->
@@ -484,7 +484,7 @@
             >
               취소
             </button>
-            <a class="btn btn-primary" href="index.html">로그아웃</a>
+            <a class="btn btn-primary" href="main.html">로그아웃</a>
           </div>
         </div>
       </div>

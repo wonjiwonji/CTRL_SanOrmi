@@ -39,7 +39,6 @@ public class FrontController extends HttpServlet {
 		else if(command.equals("/logout.do")) {
 
 		}
-		
 		if(forward==null) {
 			forward=new ActionForward();
 			forward.setPath("/error404.jsp");
