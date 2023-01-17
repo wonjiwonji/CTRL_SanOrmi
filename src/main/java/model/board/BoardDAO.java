@@ -16,8 +16,8 @@ public class BoardDAO {
 	final String INSERT_BOARD="INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES(?,?,?, NOW())";
 	final String UPDATE_BOARD="UPDATE BOARD SET B_TITLE=?,B_CONTENT=? WHERE B_NUM=?";
 	final String DELETE_BOARD="DELETE FROM BOARD WHERE B_NUM=?";
-	final String SELECTONE_BOARD="SELECT B_NUM, RPAD(SUBSTR(B_ID, 1, 3), LENGTH(B_ID), '*') AS B_ID, B_TITLE, B_CONTENT, B_DATE FROM BOARD where b_num=? ORDER BY B_NUM DESC";
-	final String SELECTALL_BOARD="select b_num, RPAD(SUBSTR(b_id, 1, 3), LENGTH(b_id), '*') as b_id, b_title, b_content, b_date from board order by b_num desc";
+	final String SELECTONE_BOARD="SELECT RPAD(SUBSTR(B_ID, 1, 3), LENGTH(B_ID), '*') AS B_ID, B_TITLE, B_CONTENT, B_DATE, B_CNT, C_CNT FROM BOARD where b_num=? ORDER BY B_NUM DESC";
+	final String SELECTALL_BOARD="SELECT B_NUM, RPAD(SUBSTR(B_ID, 1, 3), LENGTH(B_ID), '*') AS B_ID, B_TITLE, B_CONTENT, C_CNT FROM BOARD ORDER BY B_NUM DESC";
 
 	public boolean insertBoard(BoardVO bvo) {
 		conn=JDBCUtil.connect();
@@ -80,11 +80,13 @@ public class BoardDAO {
 			ResultSet rs=pstmt.executeQuery();
 				if(rs.next()) {
 					data=new BoardVO();
-					data.setbNum(rs.getInt("B_NUM"));
+					data.setbId(rs.getString("B_ID"));
 					data.setbTitle(rs.getString("B_TITLE"));
 					data.setbContent(rs.getString("B_CONTENT"));
-					data.setbId(rs.getString("B_ID"));
 					data.setbDate(rs.getDate("B_DATE"));
+					data.setbCnt(rs.getInt("B_CNT"));
+					data.setcCnt(rs.getInt("C_CNT"));
+					
 				}
 			
 		} catch (SQLException e) {
@@ -103,9 +105,10 @@ public class BoardDAO {
 				BoardVO data=new BoardVO();
 				data.setbNum(rs.getInt("B_NUM"));
 				data.setbTitle(rs.getString("B_TITLE"));
-				data.setbContent(rs.getString("B_CONTENT"));
 				data.setbId(rs.getString("B_ID"));
-				data.setbDate(rs.getDate("B_DATE"));
+				data.setbCnt(rs.getInt("B_CNT"));
+				data.setcCnt(rs.getInt("C_CNT"));
+				
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

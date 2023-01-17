@@ -8,6 +8,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.qna.QNAVO;
+import model.board.BoardVO;
 import model.common.JDBCUtil;
 
 public class QNADAO {
@@ -17,8 +18,8 @@ public class QNADAO {
 	final String INSERT_QNA="INSERT INTO QNA (Q_TITLE,Q_CONTENT,Q_ID,Q_DATE) VALUES(?,?,?,NOW())";
 	final String UPDATE_QNA="UPDATE QNA SET Q_TITLE=?,Q_CONTENT=? WHERE Q_NUM=?";
 	final String DELETE_QNA="DELETE FROM QNA WHERE Q_NUM=?";
-	final String SELECTONE_QNA="SELECT * FROM QNA WHERE Q_NUM=?";
-	final String SELECTALL_QNA="SELECT * FROM QNA ORDER BY Q_NUM DESC";
+	final String SELECTONE_QNA="SELECT RPAD(SUBSTR(Q_ID, 1, 3), LENGTH(Q_ID), '*') AS Q_ID, Q_TITLE, Q_CONTENT, Q_DATE, Q_CNT, C_CNT FROM QNA where q_num=? ORDER BY Q_NUM DESC";
+	final String SELECTALL_QNA="SELECT Q_NUM, RPAD(SUBSTR(Q_ID, 1, 3), LENGTH(Q_ID), '*') AS Q_ID, Q_TITLE, Q_CONTENT, C_CNT FROM QNA ORDER BY Q_NUM DESC";
 
 	public boolean insert(QNAVO qvo) {
 		conn=JDBCUtil.connect();
@@ -82,10 +83,13 @@ public class QNADAO {
 			ResultSet rs=pstmt.executeQuery();
 				if(rs.next()) {
 					data=new QNAVO();
-					data.setqNum(rs.getInt("Q_NUM"));
+					data.setqId(rs.getString("Q_ID"));
 					data.setqTitle(rs.getString("Q_TITLE"));
 					data.setqContent(rs.getString("Q_CONTENT"));
-					data.setqId(rs.getString("Q_ID"));
+					data.setqDate(rs.getDate("Q_DATE"));
+					data.setqCnt(rs.getInt("Q_CNT"));
+					data.setcCnt(rs.getInt("C_CNT"));
+					
 				}
 			
 		} catch (SQLException e) {
@@ -104,8 +108,9 @@ public class QNADAO {
 				QNAVO data=new QNAVO();
 				data.setqNum(rs.getInt("Q_NUM"));
 				data.setqTitle(rs.getString("Q_TITLE"));
-				data.setqContent(rs.getString("Q_CONTENT"));
 				data.setqId(rs.getString("Q_ID"));
+				data.setqCnt(rs.getInt("Q_CNT"));
+				data.setcCnt(rs.getInt("C_CNT"));
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
