@@ -19,6 +19,7 @@ public class MemberDAO {
    final String UPDATE_MEMBER_BOARDCNT = "UPDATE MEMBER SET M_BOARDCNT = ? WHERE ID=?";   
    final String DELETE_MEMBER="DELETE FROM MEMBER WHERE ID=? ";
    final String SELECTONE_MEMBER="SELECT * FROM MEMBER WHERE ID=?";
+   final String LOGIN_MEMBER="SELECT * FROM MEMBER WHERE ID=? AND PW=?";
    final String SELECTALL_MEMBER="SELECT ID M_NAME M_EMAIL M_ADDRESS M_REGDATE M_BCNT FROM MEMBER";
 
    public boolean insertMember(MemberVO mvo) {
@@ -129,6 +130,31 @@ public class MemberDAO {
       JDBCUtil.disconnect(conn, pstmt);
       return data;
    }
+   
+   public MemberVO loginMember(MemberVO mvo) {
+	      MemberVO data=null;
+	      conn=JDBCUtil.connect();
+	      try {
+	            pstmt=conn.prepareStatement(LOGIN_MEMBER);
+	            pstmt.setString(1, mvo.getId());
+	            pstmt.setString(2, mvo.getmPw());
+	      
+	         ResultSet rs=pstmt.executeQuery();
+	         if(rs.next()) {
+	            data=new MemberVO();
+	            data.setId(rs.getString("ID"));
+	            data.setmPw(rs.getString("M_PW"));
+	            data.setmName(rs.getString("M_NAME"));
+	         }
+	      } catch (SQLException e) {
+	         e.printStackTrace();
+	      }
+	      JDBCUtil.disconnect(conn, pstmt);
+	      return data;
+	   }
+   
+ 
+   
    public ArrayList<MemberVO> selectAllMember(MemberVO mvo) {
       ArrayList<MemberVO> datas=new ArrayList<MemberVO>();
       conn=JDBCUtil.connect();
