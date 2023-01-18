@@ -62,7 +62,7 @@ public class ReportDAO {
             data.setrNum(rs.getInt("R.R_NUM"));
             data.setrId(rs.getString("R.R_ID"));
             data.setrTargetId(rs.getString("R.R_TARGITID"));
-            data.setbtitle
+//            data.setbtitle
          }
       } catch (SQLException e) {
          e.printStackTrace();
