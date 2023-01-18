@@ -3,6 +3,15 @@ package model.board;
 import java.util.ArrayList;
 
 public class BoardSet {
+	private BCommentVO bc;
+	public BCommentVO getBc() {
+		return bc;
+	}
+
+	public void setBc(BCommentVO bc) {
+		this.bc = bc;
+	}
+
 	private BoardVO board;
 	private ArrayList<BCommentVO> bcList;
 
@@ -24,7 +33,8 @@ public class BoardSet {
 
 	@Override
 	public String toString() {
-		return "BoardSet [board=" + board + ", bcList=" + bcList + "]";
+		return "BoardSet [bc=" + bc + ", board=" + board + ", bcList=" + bcList + "]";
 	}
+
 
 }

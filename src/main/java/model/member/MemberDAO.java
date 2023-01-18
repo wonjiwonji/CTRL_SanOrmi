@@ -6,6 +6,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import model.board.BoardDAO;
+import model.board.BoardSet;
+import model.board.BoardVO;
 import model.common.JDBCUtil;
 
 public class MemberDAO {
@@ -173,4 +176,9 @@ public class MemberDAO {
       JDBCUtil.disconnect(conn, pstmt);
       return datas;
    }
+   
+
+   
+   
+   
 }
