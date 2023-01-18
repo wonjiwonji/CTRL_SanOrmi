@@ -1,50 +1,30 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>게시글 관리</title>
 
     <!-- link start -->
     <!-- Custom fonts for this template -->
-    <link
-      href="vendor/fontawesome-free/css/all.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-      rel="stylesheet"
-    />
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet" />
 
     <!-- Custom styles for this page -->
-    <link
-      href="vendor/datatables/dataTables.bootstrap4.min.css"
-      rel="stylesheet"
-    />
+    <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/board.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel="shortcut icon" href="./images/favicon.ico" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300"
-      rel="stylesheet"
-      type="text/css"
-    />
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300" rel="stylesheet" type="text/css" />
 
     <!-- Animate.css -->
     <link rel="stylesheet" href="css/animate.css" />
@@ -86,8 +66,7 @@
           <a class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
           <a id="fh5co-logo" class="cover-color" href="main.html">
             <img class="mg-logo" src="./images/logo1.png" alt="ren" />
-            산오르미</a
-          >
+            산오르미</a>
           <!-- START #fh5co-menu-wrap -->
           <nav id="fh5co-menu-wrap" role="navigation">
             <ul class="sf-menu" id="fh5co-primary-menu">
@@ -143,12 +122,7 @@
                 <div>
                   <div class="card-body">
                     <div class="table-responsive">
-                      <table
-                        class="table"
-                        id="dataTable"
-                        width="100%"
-                        cellspacing="0"
-                      >
+                      <table class="table" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                           <tr>
                             <th class="sorting_con">순번</th>
@@ -238,9 +212,7 @@
             <div class="button_wrap clearfix">
               <!--<button type="button" class="delete_btn">삭제하기</button>-->
               <!-- <a href="#" class="list_btn">목록보기</a> -->
-              <a href="writingpage.html" class="write_btn m_write_btn"
-                >작성하기</a
-              >
+              <a href="writingpage.html" class="write_btn m_write_btn">작성하기</a>
               <!-- <a href="#" class="modify_btn">수정하기</a> -->
             </div>
           </div>
@@ -280,24 +252,12 @@
     </a>
 
     <!-- Logout Modal-->
-    <div
-      class="modal fade"
-      id="logoutModal"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalLabel"
-      aria-hidden="true"
-    >
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
-            <button
-              class="close"
-              type="button"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">×</span>
             </button>
           </div>
@@ -305,11 +265,7 @@
             Select "Logout" below if you are ready to end your current session.
           </div>
           <div class="modal-footer">
-            <button
-              class="btn btn-secondary"
-              type="button"
-              data-dismiss="modal"
-            >
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">
               Cancel
             </button>
             <a class="btn btn-primary" href="login.html">Logout</a>
