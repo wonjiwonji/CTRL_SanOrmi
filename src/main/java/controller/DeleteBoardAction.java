@@ -11,7 +11,7 @@ public class DeleteBoardAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("/main.do");
+		forward.setPath("/tables.jsp");
 		forward.setRedirect(false);
 
 		BoardVO bvo=new BoardVO();

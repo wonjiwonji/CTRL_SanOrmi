@@ -8,7 +8,7 @@ public class MainAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("/main.html");
+		forward.setPath("/main.jsp");
 		forward.setRedirect(false);
 
 		return forward;
