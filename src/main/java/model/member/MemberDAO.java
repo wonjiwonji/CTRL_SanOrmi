@@ -1,7 +1,6 @@
 package model.member;
 
 import java.sql.Connection;
-import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -153,7 +152,6 @@ public class MemberDAO {
 	      return data;
 	   }
    
- 
    
    public ArrayList<MemberVO> selectAllMember(MemberVO mvo) {
       ArrayList<MemberVO> datas=new ArrayList<MemberVO>();
