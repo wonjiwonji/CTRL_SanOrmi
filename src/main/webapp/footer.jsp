@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
+    
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,15 +11,10 @@ pageEncoding="UTF-8"%>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>게시글 관리</title>
+    <title>Footer</title>
     <link rel="shortcut icon" href="./images/favicon.ico" />
 
     <!-- link start -->
-    <!-- summernote s -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-    <!-- summernote e -->
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
@@ -53,57 +51,28 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="css/community.css" />
     <link rel="stylesheet" href="css/join.css" />
     <link rel="stylesheet" href="css/reset.css" />
-    <!--  모두의 낚시 -->
-
-    <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-    <!-- link end -->
-  </head>
-  
-  <script>
-  $(document).ready(function(){
-	  $('#content').summernote();
-  });
-  </script>
-  
-  <body>
-  
-	<%-- 헤더임 --%>
-	<jsp:include page="header.jsp"/>
-	<%-- 헤더라고 --%>
-	
-    <section class="write_content pd60">
-      <div class="center">
-        <h2>작성</h2>
-        <hr/>
-        <form action="#">
-          <div>
-            <label for="name">작성자:</label>
-            <input type="text" class="form-control" id="name" placeholder="작성자를 입력하세요" name="name" required />
+</head>
+<body>
+  <footer>
+    <div id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 text-center">
+            <p class="fh5co-social-icons">
+              <a href="#"><i class="icon-twitter2"></i></a>
+				<a href="#"><i class="icon-facebook2"></i></a>
+				<a href="#"><i class="icon-instagram"></i></a>
+				<a href="#"><i class="icon-dribbble2"></i></a>
+				<a href="#"><i class="icon-youtube"></i></a>
+            </p>
+            <p>
+              Control Co., Ltd. &copy; Website 2023<i class="icon-heart3"></i>
+            </p>
           </div>
-          <div class="mb-3 mt-3">
-            <label for="subject">제목:</label>
-            <input type="text" class="form-control" id="subject" placeholder="제목을 입력하세요" name="subject" required />
-          </div>
-          <div class="mb-3 mt-3">
-            <label for="content">내용:</label>
-            <textarea class="form-control" rows="5" id="content" placeholder="내용을 입력하세요" name="content"></textarea>
-          </div>
-          <button type="submit" class="btncolor">작성완료</button>
-          <button class="btncolor2" href="#">목록</button>
-        </form>
+        </div>
       </div>
-    </section>
-
-    <!-- center -->
-  </body>
-
-	<%-- 푸터임 --%>
-	<jsp:include page="footer.jsp"/>
-	<%-- 푸터라고 --%>
-
+    </div>
+  </footer>
+</body>
 </html>

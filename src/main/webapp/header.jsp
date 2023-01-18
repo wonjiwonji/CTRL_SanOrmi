@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
+    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
+    
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,15 +12,10 @@ pageEncoding="UTF-8"%>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>게시글 관리</title>
+    <title>NavBar</title>
     <link rel="shortcut icon" href="./images/favicon.ico" />
 
     <!-- link start -->
-    <!-- summernote s -->
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.js"></script>
-    <!-- summernote e -->
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
@@ -53,57 +52,41 @@ pageEncoding="UTF-8"%>
     <link rel="stylesheet" href="css/community.css" />
     <link rel="stylesheet" href="css/join.css" />
     <link rel="stylesheet" href="css/reset.css" />
-    <!--  모두의 낚시 -->
-
-    <!-- Modernizr JS -->
     <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-    <!-- link end -->
-  </head>
-  
-  <script>
-  $(document).ready(function(){
-	  $('#content').summernote();
-  });
-  </script>
-  
-  <body>
-  
-	<%-- 헤더임 --%>
-	<jsp:include page="header.jsp"/>
-	<%-- 헤더라고 --%>
-	
-    <section class="write_content pd60">
-      <div class="center">
-        <h2>작성</h2>
-        <hr/>
-        <form action="#">
-          <div>
-            <label for="name">작성자:</label>
-            <input type="text" class="form-control" id="name" placeholder="작성자를 입력하세요" name="name" required />
-          </div>
-          <div class="mb-3 mt-3">
-            <label for="subject">제목:</label>
-            <input type="text" class="form-control" id="subject" placeholder="제목을 입력하세요" name="subject" required />
-          </div>
-          <div class="mb-3 mt-3">
-            <label for="content">내용:</label>
-            <textarea class="form-control" rows="5" id="content" placeholder="내용을 입력하세요" name="content"></textarea>
-          </div>
-          <button type="submit" class="btncolor">작성완료</button>
-          <button class="btncolor2" href="#">목록</button>
-        </form>
+</head>
+<body>
+    <header id="fh5co-header-section" class="sticky-banner">
+      <div class="container">
+        <div class="nav-header">
+          <a class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
+          <a id="fh5co-logo" class="cover-color" href="main.html">
+            <img class="mg-logo" src="./images/logo1.png" alt="ren" />
+            산오르미</a>
+          <!-- START #fh5co-menu-wrap -->
+          <nav id="fh5co-menu-wrap" role="navigation">
+            <ul class="sf-menu" id="fh5co-primary-menu">
+              <li><a href="adminPage.html">관리자 페이지</a></li>
+              <li><a href="contact.html">명산 소개</a></li>
+              <li><a href="QnA.html">자주 묻는 질문</a></li>
+              <li><a href="tablespage.html">커뮤니티</a></li>
+              <li>
+                <a class="fh5co-sub-ddown sf-with-ul">로그인</a>
+                <ul class="fh5co-sub-menu">
+                  <li><a href="login.html">로그인</a></li>
+                  <li><a href="agree.html">회원가입</a></li>
+                </ul>
+              </li>
+              <li>
+                <a class="fh5co-sub-ddown sf-with-ul">마이페이지</a>
+                <ul class="fh5co-sub-menu">
+                  <li><a href="mypage.html">작성글 확인</a></li>
+                  <li><a href="update.html">회원정보 수정</a></li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </div>
-    </section>
-
-    <!-- center -->
-  </body>
-
-	<%-- 푸터임 --%>
-	<jsp:include page="footer.jsp"/>
-	<%-- 푸터라고 --%>
-
+    </header>
+</body>
 </html>
