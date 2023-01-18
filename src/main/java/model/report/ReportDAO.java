@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import model.board.BoardVO;
 import model.common.JDBCUtil;
 
 public class ReportDAO {
@@ -15,8 +14,8 @@ public class ReportDAO {
 
 	final String INSERT_REPORT = "INSERT INTO REPORT (B_NUM, R_ID, R_TARGETID) VALUES(?, ?, ?)";
 	final String DELETE_REPORT = "delete from report where R_NUM =?";
-	final String SELECTONE_REPORT = "SELECT R.R_NUM, R.R_ID , R.R_TARGETID , B.B_TITLE , B.B_CONTENT FROM REPORT R, BOARD B WHERE R.R_ID  = B.B_ID AND R.R_ID = ?";
-	final String SELECTALL_REPORT = "SELECT R.R_NUM, R.R_ID , R.R_TARGETID , B.B_TITLE , B.B_CONTENT FROM REPORT R, BOARD B WHERE R.R_ID  = B.B_ID";
+	final String SELECTONE_REPORT = "SELECT R.R_NUM, R.R_TARGETID , R.R_ID , B.B_TITLE , B.B_CONTENT FROM REPORT R, BOARD B WHERE R.B_NUM = B.B_NUM AND R.R_ID = ?";
+	final String SELECTALL_REPORT = "SELECT R.R_NUM, B.B_TITLE, R.R_ID, R.R_TARGETID, B.B_DATE FROM REPORT R, BOARD B WHERE R.B_NUM = B.B_NUM";
 
 	public boolean insert(ReportVO rvo) {
 		conn = JDBCUtil.connect();
@@ -39,7 +38,7 @@ public class ReportDAO {
 		conn = JDBCUtil.connect();
 		try {
 			pstmt = conn.prepareStatement(DELETE_REPORT);
-			pstmt.setInt(1, rvo.getbNum());
+			pstmt.setInt(1, rvo.getrNum());
 			pstmt.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -55,14 +54,17 @@ public class ReportDAO {
       conn=JDBCUtil.connect();
       try {
          pstmt=conn.prepareStatement(SELECTONE_REPORT);
-         pstmt.setInt(1, rvo.getbNum());
+         pstmt.setString(1, rvo.getrId());
          ResultSet rs=pstmt.executeQuery();
          if(rs.next()) {
             data=new ReportVO();
             data.setrNum(rs.getInt("R.R_NUM"));
-            data.setrId(rs.getString("R.R_ID"));
             data.setrTargetId(rs.getString("R.R_TARGITID"));
-//            data.setbtitle
+            data.setrId(rs.getString("R.R_ID"));
+            data.setrTitle(rs.getString("B.B_TITLE"));
+            data.setrTitle(rs.getString("B.B_CONTENT"));
+            
+            pstmt.executeUpdate();
          }
       } catch (SQLException e) {
          e.printStackTrace();
@@ -79,6 +81,13 @@ public class ReportDAO {
 			ResultSet rs = pstmt.executeQuery();
 			while (rs.next()) {
 				ReportVO data = new ReportVO();
+	            data.setrNum(rs.getInt("R.R_NUM"));
+	            data.setrTitle(rs.getString("B.B_TITLE"));
+	            data.setrId(rs.getString("R.R_ID"));
+	            data.setrTargetId(rs.getString("R.R_TARGITID"));
+	            data.setrTitle(rs.getString("B.B_DATE"));
+	            
+	            pstmt.executeUpdate();
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
