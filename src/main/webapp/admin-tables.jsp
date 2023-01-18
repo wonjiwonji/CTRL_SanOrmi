@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -227,7 +229,7 @@
               <a
                 href="#"
                 class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm"
-                ><i class="fas fa-download fa-sm text-white-50"></i> 수정하기</a
+                ><i class="fas fa-download fa-sm text-white-50"></i> 임시버튼</a
               >
               <a
                 href="#"
@@ -248,11 +250,11 @@
                           <div
                             class="text-xs font-weight-bold text-success text-uppercase mb-1"
                           >
-                            순번
+                            게시글번호
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              순번이예용
+                              B_NUM
                             </div>
                             <br />
                           </div>
@@ -271,11 +273,11 @@
                           <div
                             class="text-xs font-weight-bold text-info text-uppercase mb-1"
                           >
-                            작성자
+                            게시글 작성자
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              작성자예용
+                              B_ID
                             </div>
                             <br />
                           </div>
@@ -283,6 +285,7 @@
                       </div>
                     </div>
                   </div>
+
                 </div>
 
                 <!-- Pending Requests Card Example -->
@@ -294,11 +297,11 @@
                           <div
                             class="text-xs font-weight-bold text-warning text-uppercase mb-1"
                           >
-                            조회수
+                            게시글 조회수
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              조회수
+                              B_CNT
                             </div>
                             <br />
                           </div>
@@ -307,7 +310,30 @@
                     </div>
                   </div>
                 </div>
+                                <div class="col-xl-3 col-md-6 mb-4">
+                  <div class="card border-left-warning shadow h-100 py-2">
+                    <div class="card-body">
+                      <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                          <div
+                            class="text-xs font-weight-bold text-warning text-uppercase mb-1"
+                          >
+                            게시글 제목
+                          </div>
+                          <div class="h5 mb-0 font-weight-bold text-gray-800">
+                            <div class="h5 mb-0 font-weight-bold text-gray-800">
+                              B_TITLE
+                            </div>
+                            <br />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+				  
               </div>
+<!--
               <div class="card mb-4 py-3 border-left-primary">
                 <div class="card-body">
                   <div
@@ -315,15 +341,15 @@
                   >
                     제목
                   </div>
-                  <input
-                    type="text"
-                    name="content"
-                    value="제목이예용"
-                    required
-                  />
-                  <br />
+                  <div class="h5 mb-0 font-weight-bold text-gray-800">
+                    <div class="h5 mb-0 font-weight-bold text-gray-800">
+                      B_CNT
+                    </div>
+                    <br />
+                  </div>
                 </div>
               </div>
+-->
               <div class="card mb-4 py-3 border-left-secondary">
                 <div class="card-body">
                   <div
@@ -331,20 +357,8 @@
                   >
                     내용
                   </div>
-                  <input
-                    type="text"
-                    name="content"
-                    value="로렘입숨이예용"
-                    required
-                  />
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                  laboris nisi ut aliquip ex ea commodo consequat. Duis aute
-                  irure dolor in reprehenderit in voluptate velit esse cillum
-                  dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-                  cupidatat non proident, sunt in culpa qui officia deserunt
-                  mollit anim id est laborum. <br />
+                  상처를 치료해줄 사람 어디 없나 가만히 놔두다간 끊임없이 덧나 사랑도 사람도 너무나도 겁나 혼자인게 무서워 난 잊혀질까 두려워상처를 치료해줄 사람 어디 없나 가만히 놔두다간 끊임없이 덧나 사랑도 사람도 너무나도 겁나 혼자인게 무서워 난 잊혀질까 두려워 언제나 외톨이 맘의 문을 닫고 슬픔을 등에 지고 살아가는 바보 두 눈을 감고 두 귀를 막고 캄캄한 어둠속에 내 자신을 가둬 365일 1년 내내 방황하는 내 영혼의 조작 키를 잡은 Jack Sparrow 몰아치는 Hurricane 졸라매는 허리끈에 방향감을 상실하고 길을 잃은 소리꾼 내 안에 숨어 있는 또 다른 나와 싸워 그녀가 떠나갈때 내게 말했었지 너는 곁에 있어도 있는 게 아닌것 같다고 만지면 베어버리는 칼날같은 사람 심장이 얼어붙은 차가웠던 사랑 그래 1분 1초가 사는게 사는게 아냐 매일 매일이 너무나 두려워 M'aider누가 날 좀 꺼내줘
+					<br />
                 </div>
               </div>
               <!-- Content Row -->

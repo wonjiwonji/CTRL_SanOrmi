@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,10 +15,7 @@
 
 <!-- Custom fonts for this template -->
 <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css" />
-<link
-            href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-            rel="stylesheet"
-        />
+<link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
 
 <!-- Custom styles for this template -->
 <link href="css/sb-admin-2.min.css" rel="stylesheet" />
@@ -27,7 +26,7 @@
 
 <body id="page-top">
 <!-- Page Wrapper -->
-<div id="wrapper"> 
+<div id="wrapper">
   <!-- Sidebar -->
   <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand --> 
@@ -40,20 +39,14 @@
     <hr class="sidebar-divider my-0" />
     
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active"> <a class="nav-link" href="main.html"> <i class="fas fa-fw fa-tachometer-alt"></i> <span>산오르미 페이지</span></a
-                    > </li>
+    <li class="nav-item active"> <a class="nav-link" href="main.html"> <i class="fas fa-fw fa-tachometer-alt"></i> <span>산오르미 페이지</span></a> </li>
     
     <!-- Divider -->
     <hr class="sidebar-divider" />
     
     <!-- Heading -->
     <div class="sidebar-heading">Management</div>
-    <div
-                       id="collapsePages"
-                       class="collapse"
-                       aria-labelledby="headingPages"
-                       data-parent="#accordionSidebar"
-                   >
+    <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Login Screens:</h6>
         <a class="collapse-item" href="login.html">Login</a> <a class="collapse-item" href="register.html">Register</a> <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
@@ -63,16 +56,13 @@
     </div>
     
     <!-- Nav Item - Charts -->
-    <li class="nav-item"> <a class="nav-link" href="charts.html"> <i class="fas fa-fw fa-chart-area"></i> <span>통계</span></a
-                   > </li>
+    <li class="nav-item"> <a class="nav-link" href="charts.html"> <i class="fas fa-fw fa-chart-area"></i> <span>통계</span></a> </li>
     
     <!-- Nav Item - Tables -->
-    <li class="nav-item"> <a class="nav-link" href="tables.html"> <i class="fas fa-fw fa-table"></i> <span>게시글 관리</span></a
-                   > </li>
+    <li class="nav-item"> <a class="nav-link" href="tables.html"> <i class="fas fa-fw fa-table"></i> <span>게시글 관리</span></a> </li>
     
     <!-- Nav Item - Tables -->
-    <li class="nav-item active"> <a class="nav-link" href="members.html"> <i class="fas fa-fw fa-table"></i> <span>회원 관리</span></a
-                   > </li>
+    <li class="nav-item active"> <a class="nav-link" href="members.html"> <i class="fas fa-fw fa-table"></i> <span>회원 관리</span></a> </li>
     
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block" />
@@ -98,29 +88,12 @@
         <!-- Topbar Navbar -->
         <ul class="navbar-nav ml-auto">
           <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-          <li class="nav-item dropdown no-arrow d-sm-none"> <a
-                                    class="nav-link dropdown-toggle"
-                                    href="#"
-                                    id="searchDropdown"
-                                    role="button"
-                                    data-toggle="dropdown"
-                                    aria-haspopup="true"
-                                    aria-expanded="false"
-                                > <i class="fas fa-search fa-fw"></i> </a> 
+          <li class="nav-item dropdown no-arrow d-sm-none"> <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> <i class="fas fa-search fa-fw"></i> </a> 
             <!-- Dropdown - Messages -->
-            <div
-                                    class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                    aria-labelledby="searchDropdown"
-                                >
+            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
               <form class="form-inline mr-auto w-100 navbar-search">
                 <div class="input-group">
-                  <input
-                                                type="text"
-                                                class="form-control bg-light border-0 small"
-                                                placeholder="Search for..."
-                                                aria-label="Search"
-                                                aria-describedby="basic-addon2"
-                                            />
+                  <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
                   <div class="input-group-append">
                     <button class="btn btn-success" type="button"> <i class="fas fa-search fa-sm"></i> </button>
                   </div>
@@ -385,14 +358,7 @@
 <a class="scroll-to-top rounded" href="#page-top"> <i class="fas fa-angle-up"></i> </a> 
 
 <!-- Logout Modal-->
-<div
-            class="modal fade"
-            id="logoutModal"
-            tabindex="-1"
-            role="dialog"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-        >
+<div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">

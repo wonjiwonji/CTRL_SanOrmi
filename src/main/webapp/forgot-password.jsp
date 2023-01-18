@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -102,7 +104,7 @@
             <div class="card-body p-0">
               <!-- Nested Row within Card Body -->
               <div class="row">
-                <div class="col-lg-6 d-none d-lg-block bg-password-image"></div>
+                <div class="col-lg-6 d-none d-lg-block"><img src="images/1.jpg" alt="응애"></div>
                 <div class="col-lg-6">
                   <div class="p-5">
                     <div class="text-center">
