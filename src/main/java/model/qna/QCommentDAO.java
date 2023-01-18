@@ -12,18 +12,19 @@ public class QCommentDAO {
 	Connection conn;
 	PreparedStatement pstmt;
 	
-	final String INSERT_QCOMMENT="INSERT INTO COMMENT (C_CONTENT,C_ID,C_GROUP,C_DATE) VALUES(?,?,?,NOW())";
-	final String DELETE_QCOMMENT="DELETE FROM COMMENT WHERE C_NUM=?";
+	final String INSERT_QCOMMENT="INSERT INTO QCOMMENT (QC_CONTENT,Q_NUM,QC_ID,QC_GROUP,QC_DATE) VALUES(?,?,?,?,NOW())";
+	final String DELETE_QCOMMENT="DELETE FROM QCOMMENT WHERE QC_NUM=?";
 	final String SELECTONE_QCOMMENT="SELECT * FROM COMMENT WHERE C_NUM=?";
 	final String SELECTALL_QCOMMENT="SELECT * FROM COMMENT ORDER BY C_NUM DESC";
 
-	public boolean insert(QCommentVO qcvo) {
+	public boolean insertQcomment(QCommentVO qcvo) {
 		conn=JDBCUtil.connect();
 		try {
 			pstmt=conn.prepareStatement(INSERT_QCOMMENT);
 			pstmt.setString(1, qcvo.getQcContent());
-			pstmt.setString(2, qcvo.getQcID());
-			pstmt.setInt(3, qcvo.getQcGroup());
+			pstmt.setInt(2, qcvo.getqNum());
+			pstmt.setString(3, qcvo.getQcID());
+			pstmt.setInt(4, qcvo.getQcGroup());
 			
 			int res=pstmt.executeUpdate();	
 			if(res<=0) {
@@ -37,7 +38,7 @@ public class QCommentDAO {
 		return true;
 	}
 	
-	public boolean delete(QCommentVO qcvo) {
+	public boolean deleteQcomment(QCommentVO qcvo) {
 		conn=JDBCUtil.connect();
 		try {
 			pstmt=conn.prepareStatement(DELETE_QCOMMENT);
@@ -53,7 +54,7 @@ public class QCommentDAO {
 		JDBCUtil.disconnect(conn, pstmt);
 		return true;
 	}
-	public QCommentVO selectOne(QCommentVO qcvo) {
+	public QCommentVO selectOneQcomment(QCommentVO qcvo) {
 		QCommentVO data=null;
 		conn=JDBCUtil.connect();
 		try {
@@ -72,7 +73,7 @@ public class QCommentDAO {
 		JDBCUtil.disconnect(conn, pstmt);
 		return data;
 	}
-	public ArrayList<QCommentVO> selectAll(QCommentVO qcvo) {
+	public ArrayList<QCommentVO> selectAllQcomment(QCommentVO qcvo) {
 		ArrayList<QCommentVO> datas=new ArrayList<QCommentVO>();
 		conn=JDBCUtil.connect();
 		try {

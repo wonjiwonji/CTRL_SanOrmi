@@ -12,18 +12,19 @@ public class BCommentDAO {
 	Connection conn;
 	PreparedStatement pstmt;
 	
-	final String INSERT_BCOMMENT="INSERT INTO COMMENT (C_CONTENT,C_ID,C_GROUP,C_DATE) VALUES(?,?,?,NOW())";
-	final String DELETE_BCOMMENT="DELETE FROM COMMENT WHERE C_NUM=?";
+	final String INSERT_BCOMMENT="INSERT INTO BCOMMENT (BC_CONTENT,B_NUM,BC_ID,BC_GROUP,BC_DATE) VALUES(?,?,?,?,NOW())";
+	final String DELETE_BCOMMENT="DELETE FROM BCOMMENT WHERE BC_NUM=?";
 	final String SELECTONE_BCOMMENT="SELECT * FROM COMMENT WHERE C_NUM=?";
 	final String SELECTALL_BCOMMENT="SELECT * FROM COMMENT ORDER BY C_NUM DESC";
 
-	public boolean insert(BCommentVO bcvo) {
+	public boolean insertBComment(BCommentVO bcvo) {
 		conn=JDBCUtil.connect();
 		try {
 			pstmt=conn.prepareStatement(INSERT_BCOMMENT);
 			pstmt.setString(1, bcvo.getBcContent());
-			pstmt.setString(2, bcvo.getBcID());
-			pstmt.setInt(3, bcvo.getBcGroup());
+			pstmt.setInt(2, bcvo.getbNum());
+			pstmt.setString(3, bcvo.getBcID());
+			pstmt.setInt(4, bcvo.getBcGroup());
 			
 			int res=pstmt.executeUpdate();	
 			if(res<=0) {
@@ -37,7 +38,7 @@ public class BCommentDAO {
 		return true;
 	}
 	
-	public boolean delete(BCommentVO bcvo) {
+	public boolean deleteBComment(BCommentVO bcvo) {
 		conn=JDBCUtil.connect();
 		try {
 			pstmt=conn.prepareStatement(DELETE_BCOMMENT);
@@ -53,7 +54,7 @@ public class BCommentDAO {
 		JDBCUtil.disconnect(conn, pstmt);
 		return true;
 	}
-	public BCommentVO selectOne(BCommentVO bcvo) {
+	public BCommentVO selectOneBComment(BCommentVO bcvo) {
 		BCommentVO data=null;
 		conn=JDBCUtil.connect();
 		try {
@@ -72,7 +73,7 @@ public class BCommentDAO {
 		JDBCUtil.disconnect(conn, pstmt);
 		return data;
 	}
-	public ArrayList<BCommentVO> selectAll(BCommentVO bcvo) {
+	public ArrayList<BCommentVO> selectAllBComment(BCommentVO bcvo) {
 		ArrayList<BCommentVO> datas=new ArrayList<BCommentVO>();
 		conn=JDBCUtil.connect();
 		try {
