@@ -12,6 +12,11 @@ pageEncoding="UTF-8"%>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>산오르미</title>
+    
+    <!-- 네이버 로그인 API -->
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
     <meta
@@ -902,6 +907,23 @@ pageEncoding="UTF-8"%>
     <script src="js/main.js"></script>
     <!-- 슬라이드 추가 -->
     <script src="js/slide.js"></script>
+    
+    
+    <!-- 네이버 로그인 API -->
+    <script type="text/javascript">
+  var naver_id_login = new naver_id_login("dClwkVzJ3MRBP_IElx5I", "http://localhost:8080/ctrl/main.jsp");
+  // 접근 토큰 값 출력
+  /* alert(naver_id_login.oauthParams.access_token); */
+  // 네이버 사용자 프로필 조회
+  naver_id_login.get_naver_userprofile("naverSignInCallback()");
+  // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
+  function naverSignInCallback() {
+    alert(naver_id_login.getProfileData('email'));
+    alert(naver_id_login.getProfileData('nickname'));
+    alert(naver_id_login.getProfileData('name'));
+  }
+</script>
+    
   </body>
 
   <!-- Footer -->
