@@ -12,14 +12,20 @@ public class BCommentDAO {
 	Connection conn;
 	PreparedStatement pstmt;
 	
-	final String INSERT_BCOMMENT="INSERT INTO BCOMMENT (BC_CONTENT,B_NUM,BC_ID,BC_GROUP,BC_DATE) VALUES(?,?,?,?,NOW())";
+	final String INSERT_BCOMMENT="INSERT INTO BCOMMENT (BC_ID, B_NUM,BC_CONTENT,BC_GROUP,BC_SQE, BC_DATE) VALUES(?,?,?,?,?,NOW())";
 	final String DELETE_BCOMMENT="DELETE FROM BCOMMENT WHERE BC_NUM=?";
 	final String SELECTONE_BCOMMENT="SELECT * FROM COMMENT WHERE C_NUM=?";
 	final String SELECTALL_BCOMMENT="SELECT * FROM COMMENT ORDER BY C_NUM DESC";
 
 	public boolean insertBComment(BCommentVO bcvo) {
 		conn=JDBCUtil.connect();
+	
 		try {
+		if(bcvo.getBcGroup()>0) { // 대댓글이면
+			
+		}else {
+			
+		}
 			pstmt=conn.prepareStatement(INSERT_BCOMMENT);
 			pstmt.setString(1, bcvo.getBcContent());
 			pstmt.setInt(2, bcvo.getbNum());
