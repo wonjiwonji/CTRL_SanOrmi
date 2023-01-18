@@ -20,7 +20,6 @@ public class BoardDAO {
 	final String SELECTALL_BOARD="SELECT B_NUM, RPAD(SUBSTR(B_ID, 1, 3), LENGTH(B_ID), '*') AS B_ID, B_TITLE, B_CONTENT, C_CNT FROM BOARD ORDER BY B_NUM DESC";
 	final String INSERT_BCOMMENT="INSERT INTO BCOMMENT (BC_ID, B_NUM,BC_CONTENT,BC_GROUP,BC_SQE, BC_DATE) VALUES(?,?,?,?,?,NOW())";
 	final String DELETE_BCOMMENT="DELETE FROM BCOMMENT WHERE BC_NUM=?";
-	final String SELECTONE_BCOMMENT="SELECT * FROM COMMENT WHERE C_NUM=?";
 	final String SELECTALL_BCOMMENT="SELECT * FROM COMMENT ORDER BY C_NUM DESC";
 
 	public boolean insertBoard(BoardVO bvo) {
@@ -99,14 +98,16 @@ public class BoardDAO {
 		JDBCUtil.disconnect(conn, pstmt);
 		return data;
 	}
-	public ArrayList<BoardVO> selectAllBoard(BoardVO bvo) {
-		ArrayList<BoardVO> datas=new ArrayList<BoardVO>();
+	public ArrayList<BoardSet> selectAllBoard(BoardVO bvo) {
+		ArrayList<BoardSet> datas=new ArrayList<BoardSet>();
 		conn=JDBCUtil.connect();
 		try {
 			pstmt=conn.prepareStatement(SELECTALL_BOARD);
 			ResultSet rs=pstmt.executeQuery();
 			while(rs.next()) {
+				BoardSet bs = new BoardSet();
 				BoardVO data=new BoardVO();
+				ArrayList <BCommentVO> bcList = new ArrayList<BCommentVO>();
 				data.setbNum(rs.getInt("B_NUM"));
 				data.setbTitle(rs.getString("B_TITLE"));
 				data.setbId(rs.getString("B_ID"));
