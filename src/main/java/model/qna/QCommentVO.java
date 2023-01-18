@@ -1,5 +1,6 @@
 package model.qna;
 
+import java.util.ArrayList;
 import java.util.Date;
 
 public class QCommentVO {
@@ -9,9 +10,18 @@ public class QCommentVO {
 	private String qcContent;
 	private int qNum;
 	private int qcGroup;
-	private int qcSqe;
 	private int qcCnt;
 	private Date qcDate;
+	private ArrayList <QCCommentVO> qccList;
+
+	
+	
+	public ArrayList<QCCommentVO> getQccList() {
+		return qccList;
+	}
+	public void setQccList(ArrayList<QCCommentVO> qccList) {
+		this.qccList = qccList;
+	}
 	public int getQcNum() {
 		return qcNum;
 	}
@@ -42,12 +52,6 @@ public class QCommentVO {
 	public void setQcGroup(int qcGroup) {
 		this.qcGroup = qcGroup;
 	}
-	public int getQcSqe() {
-		return qcSqe;
-	}
-	public void setQcSqe(int qcSqe) {
-		this.qcSqe = qcSqe;
-	}
 	public int getQcCnt() {
 		return qcCnt;
 	}
@@ -62,9 +66,10 @@ public class QCommentVO {
 	}
 	@Override
 	public String toString() {
-		return "QCommentDAO [qcNum=" + qcNum + ", qcID=" + qcID + ", qcContent=" + qcContent + ", qNum=" + qNum
-				+ ", qcGroup=" + qcGroup + ", qcSqe=" + qcSqe + ", qcCnt=" + qcCnt + ", qcDate=" + qcDate + "]";
+		return "QCommentVO [qcNum=" + qcNum + ", qcID=" + qcID + ", qcContent=" + qcContent + ", qNum=" + qNum
+				+ ", qcGroup=" + qcGroup + ", qcCnt=" + qcCnt + ", qcDate=" + qcDate + ", qccList=" + qccList + "]";
 	}
+
 	
 	
 }
