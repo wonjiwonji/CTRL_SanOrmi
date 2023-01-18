@@ -10,7 +10,6 @@ public class MainAction implements Action {
 		ActionForward forward=new ActionForward();
 		forward.setPath("/main.jsp");
 		forward.setRedirect(false);
-		
 
 		return forward;
 	}

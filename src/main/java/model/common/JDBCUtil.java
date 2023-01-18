@@ -6,7 +6,7 @@ import java.sql.PreparedStatement;
 
 public class JDBCUtil {
    static final String driverName="com.mysql.jdbc.Driver";
-   static final String url="jdbc:mysql://localhost/leedb";
+   static final String url="jdbc:mysql://localhost/CTRL";
    static final String user="root";
    static final String passwd="12345678";
    public static Connection connect() { // 연결

@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>게시글 관리</title>
+    <title>내가 쓴 글</title>
 
     <!-- link start -->
     <!-- Custom fonts for this template -->
