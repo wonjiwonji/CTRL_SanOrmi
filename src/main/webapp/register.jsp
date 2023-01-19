@@ -192,7 +192,7 @@
         var val = email_sel.options[idx].value;
 
         email_add.value = val;
-      }
+      }   
     </script>
 
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -246,7 +246,7 @@
 			<div class="card-body p-0">
 				<!-- Nested Row within Card Body -->
 <% //TODO %>
-				<form class="user" name="join_form" action="loginPage.do"
+				<form class="user" name="join_form" action="join.do"
 					method="post">
 					<div class="row">
 						<!-- <div class="col-lg-5 d-none d-lg-block bg-register-image"></div> -->
@@ -280,13 +280,13 @@
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="password" class="form-control form-control-user"
-											name="pwd" id="pwd" placeholder="비밀번호" />
+											name="mPw" id="pwd" placeholder="비밀번호" />
 										<!-- <input type="password" class="form-control form-control-user"
                                  id="exampleInputPassword" placeholder="Password" required /> -->
 									</div>
 									<div class="col-sm-6">
 										<input type="password" class="form-control form-control-user"
-											name="repwd" id="repwd" placeholder="비밀번호 재확인" />
+											id="repwd" placeholder="비밀번호 재확인" />
 										<!-- <input type="password"
                                  id="exampleRepeatPassword" placeholder="Repeat Password"
                                  required /> -->
@@ -294,13 +294,13 @@
 								</div>
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
-										<input type="text" name="fname" id="fname"
+										<input type="text" name="mName1" id="fname"
 											class="form-control form-control-user" placeholder="성" />
 										<!-- <input type="text" 
                                  id="exampleFirstName" placeholder="FirstName" required /> -->
 									</div>
 									<div class="col-sm-6">
-										<input type="text" name="lname" id="lname"
+										<input type="text" name="mName2" id="lname"
 											class="form-control form-control-user" placeholder="이름" />
 										<!-- <input type="text" class="form-control form-control-user"
                                  id="exampleLastName" placeholder="LastName" required /> -->
@@ -313,7 +313,7 @@
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="text" class="form-control form-control-user"
-											id="sample2_postcode" name="zipNo" placeholder="우편번호" />
+											id="sample2_postcode" name="mAddress1" placeholder="우편번호" />
 									</div>
 									<div class="col-sm-6">
 										<!-- onclick="search_address();" 우편번호 찾기 시 이동할 페이지, 현재 api 구현안돼 404로 돌림 -->
@@ -331,7 +331,7 @@
 								<!-- </form> -->
 								<!-- <form class="user" method="post"> -->
 								<div class="form-group">
-									<input type="text" id="sample2_address"
+									<input type="text" id="sample2_address" name="mAddress2"
 										class="form-control form-control-user" placeholder="기본 주소" />
 									<!-- <input type="text" name="postal_code" id="postal_code"
                          class="form-control form-control-user" placeholder="주소"> -->
@@ -339,7 +339,7 @@
                               id="exampleInputAdress" placeholder="주소" required /> -->
 								</div>
 								<div class="form-group">
-									<input type="text" id="sample2_detailAddress"
+									<input type="text" id="sample2_detailAddress" name="mAddress3"
 										class="form-control form-control-user" placeholder="상세 주소" />
 
 									<!-- <input type="text" class="form-control form-control-user"
@@ -359,11 +359,11 @@
 
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
-										<input type="text" name="email_id" id="email_id"
+										<input type="text" name="mEmail1" id="email_id"
 											class="form-control form-control-user" placeholder="이메일 앞자리" />
 									</div>
 									<div class="col-sm-6">
-										<input type="text" name="email_add" id="email_add"
+										<input type="text" name="mEmail2" id="email_add"
 											class="form-control form-control-user"
 											placeholder="@ 이메일 뒷자리" />
 									</div>
@@ -384,7 +384,7 @@
 								</div>
 								<div class="join_btn">
 									<button type="button" id="button_joinus" onclick="joinform_check();"
-										class="btn btn-success btn-user btn-block" disabled="">
+										class="btn btn-success btn-user btn-block" disabled="" >
 										회원 가입</button>
 								</div>
 								<hr />

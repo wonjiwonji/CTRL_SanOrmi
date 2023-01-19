@@ -94,12 +94,13 @@
                     <div class="text-center">
                       <h1 class="h4 text-gray-900 mb-4">로그인</h1>
                     </div>
-                    <form action="main.do" method="post">
+                    
+                    <form action="login.do" method="post">
                       <div class="form-group">
-                        <input type="text" class="form-control form-control-user" id="exampleInputID" placeholder="ID" required />
+                        <input type="text" class="form-control form-control-user" id="exampleInputID" name="id" placeholder="ID" required />
                       </div>
                       <div class="form-group">
-                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password" required />
+                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" name="pw" placeholder="Password" required />
                       </div>
                       <div class="form-group">
                         <div class="custom-control custom-checkbox small">
@@ -107,7 +108,7 @@
                           <!-- <label class="custom-control-label" for="customCheck">Remember Me</label> -->
                         </div>
                       </div>
-                      <input type="submit" href="main.do" class="btn btn-success btn-user btn-block" value="로그인" />
+                      <input type="submit" class="btn btn-success btn-user btn-block" value="로그인" />
                       <hr />
                       <a href="javascript:kakaoLogin();"> <img src="./img/kakao_login_medium_wide.png"style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block;" />
 								</a>
