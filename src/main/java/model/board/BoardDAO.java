@@ -8,6 +8,9 @@ import java.util.ArrayList;
 
 import model.common.JDBCUtil;
 
+
+// 시퀀스 넘버 넘겨주세요!
+
 public class BoardDAO {
    Connection conn;
    PreparedStatement pstmt;

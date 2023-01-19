@@ -3,26 +3,21 @@ package model.qna;
 import java.util.Date;
 
 public class QNAVO {
+	private QCommentVO qcvo;
 	private int qNum;
 	private String qId;
 	private String qTitle;
 	private String qContent;
-	private int qCnt;
+	private String qReplyCnt;
 	private Date qDate;
+	private int qCnt;
 	private int cCnt;
 	
-	
-	public Date getqDate() {
-		return qDate;
+	public QCommentVO getQcvo() {
+		return qcvo;
 	}
-	public void setqDate(Date qDate) {
-		this.qDate = qDate;
-	}
-	public int getcCnt() {
-		return cCnt;
-	}
-	public void setcCnt(int cCnt) {
-		this.cCnt = cCnt;
+	public void setQcvo(QCommentVO qcvo) {
+		this.qcvo = qcvo;
 	}
 	public int getqNum() {
 		return qNum;
@@ -48,18 +43,38 @@ public class QNAVO {
 	public void setqContent(String qContent) {
 		this.qContent = qContent;
 	}
+	public String getqReplyCnt() {
+		return qReplyCnt;
+	}
+	public void setqReplyCnt(String qReplyCnt) {
+		this.qReplyCnt = qReplyCnt;
+	}
+	public Date getqDate() {
+		return qDate;
+	}
+	public void setqDate(Date qDate) {
+		this.qDate = qDate;
+	}
 	public int getqCnt() {
 		return qCnt;
 	}
 	public void setqCnt(int qCnt) {
 		this.qCnt = qCnt;
 	}
+	public int getcCnt() {
+		return cCnt;
+	}
+	public void setcCnt(int cCnt) {
+		this.cCnt = cCnt;
+	}
 	@Override
 	public String toString() {
-		return "QNAVO [qNum=" + qNum + ", qId=" + qId + ", qTitle=" + qTitle + ", qContent=" + qContent + ", qCnt="
-				+ qCnt + ", qDate=" + qDate + ", cCnt=" + cCnt + "]";
+		return "QNAVO [qcvo=" + qcvo + ", qNum=" + qNum + ", qId=" + qId + ", qTitle=" + qTitle + ", qContent="
+				+ qContent + ", qReplyCnt=" + qReplyCnt + ", qDate=" + qDate + ", qCnt=" + qCnt + ", cCnt=" + cCnt
+				+ "]";
 	}
 	
-
-
 }
+	
+	
+	

@@ -95,8 +95,5 @@ public class BoardVO {
 				+ ", bReplyCnt=" + bReplyCnt + ", bDate=" + bDate + ", bCnt=" + bCnt + ", cCnt=" + cCnt + "]";
 	}
 
-	public static void main(String[] args) {
-		System.out.println();
-	}
 
 }

@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class QCommentVO {
-
+	private QCCommentVO qccvo;
 	private int qcNum;
 	private String qcID;
 	private String qcContent;
@@ -16,6 +16,12 @@ public class QCommentVO {
 
 	
 	
+	public QCCommentVO getQccvo() {
+		return qccvo;
+	}
+	public void setQccvo(QCCommentVO qccvo) {
+		this.qccvo = qccvo;
+	}
 	public ArrayList<QCCommentVO> getQccList() {
 		return qccList;
 	}

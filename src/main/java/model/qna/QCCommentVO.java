@@ -10,7 +10,6 @@ public class QCCommentVO {
 	private String qccContent;
 	private int qNum;
 	private int qccGroup;
-	private int qccCnt;
 	private Date qccDate;
 	public int getQccSqe() {
 		return qccSqe;
@@ -48,12 +47,6 @@ public class QCCommentVO {
 	public void setQccGroup(int qccGroup) {
 		this.qccGroup = qccGroup;
 	}
-	public int getQccCnt() {
-		return qccCnt;
-	}
-	public void setQccCnt(int qccCnt) {
-		this.qccCnt = qccCnt;
-	}
 	public Date getQccDate() {
 		return qccDate;
 	}
@@ -63,8 +56,7 @@ public class QCCommentVO {
 	@Override
 	public String toString() {
 		return "QCCommentVO [qccSqe=" + qccSqe + ", qccNum=" + qccNum + ", qccID=" + qccID + ", qccContent="
-				+ qccContent + ", qNum=" + qNum + ", qccGroup=" + qccGroup + ", qccCnt=" + qccCnt + ", qccDate="
-				+ qccDate + "]";
+				+ qccContent + ", qNum=" + qNum + ", qccGroup=" + qccGroup + ", qccDate=" + qccDate + "]";
 	}
 	
 	
