@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %> 
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="jay" tagdir="/WEB-INF/tags" %> 
 <% request.setCharacterEncoding("UTF-8"); %>    
 <!DOCTYPE html>
 <html lang="en">
@@ -65,18 +66,11 @@
               <li><a href="myeongsan.do">명산 소개</a></li>
               <li><a href="qna.do">자주 묻는 질문</a></li>
               <li><a href="freeBoards.do">커뮤니티</a></li>
-              <li> <a class="fh5co-sub-ddown sf-with-ul">로그인</a>
-                <ul class="fh5co-sub-menu">
-                  <li><a href="loginPage.do">로그인</a></li>
-                  <li><a href="agree.do">회원가입</a></li>
-                </ul>
-              </li>
-              <li> <a class="fh5co-sub-ddown sf-with-ul">마이페이지</a>
+              <jay:login />
                 <ul class="fh5co-sub-menu">
                   <li><a href="myBoard.do">작성글 확인</a></li>
                   <li><a href="updateInfo.do">회원정보 수정</a></li>
                 </ul>
-              </li>
             </ul>
           </nav>
         </div>
