@@ -93,40 +93,10 @@ pageEncoding="UTF-8"%>
   </head>
 
   <body id="page-top">
-    <header id="fh5co-header-section" class="sticky-banner">
-      <div class="container">
-        <div class="nav-header">
-          <a class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-          <a id="fh5co-logo" class="cover-color" href="main.html">
-            <img class="mg-logo" src="./images/logo1.png" alt="ren" />
-            산오르미</a
-          >
-          <!-- START #fh5co-menu-wrap -->
-          <nav id="fh5co-menu-wrap" role="navigation">
-            <ul class="sf-menu" id="fh5co-primary-menu">
-              <li><a href="adminPage.html">관리자 페이지</a></li>
-              <li><a href="contact.html">명산 소개</a></li>
-              <li><a href="QnA.html">자주 묻는 질문</a></li>
-              <li><a href="tablespage.html">커뮤니티</a></li>
-              <li>
-                <a class="fh5co-sub-ddown sf-with-ul">로그인</a>
-                <ul class="fh5co-sub-menu">
-                  <li><a href="login.html">로그인</a></li>
-                  <li><a href="agree.html">회원가입</a></li>
-                </ul>
-              </li>
-              <li>
-                <a class="fh5co-sub-ddown sf-with-ul">마이페이지</a>
-                <ul class="fh5co-sub-menu">
-                  <li><a href="mypage.html">작성글 확인</a></li>
-                  <li><a href="update.html">회원정보 수정</a></li>
-                </ul>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-    </header>
+  
+	<%-- 헤더임 --%>
+	<jsp:include page="header.jsp"/>
+	<%-- 헤더라고 --%>
 
     <!-- Page Wrapper -->
     <div id="wrapper">
@@ -330,29 +300,10 @@ pageEncoding="UTF-8"%>
           </div>
         </div>
 
-        <!-- Footer -->
-        <footer>
-          <div id="footer">
-            <div class="container">
-              <div class="row">
-                <div class="col-md-6 col-md-offset-3 text-center">
-                  <p class="fh5co-social-icons">
-                    <span><i class="icon-twitter2"></i></span>
-                    <span><i class="icon-facebook2"></i></span>
-                    <span><i class="icon-instagram"></i></span>
-                    <span><i class="icon-dribbble2"></i></span>
-                    <span><i class="icon-youtube"></i></span>
-                  </p>
-                  <p>
-                    Control Co., Ltd. &copy; Website 2023
-                    <i class="icon-heart3"></i>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </footer>
-        <!-- End of Footer -->
+	<%-- 푸터임 --%>
+	<jsp:include page="footer.jsp"/>
+	<%-- 푸터라고 --%>
+	
       </div>
       <!-- End of Content Wrapper -->
     </div>

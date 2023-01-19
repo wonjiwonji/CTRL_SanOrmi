@@ -57,30 +57,25 @@
 <body>
     <header id="fh5co-header-section" class="sticky-banner">
       <div class="container">
-        <div class="nav-header">
-          <a class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-          <a id="fh5co-logo" class="cover-color" href="main.html">
-            <img class="mg-logo" src="./images/logo1.png" alt="ren" />
-            산오르미</a>
+          <!-- START #fh5co-menu-wrap -->
+        <div class="nav-header"> <a class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a> <a id="fh5co-logo" class="cover-color" href="main.do"> <img class="mg-logo" src="./images/logo1.png" alt="ren" /> 산오르미 </a> 
           <!-- START #fh5co-menu-wrap -->
           <nav id="fh5co-menu-wrap" role="navigation">
             <ul class="sf-menu" id="fh5co-primary-menu">
-              <li><a href="adminPage.html">관리자 페이지</a></li>
-              <li><a href="contact.html">명산 소개</a></li>
-              <li><a href="QnA.html">자주 묻는 질문</a></li>
-              <li><a href="tablespage.html">커뮤니티</a></li>
-              <li>
-                <a class="fh5co-sub-ddown sf-with-ul">로그인</a>
+              <li><a href="adminPage.do">관리자 페이지</a></li>
+              <li><a href="myeongsan.do">명산 소개</a></li>
+              <li><a href="qna.do">자주 묻는 질문</a></li>
+              <li><a href="freeBoards.do">커뮤니티</a></li>
+              <li> <a class="fh5co-sub-ddown sf-with-ul">로그인</a>
                 <ul class="fh5co-sub-menu">
-                  <li><a href="login.html">로그인</a></li>
-                  <li><a href="agree.html">회원가입</a></li>
+                  <li><a href="loginPage.do">로그인</a></li>
+                  <li><a href="register.do">회원가입</a></li>
                 </ul>
               </li>
-              <li>
-                <a class="fh5co-sub-ddown sf-with-ul">마이페이지</a>
+              <li> <a class="fh5co-sub-ddown sf-with-ul">마이페이지</a>
                 <ul class="fh5co-sub-menu">
-                  <li><a href="mypage.html">작성글 확인</a></li>
-                  <li><a href="update.html">회원정보 수정</a></li>
+                  <li><a href="myBoard.do">작성글 확인</a></li>
+                  <li><a href="updateInfo.do">회원정보 수정</a></li>
                 </ul>
               </li>
             </ul>

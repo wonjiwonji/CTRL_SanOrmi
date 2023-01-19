@@ -71,7 +71,7 @@ pageEncoding="UTF-8"%>
   </script>
   
   <body>
-  
+
 	<%-- 헤더임 --%>
 	<jsp:include page="header.jsp"/>
 	<%-- 헤더라고 --%>

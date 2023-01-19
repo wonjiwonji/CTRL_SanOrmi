@@ -12,6 +12,30 @@
 
 <title>회원 가입 페이지</title>
 
+<!-- 중복 확인 -->
+<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script type="text/javascript">
+	function check(){
+		console.log('로그 1 : check()라는 JS 함수가 연결되었음');
+		var id=$('#id').val(); // $('id 속성이 id인 요소')의 값을 불러올래!
+		$.ajax({
+			type: 'POST',
+			url: 'check',
+			data: {id:id},
+			success: function(result){
+				console.log('로그 2 : 응답받은 데이터( == response.getWriter() == out ) 출력');
+				console.log(result);
+				if(result==1){
+					$('#checkmsg').html('사용가능'); // $('id 속성이 checkmsg인 요소')에 텍스트 추가
+				}
+				else{
+					$('#checkmsg').html('사용불가능');
+				}
+			}
+		})
+	}
+</script>
+<!-- 중복 확인 끝 -->
 <!-- 네이버 로그인 API -->
 <script type="text/javascript"
 	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
@@ -24,7 +48,7 @@
       function joinform_check() {
         //console.log("log");
         //변수에 담아주기
-        var uid = document.getElementById('uid');
+        var id = document.getElementById('id');
         var pwd = document.getElementById('pwd');
         var repwd = document.getElementById('repwd');
         var fname = document.getElementById('fname');
@@ -32,19 +56,19 @@
         var email_id = document.getElementById('email_id');
         /* var agree = document.getElementById("agree"); */
 
-        if (uid.value == '') {
-          //해당 입력값이 없을 경우 같은말: if(!uid.value)
+        if (id.value == '') {
+          //해당 입력값이 없을 경우 같은말: if(!id.value)
           alert('아이디를 입력하세요.');
-          uid.focus(); //focus(): 커서가 깜빡이는 현상, blur(): 커서가 사라지는 현상
+          id.focus(); //focus(): 커서가 깜빡이는 현상, blur(): 커서가 사라지는 현상
           return false; //return: 반환하다 return false:  아무것도 반환하지 말아라 아래 코드부터 아무것도 진행하지 말것
         }
         var idCheck = /^(?=.*[a-zA-Z])[-a-zA-Z0-9_.]{2,10}$/;
 
-        if (!idCheck.test(uid.value)) {
+        if (!idCheck.test(id.value)) {
           alert(
             '아이디는 2-10자의 영문과 숫자와 일부 특수문자(._-)만 사용해야 합니다.',
           );
-          uid.focus();
+          id.focus();
           return false;
         }
         if (pwd.value == '') {
@@ -75,25 +99,30 @@
         var reg = /^[0-9]+/g; //숫자만 입력하는 정규식
 
         if (email_id.value == '') {
-          alert('이메일 주소를 입력하세요.');
+          alert('이메일 앞자리를 입력하세요.');
           email_id.focus();
           return false;
         }
-
-        /* if (!agree.checked) { //체크박스 미체크시
-         alert("약관 동의를 체크하세요.");
-         agree.focus();
-         return false;
-      } */
+        
+        if (email_add.value == '') {
+            alert('이메일 뒷자리를 입력하세요.');
+            email_add.focus();
+            return false;
+          }
+        <!-- 로직추가해야함.... -->
+        if (#checkmsg.value == '') {
+        	alert('아이디 중복확인을 해주세요.');
+            id.focus();
+            return false;
+        } 
+        if (checkmsg.value == '사용불가능') {
+            alert('사용가능한 아이디를 입력해주세요.');
+            id.focus();
+            return false;
+          }
 
         //입력 값 전송
         document.join_form.submit(); //유효성 검사의 포인트
-      }
-
-      //아이디 중복체크 팝업창(현재 공백문서)
-      function id_check() {
-        //window.open("팝업될 문서 경로", "팝업될 문서 이름", "옵션");
-        window.open('', '', 'width=600, height=200, left=200, top=100');
       }
 
       //이메일 옵션 선택후 주소 자동 완성
@@ -150,42 +179,17 @@
 </head>
 
 <body class="bg-gradient-success">
-	<header id="fh5co-header-section" class="sticky-banner">
-		<div class="container">
-			<div class="nav-header">
-				<a class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a> <a
-					id="fh5co-logo" class="cover-color" href="main.html"> <img
-					class="mg-logo" src="./images/logo1.png" alt="ren" /> 산오르미
-				</a>
-				<!-- START #fh5co-menu-wrap -->
-				<nav id="fh5co-menu-wrap" role="navigation">
-					<ul class="sf-menu" id="fh5co-primary-menu">
-						<li><a href="adminPage.html">관리자 페이지</a></li>
-						<li><a href="contact.html">명산 소개</a></li>
-						<li><a href="QnA.html">자주 묻는 질문</a></li>
-						<li><a href="tablespage.html">커뮤니티</a></li>
-						<li><a class="fh5co-sub-ddown sf-with-ul">로그인</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="login.html">로그인</a></li>
-								<li><a href="agree.html">회원가입</a></li>
-							</ul></li>
-						<li><a class="fh5co-sub-ddown sf-with-ul">마이페이지</a>
-							<ul class="fh5co-sub-menu">
-								<li><a href="mypage.html">작성글 확인</a></li>
-								<li><a href="update.html">회원정보 수정</a></li>
-							</ul></li>
-					</ul>
-				</nav>
-			</div>
-		</div>
-	</header>
+
+	<%-- 헤더임 --%>
+	<jsp:include page="header.jsp"/>
+	<%-- 헤더라고 --%>
 
 	<div class="container">
 		<div class="card o-hidden border-0 shadow-lg my-5">
 			<div class="card-body p-0">
 				<!-- Nested Row within Card Body -->
-
-				<form class="user" name="join_form" action="login.html"
+<% //TODO %>
+				<form class="user" name="join_form" action="loginPage.do"
 					method="post">
 					<div class="row">
 						<!-- <div class="col-lg-5 d-none d-lg-block bg-register-image"></div> -->
@@ -202,16 +206,17 @@
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="text" class="form-control form-control-user"
-											placeholder="아이디" name="udi" id="uid" />
+											placeholder="아이디" name="id" id="id" />
 									</div>
 									<div class="col-sm-6">
 										<button type="button"
 											class="jw jw-btn-success btn-user btn-block"
-											onclick="location.href='error404.html'">
+											onclick="check()">
 											<!-- onclick="id_check();" 중복확인 아직 구현하지 않아 404페이지로 돌림 -->
 											중복 확인
 										</button>
 									</div>
+									<div><p id="checkmsg"></p></div>
 								</div>
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
@@ -324,11 +329,11 @@
 										회원 가입</button>
 								</div>
 								<hr />
-								<a href="javascript:kakaoLogin();"> <img
+								<!--<a href="javascript:kakaoLogin();"> <img
 									src="./img/kakao_login_medium_wide.png"
 									style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block;" />
-								</a>
-
+								</a> -->
+<!--
 								<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 								<script>
                     window.Kakao.init('78892b6e583dfe48cb2d2caf38da1114');
@@ -358,14 +363,16 @@
                       });
                     }
                   </script>
+                   -->
 								
 								<!-- 네이버 로그아웃 -->
 								<!-- 로그인 다시 시도하고 싶을 때 밑의 주소 복붙해서 로그아웃하면 됨 -->
 								<!-- http://nid.naver.com/nidlogin.logout -->
 								
 								<!-- 네이버 로그인 버튼 노출 영역 -->
-								<div id="naver_id_login" style="display: flex; justify-content: center;"></div>
+								<!--<div id="naver_id_login" style="display: flex; justify-content: center;"></div> -->
 								<!-- //네이버 로그인 버튼 노출 영역 -->
+								<!-- 
 								<script type="text/javascript">
   									var naver_id_login = new naver_id_login("dClwkVzJ3MRBP_IElx5I", "http://localhost:8080/ctrl/main.jsp");
   									var state = naver_id_login.getUniqState();
@@ -375,14 +382,14 @@
   									/* naver_id_login.setPopup(); */
   									naver_id_login.init_naver_id_login();
   								</script>
+  								-->
 								<!-- </form> -->
 								<hr />
 								<!-- <div class="text-center">
                            <a class="small" href="forgot-password.html">비밀번호 찾기</a>
                         </div> -->
 								<div class="text-center">
-									<a class="small" href="login.html">이미
-										회원이신가요? 로그인으로 이동!</a>
+									<a class="small" href="loginPage.do">이미 회원이신가요? 로그인으로 이동!</a>
 								</div>
 							</div>
 						</div>
@@ -402,27 +409,9 @@
 	<!-- Custom scripts for all pages-->
 	<script src="js/sb-admin-2.min.js"></script>
 
-	<!-- Footer -->
-	<footer>
-		<div id="footer">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-6 col-md-offset-3 text-center">
-						<p class="fh5co-social-icons">
-							<span><i class="icon-twitter2"></i></span> <span><i
-								class="icon-facebook2"></i></span> <span><i
-								class="icon-instagram"></i></span> <span><i
-								class="icon-dribbble2"></i></span> <span><i class="icon-youtube"></i></span>
-						</p>
-						<p>
-							Control Co., Ltd. &copy; Website 2023 <i class="icon-heart3"></i>
-						</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</footer>
-	<!-- End of Footer -->
+	<%-- 푸터임 --%>
+	<jsp:include page="footer.jsp"/>
+	<%-- 푸터라고 --%>
 
 	<script
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
