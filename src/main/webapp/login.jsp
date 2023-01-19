@@ -94,7 +94,8 @@
                     <div class="text-center">
                       <h1 class="h4 text-gray-900 mb-4">로그인</h1>
                     </div>
-                    <form class="user">
+                    <form action="main.do"
+					method="post">
                       <div class="form-group">
                         <input
                           type="text"

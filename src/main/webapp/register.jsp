@@ -27,7 +27,8 @@
 				console.log(result);
 				if(result==1){
 					$('#checkmsg').html('사용가능'); // $('id 속성이 checkmsg인 요소')에 텍스트 추가
-				}
+					$('#button_joinus').removeAttr("disabled");
+				}	
 				else{
 					$('#checkmsg').html('사용불가능');
 				}
@@ -109,8 +110,8 @@
             email_add.focus();
             return false;
           }
-        <!-- 로직추가해야함.... -->
-        if (#checkmsg.value == '') {
+        <!-- 로직추가해야함....
+        if (checkmsg.value == '') {
         	alert('아이디 중복확인을 해주세요.');
             id.focus();
             return false;
@@ -120,6 +121,10 @@
             id.focus();
             return false;
           }
+        -->
+        if (checkmsg.value == '') {
+        	
+        }
 
         //입력 값 전송
         document.join_form.submit(); //유효성 검사의 포인트
@@ -324,8 +329,8 @@
 									</select> <br />
 								</div>
 								<div class="join_btn">
-									<button type="button" onclick="joinform_check();"
-										class="btn btn-success btn-user btn-block">
+									<button type="button" id="button_joinus" onclick="joinform_check();"
+										class="btn btn-success btn-user btn-block" disabled="">
 										회원 가입</button>
 								</div>
 								<hr />
