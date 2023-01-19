@@ -21,7 +21,7 @@ public class BoardDAO {
    final String INSERT_BCOMMENT = "INSERT INTO BCOMMENT (BC_ID, B_NUM,BC_CONTENT,BC_GROUP, BC_DATE) VALUES(?,?,?,(SELECT COALESCE(MAX(BC_GROUP),0)+1 FROM BCOMMENT AS BC_GROUP),NOW())";
    final String INSERT_BCCOMMENT = "INSERT INTO BCOMMENT (BC_ID, B_NUM,BC_CONTENT,BC_GROUP,BC_SQE, BC_DATE)\r\n"
          + "VALUES(?,?,?,?, (SELECT COALESCE(MAX(BCC.BC_SQE),0)+1\r\n"
-         + "FROM BCOMMENT BCC GROUP BY BC_GROUP HAVING BC_GROUP = 0) , NOW() );";
+         + "FROM BCOMMENT BCC GROUP BY BC_GROUP HAVING BC_GROUP = ?) , NOW() );";
 
    final String DELETE_BCOMMENT = "DELETE FROM BCOMMENT WHERE BC_GROUP = ?";
    final String DELETE_BCCOMMENT = "DELETE FROM BCOMMENT WHERE BC_NUM=?";
@@ -233,14 +233,14 @@ public class BoardDAO {
       conn = JDBCUtil.connect();
       try {
          System.out.println(bcvo.getBccvo().getBccSqe());
-         if (bcvo.getBccvo().getBccSqe() == 0) { // 대댓글 삭제
+         if (bcvo.getBccvo().getBccSqe() >0) { // 대댓글 삭제
+        	 System.out.println("탐");
+        	 pstmt = conn.prepareStatement(DELETE_BCCOMMENT);
+        	 pstmt.setInt(1, bcvo.getBcNum());
+         } else {
         	 System.out.println("else");
         	 pstmt = conn.prepareStatement(DELETE_BCOMMENT);
         	 pstmt.setInt(1, bcvo.getBcGroup());
-         } else {
-        	 System.out.println("탐");
-        	 pstmt = conn.prepareStatement(DELETE_BCCOMMENT);
-        	 pstmt.setInt(1, bcvo.getBccvo().getBccNum());
          }
          int res = pstmt.executeUpdate();
          if (res <= 0) {
@@ -257,9 +257,9 @@ public class BoardDAO {
    public static void main(String[] args) {
       BoardDAO bdao = new BoardDAO();
       BCommentVO bcvo = new BCommentVO();
-      
-//      bcvo.getBccvo().setBccNum(29);
-      bcvo.setBcGroup(2);
+      bcvo.getBccvo().setBccSqe(0);
+//      bcvo.setBcNum(27);
+      bcvo.setBcGroup(1);
       
       System.out.println(bdao.deleteBComment(bcvo));
    }
