@@ -34,11 +34,146 @@ public class FrontController extends HttpServlet {
 			}
 		}
 		else if(command.equals("/login.do")) {
-
+			
 		}
 		else if(command.equals("/logout.do")) {
-
+			
 		}
+		else if(command.equals("/adminPage.do")) {
+			try {
+				forward=new AdminPageAction().execute(request, response);
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/agree.do")) {
+			try {
+				forward=new AgreeAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/blank.do")) {
+			try {
+				forward=new BlankAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/charts.do")) {
+			try {
+				forward=new ChartsAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/comment.do")) {
+			try {
+				forward=new CommentAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/forgot.do")) {
+			try {
+				forward=new ForgotAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/freeBoards.do")) {
+			try {
+				forward=new FreeBoardsAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/loginPage.do")) {
+			try {
+				forward=new LoginPageAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/manageBoards.do")) {
+			try {
+				forward=new ManageBoardsAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/manageBoardsDetail.do")) {
+			try {
+				forward=new ManageBoardsDetailAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/manageMem.do")) {
+			try {
+				forward=new ManageMemAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/manageMemDetail.do")) {
+			try {
+				forward=new ManageMemDetailAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/myBoard.do")) {
+			try {
+				forward=new MyBoardAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/myeongsan.do")) {
+			try {
+				forward=new MyeongsanAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/qna.do")) {
+			try {
+				forward=new QnAAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/register.do")) {
+			try {
+				forward=new RegisterAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/updateInfo.do")) {
+			try {
+				forward=new UpdateInfoAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/view.do")) {
+			try {
+				forward=new ViewAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/writeBoard.do")) {
+			try {
+				forward=new WriteBoardAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		if(forward==null) {
 			forward=new ActionForward();
 			forward.setPath("/error404.jsp");
