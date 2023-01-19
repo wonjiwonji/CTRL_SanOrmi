@@ -31,6 +31,8 @@ public class JoinAction implements Action {
 		
 		mdao.insertMember(mvo);
 		
+		System.out.println(mvo);
+		
 		return forward;
 	}
 

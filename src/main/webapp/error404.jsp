@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -41,7 +42,7 @@
           <div class="error mx-auto" data-text="404">404</div>
           <p class="lead text-gray-800 mb-5">Page Not Found</p>
           <p class="text-gray-500 mb-0">페이지를 찾을 수 없습니다 ㅠ_ㅠ</p>
-          <a href="main.html">&larr; 홈으로 돌아가기 </a>
+          <a href="main.do">&larr; 홈으로 돌아가기 </a>
         </div>
       </div>
       <!-- /.container-fluid -->
