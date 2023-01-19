@@ -11,7 +11,7 @@ public class JoinAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("joinOK.do");
+		forward.setPath("registerOK.jsp");
 		forward.setRedirect(true);
 		
 		MemberDAO mdao=new MemberDAO();
