@@ -100,7 +100,7 @@
                         <input type="text" class="form-control form-control-user" id="exampleInputID" name="id" placeholder="ID" required />
                       </div>
                       <div class="form-group">
-                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" name="pw" placeholder="Password" required />
+                        <input type="password" class="form-control form-control-user" id="exampleInputPassword" name="mPw" placeholder="Password" required />
                       </div>
                       <div class="form-group">
                         <div class="custom-control custom-checkbox small">
