@@ -69,7 +69,7 @@
               <li> <a class="fh5co-sub-ddown sf-with-ul">로그인</a>
                 <ul class="fh5co-sub-menu">
                   <li><a href="loginPage.do">로그인</a></li>
-                  <li><a href="register.do">회원가입</a></li>
+                  <li><a href="agree.do">회원가입</a></li>
                 </ul>
               </li>
               <li> <a class="fh5co-sub-ddown sf-with-ul">마이페이지</a>

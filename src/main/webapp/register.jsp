@@ -31,6 +31,7 @@
 				}	
 				else{
 					$('#checkmsg').html('사용불가능');
+					$('#button_joinus').setAttribute("disabled");
 				}
 			}
 		})
