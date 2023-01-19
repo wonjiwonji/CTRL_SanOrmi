@@ -19,7 +19,19 @@ public class LoginAction implements Action {
 		mvo.setId(request.getParameter("id"));
 		mvo.setmPw(request.getParameter("pw"));
 		
-		mdao.loginMember(mvo);
+		MemberVO tryId=mdao.loginMember(mvo);
+		MemberVO member = null;
+		if(tryId.getId()!=null) {
+			member=mdao.selectOneMember(mvo);
+		}
+		
+		request.getSession().setAttribute("id", member.getId());
+		request.getSession().setAttribute("mName", member.getmName());
+		request.getSession().setAttribute("mAddress", member.getmAddress());
+		request.getSession().setAttribute("mEmail", member.getmEmail());
+		request.getSession().setAttribute("mBanCnt", member.getmBanCnt());
+		request.getSession().setAttribute("mBoardCnt", member.getmBoardCnt());
+		request.getSession().setAttribute("mDate", member.getmDate());
 		
 		return forward;
 	}

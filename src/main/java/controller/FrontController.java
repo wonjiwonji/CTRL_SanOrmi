@@ -34,11 +34,35 @@ public class FrontController extends HttpServlet {
 			}
 		}
 		else if(command.equals("/login.do")) {
-			
+			try {
+				forward=new LoginAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
 		else if(command.equals("/logout.do")) {
-			
+			try {
+				forward=new LogoutAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 		}
+		else if(command.equals("/join.do")) {
+			try {
+				forward=new JoinAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/joinOK.do")) {
+			try {
+				forward=new JoinOKAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
 		else if(command.equals("/adminPage.do")) {
 			try {
 				forward=new AdminPageAction().execute(request, response);
