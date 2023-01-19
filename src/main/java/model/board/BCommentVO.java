@@ -9,10 +9,10 @@ public class BCommentVO {
 	private String bcContent;
 	private int bNum;
 	private int bcGroup;
-	private int bcCnt;
 	private Date bcDate;
 	private ArrayList <BCCommentVO> bccList;
 
+	
 	public ArrayList<BCCommentVO> getBccList() {
 		return bccList;
 	}
@@ -61,13 +61,6 @@ public class BCommentVO {
 		this.bcGroup = bcGroup;
 	}
 
-	public int getBcCnt() {
-		return bcCnt;
-	}
-
-	public void setBcCnt(int bcCnt) {
-		this.bcCnt = bcCnt;
-	}
 
 	public Date getBcDate() {
 		return bcDate;
@@ -80,8 +73,9 @@ public class BCommentVO {
 	@Override
 	public String toString() {
 		return "BCommentVO [bcNum=" + bcNum + ", bcID=" + bcID + ", bcContent=" + bcContent + ", bNum=" + bNum
-				+ ", bcGroup=" + bcGroup + ", bcCnt=" + bcCnt + ", bcDate=" + bcDate + ", bccList=" + bccList + "]";
+				+ ", bcGroup=" + bcGroup + ", bcDate=" + bcDate + ", bccList=" + bccList + "]";
 	}
+
 
 
 }

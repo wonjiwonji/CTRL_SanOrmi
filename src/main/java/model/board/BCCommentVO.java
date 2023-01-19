@@ -9,7 +9,6 @@ public class BCCommentVO {
 	private int bNum;
 	private int bccGroup;
 	private int bccSqe;
-	private int bccCnt;
 	private Date bccDate;
 
 	public int getBccNum() {
@@ -60,13 +59,7 @@ public class BCCommentVO {
 		this.bccSqe = bccSqe;
 	}
 
-	public int getBccCnt() {
-		return bccCnt;
-	}
-
-	public void setBccCnt(int bccCnt) {
-		this.bccCnt = bccCnt;
-	}
+	
 
 	public Date getBccDate() {
 		return bccDate;
@@ -78,8 +71,9 @@ public class BCCommentVO {
 
 	@Override
 	public String toString() {
-		return "BCCommemt [bccNum=" + bccNum + ", bccID=" + bccID + ", bccContent=" + bccContent + ", bNum=" + bNum
-				+ ", bccGroup=" + bccGroup + ", bccSqe=" + bccSqe + ", bccCnt=" + bccCnt + ", bccDate=" + bccDate + "]";
+		return "BCCommentVO [bccNum=" + bccNum + ", bccID=" + bccID + ", bccContent=" + bccContent + ", bNum=" + bNum
+				+ ", bccGroup=" + bccGroup + ", bccSqe=" + bccSqe + ", bccDate=" + bccDate + "]";
 	}
+
 
 }
