@@ -99,15 +99,15 @@
 												<input type="checkbox" class="custom-control-input"
 													id="customCheck" />
 												<!-- <label class="custom-control-label" for="customCheck">Remember Me</label> -->
-											</div>
+											</div>	
 										</div>
 										<input type="submit"
-											class="btn btn-success btn-user btn-block" value="로그인" />
+											class="btn btn-success btn-user btn-block" style = "color:whitex;" value="로그인" />
 										<hr />
 
 										<!-- 카카오 로그인 js 연결 및 버튼 생성 -->
 										<a href="javascript:kakaoLogin();"> <img
-											src="./img/kakao_login_medium_wide.png"
+											src="./img/kakao_login_large_narrow5.png"
 											style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block;" />
 										</a>
 
