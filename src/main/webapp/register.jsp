@@ -14,8 +14,29 @@
 
 <!-- 중복 확인 -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+
 <script type="text/javascript">
 	function check(){
+	        //console.log("log");
+	        //변수에 담아주기
+	        var id = document.getElementById('id');
+	        
+	        if (id.value == '') {
+	            //해당 입력값이 없을 경우 같은말: if(!id.value)
+	            alert('아이디를 입력하세요.');
+	            id.focus(); //focus(): 커서가 깜빡이는 현상, blur(): 커서가 사라지는 현상
+	            return false; //return: 반환하다 return false:  아무것도 반환하지 말아라 아래 코드부터 아무것도 진행하지 말것
+	          }
+	          var idCheck = /^(?=.*[a-zA-Z])[-a-zA-Z0-9_.]{2,10}$/;
+
+	          if (!idCheck.test(id.value)) {
+	            alert(
+	              '아이디는 2-10자의 영문과 숫자와 일부 특수문자(._-)만 사용해야 합니다.',
+	            );
+	            id.focus();
+	            return false;
+	          }
+	        
 		console.log('로그 1 : check()라는 JS 함수가 연결되었음');
 		var id=$('#id').val(); // $('id 속성이 id인 요소')의 값을 불러올래!
 		$.ajax({
@@ -25,18 +46,19 @@
 			success: function(result){
 				console.log('로그 2 : 응답받은 데이터( == response.getWriter() == out ) 출력');
 				console.log(result);
+				
 				if(result==1){
 					$('#checkmsg').html('사용가능'); // $('id 속성이 checkmsg인 요소')에 텍스트 추가
 					$('#button_joinus').removeAttr("disabled");
 				}	
 				else{
 					$('#checkmsg').html('사용불가능');
-					$('#button_joinus').setAttribute("disabled");
 				}
 			}
 		})
 	}
 </script>
+
 <!-- 중복 확인 끝 -->
 <!-- 네이버 로그인 API -->
 <script type="text/javascript"
@@ -73,6 +95,25 @@
           id.focus();
           return false;
         }
+		console.log('로그 1 : check()라는 JS 함수가 연결되었음');
+		var id=$('#id').val(); // $('id 속성이 id인 요소')의 값을 불러올래!
+		$.ajax({
+			type: 'POST',
+			url: 'check',
+			data: {id:id},
+			success: function(result){
+				console.log('로그 2 : 응답받은 데이터( == response.getWriter() == out ) 출력');
+				console.log(result);
+				
+				if(result==1){
+					$('#checkmsg').html('사용가능'); // $('id 속성이 checkmsg인 요소')에 텍스트 추가
+					$('#button_joinus').removeAttr("disabled");
+				}	
+				else{
+					$('#checkmsg').html('사용불가능');
+				}
+			}
+		})
         if (pwd.value == '') {
           alert('비밀번호를 입력하세요.');
           pwd.focus();
@@ -100,15 +141,25 @@
         }
         var reg = /^[0-9]+/g; //숫자만 입력하는 정규식
 
+        
         if (email_id.value == '') {
           alert('이메일 앞자리를 입력하세요.');
           email_id.focus();
           return false;
         }
         
+        
         if (email_add.value == '') {
             alert('이메일 뒷자리를 입력하세요.');
             email_add.focus();
+            return false;
+          }
+        var emaCheck = /^[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/i;
+	        if (!emaCheck.test(email_add.value)) {
+	            alert(
+              '올바른 이메일 형식이 아닙니다',
+            );
+            email_id.focus();
             return false;
           }
         <!-- 로직추가해야함....
@@ -216,8 +267,10 @@
 									</div>
 									<div class="col-sm-6">
 										<button type="button"
-											class="jw jw-btn-success btn-user btn-block"
-											onclick="check()">
+											class="jw jw-btn-success btn-user btn-block" onclick="check();"
+											>
+											<!-- onclick="joinform_check();" -->
+											<!-- onclick="check();" -->
 											<!-- onclick="id_check();" 중복확인 아직 구현하지 않아 404페이지로 돌림 -->
 											중복 확인
 										</button>
