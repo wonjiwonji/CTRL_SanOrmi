@@ -4,78 +4,87 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class BCommentVO {
-	private int bcNum;
-	private String bcID;
-	private String bcContent;
-	private int bNum;
-	private int bcGroup;
-	private Date bcDate;
-	private ArrayList <BCCommentVO> bccList;
+   private BCCommentVO bccvo;
+   private int bcNum;
+   private String bcID;
+   private String bcContent;
+   private int bNum;
+   private int bcGroup;
+   private Date bcDate;
+   private ArrayList<BCCommentVO> bccList;
 
-	
-	public ArrayList<BCCommentVO> getBccList() {
-		return bccList;
-	}
+   public BCommentVO() {
+      this.bccvo = new BCCommentVO();
+   }
 
-	public void setBccList(ArrayList<BCCommentVO> bccList) {
-		this.bccList = bccList;
-	}
+   public ArrayList<BCCommentVO> getBccList() {
+      return bccList;
+   }
 
-	public int getBcNum() {
-		return bcNum;
-	}
+   public void setBccList(ArrayList<BCCommentVO> bccList) {
+      this.bccList = bccList;
+   }
 
-	public void setBcNum(int bcNum) {
-		this.bcNum = bcNum;
-	}
+   public int getBcNum() {
+      return bcNum;
+   }
 
-	public String getBcID() {
-		return bcID;
-	}
+   public void setBcNum(int bcNum) {
+      this.bcNum = bcNum;
+   }
 
-	public void setBcID(String bcID) {
-		this.bcID = bcID;
-	}
+   public String getBcID() {
+      return bcID;
+   }
 
-	public String getBcContent() {
-		return bcContent;
-	}
+   public void setBcID(String bcID) {
+      this.bcID = bcID;
+   }
 
-	public void setBcContent(String bcContent) {
-		this.bcContent = bcContent;
-	}
+   public String getBcContent() {
+      return bcContent;
+   }
 
-	public int getbNum() {
-		return bNum;
-	}
+   public void setBcContent(String bcContent) {
+      this.bcContent = bcContent;
+   }
 
-	public void setbNum(int bNum) {
-		this.bNum = bNum;
-	}
+   public int getbNum() {
+      return bNum;
+   }
 
-	public int getBcGroup() {
-		return bcGroup;
-	}
+   public void setbNum(int bNum) {
+      this.bNum = bNum;
+   }
 
-	public void setBcGroup(int bcGroup) {
-		this.bcGroup = bcGroup;
-	}
+   public int getBcGroup() {
+      return bcGroup;
+   }
 
+   public void setBcGroup(int bcGroup) {
+      this.bcGroup = bcGroup;
+   }
 
-	public Date getBcDate() {
-		return bcDate;
-	}
+   public Date getBcDate() {
+      return bcDate;
+   }
 
-	public void setBcDate(Date bcDate) {
-		this.bcDate = bcDate;
-	}
+   public void setBcDate(Date bcDate) {
+      this.bcDate = bcDate;
+   }
 
-	@Override
-	public String toString() {
-		return "BCommentVO [bcNum=" + bcNum + ", bcID=" + bcID + ", bcContent=" + bcContent + ", bNum=" + bNum
-				+ ", bcGroup=" + bcGroup + ", bcDate=" + bcDate + ", bccList=" + bccList + "]";
-	}
+   public BCCommentVO getBccvo() {
+      return bccvo;
+   }
 
+   public void setBccvo(BCCommentVO bccvo) {
+      this.bccvo = bccvo;
+   }
 
+   @Override
+   public String toString() {
+      return "BCommentVO [bcNum=" + bcNum + ", bcID=" + bcID + ", bcContent=" + bcContent + ", bNum=" + bNum
+            + ", bcGroup=" + bcGroup + ", bcDate=" + bcDate + ", bccList=" + bccList + "]";
+   }
 
 }
