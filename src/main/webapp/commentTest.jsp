@@ -10,7 +10,7 @@
 </head>
 <body>
 
-	<h1>Instagram Comments</h1>
+	<h1>ctrl</h1>
 	<form action="/dogs" id="instaForm">
 		<input type="text" name="username" placeholder="username" /> <input
 			type="text" name="comment" placeholder="comment" />
