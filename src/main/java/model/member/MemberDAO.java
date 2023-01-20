@@ -35,6 +35,8 @@ public class MemberDAO {
 	final String SELECTONE_MEMBER = "SELECT * FROM MEMBER WHERE ID=?";
 	// SELECTALL_MEMBER ; 회원 출력 -> 관리자(회원관리) 페이지
 	final String SELECTALL_MEMBER = "SELECT ID M_NAME M_EMAIL M_ADDRESS M_REGDATE M_BCNT FROM MEMBER";
+	
+	final String SELECTALL_COMMUNITY_KING ="select id, m_boardcnt from member order by m_boardcnt desc limit 0,5";
 
 	// insertMember ; 회원 가입
 	public boolean insertMember(MemberVO mvo) { // mvo ; Id, mPw, mName, mAddress(선택), mEmail 필요
@@ -226,6 +228,24 @@ public class MemberDAO {
 				data.setmEmail(rs.getString("M_EMAIL"));
 				data.setmDate(rs.getDate("M_REGDATE"));
 				data.setmName(rs.getString("M_NAME"));
+				datas.add(data);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		JDBCUtil.disconnect(conn, pstmt);
+		return datas;
+	}
+	public ArrayList<MemberVO> selectAllCommunityKing(MemberVO mvo) {
+		ArrayList<MemberVO> datas = new ArrayList<MemberVO>();
+		conn = JDBCUtil.connect();
+		try {
+			pstmt = conn.prepareStatement(SELECTALL_COMMUNITY_KING);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				MemberVO data = new MemberVO();
+				data.setId(rs.getString("ID"));
+				data.setmBoardCnt(rs.getInt("M_BOARD_CNT"));
 				datas.add(data);
 			}
 		} catch (SQLException e) {
