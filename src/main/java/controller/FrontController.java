@@ -185,7 +185,7 @@ public class FrontController extends HttpServlet {
 		}
 		else if(command.equals("/writeBoard.do")) {
 			try {
-				forward=new WriteBoardAction().execute(request, response);
+				forward=new WriteBoardFreeAction().execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
