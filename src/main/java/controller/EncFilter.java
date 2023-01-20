@@ -11,7 +11,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
 
-@WebFilter("*.jsp")
+@WebFilter("*.do")
 public class EncFilter extends HttpFilter implements Filter {
        
     private String encoding;
@@ -25,6 +25,7 @@ public class EncFilter extends HttpFilter implements Filter {
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
+		System.out.println("CHECKCHECK");
 		request.setCharacterEncoding(this.encoding);
 		chain.doFilter(request, response);
 	}
