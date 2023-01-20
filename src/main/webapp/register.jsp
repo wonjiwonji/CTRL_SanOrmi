@@ -317,7 +317,7 @@
 											id="sample2_postcode" name="mAddress1" placeholder="우편번호" />
 									</div>
 									<div class="col-sm-6">
-										<!-- onclick="search_address();" 우편번호 찾기 시 이동할 페이지, 현재 api 구현안돼 404로 돌림 -->
+										<!-- onclick="search_address(); -->
 										<button type="button" onclick="openAddressAPI()"
 											class="jw jw-btn-success btn-user btn-block" value="우편번호 찾기">
 											우편번호 찾기</button>

@@ -880,7 +880,7 @@ pageEncoding="UTF-8"%>
     
     <!-- 네이버 로그인 API -->
     <script type="text/javascript">
-  var naver_id_login = new naver_id_login("dClwkVzJ3MRBP_IElx5I", "http://localhost:8080/ctrl/main.jsp");
+  var naver_id_login = new naver_id_login("dClwkVzJ3MRBP_IElx5I", "http://localhost:8088/ctrl/main.jsp");
   // 접근 토큰 값 출력
   /* alert(naver_id_login.oauthParams.access_token); */
   // 네이버 사용자 프로필 조회
