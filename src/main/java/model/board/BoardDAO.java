@@ -137,7 +137,7 @@ public class BoardDAO {
       return true;
    }
 
-   public ArrayList<BoardSet> select(BoardVO bvo) {
+   public ArrayList<BoardSet> selectOneBoard(BoardVO bvo) {
       ArrayList<BoardSet> datas = new ArrayList<BoardSet>();
 
       conn = JDBCUtil.connect();
