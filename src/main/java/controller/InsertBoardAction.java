@@ -11,11 +11,14 @@ public class InsertBoardAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("tables.jsp");
+		forward.setPath("writeBoardFree.jsp");
 		forward.setRedirect(true);
 
 		BoardVO bvo=new BoardVO();
 		BoardDAO bdao=new BoardDAO();
+		bvo.setbTitle(request.getParameter("bTitle"));
+		bvo.setbContent(request.getParameter("bContent"));
+		bvo.setbId(request.getParameter("bId"));
 
 		bdao.insertBoard(bvo);
 		return forward;

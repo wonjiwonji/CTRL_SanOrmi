@@ -54,6 +54,16 @@ public class FrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/deleteBoard.do")) {
+			try {
+				forward=new DeleteBoardAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
+		
 		
 		
 		else if(command.equals("/adminPage.do")) {
@@ -183,9 +193,16 @@ public class FrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/writeBoard.do")) {
+		else if(command.equals("/writeBoardFree.do")) {
 			try {
 				forward=new WriteBoardFreeAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/writeBoardQnA.do")) {
+			try {
+				forward=new WriteBoardQnAAction().execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
