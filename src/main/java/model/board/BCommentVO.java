@@ -4,14 +4,14 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class BCommentVO {
-   private BCCommentVO bccvo;
-   private int bcNum;
-   private String bcID;
-   private String bcContent;
-   private int bNum;
-   private int bcGroup;
-   private Date bcDate;
-   private ArrayList<BCCommentVO> bccList;
+   private BCCommentVO bccvo; // BCCommentVO
+   private int bcNum;	// 댓글 번호
+   private String bcID; // 댓글 작성자
+   private String bcContent; // 댓글 내용
+   private int bNum; // 게시글 번호
+   private int bcGroup; // 댓글 그룹
+   private Date bcDate; // 댓글 작성일
+   private ArrayList<BCCommentVO> bccList; // ArrayList<BCCommentVO>
 
    public BCommentVO() {
       this.bccvo = new BCCommentVO();

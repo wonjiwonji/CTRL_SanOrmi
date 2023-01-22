@@ -3,13 +3,13 @@ package model.board;
 import java.util.Date;
 
 public class BCCommentVO {
-	private int bccNum;
-	private String bccID;
-	private String bccContent;
-	private int bNum;
-	private int bccGroup;
-	private int bccSqe;
-	private Date bccDate;
+	private int bccNum; // 대댓글 번호
+	private String bccID; // 대댓글 작성자
+	private String bccContent; // 대댓글 내용
+	private int bNum; // 게시글 번호
+	private int bccGroup; // 대댓글 그룹
+	private int bccSqe; // 대댓글 시퀀스
+	private Date bccDate; // 대댓글 작성일
 
 	public int getBccNum() {
 		return bccNum;

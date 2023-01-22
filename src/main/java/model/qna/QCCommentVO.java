@@ -4,14 +4,15 @@ import java.util.Date;
 
 public class QCCommentVO {
 
-	private int qccSqe;
-	private int qccNum;
-	private String qccID;
-	private String qccContent;
-	private int qNum;
-	private int qccGroup;
-	private Date qccDate;
-	public int getQccSqe() {
+	private int qccNum;	// 대댓글 번호
+	private String qccID;	// 대댓글 작성자
+	private String qccContent; // 대댓글 내용
+	private int qNum; // qna 게시글 번호
+	private int qccGroup; // 대댓글 그룹
+	private int qccSqe;	// 대댓글 시퀀스
+	private Date qccDate; // 대댓글 작성일
+	
+	public int getQccSqe() { 
 		return qccSqe;
 	}
 	public void setQccSqe(int qccSqe) {

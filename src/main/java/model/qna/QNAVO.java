@@ -8,7 +8,6 @@ public class QNAVO {
 	private String qId;
 	private String qTitle;
 	private String qContent;
-	private String qReplyCnt;
 	private Date qDate;
 	private int qCnt;
 	private int cCnt;
@@ -43,12 +42,6 @@ public class QNAVO {
 	public void setqContent(String qContent) {
 		this.qContent = qContent;
 	}
-	public String getqReplyCnt() {
-		return qReplyCnt;
-	}
-	public void setqReplyCnt(String qReplyCnt) {
-		this.qReplyCnt = qReplyCnt;
-	}
 	public Date getqDate() {
 		return qDate;
 	}
@@ -70,8 +63,7 @@ public class QNAVO {
 	@Override
 	public String toString() {
 		return "QNAVO [qcvo=" + qcvo + ", qNum=" + qNum + ", qId=" + qId + ", qTitle=" + qTitle + ", qContent="
-				+ qContent + ", qReplyCnt=" + qReplyCnt + ", qDate=" + qDate + ", qCnt=" + qCnt + ", cCnt=" + cCnt
-				+ "]";
+				+ qContent + ", qDate=" + qDate + ", qCnt=" + qCnt + ", cCnt=" + cCnt + "]";
 	}
 	
 }

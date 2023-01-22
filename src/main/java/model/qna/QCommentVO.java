@@ -3,17 +3,21 @@ package model.qna;
 import java.util.ArrayList;
 import java.util.Date;
 
-public class QCommentVO {
-	private QCCommentVO qccvo;
-	private int qcNum;
-	private String qcID;
-	private String qcContent;
-	private int qNum;
-	private int qcGroup;
-	private int qcCnt;
-	private Date qcDate;
-	private ArrayList <QCCommentVO> qccList;
+import model.board.BCCommentVO;
 
+public class QCommentVO {
+	private QCCommentVO qccvo; // QCCommentVO qccvo 
+	private int qcNum; // 댓글 번호
+	private String qcID; // 댓글 작성자
+	private String qcContent; // 댓글 내용
+	private int qNum; // qna 게시글 번호
+	private int qcGroup; // 댓글 그룹
+	private Date qcDate; // 댓글 작성일 
+	private ArrayList <QCCommentVO> qccList; // ArrayList <QCCommentVO> qccList
+
+	public QCommentVO() {
+		this.qccvo = new QCCommentVO();
+	}
 	
 	
 	public QCCommentVO getQccvo() {
@@ -58,12 +62,6 @@ public class QCommentVO {
 	public void setQcGroup(int qcGroup) {
 		this.qcGroup = qcGroup;
 	}
-	public int getQcCnt() {
-		return qcCnt;
-	}
-	public void setQcCnt(int qcCnt) {
-		this.qcCnt = qcCnt;
-	}
 	public Date getQcDate() {
 		return qcDate;
 	}
@@ -72,8 +70,8 @@ public class QCommentVO {
 	}
 	@Override
 	public String toString() {
-		return "QCommentVO [qcNum=" + qcNum + ", qcID=" + qcID + ", qcContent=" + qcContent + ", qNum=" + qNum
-				+ ", qcGroup=" + qcGroup + ", qcCnt=" + qcCnt + ", qcDate=" + qcDate + ", qccList=" + qccList + "]";
+		return "QCommentVO [qccvo=" + qccvo + ", qcNum=" + qcNum + ", qcID=" + qcID + ", qcContent=" + qcContent
+				+ ", qNum=" + qNum + ", qcGroup=" + qcGroup + ", qcDate=" + qcDate + ", qccList=" + qccList + "]";
 	}
 
 	

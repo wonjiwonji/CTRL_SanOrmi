@@ -4,8 +4,8 @@ import java.util.ArrayList;
 
 public class BoardSet {
 	
-	private BoardVO board;
-	private ArrayList<BCommentVO> bcList;
+	private BoardVO board; // BoardVO	
+	private ArrayList<BCommentVO> bcList; // ArrayList<BCommentVO>
 
 	public BoardVO getBoard() {
 		return board;

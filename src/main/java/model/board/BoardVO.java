@@ -3,16 +3,16 @@ package model.board;
 import java.util.Date;
 
 public class BoardVO {
-	private BCommentVO bcvo;
-	private int bNum;
-	private String bId;
-	private String bTitle;
-	private String bContent;
-	private String bReplyCnt;
-	private Date bDate;
-	private int bCnt;
-	private int cCnt;
+	private BCommentVO bcvo; // BCommentVO 
+	private int bNum; // 게시글 번호
+	private String bId; // 게시글 작성자
+	private String bTitle; // 게시글 제목
+	private String bContent; // 게시글 내용
+	private Date bDate; // 게시글 작성일
+	private int bCnt; // 게시글 조회수
+	private int cCnt; // 댓글 수 
 
+	
 	public BoardVO() {
 		this.bcvo = new BCommentVO();
 	}
@@ -81,19 +81,13 @@ public class BoardVO {
 		this.bContent = bContent;
 	}
 
-	public String getbReplyCnt() {
-		return bReplyCnt;
-	}
-
-	public void setbReplyCnt(String bReplyCnt) {
-		this.bReplyCnt = bReplyCnt;
-	}
-
 	@Override
 	public String toString() {
-		return "BoardVO [bNum=" + bNum + ", bId=" + bId + ", bTitle=" + bTitle + ", bContent=" + bContent
-				+ ", bReplyCnt=" + bReplyCnt + ", bDate=" + bDate + ", bCnt=" + bCnt + ", cCnt=" + cCnt + "]";
+		return "BoardVO [bcvo=" + bcvo + ", bNum=" + bNum + ", bId=" + bId + ", bTitle=" + bTitle + ", bContent="
+				+ bContent + ", bDate=" + bDate + ", bCnt=" + bCnt + ", cCnt=" + cCnt + "]";
 	}
+
+
 
 
 }
