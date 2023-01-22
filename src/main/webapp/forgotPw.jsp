@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -99,7 +98,7 @@
                         />
                       </div>
                       <a
-                        href="login.html"
+                        href="login.do"
                         class="btn btn-success btn-user btn-block"
                       >
                         링크 보내기
@@ -107,10 +106,10 @@
                     </form>
                     <hr />
                     <div class="text-center">
-                      <a class="small" href="register.html">회원가입</a>
+                      <a class="small" href="register.do">회원가입</a>
                     </div>
                     <div class="text-center">
-                      <a class="small" href="login.html"
+                      <a class="small" href="login.do"
                         >이미 회원이신가요? 로그인하세요!</a
                       >
                     </div>

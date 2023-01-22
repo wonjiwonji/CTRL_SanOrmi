@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -95,7 +94,7 @@ pageEncoding="UTF-8"%>
             <textarea class="form-control" rows="5" id="content" placeholder="내용을 입력하세요" name="content"></textarea>
           </div>
           <button type="submit" class="btncolor">작성완료</button>
-          <button class="btncolor2" href="#">목록</button>
+          <button class="btncolor2" href="qna.do">목록</button>
         </form>
       </div>
     </section>

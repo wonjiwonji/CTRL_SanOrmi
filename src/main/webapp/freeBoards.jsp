@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -293,7 +292,7 @@ pageEncoding="UTF-8"%>
             <div class="button_wrap clearfix">
               <!--<button type="button" class="delete_btn">삭제하기</button>-->
               <!-- <a href="#" class="list_btn">목록보기</a> -->
-              <a href="writingpage.html" class="write_btn m_write_btn"
+              <a href="writeBoardFree.do" class="write_btn m_write_btn"
                 >작성하기</a
               >
               <!-- <a href="#" class="modify_btn">수정하기</a> -->
@@ -348,7 +347,7 @@ pageEncoding="UTF-8"%>
             >
               Cancel
             </button>
-            <a class="btn btn-primary" href="login.html">Logout</a>
+            <a class="btn btn-primary" href="login.do">Logout</a>
           </div>
         </div>
       </div>

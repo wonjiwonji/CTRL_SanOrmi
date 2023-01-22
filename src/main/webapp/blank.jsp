@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -28,7 +27,7 @@
       <!-- Sidebar -->
       <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
         <!-- Sidebar - Brand -->
-        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="adminPage.html">
+        <a class="sidebar-brand d-flex align-items-center justify-content-center" href="adminPage.do">
           <div class="sidebar-brand-icon rotate-n-15">
             <i class="fas fa-laugh-wink"></i>
           </div>
@@ -40,7 +39,7 @@
 
         <!-- Nav Item - Dashboard -->
         <li class="nav-item">
-          <a class="nav-link" href="adminPage.html">
+          <a class="nav-link" href="adminPage.do">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>메인페이지</span></a
           >

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<% request.setCharacterEncoding("UTF-8"); %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,7 +30,7 @@
   <!-- Sidebar -->
   <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand --> 
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="adminPage.html">
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="adminPage.do">
     <div class="sidebar-brand-icon rotate-n-15"> <i class="fas fa-laugh-wink"></i> </div>
     <div class="sidebar-brand-text mx-3">산오르미 <sup>admin</sup></div>
     </a> 
@@ -40,7 +39,7 @@
     <hr class="sidebar-divider my-0" />
     
     <!-- Nav Item - Dashboard -->
-    <li class="nav-item active"> <a class="nav-link" href="main.html"> <i class="fas fa-fw fa-tachometer-alt"></i> <span>산오르미 페이지</span></a> </li>
+    <li class="nav-item active"> <a class="nav-link" href="main.do"> <i class="fas fa-fw fa-tachometer-alt"></i> <span>산오르미 페이지</span></a> </li>
     
     <!-- Divider -->
     <hr class="sidebar-divider" />
@@ -50,20 +49,20 @@
     <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
       <div class="bg-white py-2 collapse-inner rounded">
         <h6 class="collapse-header">Login Screens:</h6>
-        <a class="collapse-item" href="login.html">Login</a> <a class="collapse-item" href="register.html">Register</a> <a class="collapse-item" href="forgot-password.html">Forgot Password</a>
+        <a class="collapse-item" href="login.do">Login</a> <a class="collapse-item" href="register.do">Register</a> <a class="collapse-item" href="forgot.do">Forgot Password</a>
         <div class="collapse-divider"></div>
         <h6 class="collapse-header">Other Pages:</h6>
-        <a class="collapse-item" href="error404.html">404 Page</a> <a class="collapse-item" href="blank.html">Blank Page</a> </div>
+        <a class="collapse-item" href="error404.do">404 Page</a> <a class="collapse-item" href="blank.do">Blank Page</a> </div>
     </div>
     
     <!-- Nav Item - Charts -->
-    <li class="nav-item"> <a class="nav-link" href="charts.html"> <i class="fas fa-fw fa-chart-area"></i> <span>통계</span></a> </li>
+    <li class="nav-item"> <a class="nav-link" href="charts.do"> <i class="fas fa-fw fa-chart-area"></i> <span>통계</span></a> </li>
     
     <!-- Nav Item - Tables -->
-    <li class="nav-item"> <a class="nav-link" href="tables.html"> <i class="fas fa-fw fa-table"></i> <span>게시글 관리</span></a> </li>
+    <li class="nav-item"> <a class="nav-link" href="manageBoards.do"> <i class="fas fa-fw fa-table"></i> <span>게시글 관리</span></a> </li>
     
     <!-- Nav Item - Tables -->
-    <li class="nav-item active"> <a class="nav-link" href="members.html"> <i class="fas fa-fw fa-table"></i> <span>회원 관리</span></a> </li>
+    <li class="nav-item active"> <a class="nav-link" href="manageMem.do"> <i class="fas fa-fw fa-table"></i> <span>회원 관리</span></a> </li>
     
     <!-- Divider -->
     <hr class="sidebar-divider d-none d-md-block" />
@@ -138,7 +137,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td><a href="admin-members.html">Aager Nixon</a></td>
+                    <td><a href="manageMemDetail.do">Aager Nixon</a></td>
                     <td>Tiger Nixon</td>
                     <td>System Architect</td>
                     <td>61</td>
@@ -369,7 +368,7 @@
       <div class="modal-body"> 현재 세션을 종료할 준비가 되었으면 아래에서 "로그아웃"을 선택하십시오.</div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
-        <a class="btn btn-primary" href="main.html">로그아웃</a> </div>
+        <a class="btn btn-primary" href="main.do">로그아웃</a> </div>
     </div>
   </div>
 </div>

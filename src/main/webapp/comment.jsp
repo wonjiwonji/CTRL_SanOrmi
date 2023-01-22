@@ -2,10 +2,9 @@
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<% request.setCharacterEncoding("UTF-8"); %> 
 
 <script src="https://kit.fontawesome.com/51772bd9bd.js" crossorigin="anonymous"></script>
-    
+
 <div class="container my-3 border rounded">
     <div class="mb-3 mt-3">
         <label>댓글: <span id="cmt_cnt"></span> 개</label>
