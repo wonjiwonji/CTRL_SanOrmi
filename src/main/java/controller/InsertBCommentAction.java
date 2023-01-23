@@ -3,24 +3,25 @@ package controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.board.BCommentVO;
 import model.board.BoardDAO;
 import model.board.BoardVO;
 
-public class InsertBoardAction implements Action {
+public class InsertBCommentAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("freeBoards.jsp");
+		forward.setPath("view.do");
 		forward.setRedirect(true);
 
-		BoardVO bvo=new BoardVO();
+		BCommentVO bcvo=new BCommentVO();
 		BoardDAO bdao=new BoardDAO();
-		bvo.setbTitle(request.getParameter("bTitle"));
-		bvo.setbContent(request.getParameter("bContent"));
-		bvo.setbId(request.getParameter("bId"));
+		bcvo.setBcContent(request.getParameter("bcContent"));
+		bcvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
+		bcvo.setBcID(request.getParameter("bcID"));
 
-		bdao.insertBoard(bvo);
+		bdao.insertBComment(bcvo);
 		return forward;
 	}
 

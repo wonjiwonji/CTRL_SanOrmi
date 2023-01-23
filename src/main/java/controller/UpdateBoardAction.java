@@ -5,8 +5,10 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.board.BoardDAO;
 import model.board.BoardVO;
+import model.member.MemberDAO;
+import model.member.MemberVO;
 
-public class InsertBoardAction implements Action {
+public class UpdateBoardAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -18,9 +20,9 @@ public class InsertBoardAction implements Action {
 		BoardDAO bdao=new BoardDAO();
 		bvo.setbTitle(request.getParameter("bTitle"));
 		bvo.setbContent(request.getParameter("bContent"));
-		bvo.setbId(request.getParameter("bId"));
+		bvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
 
-		bdao.insertBoard(bvo);
+		bdao.updateBoard(bvo);
 		return forward;
 	}
 

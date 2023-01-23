@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <c:choose>
-<c:when test="${membermName != null}">
+<c:when test="${mName != null}">
 			<li> <a class="fh5co-sub-ddown sf-with-ul">회원정보</a>
 		<ul class="fh5co-sub-menu">
 			<li><a href="logout.do">로그아웃</a></li>

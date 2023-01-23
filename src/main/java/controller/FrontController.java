@@ -54,6 +54,48 @@ public class FrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/joinKakao.do")) {
+			try {
+				forward=new JoinKakaoAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/joinNaver.do")) {
+			try {
+				forward=new JoinNaverAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/updateMember.do")) {
+			try {
+				forward=new DeleteBoardAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/deleteMember.do")) {
+			try {
+				forward=new DeleteMemberAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/insertBoard.do")) {
+			try {
+				forward=new InsertBoardAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/updateBoard.do")) {
+			try {
+				forward=new UpdateBoardAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		else if(command.equals("/deleteBoard.do")) {
 			try {
 				forward=new DeleteBoardAction().execute(request, response);
@@ -61,6 +103,15 @@ public class FrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/insertBComment.do")) {
+			try {
+				forward=new InsertBCommentAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
 		
 		
 		
