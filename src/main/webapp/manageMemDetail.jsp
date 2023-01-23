@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +29,7 @@
   <!-- Sidebar -->
   <ul class="navbar-nav bg-gradient-success sidebar sidebar-dark accordion" id="accordionSidebar" >
     <!-- Sidebar - Brand --> 
-    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="adminPage.html" >
+    <a class="sidebar-brand d-flex align-items-center justify-content-center" href="adminPage.do" >
     <div class="sidebar-brand-icon rotate-n-15"> <i class="fas fa-laugh-wink"></i> </div>
     <div class="sidebar-brand-text mx-3">산오르미 <sup>admin</sup></div>
     </a> 
@@ -118,7 +120,7 @@
                 class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
                 ><i class="fas fa-download fa-sm text-white-50"></i> 돌아가기</a
               > <a
-                href="manageMem.do"
+                href="deleteMember.do"
                 class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
                 ><i class="fas fa-download fa-sm text-white-50"></i> 삭제하기</a
               > </div>
@@ -136,7 +138,7 @@
                             class="text-xs font-weight-bold text-success text-uppercase mb-1"
                           > 아이디 </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"> id </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${id } </div>
                         <br />
                       </div>
                     </div>
@@ -155,7 +157,7 @@
                             class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                           > 이름 </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"> mName </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${mName } </div>
                         <br />
                       </div>
                     </div>
@@ -172,7 +174,7 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> 이메일 </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"> mEmail </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${mEmail } </div>
                         <br />
                       </div>
                     </div>
@@ -191,7 +193,7 @@
                             class="text-xs font-weight-bold text-warning text-uppercase mb-1"
                           > 주소 </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"> mAddress </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${mAddress } </div>
                         <br />
                       </div>
                     </div>
@@ -210,7 +212,7 @@
                             class="text-xs font-weight-bold text-success text-uppercase mb-1"
                           > 가입일자 </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"> mDate </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">${mDate } </div>
                         <br />
                       </div>
                     </div>
@@ -227,7 +229,7 @@
                             class="text-xs font-weight-bold text-warning text-uppercase mb-1"
                           > 경고 횟수 </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"> mBan </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${mBan } </div>
                         <br />
                       </div>
                     </div>

@@ -102,7 +102,7 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item active">
-          <a class="nav-link" href="manageDetailBoard.do">
+          <a class="nav-link" href="manageMem.do">
             <i class="fas fa-fw fa-table"></i> <span>회원 관리</span></a
           >
         </li>
@@ -119,7 +119,7 @@
 
       <!-- Content Wrapper -->
       <div id="content-wrapper" class="d-flex flex-column">
-        <!-- Main Content -->
+        <!-- Main Content -->	
         <div id="content">
           <!-- Topbar -->
           <nav

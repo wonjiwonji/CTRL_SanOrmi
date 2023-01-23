@@ -11,7 +11,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
-<title>자유게시판</title>
+<title>내가 쓴 글</title>
 
 <!-- link start -->
 <!-- Custom fonts for this template -->
@@ -105,8 +105,8 @@
 					<div class="bottom">
 						<ul class="list_wrap">
 							<div class="left_top_02">
-								<h5 class="sub_eng mt">PREE BOARD</h5>
-								<h3 class="sub_title">자유게시판</h3>
+								<h5 class="sub_eng mt">MY BOARD</h5>
+								<h3 class="sub_title">내가 쓴 글</h3>
 							</div>
 							<!-- DataTales Example -->
 							<div>
@@ -119,16 +119,14 @@
 												<tr>
 													<th class="sorting_con">순번</th>
 													<th>제목</th>
-													<th>작성자</th>
 													<th class="sorting_con">조회수</th>
 												</tr>
 											</thead>
 											<tbody>
-												<c:forEach var="dto" items="${bList }">
+												<c:forEach var="dto" items="${datas }">
 													<tr>
 														<td>${dto.bNum }</td>
 														<td><a href="view.do?bNum=${dto.bNum }">${dto.bTitle }</a></td>
-														<td>${dto.bId }</td>
 														<td>${dto.bCnt }</td>
 													</tr>
 												</c:forEach>
@@ -142,8 +140,6 @@
 					<!-- /.container-fluid -->
 					<div class="button_wrap clearfix">
 						<!--<button type="button" class="delete_btn">삭제하기</button>-->
-						<!-- <a href="#" class="list_btn">목록보기</a> -->
-						<a href="writeBoardFree.do" class="write_btn m_write_btn">작성하기</a>
 						<!-- <a href="#" class="modify_btn">수정하기</a> -->
 					</div>
 				</div>
@@ -180,7 +176,7 @@
 				<div class="modal-footer">
 					<button class="btn btn-secondary" type="button"
 						data-dismiss="modal">Cancel</button>
-					<a class="btn btn-primary" href="login.do">Logout</a>
+					<a class="btn btn-primary" href="main.do">Logout</a>
 				</div>
 			</div>
 		</div>

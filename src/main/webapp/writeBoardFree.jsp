@@ -63,13 +63,13 @@ pageEncoding="UTF-8"%>
     <![endif]-->
     <!-- link end -->
   </head>
-  
+  <!-- 
   <script>
   $(document).ready(function(){
 	  $('#content').summernote();
   });
   </script>
-  
+   -->
   <body>
 
 	<%-- 헤더임 --%>
@@ -80,7 +80,7 @@ pageEncoding="UTF-8"%>
       <div class="center">
         <h2>작성</h2>
         <hr/>
-        <form action="#">
+        <form action="insertBoard.do">
           <div>
             <label for="name">작성자:</label>
             <input type="text" class="form-control" id="name" placeholder="작성자를 입력하세요" name="bId" required />

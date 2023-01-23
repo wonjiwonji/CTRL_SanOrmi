@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+	<%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,13 +63,13 @@ pageEncoding="UTF-8"%>
     <![endif]-->
     <!-- link end -->
   </head>
-  
+  <!--
   <script>
   $(document).ready(function(){
 	  $('#content').summernote();
   });
   </script>
-  
+    -->
   <body>
 
 	<%-- 헤더임 --%>
@@ -80,10 +80,10 @@ pageEncoding="UTF-8"%>
       <div class="center">
         <h2>작성</h2>
         <hr/>
-        <form action="#">
+        <form action="insertQNA.do">
           <div>
             <label for="name">작성자:</label>
-            <input type="text" class="form-control" id="bId" placeholder="작성자를 입력하세요" name="bId" required />
+            <input type="text" class="form-control" id="name" placeholder="작성자를 입력하세요" name="bId" required />
           </div>
           <div class="mb-3 mt-3">
             <label for="subject">제목:</label>
