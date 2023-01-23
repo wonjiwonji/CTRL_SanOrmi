@@ -110,7 +110,55 @@ public class FrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		
+		else if(command.equals("/insertBCComment.do")) {
+			try {
+				forward=new InsertBCCommentAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/deleteBComment.do")) {
+			try {
+				forward=new DeleteBCommentAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/insertQNA.do")) {
+			try {
+				forward=new InsertQNAAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/updateQNA.do")) {
+			try {
+				forward=new UpdateQNAAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/deleteQNA.do")) {
+			try {
+				forward=new DeleteQNAAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/insertQComment.do")) {
+			try {
+				forward=new InsertQCommentAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/insertQCComment.do")) {
+			try {
+				forward=new InsertQCCommentAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		
 		
 		

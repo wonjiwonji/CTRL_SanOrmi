@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletResponse;
 import model.board.BCommentVO;
 import model.board.BoardDAO;
 
-public class InsertBCommentAction implements Action {
+public class DeleteBCommentAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -16,11 +16,11 @@ public class InsertBCommentAction implements Action {
 
 		BCommentVO bcvo=new BCommentVO();
 		BoardDAO bdao=new BoardDAO();
-		bcvo.setBcContent(request.getParameter("bcContent"));
-		bcvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
-		bcvo.setBcID(request.getParameter("bcID"));
+		
+		bcvo.setBcNum(Integer.parseInt(request.getParameter("bcNum")));
+		bcvo.setBcGroup(Integer.parseInt(request.getParameter("bcGroup")));
 
-		bdao.insertBComment(bcvo);
+		bdao.deleteBComment(bcvo);
 		return forward;
 	}
 

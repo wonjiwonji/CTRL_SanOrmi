@@ -3,10 +3,10 @@ package controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.board.BCommentVO;
+import model.board.BCCommentVO;
 import model.board.BoardDAO;
 
-public class InsertBCommentAction implements Action {
+public class InsertBCCommentAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
@@ -14,13 +14,14 @@ public class InsertBCommentAction implements Action {
 		forward.setPath("view.do");
 		forward.setRedirect(true);
 
-		BCommentVO bcvo=new BCommentVO();
+		BCCommentVO bccvo=new BCCommentVO();
 		BoardDAO bdao=new BoardDAO();
-		bcvo.setBcContent(request.getParameter("bcContent"));
-		bcvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
-		bcvo.setBcID(request.getParameter("bcID"));
+		bccvo.setBccID(request.getParameter("bccID"));
+		bccvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
+		bccvo.setBccContent(request.getParameter("bccContent"));
+		bccvo.setBccGroup(Integer.parseInt(request.getParameter("bccGroup")));
 
-		bdao.insertBComment(bcvo);
+		bdao.insertBCComment(bccvo);
 		return forward;
 	}
 
