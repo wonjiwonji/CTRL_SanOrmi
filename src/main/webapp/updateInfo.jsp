@@ -172,6 +172,7 @@ pageEncoding="UTF-8"%>
                     <input type="text" id="sample2_detailAddress" name="mAddress3" class="form-control form-control-user" placeholder="상세 주소" />
                   </div>
                 </div>
+                <!--
                 <div class="receivebox">
                   <label><span> </span>메일수신</label>
                   <div>
@@ -180,6 +181,7 @@ pageEncoding="UTF-8"%>
                     <label for="mb_mailling1" class="txc1">수신동의</label>
                     <small class="ctm">※ 수신 설정시 다양한 등산 정보를 받아 보실 수 있습니다.</small> </div>
                 </div>
+                -->
                 <div class="btnbox">
                   <button type="button" onclick="joinform_check();" class="join_btn sub" id="btn_regi_submit"> 회원 정보 수정 </button>
                 </div>
