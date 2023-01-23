@@ -127,7 +127,7 @@
 												<c:forEach var="dto" items="${datas }">
 													<tr>
 														<td>${dto.bNum }</td>
-														<td><a href="view.do?uid=${dto.bNum }">${dto.bTitle }</a></td>
+														<td><a href="view.do?bNum=${dto.bNum }">${dto.bTitle }</a></td>
 														<td>${dto.bId }</td>
 														<td>${dto.bCnt }</td>
 													</tr>
