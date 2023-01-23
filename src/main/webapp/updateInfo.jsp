@@ -123,53 +123,53 @@ pageEncoding="UTF-8"%>
                 <div class="Idbox">
                   <label><span> </span>아이디</label>
                   <div class="box">
-                    <input type="text" name="mb_nick" value="" id="reg_mb_nick" class="nickname" required maxlength="20" placeholder="ID (변경 불가)" oninput="init_chk_nick();" autocomplete="off" readonly />
+                    <input type="text" name="id" value="" id="id" class="nickname" required maxlength="20" placeholder="ID (변경 불가)" oninput="init_chk_nick();" autocomplete="off" readonly />
                   </div>
                 </div>
                 <div class="passwordbox">
                   <label><span> </span>비밀번호</label>
                   <div class="box box2">
-                    <input type="password" name="pwd" id="pwd" placeholder="비밀번호 입력" />
+                    <input type="password" name="mpw" id="pwd" placeholder="비밀번호 입력" />
                   </div>
                   <div class="box box3" style="margin-top: 7px">
-                    <input type="password" name="repwd" id="repwd" placeholder="비밀번호 확인" maxlength="20" />
+                    <input type="password" id="repwd" placeholder="비밀번호 확인" maxlength="20" />
                   </div>
                 </div>
                 <div class="emailbox">
                   <label><span> </span>이름</label>
                   <div class="box box1">
-                    <input type="text" name="fname" id="fname" class="email_front" placeholder="성" readonly />
+                    <input type="text" name="mName1" id="fname" class="email_front" placeholder="성" readonly />
                     <em class="ctm">&nbsp;</em>
-                    <input type="text" name="lname" id="lname" class="email_front" placeholder="이름" readonly />
+                    <input type="text" name="mName2" id="lname" class="email_front" placeholder="이름" readonly />
                   </div>
                 </div>
                 <div class="emailbox">
                   <label><span> </span>이메일</label>
                   <div class="box box1">
-                    <input type="text" name="postal_code" id="postal_code" class="email_front" placeholder="이메일 앞자리" />
+                    <input type="text" name="mEmail1" id="email_id" class="email_front" placeholder="이메일 앞자리" />
                     <em class="ctm">@</em>
-                    <select style="width: 150px; margin-right: auto" name="selectEmail" id="selectEmail">
+                    <select style="width: 150px; margin-right: auto" name="mEmail2" id="email_add">
                       <option value="1">직접입력</option>
                       <option value="gmail.com">gmail.com</option>
                       <option value="naver.com" selected>naver.com</option>
                     </select>
-                    <input type="text" name="str_email02" id="str_email02" style="width: 400px" placeholder="이메일 뒷자리" />
+                    <input type="text" name="mEmail2" id="email_add" style="width: 400px" placeholder="이메일 뒷자리" />
                   </div>
                 </div>
                 <div class="emailbox">
                   <label><span> </span>주소 (선택 사항)</label>
                   <div class="box box1">
-                    <input type="text" class="email_front" placeholder="우편번호" />
+                    <input type="text" class="email_front" id="sample2_postcode" name="mAddress1" placeholder="우편번호" />
                     <em class="ctm">&nbsp;</em>
                     <button type="button" onclick="location.href='error404.html'" class="adress_btn" style="  background: #858796; color: #fff; height: 46px; padding: 0px 15px;"> 우편번호 찾기 </button>
                   </div>
                 </div>
                 <div class="adressbox">
                   <div class="box box2">
-                    <input type="text" name="addr1" id="addr1" class="form-control form-control-user" placeholder="기본 주소" />
+                    <input type="text" id="sample2_address" name="mAddress2" class="form-control form-control-user" placeholder="기본 주소" />
                   </div>
                   <div class="box box3" style="margin-top: 7px">
-                    <input type="text" name="addr2" id="addr2" class="form-control form-control-user" placeholder="상세 주소" />
+                    <input type="text" id="sample2_detailAddress" name="mAddress3" class="form-control form-control-user" placeholder="상세 주소" />
                   </div>
                 </div>
                 <div class="receivebox">
