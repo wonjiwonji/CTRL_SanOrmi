@@ -19,12 +19,12 @@ public class CommentAction implements Action {
 		
 		BoardDAO bdao=new BoardDAO();
 		BoardVO bvo=new BoardVO();
-		ArrayList<BoardSet> bdatas = new ArrayList<BoardSet>();
+		ArrayList<BoardSet> selectBs = new ArrayList<BoardSet>();
 		
 		bvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
-		bdatas=bdao.selectOneBoard(bvo);
+		selectBs=bdao.selectOneBoard(bvo);
 		
-		request.getSession().setAttribute("bdatas", bdatas);
+		request.getSession().setAttribute("selectBs", selectBs);
 
 		return forward;
 	}

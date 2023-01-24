@@ -11,7 +11,7 @@ public class InsertQNAAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("freeBoards.jsp");
+		forward.setPath("qna.do");
 		forward.setRedirect(true);
 
 		QNAVO qvo=new QNAVO();

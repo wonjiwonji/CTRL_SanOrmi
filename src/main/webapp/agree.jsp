@@ -1,22 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>산오르미</title>
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-    <link rel="shortcut icon" href="./images/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-    <meta
-      name="keywords"
-      content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive"
-    />
-    <meta name="author" content="FREEHTML5.CO" />
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<title>산오르미</title>
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+<link rel="shortcut icon" href="./images/favicon.ico" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
+<meta name="keywords"
+	content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+<meta name="author" content="FREEHTML5.CO" />
 
-    <!-- 
+<!-- 
    //////////////////////////////////////////////////////
 
    FREE HTML5 TEMPLATE 
@@ -30,143 +28,120 @@
    //////////////////////////////////////////////////////
     -->
 
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:description" content="" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
+<!-- Facebook and Twitter integration -->
+<meta property="og:title" content="" />
+<meta property="og:image" content="" />
+<meta property="og:url" content="" />
+<meta property="og:site_name" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:title" content="" />
+<meta name="twitter:image" content="" />
+<meta name="twitter:url" content="" />
+<meta name="twitter:card" content="" />
 
-    <!-- link start -->
-    <!-- Custom fonts for this template -->
-    <link
-      href="vendor/fontawesome-free/css/all.min.css"
-      rel="stylesheet"
-      type="text/css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-      rel="stylesheet"
-    />
+<!-- link start -->
+<!-- Custom fonts for this template -->
+<link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+	type="text/css" />
+<link
+	href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+	rel="stylesheet" />
 
-    <!-- Custom styles for this template -->
-    <link href="css/sb-admin-2.min.css" rel="stylesheet" />
+<!-- Custom styles for this template -->
+<link href="css/sb-admin-2.min.css" rel="stylesheet" />
 
-    <!-- Custom styles for this page -->
-    <link
-      href="vendor/datatables/dataTables.bootstrap4.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="css/board.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
-      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300"
-      rel="stylesheet"
-      type="text/css"
-    />
+<!-- Custom styles for this page -->
+<link href="vendor/datatables/dataTables.bootstrap4.min.css"
+	rel="stylesheet" />
+<link rel="stylesheet" href="css/board.css" />
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+	integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+	crossorigin="anonymous" />
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300"
+	rel="stylesheet" type="text/css" />
 
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css" />
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css" />
-    <!-- Bootstrap  -->
-    <link rel="stylesheet" href="css/bootstrap.css" />
-    <!-- Superfish -->
-    <link rel="stylesheet" href="css/superfish.css" />
-    <!-- Magnific Popup -->
-    <link rel="stylesheet" href="css/magnific-popup.css" />
-    <!-- Date Picker -->
-    <link rel="stylesheet" href="css/bootstrap-datepicker.min.css" />
-    <!-- CS Select -->
-    <link rel="stylesheet" href="css/cs-select.css" />
-    <link rel="stylesheet" href="css/cs-skin-border.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/sub_layout.css" />
-    <link rel="stylesheet" href="css/styleguide.css" />
-    <link rel="stylesheet" href="css/community.css" />
-    <link rel="stylesheet" href="css/join.css" />
-    <link rel="stylesheet" href="css/reset.css" />
-    <!--  모두의 낚시 -->
+<!-- Animate.css -->
+<link rel="stylesheet" href="css/animate.css" />
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="css/icomoon.css" />
+<!-- Bootstrap  -->
+<link rel="stylesheet" href="css/bootstrap.css" />
+<!-- Superfish -->
+<link rel="stylesheet" href="css/superfish.css" />
+<!-- Magnific Popup -->
+<link rel="stylesheet" href="css/magnific-popup.css" />
+<!-- Date Picker -->
+<link rel="stylesheet" href="css/bootstrap-datepicker.min.css" />
+<!-- CS Select -->
+<link rel="stylesheet" href="css/cs-select.css" />
+<link rel="stylesheet" href="css/cs-skin-border.css" />
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/sub_layout.css" />
+<link rel="stylesheet" href="css/styleguide.css" />
+<link rel="stylesheet" href="css/community.css" />
+<link rel="stylesheet" href="css/join.css" />
+<link rel="stylesheet" href="css/reset.css" />
+<!--  모두의 낚시 -->
 
-    <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
+<!-- Modernizr JS -->
+<script src="js/modernizr-2.6.2.min.js"></script>
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-    <!-- link end -->
+<!-- link end -->
 
-    <meta
-      name="google-site-verification"
-      content="evOF2zL16TFjnMPvfz0bhxri-wWlTG64Qq8Rcf4Rnvo"
-    />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7091309316201192"
-      crossorigin="anonymous"
-    ></script>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta name="HandheldFriendly" content="true" />
-    <meta name="format-detection" content="telephone=no" />
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
-    <meta name="title" content="회원가입약관" />
-    <!-- 임시 변경 예정 -->
-    <meta name="description" content="산오르미" />
-    <!-- 임시 변경 예정 -->
-    <meta name="keywords" content="산오르미" />
-    <!-- 임시 변경 예정 -->
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content=" 회원가입약관" />
-    <meta property="og:site_name" content="산오르미" />
-    <meta property="og:description" content="" />
-    <meta property="og:image" content="https://www.monak.kr/img/monak_og.jpg" />
-    <meta
-      property="og:image:secure_url"
-      content="https://www.monak.kr/img/monak_og.jpg"
-    />
-    <meta property="og:url" content="https://www.monak.kr" />
-    <title>회원가입약관</title>
-    <link rel="canonical" href="https://www.monak.kr" />
-    <link
-      rel="stylesheet"
-      href="https://www.monak.kr/skin/member/basic/style.css?ver=171222"
-    />
-    <!-- 임시링크 변경 예정 -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- NotoSansKR -->
-    <!-- font-family: 'Noto Sans KR', sans-serif; -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- Montserrat -->
-    <!-- font-family: 'Montserrat', sans-serif; -->
-    <link
-      rel="stylesheet"
-      href="https://www.monak.kr/js/font-awesome/css/all.min.css"
-    />
-    <link rel="stylesheet" href="https://www.monak.kr/css/reset.css" />
-    <link rel="stylesheet" href="https://www.monak.kr/css/styleguide.css" />
-    <link rel="stylesheet" href="https://www.monak.kr/css/sub_layout.css" />
-    <link rel="stylesheet" href="https://www.monak.kr/css/header.css" />
-    <link rel="stylesheet" href="https://www.monak.kr/css/footer.css" />
-    <script>
+<meta name="google-site-verification"
+	content="evOF2zL16TFjnMPvfz0bhxri-wWlTG64Qq8Rcf4Rnvo" />
+<script async
+	src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7091309316201192"
+	crossorigin="anonymous"></script>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="HandheldFriendly" content="true" />
+<meta name="format-detection" content="telephone=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=Edge, chrome=1" />
+<meta name="title" content="회원가입약관" />
+<!-- 임시 변경 예정 -->
+<meta name="description" content="산오르미" />
+<!-- 임시 변경 예정 -->
+<meta name="keywords" content="산오르미" />
+<!-- 임시 변경 예정 -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content=" 회원가입약관" />
+<meta property="og:site_name" content="산오르미" />
+<meta property="og:description" content="" />
+<meta property="og:image"
+	content="https://www.monak.kr/img/monak_og.jpg" />
+<meta property="og:image:secure_url"
+	content="https://www.monak.kr/img/monak_og.jpg" />
+<meta property="og:url" content="https://www.monak.kr" />
+<title>회원가입약관</title>
+<link rel="canonical" href="https://www.monak.kr" />
+<link rel="stylesheet"
+	href="https://www.monak.kr/skin/member/basic/style.css?ver=171222" />
+<!-- 임시링크 변경 예정 -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap"
+	rel="stylesheet" />
+<!-- NotoSansKR -->
+<!-- font-family: 'Noto Sans KR', sans-serif; -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap"
+	rel="stylesheet" />
+<!-- Montserrat -->
+<!-- font-family: 'Montserrat', sans-serif; -->
+<link rel="stylesheet"
+	href="https://www.monak.kr/js/font-awesome/css/all.min.css" />
+<link rel="stylesheet" href="https://www.monak.kr/css/reset.css" />
+<link rel="stylesheet" href="https://www.monak.kr/css/styleguide.css" />
+<link rel="stylesheet" href="https://www.monak.kr/css/sub_layout.css" />
+<link rel="stylesheet" href="https://www.monak.kr/css/header.css" />
+<link rel="stylesheet" href="https://www.monak.kr/css/footer.css" />
+<script>
       // 자바스크립트에서 사용하는 전역변수 선언
       var g5_url = 'https://www.monak.kr';
       var g5_bbs_url = 'https://www.monak.kr/bbs';
@@ -178,14 +153,14 @@
       var g5_editor = '';
       var g5_cookie_domain = '.monak.kr';
     </script>
-    <script src="https://www.monak.kr/js/jquery-1.12.4.min.js"></script>
-    <script src="https://www.monak.kr/js/common.js?ver=171222"></script>
-    <script src="https://www.monak.kr/js/wrest.js?ver=171222"></script>
-    <script src="https://www.monak.kr/js/placeholders.min.js"></script>
-    <script src="https://www.monak.kr/js/win_info.js"></script>
-    <script src="https://www.monak.kr/js/header.js"></script>
-    <script src="https://www.monak.kr/js/jquery.cookie.js"></script>
-    <script>
+<script src="https://www.monak.kr/js/jquery-1.12.4.min.js"></script>
+<script src="https://www.monak.kr/js/common.js?ver=171222"></script>
+<script src="https://www.monak.kr/js/wrest.js?ver=171222"></script>
+<script src="https://www.monak.kr/js/placeholders.min.js"></script>
+<script src="https://www.monak.kr/js/win_info.js"></script>
+<script src="https://www.monak.kr/js/header.js"></script>
+<script src="https://www.monak.kr/js/jquery.cookie.js"></script>
+<script>
       (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
         (i[r] =
@@ -209,13 +184,13 @@
       ga('create', 'UA-90588653-1', 'auto');
       ga('send', 'pageview');
     </script>
-    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
-    <script type="text/javascript">
+<script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+<script type="text/javascript">
       if (!wcs_add) var wcs_add = {};
       wcs_add['wa'] = 'b11c224de2ba08';
       wcs_do();
     </script>
-    <script>
+<script>
       //1.모바일앱과 웹구분시 사용js스크립트
       var is_app = false;
       var is_android = false;
@@ -253,92 +228,93 @@
         });
       }
     </script>
-    <style>
-      .regi_wrap {
-        max-width: 1200px;
-        padding: 40px 15px;
-        margin: 0 auto;
-      }
-      #fregister p {
-        line-height: 130%;
-      }
+<script type="text/javascript"
+	src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+      $(document).ready(function() {
+         $("#cbx_chkAll").click(function() {
+            if($("#cbx_chkAll").is(":checked")) $("input[name=chk]").prop("checked", true);
+            else $("input[name=chk]").prop("checked", false);
+         });
+         
+         $("input[name=chk]").click(function() {
+            var total = $("input[name=chk]").length;
+            var checked = $("input[name=chk]:checked").length;
+            
+            if(total != checked) $("#cbx_chkAll").prop("checked", false);
+            else $("#cbx_chkAll").prop("checked", true); 
+         });
+      });
+</script>
+<style>
+.regi_wrap {
+	max-width: 1200px;
+	padding: 40px 15px;
+	margin: 0 auto;
+}
 
-      @media screen and (max-width: 600px) {
-        #fregister .fregister_agree {
-          position: unset;
-          border-top: 1px solid #dbdbdb;
-          background: #f8f8f8;
-        }
-        #fregister h2,
-        #fregister p,
-        #fregister .fregister_agree label {
-          font-size: 14px;
-        }
-        #fregister h2 {
-          padding: 15px;
-        }
-        table {
-          font-size: 14px;
-        }
-        #fregister_private div {
-          padding: 15px;
-        }
-      }
+#fregister p {
+	line-height: 130%;
+}
 
-      @media screen and (max-width: 450px) {
-        #fregister h2,
-        #fregister p,
-        #fregister .fregister_agree label {
-          font-size: 13px;
-        }
-        table {
-          font-size: 13px;
-        }
-      }
-    </style>
-  </head>
+@media screen and (max-width: 600px) {
+	#fregister .fregister_agree {
+		position: unset;
+		border-top: 1px solid #dbdbdb;
+		background: #f8f8f8;
+	}
+	#fregister h2, #fregister p, #fregister .fregister_agree label {
+		font-size: 14px;
+	}
+	#fregister h2 {
+		padding: 15px;
+	}
+	table {
+		font-size: 14px;
+	}
+	#fregister_private div {
+		padding: 15px;
+	}
+}
 
-  <body>
-    <div id="mg-fh5co-wrapper">
-      <div id="fh5co-page">
-      
-	<%-- 헤더임 --%>
-	<jsp:include page="header.jsp"/>
-	<%-- 헤더라고 --%>
+@media screen and (max-width: 450px) {
+	#fregister h2, #fregister p, #fregister .fregister_agree label {
+		font-size: 13px;
+	}
+	table {
+		font-size: 13px;
+	}
+}
+</style>
+</head>
 
-        <!-- end:header-top -->
+<body>
+	<div id="mg-fh5co-wrapper">
+		<div id="fh5co-page">
 
-        <div id="main">
-          <div id="fh5co-contact" class="fh5co-section-gray">
-            <div class="container">
-              <!-- 회원가입약관 동의 시작 { -->
-              <div class="regi_wrap">
-                <form
-                  name="fregister"
-                  id="fregister"
-                  action="register.do"
-                  onsubmit="fregister_submit(this);"
-                  autocomplete="off"
-                >
-                  <p>
-                    회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야
-                    회원가입 하실 수 있습니다.
-                  </p>
-                  <div id="fregister_chkall">
-                    <label for="chk_all">전체선택</label>
-                    <input
-                      type="checkbox"
-                      name="chk_all"
-                      value="1"
-                      id="chk_all"
-                    />
-                  </div>
-                  <section id="fregister_term">
-                    <h2>
-                      <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                      회원가입약관
-                    </h2>
-                    <textarea readonly>
+			<%-- 헤더임 --%>
+			<jsp:include page="header.jsp" />
+			<%-- 헤더라고 --%>
+
+			<!-- end:header-top -->
+
+			<div id="main">
+				<div id="fh5co-contact" class="fh5co-section-gray">
+					<div class="container">
+						<!-- 회원가입약관 동의 시작 { -->
+						<div class="regi_wrap">
+							<form name="fregister" id="fregister" action="register.do"
+								onsubmit="fregister_submit(this);" autocomplete="off">
+								<p>회원가입약관 및 개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.</p>
+								<div id="fregister_chkall">
+									<label for="chk_all">전체선택</label> <input type="checkbox"
+										id="cbx_chkAll" value="1" id="chk_all" />
+								</div>
+								<section id="fregister_term">
+									<h2>
+										<i class="fa fa-check-square-o" aria-hidden="true"></i> 회원가입약관
+									</h2>
+									<textarea readonly>
 제1조(목적) 이 약관은 그래비티(서비스 사업자)가 운영하는 산오르미(이하 “산오르미”이라 한다)에서 제공하는 인터넷 관련 서비스(이하 “서비스”라 한다)를 이용함에 있어 사이버 산오르미과 이용자의 권리․의무 및 책임사항을 규정함을 목적으로 합니다.
 
 제2조(정의)
@@ -512,102 +488,83 @@
   ① “산오르미”과 이용자 간에 발생한 전자상거래 분쟁에 관한 소송은 제소 당시의 “산오르미”의 주소에 의하고, 주소가 없는 경우에는 거소를 관할하는 지방법원의 전속관할로 합니다. 다만, 제소 당시 이용자의 주소 또는 거소가 분명하지 않거나 외국 거주자의 경우에는 민사소송법상의 관할법원에 제기합니다.
 
   ② “산오르미”과 이용자 간에 제기된 전자상거래 소송에는 한국법을 적용합니다.
-</textarea
-                    >
-                    <fieldset class="fregister_agree">
-                      <label for="agree11"
-                        >회원가입약관의 내용에 동의합니다.</label
-                      >
-                      <input
-                        type="checkbox"
-                        name="agree"
-                        value="1"
-                        id="agree11"
-                      />
-                    </fieldset>
-                  </section>
-                  <section id="fregister_private">
-                    <h2>
-                      <i class="fa fa-check-square-o" aria-hidden="true"></i>
-                      개인정보처리방침안내
-                    </h2>
-                    <div>
-                      <table>
-                        <caption>
-                          개인정보처리방침안내
-                        </caption>
-                        <thead>
-                          <tr>
-                            <th>목적</th>
-                            <th>항목</th>
-                            <th>보유기간</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          <tr>
-                            <td>이용자 식별 및 본인여부 확인</td>
-                            <td>아이디, 이름, 비밀번호</td>
-                            <td>회원 탈퇴 시까지</td>
-                          </tr>
-                          <tr>
-                            <td>
-                              고객서비스 이용에 관한 통지,<br />
-                              CS대응을 위한 이용자 식별
-                            </td>
-                            <td>연락처 (이메일, 휴대전화번호)</td>
-                            <td>회원 탈퇴 시까지</td>
-                          </tr>
-                        </tbody>
-                      </table>
-                    </div>
-                    <fieldset class="fregister_agree">
-                      <label for="agree21"
-                        >개인정보처리방침안내의 내용에 동의합니다.</label
-                      >
-                      <input
-                        type="checkbox"
-                        name="agree2"
-                        value="1"
-                        id="agree21"
-                      />
-                    </fieldset>
-                  </section>
-                  <div class="button_wrap tac">
-                    <input
-                      type="submit"
-                      class="btn_submit join_btn"
-                      value="이메일 회원가입"
-                    />
-                    <!--
+</textarea>
+									<fieldset class="fregister_agree">
+										<label for="agree11">회원가입약관의 내용에 동의합니다.</label> <input
+											type="checkbox" name="chk" value="1" id="agree11" />
+									</fieldset>
+								</section>
+								<section id="fregister_private">
+									<h2>
+										<i class="fa fa-check-square-o" aria-hidden="true"></i>
+										개인정보처리방침안내
+									</h2>
+									<div>
+										<table>
+											<caption>개인정보처리방침안내</caption>
+											<thead>
+												<tr>
+													<th>목적</th>
+													<th>항목</th>
+													<th>보유기간</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>이용자 식별 및 본인여부 확인</td>
+													<td>아이디, 이름, 비밀번호</td>
+													<td>회원 탈퇴 시까지</td>
+												</tr>
+												<tr>
+													<td>고객서비스 이용에 관한 통지,<br /> CS대응을 위한 이용자 식별
+													</td>
+													<td>연락처 (이메일, 휴대전화번호)</td>
+													<td>회원 탈퇴 시까지</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+									<fieldset class="fregister_agree">
+										<label for="agree21">개인정보처리방침안내의 내용에 동의합니다.</label> <input
+											type="checkbox" name="chk" value="1" id="agree21" />
+									</fieldset>
+								</section>
+								<div class="button_wrap tac">
+									<input type="submit" class="btn_submit join_btn"
+										value="이메일 회원가입" />
+									<!--
         <button type="submit" class="btn_submit facebook_btn write_btn" value="페이스북 회원가입">
             <i class="fab fa-facebook"></i>
             페이스북 회원가입
         </button>
         -->
-                  </div>
-                </form>
-                <script>
+								</div>
+							</form>
+							<script>
                   function fregister_submit(f) {
-                    if (!f.agree.checked) {
+                    if (!f.agree11.checked) {
                       alert(
                         '회원가입약관의 내용에 동의하셔야 회원가입 하실 수 있습니다.',
                       );
-                      f.agree.focus();
+                      f.agree11.focus();
+                      event.preventDefault();
                       return false;
+                      
                     }
 
-                    if (!f.agree2.checked) {
+                    if (!f.agree21.checked) {
                       alert(
                         '개인정보처리방침안내의 내용에 동의하셔야 회원가입 하실 수 있습니다.',
                       );
-                      f.agree2.focus();
+                      f.agree21.focus();
+                      event.preventDefault();
                       return false;
                     }
 
                     return true;
                   }
 
-                  jQuery(function ($) {
+                /*   jQuery(function ($) {
                     // 모두선택
                     $('input[name=chk_all]').click(function () {
                       if ($(this).prop('checked')) {
@@ -616,18 +573,18 @@
                         $('input[name^=agree]').prop('checked', false);
                       }
                     });
-                  });
+                  }); */
                 </script>
-              </div>
-            </div>
-          </div>
-          <!-- } 회원가입 약관 동의 끝 -->
-        </div>
-      </div>
-    </div>
-	<%-- 푸터임 --%>
-	<jsp:include page="footer.jsp"/>
-	<%-- 푸터라고 --%>
-  </body>
-  
+						</div>
+					</div>
+				</div>
+				<!-- 회원가입 약관 동의 끝 -->
+			</div>
+		</div>
+	</div>
+	<!-- 푸터임 -->
+	<jsp:include page="footer.jsp" />
+	<!-- 푸터라고 -->
+</body>
+
 </html>
