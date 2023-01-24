@@ -28,6 +28,9 @@ public class BoardDAO {
 	final String SELECTONE_BOARD = "SELECT RPAD(SUBSTR(B.B_ID, 1, 3), LENGTH(B.B_ID), '*') AS B_ID, B.B_TITLE, B.B_CONTENT, B.B_DATE, B.B_CNT, COUNT(BC.BC_NUM) AS C_CNT FROM BOARD B, BCOMMENT BC WHERE B.B_NUM=? AND B.B_NUM = BC.B_NUM";
 	// SELECTALL_BOARD; 게시글 전체보기 쿼리문 ( 게시글 목록 시 나오는 정보 )
 	final String SELECTALL_BOARD = "SELECT B_NUM, B_TITLE, B_CNT, RPAD(SUBSTR(B_ID, 1, 3), LENGTH(B_ID), '*') AS B_ID, B_CONTENT, C_CNT FROM BOARD ORDER BY B_NUM DESC";
+	// SELECTALL_MY_PAGE; 내가 쓴 글 전체보기 쿼리문 
+	final String SELECTALL_MY_PAGE = "SELECT B_ID, B_TITLE, B_CONTENT, B_DATE, B_CNT,  C_CNT FROM BOARD  WHERE B_ID=? ORDER BY B_NUM DESC";
+	
 	// INSERT_BCOMMENT; 댓글 등록 쿼리문
 	final String INSERT_BCOMMENT = "INSERT INTO BCOMMENT (BC_ID, B_NUM,BC_CONTENT,BC_GROUP, BC_DATE) VALUES(?,?,?,(SELECT COALESCE(MAX(BC_GROUP),0)+1 FROM BCOMMENT AS BC_GROUP),NOW())";
 	// INSERT_BCCOMMENT; 대댓글 등록 쿼리문
@@ -271,6 +274,32 @@ public class BoardDAO {
 		return bList; // ArrayList bList 반환
 	}
 
+	
+	// selectAll_MY_PAGE ; 내가 쓴 글 전체 보기 메서드
+	public ArrayList<BoardVO> selectAllMyPage(BoardVO bvo) { // 내가 쓴 글 전체보기 메서드
+
+		ArrayList<BoardVO> bList = new ArrayList<>(); // <BoardVO> 타입의 ArrayList bList 생성
+		conn = JDBCUtil.connect(); // JDBCUtil 연결
+		try {
+			pstmt = conn.prepareStatement(SELECTALL_MY_PAGE); // SELECTALL_BOARD; 게시글 전체 보기
+			pstmt.setString(1, bvo.getbId()); // 작성자
+			ResultSet rs = pstmt.executeQuery(); // 실행결과 rs에 저장
+			while (rs.next()) { // 저장할 정보가 남아있는 동안
+				BoardVO board = new BoardVO(); // 새로운 BoardVO 객체 board 생성
+				board.setbNum(rs.getInt("B_NUM")); // 게시글 번호 저장 
+				board.setbTitle(rs.getString("B_TITLE")); // 게시글 제목 저장
+				board.setbId(rs.getString("B_ID")); // 작성자 저장
+				board.setbCnt(rs.getInt("B_CNT")); // 게시글 조회수 저장
+				board.setcCnt(rs.getInt("C_CNT")); // 댓글 수 저장
+				bList.add(board); // ArrayList bList에 board 값들 add해줌
+
+			}
+		} catch (SQLException e) { // 위 try문 실행 중 에러(SQL) 발생 시
+			e.printStackTrace(); // 무슨 에러인지 출력
+		}
+		JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
+		return bList; // ArrayList bList 반환
+	}
 	// selectOne ; 댓글 삭제를 위해 BC_NUM을 이용하여 BC_NUM, BC_GROUP, BC_SQE를 조회
 	public BCommentVO selectOne(BCommentVO bcvo) { // bcvo ; bcNum 필요
 		BCommentVO data = null;
