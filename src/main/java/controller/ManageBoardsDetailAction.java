@@ -18,7 +18,7 @@ public class ManageBoardsDetailAction implements Action {
 		ReportVO rvo = new ReportVO();
 		ReportVO srvo = new ReportVO();
 		
-		rvo.setrNum(Integer.parseInt(request.getParameter("rNum")));
+		rvo.setrId(request.getParameter("rId"));
 		// rNum인지 rId인지 확인 필요
 		
 		srvo=rdao.selectOne(rvo);
