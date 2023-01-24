@@ -137,11 +137,11 @@ pageEncoding="UTF-8"%>
                   </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="rvo" items="${rList}">
+                <c:forEach var="vo" items="${rList}">
                   <tr>
-                    <td>${rNum }</td>
-                    <td><a href="manageBoardsDetail.do?rNum=${rList.rNum }">${rList.rTitle }</a></td>
-                    <td>${rTargetId }</td>
+                    <td>${vo.rNum }</td>
+                    <td><a href="manageBoardsDetail.do?rNum=${vo.rNum }">${vo.rTitle }</a></td>
+                    <td>${vo.rTargetId }</td>
                   </tr>
                   </c:forEach>
                 </tbody>

@@ -137,12 +137,12 @@
                   </tr>
                 </thead>
                 <tbody>
-                <c:forEach var="mvo" items="${mList}">
+                <c:forEach var="vo" items="${mList}">
                   <tr>
-                    <td><a href="manageMemDetail.do?id=${mList.id }">${mList.id }</a></td>
-                    <td>${mEmail }</td>
-                    <td>${mName }</td>
-                    <td>${mPw }</td>
+                    <td><a href="manageMemDetail.do?id=${vo.id }">${vo.id }</a></td>
+                    <td>${vo.mEmail }</td>
+                    <td>${vo.mName }</td>
+                    <td>${vo.mPw }</td>
                   </tr>
                   </c:forEach>
                 </tbody>
