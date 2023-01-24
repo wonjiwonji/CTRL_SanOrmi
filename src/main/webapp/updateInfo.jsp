@@ -123,7 +123,7 @@ pageEncoding="UTF-8"%>
                 <div class="Idbox">
                   <label><span> </span>아이디</label>
                   <div class="box">
-                    <input type="text" name="id" value="" id="reg_mb_nick" class="nickname" required maxlength="20" placeholder="ID (변경 불가)" oninput="init_chk_nick();" autocomplete="off" readonly />
+                    <input type="text" name="id" value="${sessionScope.id }" id="reg_mb_nick" class="nickname" required maxlength="20" placeholder="ID (변경 불가)" oninput="init_chk_nick();" autocomplete="off" readonly />
                   </div>
                 </div>
                 <div class="passwordbox">
