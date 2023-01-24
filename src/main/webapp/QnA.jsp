@@ -115,7 +115,7 @@
 												</tr>
 											</thead>
 											<tbody>
-												<c:forEach var="dto" items="${datas }">
+												<c:forEach var="dto" items="${qList }">
 													<tr>
 														<td>${dto.bNum }</td>
 														<td><a href="view.do?bNum=${dto.bNum }">${dto.bTitle }</a></td>
