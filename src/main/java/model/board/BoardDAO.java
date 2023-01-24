@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.common.JDBCUtil;
-import model.member.MemberVO;
 
 // 시퀀스 넘버 넘겨주세요!
 
@@ -257,7 +256,7 @@ public class BoardDAO {
 			pstmt.setInt(1, bcvo.getBcNum()); // 댓글 번호
 			ResultSet rs = pstmt.executeQuery(); // pstmt 실행, 실행한 결과 rs에 저장
 			if (rs.next()) { // rs에 정보가 있는 동안
-				data = new BCommentVO(); // MemberVO 새로운 객체 data 생성
+				data = new BCommentVO(); // BCommentVO 새로운 객체 data 생성
 				data.setBcNum(rs.getInt("BC_NUM")); // 댓글 번호
 				data.setBcGroup(rs.getInt("BC_GROUP")); // 댓글 그룹
 				data.setBcSQE(rs.getInt("BC_SQE")); // 댓글 시퀀스
