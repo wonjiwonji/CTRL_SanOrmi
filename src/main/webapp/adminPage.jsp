@@ -95,13 +95,13 @@
 
         <!-- Nav Item - Tables -->
         <li class="nav-item">
-          <a class="nav-link" href="manageBoard.do">
+          <a class="nav-link" href="manageBoards.do">
             <i class="fas fa-fw fa-table"></i> <span>게시글 관리</span></a
           >
         </li>
 
         <!-- Nav Item - Tables -->
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="manageMem.do">
             <i class="fas fa-fw fa-table"></i> <span>회원 관리</span></a
           >

@@ -33,7 +33,7 @@ var ctx = document.getElementById('myBarChart');
 var myBarChart = new Chart(ctx, {
     type: 'bar',
     data: {
-        labels: ['등산복', '가입', '동호회', '등산로', '산책', '추천'],
+        labels: ['apple', 'banana', 'kiwi', 'grape', 'melon', 'plum'],
         datasets: [
             {
                 label: 'Revenue',

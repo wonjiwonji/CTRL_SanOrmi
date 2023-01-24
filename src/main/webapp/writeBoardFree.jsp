@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -83,7 +85,8 @@ pageEncoding="UTF-8"%>
         <form action="insertBoard.do">
           <div>
             <label for="name">작성자:</label>
-            <input type="text" class="form-control" id="name" placeholder="작성자를 입력하세요" name="bId" required />
+            <!-- <span class= "form-control" name="bId">${sessionScope.id }</span> -->
+            <input type="text" value="${sessionScope.id }" class="form-control" id="name" name="bId" required />
           </div>
           <div class="mb-3 mt-3">
             <label for="subject">제목:</label>

@@ -83,15 +83,16 @@ pageEncoding="UTF-8"%>
         <form action="insertQNA.do">
           <div>
             <label for="name">작성자:</label>
-            <input type="text" class="form-control" id="name" placeholder="작성자를 입력하세요" name="bId" required />
+            <!-- <span class= "form-control" name="bId">${sessionScope.id }</span> -->
+            <input type="text" value="${sessionScope.id }" class="form-control" id="name" name="qId" required />
           </div>
           <div class="mb-3 mt-3">
             <label for="subject">제목:</label>
-            <input type="text" class="form-control" id="subject" placeholder="제목을 입력하세요" name="bTitle" required />
+            <input type="text" class="form-control" id="subject" placeholder="제목을 입력하세요" name="qTitle" required />
           </div>
           <div class="mb-3 mt-3">
             <label for="content">내용:</label>
-            <textarea class="form-control" rows="5" id="content" placeholder="내용을 입력하세요" name="bContent"></textarea>
+            <textarea class="form-control" rows="5" id="content" placeholder="내용을 입력하세요" name="qContent"></textarea>
           </div>
           <button type="submit" class="btncolor">작성완료</button>
           <button class="btncolor2" href="qna.do">목록</button>

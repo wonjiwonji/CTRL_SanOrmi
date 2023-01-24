@@ -105,7 +105,7 @@
 					<div class="bottom">
 						<ul class="list_wrap">
 							<div class="left_top_02">
-								<h5 class="sub_eng mt">PREE BOARD</h5>
+								<h5 class="sub_eng mt">FREE BOARD</h5>
 								<h3 class="sub_title">자유게시판</h3>
 							</div>
 							<!-- DataTales Example -->
@@ -124,12 +124,12 @@
 												</tr>
 											</thead>
 											<tbody>
-												<c:forEach var="dto" items="${bList }">
+												<c:forEach var="vo" items="${bList}">
 													<tr>
-														<td>${dto.bNum }</td>
-														<td><a href="view.do?bNum=${dto.bNum }">${dto.bTitle }</a></td>
-														<td>${dto.bId }</td>
-														<td>${dto.bCnt }</td>
+														<td>${bList.bNum }</td>
+														<td><a href="view.do?bNum=${bList.bNum }">${bList.bTitle }</a></td>
+														<td>${bList.bId }</td>
+														<td>${bList.bCnt }</td>
 													</tr>
 												</c:forEach>
 											</tbody>

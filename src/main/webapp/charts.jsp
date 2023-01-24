@@ -63,7 +63,7 @@
         </div>
 
         <!-- Nav Item - Charts -->
-        <li class="nav-item">
+        <li class="nav-item active">
           <a class="nav-link" href="charts.do">
             <i class="fas fa-fw fa-chart-area"></i> <span>통계</span></a
           >
@@ -77,7 +77,7 @@
         </li>
 
         <!-- Nav Item - Tables -->
-        <li class="nav-item active">
+        <li class="nav-item">
           <a class="nav-link" href="manageMem.do">
             <i class="fas fa-fw fa-table"></i> <span>회원 관리</span></a
           >
