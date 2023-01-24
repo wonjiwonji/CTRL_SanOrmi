@@ -205,20 +205,12 @@ public class FrontController extends HttpServlet {
 			try {
 				forward=new AdminPageAction().execute(request, response);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		else if(command.equals("/agree.do")) {
 			try {
 				forward=new AgreeAction().execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		else if(command.equals("/blank.do")) {
-			try {
-				forward=new BlankAction().execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
