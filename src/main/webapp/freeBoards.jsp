@@ -126,10 +126,10 @@
 											<tbody>
 												<c:forEach var="vo" items="${bList}">
 													<tr>
-														<td>${bList.bNum }</td>
-														<td><a href="view.do?bNum=${bList.bNum }">${bList.bTitle }</a></td>
-														<td>${bList.bId }</td>
-														<td>${bList.bCnt }</td>
+														<td>${vo.bNum }</td>
+														<td><a href="view.do?bNum=${vo.bNum }">${vo.bTitle }</a></td>
+														<td>${vo.bId }</td>
+														<td>${vo.bCnt }</td>
 													</tr>
 												</c:forEach>
 											</tbody>
