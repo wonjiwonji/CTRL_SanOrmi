@@ -229,12 +229,12 @@
                 ><i class="fas fa-download fa-sm text-white-50"></i> 돌아가기</a
               >
               <a
-                href="#"
+                href="cancleReport.do"
                 class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm"
-                ><i class="fas fa-download fa-sm text-white-50"></i> 임시버튼</a
+                ><i class="fas fa-download fa-sm text-white-50"></i> 철회하기</a
               >
               <a
-                href="#"
+                href="acceptReport.do"
                 class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
                 ><i class="fas fa-download fa-sm text-white-50"></i> 삭제하기</a
               >
@@ -256,7 +256,7 @@
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              B_NUM
+                              ${bNum }
                             </div>
                             <br />
                           </div>
@@ -279,7 +279,7 @@
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              B_ID
+                              ${bId }
                             </div>
                             <br />
                           </div>
@@ -303,7 +303,7 @@
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              B_CNT
+                              ${bCnt }
                             </div>
                             <br />
                           </div>
@@ -324,7 +324,7 @@
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              B_TITLE
+                              ${bTitle }
                             </div>
                             <br />
                           </div>
@@ -359,7 +359,7 @@
                   >
                     내용
                   </div>
-                  상처를 치료해줄 사람 어디 없나 가만히 놔두다간 끊임없이 덧나 사랑도 사람도 너무나도 겁나 혼자인게 무서워 난 잊혀질까 두려워상처를 치료해줄 사람 어디 없나 가만히 놔두다간 끊임없이 덧나 사랑도 사람도 너무나도 겁나 혼자인게 무서워 난 잊혀질까 두려워 언제나 외톨이 맘의 문을 닫고 슬픔을 등에 지고 살아가는 바보 두 눈을 감고 두 귀를 막고 캄캄한 어둠속에 내 자신을 가둬 365일 1년 내내 방황하는 내 영혼의 조작 키를 잡은 Jack Sparrow 몰아치는 Hurricane 졸라매는 허리끈에 방향감을 상실하고 길을 잃은 소리꾼 내 안에 숨어 있는 또 다른 나와 싸워 그녀가 떠나갈때 내게 말했었지 너는 곁에 있어도 있는 게 아닌것 같다고 만지면 베어버리는 칼날같은 사람 심장이 얼어붙은 차가웠던 사랑 그래 1분 1초가 사는게 사는게 아냐 매일 매일이 너무나 두려워 M'aider누가 날 좀 꺼내줘
+                  ${bContent }
 					<br />
                 </div>
               </div>
