@@ -159,6 +159,42 @@ public class FrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/deleteQComment.do")) {
+			try {
+				forward=new DeleteQCommentAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/communityKing.do")) {
+			try {
+				forward=new CommunityKingAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/report.do")) {
+			try {
+				forward=new ReportAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/acceptReport.do")) {
+			try {
+				forward=new AcceptReportAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/cancleReport.do")) {
+			try {
+				forward=new CancleReportAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
 		
 		
 		

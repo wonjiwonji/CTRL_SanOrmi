@@ -3,25 +3,24 @@ package controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import model.board.BCommentVO;
 import model.board.BoardDAO;
+import model.board.BoardVO;
+import model.report.ReportDAO;
+import model.report.ReportVO;
 
-public class DeleteBCommentAction implements Action {
+public class CancleReportAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("view.do");
+		forward.setPath("manageBoards.jsp");
 		forward.setRedirect(true);
 
-		BCommentVO bcvo=new BCommentVO();
-		BoardDAO bdao=new BoardDAO();
-		
-		bcvo.setBcNum(Integer.parseInt(request.getParameter("bcNum")));
-		
-		BCommentVO dbcvo=bdao.selectOne(bcvo);
-		bdao.deleteBComment(dbcvo);
+		ReportVO rvo=new ReportVO();
+		ReportDAO rdao=new ReportDAO();
+		rvo.setrNum(Integer.parseInt(request.getParameter("rNum")));
+
+		rdao.delete(rvo);
 		return forward;
 	}
-
 }
