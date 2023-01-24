@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class QNASet {
 
-	private QNAVO qna;
-	private ArrayList<QCommentVO> qcList;
+	private QNAVO qna; // QNAVO qna
+	private ArrayList<QCommentVO> qcList; // ArrayList<QCommentVO> qcList
 	public QNAVO getQna() {
 		return qna;
 	}

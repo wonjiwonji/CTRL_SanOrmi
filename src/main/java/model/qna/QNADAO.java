@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import model.board.BoardVO;
 import model.common.JDBCUtil;
 
 // 시퀀스 넘버 넘겨주세요!
@@ -17,6 +18,9 @@ public class QNADAO {
 	final String INSERT_QNA = "INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES(?,?,?, NOW())";
 	// UPDATE_QNA; QNA 게시글 수정 쿼리문
 	final String UPDATE_QNA = "UPDATE QNA SET Q_TITLE=?,Q_CONTENT=? WHERE Q_NUM=?";
+	
+	// UPDATE_QNA_CNT; 게시글 조회수+ 쿼리문
+		final String UPDATE_QNA_CNT = "UPDATE QNA SET Q_CNT = Q_CNT+1 WHERE Q_NUM=?";
 	// DELETE_QNA; QNA 게시글 삭제 쿼리문
 	final String DELETE_QNA = "DELETE FROM QNA WHERE Q_NUM=?";
 	// SELECTONE_QNA; QNA 게시글 상세보기 쿼리문 (게시글 하나 클릭 시 나오는 정보)
@@ -131,6 +135,23 @@ public class QNADAO {
 		return true; // true 반환
 	}
 
+	// updateqCnt ; 게시글 조회수 변경
+	public boolean updatebCnt(QNAVO qvo) { // qvo ; qNum 필요
+		conn = JDBCUtil.connect(); // JDBCUtil 연결
+		try {
+			pstmt = conn.prepareStatement(UPDATE_QNA_CNT); // UPDATE_QNA_CNT ; 게시글 조회수 변경
+			pstmt.setInt(1, qvo.getqNum()); // 게시글 번호
+			pstmt.executeUpdate(); // 실행
+		} catch (SQLException e) {
+			e.printStackTrace();
+			return false;
+		}
+		JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
+		return true;
+	}
+
+	
+	
 	// deleteQNA; 게시글 삭제
 	public boolean deleteQNA(QNAVO qvo) { // qvo; qNum 필요
 		conn = JDBCUtil.connect(); // JDBCUtil 연결
@@ -158,58 +179,58 @@ public class QNADAO {
 		try {
 			pstmt = conn.prepareStatement(SELECTONE_QNA); // SELECTONE_QNA; 게시글 상세보기
 			pstmt.setInt(1, qvo.getqNum()); // pstmt에 qNum 저장
-			ResultSet rs = pstmt.executeQuery();
-			if (rs.next()) {
+			ResultSet rs = pstmt.executeQuery(); // 실행결과 rs에 저장
+			if (rs.next()) { // 저장할 값이 남아있다면
 				QNASet qs = new QNASet(); // QNASet 객체 qs 생성
 				QNAVO qna = new QNAVO(); // QNAVO 객체 qna 생성
 
-				qna.setqNum(qvo.getqNum());
+				qna.setqNum(qvo.getqNum()); // 게시글 번호 저장
 
-				qna.setqId(rs.getString("Q_ID"));
-				qna.setqTitle(rs.getString("Q_TITLE"));
-				qna.setqContent(rs.getString("Q_CONTENT"));
-				qna.setqDate(rs.getDate("Q_DATE"));
+				qna.setqId(rs.getString("Q_ID")); // 게시글 작성자 저장
+				qna.setqTitle(rs.getString("Q_TITLE")); // 게시글 제목 저장
+				qna.setqContent(rs.getString("Q_CONTENT")); // 게시글 내용 저장
+				qna.setqDate(rs.getDate("Q_DATE")); // 게시글 작성일 저장
 				// B_DATE
-				qna.setqCnt(rs.getInt("Q_CNT"));
-				qna.setcCnt(rs.getInt("C_CNT"));
-				qs.setQna(qna);
+				qna.setqCnt(rs.getInt("Q_CNT")); // 게시글 조회수 저장
+				qna.setcCnt(rs.getInt("C_CNT")); // 댓글 수 저장
+				qs.setQna(qna); // setQna 해줌
 
 				pstmt = conn.prepareStatement(SELECTALL_QCOMMENT); // SELECTALL_QCOMMENT; 댓글 전체 보기
 				pstmt.setInt(1, qvo.getqNum()); // pstmt에 qNum 저장
-				ResultSet rs2 = pstmt.executeQuery();
+				ResultSet rs2 = pstmt.executeQuery(); // 실행결과 rs2에 저장
 
 				ArrayList<QCommentVO> qcList = new ArrayList<QCommentVO>(); // <QCommentVO> 타입의 ArrayList qcList 생성
-				while (rs2.next()) {
+				while (rs2.next()) { // 저장할 정보가 남아있는 동안
 					QCommentVO qcomment = new QCommentVO();// QCommentVO 객체 qcomment 생성
 
-					qcomment.setQcContent(rs2.getString("QC_CONTENT"));
-					qcomment.setQcID(rs2.getString("QC_ID"));
-					qcomment.setQcGroup(qvo.getQcvo().getQcGroup());
-					qcomment.setqNum(qvo.getqNum());
-					qcomment.setQcDate(rs2.getDate("QC_DATE"));
-					qcList.add(qcomment);
+					qcomment.setQcContent(rs2.getString("QC_CONTENT")); // 댓글 내용 저장
+					qcomment.setQcID(rs2.getString("QC_ID")); // 댓글 작성자 저장
+					qcomment.setQcGroup(qvo.getQcvo().getQcGroup()); // 댓글 그룹 저장
+					qcomment.setqNum(qvo.getqNum()); // 게시글 번호 저장
+					qcomment.setQcDate(rs2.getDate("QC_DATE")); // 댓글 작성일 저장
+					qcList.add(qcomment); // qc리스트에 위의 값들을 add해줌
 
 					pstmt = conn.prepareStatement(SELECTALL_QCCOMMENT); // SELECTALL_QCCOMMENT; 대댓글 전체보기
 					pstmt.setInt(1, qvo.getqNum()); // pstmt에 qNum 저장
 					pstmt.setInt(2, qvo.getQcvo().getQcGroup()); // pstmt에 qcGroup저장
-					ResultSet rs3 = pstmt.executeQuery();
+					ResultSet rs3 = pstmt.executeQuery(); // 실행결과 rs3에 저장
 
 					ArrayList<QCCommentVO> qccList = new ArrayList<QCCommentVO>(); // <QCCommentVO> 타입의 ArrayList
 																					// qccList 생성
 					while (rs3.next()) {
 						QCCommentVO qccomment = new QCCommentVO(); // QCCommentVO 객체 qccomment생성
 
-						qccomment.setQccContent(rs3.getString("QC_CONTENT"));
-						qccomment.setQccID(rs3.getString("QC_ID"));
-						qccomment.setqNum(qvo.getqNum());
-						qccomment.setQccSqe(rs3.getInt("QC_SQE"));
-						qccomment.setQccGroup(qvo.getQcvo().getQcGroup());
-						qccomment.setQccDate(rs3.getDate("QC_DATE"));
-						qccList.add(qccomment);
+						qccomment.setQccContent(rs3.getString("QC_CONTENT")); // 대댓글 내용 저장
+						qccomment.setQccID(rs3.getString("QC_ID")); // 대댓글 작성자 저장
+						qccomment.setqNum(qvo.getqNum()); // 게시글 번호 저장 
+						qccomment.setQccSqe(rs3.getInt("QC_SQE")); // 대댓글 시퀀스 저장
+						qccomment.setQccGroup(qvo.getQcvo().getQcGroup()); // 대댓글 그룹 저장
+						qccomment.setQccDate(rs3.getDate("QC_DATE")); // 대댓글 작성일 저장
+						qccList.add(qccomment); // qccList에 위의 값들을 add해줌
 					}
-					qcomment.setQccList(qccList);
+					qcomment.setQccList(qccList); // setQccList해줌
 				}
-				qs.setQcList(qcList);
+				qs.setQcList(qcList); // setQcList해줌
 
 				datas.add(qs); // ArrayList datas에 qs 값들 add해줌
 			}
@@ -228,14 +249,14 @@ public class QNADAO {
 		conn = JDBCUtil.connect();// JDBCUtil 연결
 		try {
 			pstmt = conn.prepareStatement(SELECTALL_QNA);// SELECTALL_QNA; 게시글 전체 보기
-			ResultSet rs = pstmt.executeQuery();
-			while (rs.next()) {
-				QNAVO qna = new QNAVO();
-				qna.setqNum(rs.getInt("Q_NUM"));
-				qna.setqTitle(rs.getString("Q_TITLE"));
-				qna.setqId(rs.getString("Q_ID"));
-				qna.setqCnt(rs.getInt("Q_CNT"));
-				qna.setcCnt(rs.getInt("C_CNT"));
+			ResultSet rs = pstmt.executeQuery(); // 실행결과 rs에 저장
+			while (rs.next()) { // 저장할 정보가 있는 동안
+				QNAVO qna = new QNAVO(); // QNAVO의 객체 qna 생성
+				qna.setqNum(rs.getInt("Q_NUM")); // 게시글 번호 저장
+				qna.setqTitle(rs.getString("Q_TITLE")); // 게시글 제목 저장
+				qna.setqId(rs.getString("Q_ID")); // 게시글 작성자 저장
+				qna.setqCnt(rs.getInt("Q_CNT")); // 게시글 조회수 저장
+				qna.setcCnt(rs.getInt("C_CNT")); // 댓글수 저장
 				qList.add(qna); // ArrayList qList에 qna 값들 add해줌
 
 			}

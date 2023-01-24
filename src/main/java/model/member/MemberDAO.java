@@ -21,9 +21,9 @@ public class MemberDAO {
 	// UPDATE_MEMBER ; 회원 정보 변경
 	final String UPDATE_MEMBER = "UPDATE MEMBER SET M_PW=? M_NAME=? M_EMAIL=? M_ADDRESS=? WHERE ID=?";
 	// UPDATE_MEMBER_BANCNT ; BAN당할 경우 횟수 ++
-	final String UPDATE_MEMBER_BANCNT = "UPDATE MEMBER SET M_BANCNT = ? WHERE ID=?";
+	final String UPDATE_MEMBER_BANCNT = "UPDATE MEMBER SET M_BANCNT = M_BANCNT+1 WHERE ID=?";
 	// UPDATE_MEMBER_BOARDCNT ; 본인이 쓴 게시글 갯수 추가 -> 커뮤니티왕!!!
-	final String UPDATE_MEMBER_BOARDCNT = "UPDATE MEMBER SET M_BOARDCNT = ? WHERE ID=?";
+	final String UPDATE_MEMBER_BOARDCNT = "UPDATE MEMBER SET M_BOARDCNT = M_BOARDCNT+1 WHERE ID=?";
 	// DELETE_MEMBER ; 회원 삭제
 	final String DELETE_MEMBER = "DELETE FROM MEMBER WHERE ID=? ";
 	// LOGIN_MEMBER ; 로그인
@@ -131,7 +131,7 @@ public class MemberDAO {
 		conn = JDBCUtil.connect(); // JDBCUtil 연결
 		try {
 			pstmt = conn.prepareStatement(UPDATE_MEMBER_BOARDCNT); // UPDATE_MEMBER_BOARD ; 회원이 작성한 게시글 갯수 변경
-			pstmt.setString(2, mvo.getId()); // Id
+			pstmt.setString(1, mvo.getId()); // Id
 			pstmt.executeUpdate(); // 실행
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -146,7 +146,7 @@ public class MemberDAO {
 		conn = JDBCUtil.connect();
 		try {
 			pstmt = conn.prepareStatement(UPDATE_MEMBER_BANCNT); // updateBanCnt ; 회원 별 Ban 당한 횟수 변경
-			pstmt.setString(2, mvo.getId()); // Id
+			pstmt.setString(1, mvo.getId()); // Id
 			pstmt.executeUpdate(); // 실행
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -250,7 +250,7 @@ public class MemberDAO {
 			while (rs.next()) { // 저장할 정보가 남아 있는 동안
 				MemberVO data = new MemberVO(); // 새로운 MemberVo 객체 data 생성해서 다음 값 저장
 				data.setId(rs.getString("ID")); // 아이디
-				data.setmBanCnt(rs.getInt("M_BOARDCNT")); // 벤 카운트
+				data.setmBoardCnt(rs.getInt("M_BOARDCNT")); // 보드 카운트
 				datas.add(data); // datas배열리스트에 data객체 추가
 			}
 		} catch (SQLException e) {
