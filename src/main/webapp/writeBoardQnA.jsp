@@ -72,9 +72,9 @@ pageEncoding="UTF-8"%>
     -->
   <body>
 
-	<%-- 헤더임 --%>
+	<%-- 헤더시작 --%>
 	<jsp:include page="header.jsp"/>
-	<%-- 헤더라고 --%>
+	<%-- 헤더끝 --%>
 	
     <section class="write_content pd60">
       <div class="center">
@@ -84,7 +84,7 @@ pageEncoding="UTF-8"%>
           <div>
             <label for="name">작성자:</label>
             <!-- <span class= "form-control" name="bId">${sessionScope.id }</span> -->
-            <input type="text" value="${sessionScope.id }" class="form-control" id="name" name="qId" required />
+            <input type="text" value="${sessionScope.id }" class="form-control" id="name" name="qId" readonly required />
           </div>
           <div class="mb-3 mt-3">
             <label for="subject">제목:</label>
@@ -103,8 +103,8 @@ pageEncoding="UTF-8"%>
     <!-- center -->
   </body>
 
-	<%-- 푸터임 --%>
+	<%-- 푸터시작 --%>
 	<jsp:include page="footer.jsp"/>
-	<%-- 푸터라고 --%>
-
+	<%-- 푸터끝 --%>
+ 
 </html>

@@ -61,7 +61,6 @@
           <!-- START #fh5co-menu-wrap -->
           <nav id="fh5co-menu-wrap" role="navigation">
             <ul class="sf-menu" id="fh5co-primary-menu">
-              <li><a href="adminPage.do">관리자 페이지</a></li>
               <li><a href="myeongsan.do">명산 소개</a></li>
               <li><a href="qna.do">자주 묻는 질문</a></li>
               <li><a href="freeBoards.do">커뮤니티</a></li>
@@ -69,7 +68,7 @@
                 <ul class="fh5co-sub-menu">
                   <li><a href="myBoard.do">작성글 확인</a></li>
                   <li><a href="updateInfo.do">회원정보 수정</a></li>
-                </ul>
+                </ul>            
             </ul>
           </nav>
         </div>

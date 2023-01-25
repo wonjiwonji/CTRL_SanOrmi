@@ -86,7 +86,7 @@ pageEncoding="UTF-8"%>
           <div>
             <label for="name">작성자:</label>
             <!-- <span class= "form-control" name="bId">${sessionScope.id }</span> -->
-            <input type="text" value="${sessionScope.id }" class="form-control" id="name" name="bId" required />
+            <input type="text" value="${sessionScope.id }" class="form-control" id="name" name="bId" readonly required />
           </div>
           <div class="mb-3 mt-3">
             <label for="subject">제목:</label>
