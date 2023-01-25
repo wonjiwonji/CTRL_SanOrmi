@@ -100,19 +100,20 @@
         </div>
 
         <section>
-        <c:forEach var="qvo" items="${qbvo}">
+        <c:forEach var="QNASet" items="${qbvo}">
+        <c:set var="qna" value="${QNASet.qna}" />
             <div class="mb-3">
                 <label for="name">작성자:</label>
-                <div class="border bg-light rounded p-2" >${qvo.qId }</div>
+                <div class="border bg-light rounded p-2" >${qna.qId }</div>
             </div>    
             <div class="mb-3 mt-3">
                 <label for="subject">제목:</label>
-                <div class="border bg-light rounded p-2" >${qvo.qTitle }</div>
+                <div class="border bg-light rounded p-2" >${qna.qTitle }</div>
             </div>    
             <div class="mb-3 mt-3">
                 <label for="content">내용:</label>
-                <div  class="border bg-light rounded p-2">${qvo.qContent }</div>
-            </div>    
+                <div class="border bg-light rounded p-2">${qna.qContent }</div>
+            </div>
             <a class="btn btn-outline-dark" href="#">수정</a>
             <a class="btn btn-outline-dark" href="#">목록</a>
             <button type="button" class="btn btn-outline-dark">삭제</button>

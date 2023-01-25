@@ -118,7 +118,7 @@
 												<c:forEach var="dto" items="${qList }">
 													<tr>
 														<td>${dto.qNum }</td>
-														<td><a href="qView.do?bNum=${dto.qNum }">${dto.qTitle }</a></td>
+														<td><a href="qView.do?qNum=${dto.qNum }">${dto.qTitle }</a></td>
 														<td>${dto.qCnt }</td>
 													</tr>
 												</c:forEach>

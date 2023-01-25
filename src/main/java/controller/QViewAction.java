@@ -26,7 +26,9 @@ public class QViewAction implements Action {
 		
 		qbvo=qdao.selectOneQNA(qvo);
 		qdao.updatebCnt(qvo);
-
+		
+		System.out.println(qbvo);
+		
 		request.getSession().setAttribute("qbvo", qbvo);
 		
 		return forward;
