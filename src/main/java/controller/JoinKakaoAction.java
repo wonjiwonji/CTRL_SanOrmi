@@ -17,10 +17,12 @@ public class JoinKakaoAction implements Action {
 		MemberDAO mdao=new MemberDAO();
 		MemberVO mvo=new MemberVO();
 
-		mvo.setId(request.getParameter("account_email"));
-		mvo.setmName(request.getParameter("profile_nickname"));
-		mvo.setmEmail(request.getParameter("account_email"));
-
+		mvo.setId(request.getParameter("email"));
+		mvo.setmName(request.getParameter("name"));
+		mvo.setmEmail(request.getParameter("email"));
+		
+		System.out.println(mvo);
+		
 		if(mdao.selectOneMember(mvo)==null) {
 			mdao.insertKakaoMember(mvo);
 			mdao.loginMember(mvo);

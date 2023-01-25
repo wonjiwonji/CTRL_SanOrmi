@@ -109,18 +109,27 @@
                       window.Kakao.Auth.login({
                         scope: 'profile_nickname, account_email', //동의항목 페이지에 있는 개인정보 보호 테이블의 활성화된 ID값을 넣습니다.
                         success: function (authObj) {
-                          console.log(authObj); // 로그인 성공하면 받아오는 데이터
+                          // console.log(authObj); // 로그인 성공하면 받아오는 데이터
                           window.Kakao.API.request({
                             // 사용자 정보 가져오기
                       		url: '/v2/user/me',
                          	//url: '/v1/user/unlink',
                            // 연결 끊기(회원탈퇴)
-                            success: (res) => {
-                              const kakao_account = res.kakao_account;
-                              console.log(kakao_account);
+                            success: (response) => {
+/*                               const kakao_account = res.kakao_account;
+                              console.log(kakao_account); */
+                              
+                              const properties = response.properties;
+                              const name = properties.nickname;
+                              const email = response['kakao_account']['email'];
+                              
+                              console.log(name);
+                              console.log(email);
+                              
+                          	location.href="joinKakao.do?name=" + name + "&email=" + email; //리다이렉트 주소
                             },
                           });
-                          //window.location.href='joinKakao.do' //리다이렉트 주소
+                         // window.location.href='joinKakao.do'; //리다이렉트 주소
                         },
                         fail: function (error) {
                           console.log(error);	// 실패하면 콘솔에 error 메세지
@@ -129,7 +138,7 @@
                     }
                   	
                   //토큰 가져오기 (콘솔로 정보 보기)
-                    function selectMyAccessTockenWithKakao() {
+/*                     function selectMyAccessTockenWithKakao() {
                     	
                      	var param = {"code" : code}
                     	
@@ -148,8 +157,8 @@
                     		        console.log(type); 
                     			}
                     	    })
-                      }
-                    
+                      } */
+                  
                   </script> 
                   
                   <!-- <ul>
