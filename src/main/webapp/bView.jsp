@@ -103,15 +103,15 @@
         <c:forEach var="bvo" items="${bbvo}">
             <div class="mb-3">
                 <label for="name">작성자:</label>
-                <div class="border bg-light rounded p-2" >${bvo.qId }</div>
+                <div class="border bg-light rounded p-2" >${bvo.bId }</div>
             </div>    
             <div class="mb-3 mt-3">
                 <label for="subject">제목:</label>
-                <div class="border bg-light rounded p-2" >${bvo.qTitle }</div>
+                <div class="border bg-light rounded p-2" >${bvo.bTitle }</div>
             </div>    
             <div class="mb-3 mt-3">
                 <label for="content">내용:</label>
-                <div  class="border bg-light rounded p-2">${bvo.qContent }</div>
+                <div  class="border bg-light rounded p-2">${bvo.bContent }</div>
             </div>    
             <a class="btn btn-outline-dark" href="#">수정</a>
             <a class="btn btn-outline-dark" href="#">목록</a>
