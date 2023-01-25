@@ -6,23 +6,29 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.board.BoardDAO;
+import model.board.BoardSet;
 import model.board.BoardVO;
 
-public class FreeBoardsAction implements Action {
+public class BViewAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("/freeBoards.jsp");
+		forward.setPath("/bview.jsp");
 		forward.setRedirect(false);
 		
-		ArrayList<BoardVO> bList = new ArrayList<>();
-		BoardDAO bdao=new BoardDAO();
-
-		bList=bdao.selectAllBoard();
+		BoardDAO bdao = new BoardDAO();
+		BoardVO bvo = new BoardVO();
+		ArrayList<BoardSet> bbvo = new ArrayList<BoardSet>();
 		
-		request.getSession().setAttribute("bList", bList);
+		bvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
+		
+		bbvo=bdao.selectOneBoard(bvo);
+		bdao.updatebCnt(bvo);
 
+		request.getSession().setAttribute("bbvo", bbvo);
+		
 		return forward;
 	}
+
 }
