@@ -100,18 +100,19 @@
         </div>
 
         <section>
-        <c:forEach var="bvo" items="${vbvo}">
+        <c:forEach var="boardSet" items="${vbvo}">
+        <c:set var="board" value="${boardSet.board}" />
             <div class="mb-3">
                 <label for="name">작성자:</label>
-                <div class="border bg-light rounded p-2" >${bvo.bId }</div>
+                <div class="border bg-light rounded p-2" >${board.bId }</div>
             </div>    
             <div class="mb-3 mt-3">
                 <label for="subject">제목:</label>
-                <div class="border bg-light rounded p-2" >${bvo.bTitle }</div>
+                <div class="border bg-light rounded p-2" >${board.bTitle }</div>
             </div>    
             <div class="mb-3 mt-3">
                 <label for="content">내용:</label>
-                <div class="border bg-light rounded p-2">${bvo.bContent }</div>
+                <div class="border bg-light rounded p-2">${board.bContent }</div>
             </div>
             <a class="btn btn-outline-dark" href="#">수정</a>
             <a class="btn btn-outline-dark" href="#">목록</a>
