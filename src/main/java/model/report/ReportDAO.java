@@ -13,11 +13,16 @@ public class ReportDAO {
 	PreparedStatement pstmt;
 
 	// 쿼리문 멤버변수화
+	// INSERT_REPORT ; 신고 보드에 추가
 	final String INSERT_REPORT = "INSERT INTO REPORT (B_NUM, R_ID, R_TARGETID) VALUES(?, ?, ?)";
+	// DELETE_REPORT ; 신고 게시보드 게시글 삭제
 	final String DELETE_REPORT = "delete from report where R_NUM =?";
-	final String SELECTONE_REPORT = "SELECT R.R_NUM, R.R_TARGETID , R.R_ID , B.B_TITLE , B.B_CONTENT FROM REPORT R, BOARD B WHERE R.B_NUM = B.B_NUM AND R.R_ID = ?";
+	// SELECTONE_REPORT; 신고글 상세보기
+	final String SELECTONE_REPORT = "SELECT R.R_NUM, R.R_TARGETID , R.R_ID , B.B_TITLE , B.B_CONTENT FROM REPORT R, BOARD B \r\n"
+			+ "WHERE R.B_NUM = B.B_NUM AND R.R_ID = ?";
+	// SELECTALL_REPORT; 신고글 전체보기
 	final String SELECTALL_REPORT = "SELECT R.R_NUM, B.B_TITLE, R.R_ID, R.R_TARGETID, B.B_DATE FROM REPORT R, BOARD B WHERE R.B_NUM = B.B_NUM";
-	// 신고 중복 검사 SELECT문
+	// SELECT_REPORT_CHECK;  신고 중복 검사 
 	final String SELECT_REPORT_CHECK = "SELECT * FROM report WHERE R_ID =? AND B_NUM =?";
 	
 	
