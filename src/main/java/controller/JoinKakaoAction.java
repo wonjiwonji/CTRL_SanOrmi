@@ -34,8 +34,6 @@ public class JoinKakaoAction implements Action {
 			request.getSession().setAttribute("id", mvo.getId());
 			System.out.println(mvo);
 		}
-		
-
 
 		return forward;
 	}

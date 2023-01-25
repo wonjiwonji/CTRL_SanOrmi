@@ -21,18 +21,15 @@ public class JoinNaverAction implements Action {
 		mvo.setmName(request.getParameter("mName"));
 		mvo.setmEmail(request.getParameter("mEmail"));
 		
-		if(mdao.selectOneMember(mvo)==null) {
-			mdao.insertNaverMember(mvo);
-			member=mdao.loginMember(mvo);
-
-		} else {
-			member=mdao.loginMember(mvo);
-		}
-
+//		if(mdao.selectOneMember(mvo)==null) {
+//			mdao.insertNaverMember(mvo);
+//			member=mdao.loginMember(mvo);
+//			request.getSession().setAttribute("id", member.getId());
+//		} else {
+//			member=mdao.loginMember(mvo);
+//			request.getSession().setAttribute("id", member.getId());
+//		}
 		System.out.println(mvo);
-		
-		// 세션에 이메일(아이디) 남겨줘야함
-		request.getSession().setAttribute("id", member.getId());
 
 		return forward;
 	}

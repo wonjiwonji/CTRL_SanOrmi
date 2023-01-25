@@ -116,8 +116,6 @@
                          	//url: '/v1/user/unlink',
                            // 연결 끊기(회원탈퇴)
                             success: (response) => {
-/*                               const kakao_account = res.kakao_account;
-                              console.log(kakao_account); */
                               
                               const properties = response.properties;
                               const name = properties.nickname;
@@ -184,7 +182,6 @@
   					naver_id_login.setDomain("http://localhost:8088");
   					naver_id_login.setState(state);
   					naver_id_login.init_naver_id_login();
-  					//console.log(naver_id_login.getProfileData('email'));
   				</script>
                 </form>
                 <hr />

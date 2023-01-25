@@ -19,7 +19,7 @@ public class EncFilter extends HttpFilter implements Filter {
     public EncFilter() {
         super();
     }
-
+    
 	public void destroy() {
 		
 	}
