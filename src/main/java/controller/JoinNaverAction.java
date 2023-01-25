@@ -30,6 +30,8 @@ public class JoinNaverAction implements Action {
 		}
 
 		System.out.println(mvo);
+		
+		// 세션에 이메일(아이디) 남겨줘야함
 
 		return forward;
 	}

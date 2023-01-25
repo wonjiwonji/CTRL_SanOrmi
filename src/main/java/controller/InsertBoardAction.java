@@ -5,6 +5,8 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.board.BoardDAO;
 import model.board.BoardVO;
+import model.member.MemberDAO;
+import model.member.MemberVO;
 
 public class InsertBoardAction implements Action {
 
@@ -19,8 +21,13 @@ public class InsertBoardAction implements Action {
 		bvo.setbTitle(request.getParameter("bTitle"));
 		bvo.setbContent(request.getParameter("bContent"));
 		bvo.setbId(request.getParameter("bId"));
-
+		
+		MemberVO mvo=new MemberVO();
+		MemberDAO mdao=new MemberDAO();
+		mvo.setId(request.getParameter("id"));
+		
 		bdao.insertBoard(bvo);
+		mdao.updateMBoardCnt(mvo);
 		return forward;
 	}
 

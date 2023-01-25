@@ -315,7 +315,7 @@ public class FrontController extends HttpServlet {
 		}
 		else if(command.equals("/view.do")) {
 			try {
-				forward=new ViewAction().execute(request, response);
+				forward=new BViewAction().execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
