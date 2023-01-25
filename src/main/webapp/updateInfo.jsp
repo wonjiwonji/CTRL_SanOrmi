@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>회원 정보 수정</title>
@@ -59,13 +60,14 @@ pageEncoding="UTF-8"%>
       function search_address() {
         window.open('', 'b', 'width=600, height=300, left=200, top=100');
       }
-    </script> 
+    </script>
 
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="./images/favicon.ico" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="description" content="Free HTML5 Template by FREEHTML5.CO" />
-<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+<meta name="keywords"
+	content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
 <meta name="author" content="FREEHTML5.CO" />
 <meta property="og:title" content="" />
 <meta property="og:image" content="" />
@@ -76,7 +78,9 @@ pageEncoding="UTF-8"%>
 <meta name="twitter:image" content="" />
 <meta name="twitter:url" content="" />
 <meta name="twitter:card" content="" />
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300" rel="stylesheet" type="text/css" />
+<link
+	href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300"
+	rel="stylesheet" type="text/css" />
 
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css" />
@@ -95,84 +99,109 @@ pageEncoding="UTF-8"%>
 <link rel="stylesheet" href="css/style.css" />
 <link rel="stylesheet" href="css/update.css" />
 
-<!-- Modernizr JS --> 
-<script src="js/modernizr-2.6.2.min.js"></script> 
-<!-- FOR IE9 below --> 
+<!-- Modernizr JS -->
+<script src="js/modernizr-2.6.2.min.js"></script>
+<!-- FOR IE9 below -->
 <!--[if lt IE 9]>
       <script src="js/respond.min.js"></script>
     <![endif]-->
 </head>
 <body>
-<div id="fh5co-wrapper">
-  <div id="fh5co-page">
-  
-	<%-- 헤더임 --%>
-	<jsp:include page="header.jsp"/>
-	<%-- 헤더라고 --%>
-	
-    <div id="main">
-      <div id="fh5co-contact" class="fh5co-section-gray">
-        <div class="container">
-          <section class="join_section pdt60">
-            <h2 class="join_title">회원 정보 수정</h2>
-            <p class="join_desc mt">Edit Member Information</p>
-            <div class="center400 pdb60">
-              <form name="join_form" id="fregister" method="post" autocomplete="off" action="updateMember.do">
-                <!-- <form name="fregister" id="fregister" method="post"
+	<div id="fh5co-wrapper">
+		<div id="fh5co-page">
+
+			<%-- 헤더임 --%>
+			<jsp:include page="header.jsp" />
+			<%-- 헤더라고 --%>
+
+			<div id="main">
+				<div id="fh5co-contact" class="fh5co-section-gray">
+					<div class="container">
+						<section class="join_section pdt60">
+							<h2 class="join_title">회원 정보 수정</h2>
+							<p class="join_desc mt">Edit Member Information</p>
+							<div class="center400 pdb60">
+								<form name="join_form" id="fregister" method="post"
+									autocomplete="off" action="updateMember.do">
+									<!-- <form name="fregister" id="fregister" method="post"
                            autocomplete="off"> -->
-                <div class="Idbox">
-                  <label><span> </span>아이디</label>
-                  <div class="box">
-                    <input type="text" name="id" value="${sessionScope.id }" id="reg_mb_nick" class="nickname" required maxlength="20" placeholder="ID (변경 불가)" oninput="init_chk_nick();" autocomplete="off" readonly />
-                  </div>
-                </div>
-                <div class="passwordbox">
-                  <label><span> </span>비밀번호</label>
-                  <div class="box box2">
-                    <input type="password" name="mPw" id="pwd" placeholder="비밀번호 입력" />
-                  </div>
-                  <div class="box box3" style="margin-top: 7px">
-                    <input type="password" id="repwd" placeholder="비밀번호 확인" maxlength="20" />
-                  </div>
-                </div>
-                <div class="emailbox">
-                  <label><span> </span>이름</label>
-                  <div class="box box1">
-                    <input type="text" name="mName1" id="fname" class="email_front" placeholder="성" readonly />
-                    <em class="ctm">&nbsp;</em>
-                    <input type="text" name="mName2" id="lname" class="email_front" placeholder="이름" readonly />
-                  </div>
-                </div>
-                <div class="emailbox">
-                  <label><span> </span>이메일</label>
-                  <div class="box box1">
-                    <input type="text" name="mEmail1" id="postal_code" class="email_front" placeholder="이메일 앞자리" />
-                    <em class="ctm">@</em>
-                    <select style="width: 150px; margin-right: auto" name="mEmail2" id="email_add">
-                      <option value="1">직접입력</option>
-                      <option value="gmail.com">gmail.com</option>
-                      <option value="naver.com" selected>naver.com</option>
-                    </select>
-                    <input type="text" name="mEmail2" id="str_email02" style="width: 400px" placeholder="이메일 뒷자리" />
-                  </div>
-                </div>
-                <div class="emailbox">
-                  <label><span> </span>주소 (선택 사항)</label>
-                  <div class="box box1">
-                    <input type="text" class="email_front" id="sample2_postcode" name="mAddress1" placeholder="우편번호" />
-                    <em class="ctm">&nbsp;</em>
-                    <button type="button" onclick="openAddressAPI()" class="adress_btn" style="  background: #858796; color: #fff; height: 46px; padding: 0px 15px;"> 우편번호 찾기 </button>
-                  </div>
-                </div>
-                <div class="adressbox">
-                  <div class="box box2">
-                    <input type="text" id="sample2_address" name="mAddress2" class="form-control form-control-user" placeholder="기본 주소" />
-                  </div>
-                  <div class="box box3" style="margin-top: 7px">
-                    <input type="text" id="sample2_detailAddress" name="mAddress3" class="form-control form-control-user" placeholder="상세 주소" />
-                  </div>
-                </div>
-                <!--
+									<div class="Idbox">
+										<label><span> </span>아이디</label>
+										<div class="box">
+											<input type="text" name="id" value="${sessionScope.id }"
+												id="reg_mb_nick" class="nickname" required maxlength="20"
+												placeholder="ID (변경 불가)" oninput="init_chk_nick();"
+												autocomplete="off" readonly />
+										</div>
+									</div>
+									<div class="passwordbox">
+										<label><span> </span>비밀번호</label>
+										<div class="box box2">
+											<input type="password" name="mPw" id="pwd"
+												placeholder="비밀번호 입력" />
+										</div>
+										<div class="box box3" style="margin-top: 7px">
+											<input type="password" id="repwd" placeholder="비밀번호 확인"
+												maxlength="20" />
+										</div>
+									</div>
+									<div class="emailbox">
+										<label><span> </span>이름</label>
+										<div class="box box1">
+											<input type="text" name="mName1" id="fname"
+												class="email_front" placeholder="성" readonly /> <em
+												class="ctm">&nbsp;</em> <input type="text" name="mName2"
+												id="lname" class="email_front" placeholder="이름" readonly />
+										</div>
+									</div>
+									<div class="emailbox">
+										<label><span> </span>이메일</label>
+										<div class="box box1">
+											<input type="text" name="mEmail1" id="postal_code"
+												class="email_front" placeholder="이메일 앞자리" /> <em
+												class="ctm">@</em> <select
+												style="width: 150px; margin-right: auto" name="mEmail2"
+												id="email_add">
+												<option value="1">직접입력</option>
+												<option value="gmail.com">gmail.com</option>
+												<option value="naver.com" selected>naver.com</option>
+											</select> <input type="text" name="mEmail2" id="str_email02"
+												style="width: 400px" placeholder="이메일 뒷자리" />
+										</div>
+									</div>
+									<div class="emailbox">
+										<label><span> </span>주소 (선택 사항)</label>
+										<div class="box box1">
+											<input type="text" class="email_front" id="sample2_postcode"
+												name="mAddress1" placeholder="우편번호" /> <em class="ctm">&nbsp;</em>
+											<button type="button" onclick="openAddressAPI()"
+												class="adress_btn" value="우편번호 찾기"
+												style="background: #858796; color: #fff; height: 46px; padding: 0px 15px;">
+												우편번호 찾기</button>
+										</div>
+									</div>
+									<div class="adressbox">
+										<div class="box box2">
+											<input type="text" id="sample2_address" name="mAddress2"
+												class="form-control form-control-user" placeholder="기본 주소" />
+										</div>
+										<div class="box box3" style="margin-top: 7px">
+											<input type="text" id="sample2_detailAddress"
+												name="mAddress3" class="form-control form-control-user"
+												placeholder="상세 주소" />
+										</div>
+									</div>
+									<!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
+									<div id="layer"
+										style="display: none; position: fixed; overflow: hidden; z-index: 9999999; -webkit-overflow-scrolling: touch;">
+										<img src="//t1.daumcdn.net/postcode/resource/images/close.png"
+											id="btnCloseLayer"
+											style="cursor: pointer; position: absolute; right: -3px; top: -3px; z-index: 1;"
+											onclick="closeDaumPostcode()" alt="닫기 버튼" />
+									</div>
+
+									<!-- 주소 끝 -->
+									<!--
                 <div class="receivebox">
                   <label><span> </span>메일수신</label>
                   <div>
@@ -182,22 +211,21 @@ pageEncoding="UTF-8"%>
                     <small class="ctm">※ 수신 설정시 다양한 등산 정보를 받아 보실 수 있습니다.</small> </div>
                 </div>
                 -->
-                <div class="btnbox">
-                  <button type="button" onclick="joinform_check();" class="join_btn sub" id="btn_regi_submit"> 회원 정보 수정 </button>
-                </div>
-              </form>
-            </div>
-          </section>
-        </div>
-      </div>
-    </div>
-    <!-- div id="main" 끝 --> 
-    
-    <script
-          type="text/javascript"
-          src="http://code.jquery.com/jquery-latest.min.js"
-        ></script> 
-    <script type="text/javascript">
+									<div class="btnbox">
+										<button type="button" onclick="joinform_check();"
+											class="join_btn sub" id="btn_regi_submit">회원 정보 수정</button>
+									</div>
+								</form>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div>
+			<!-- div id="main" 끝 -->
+
+			<script type="text/javascript"
+				src="http://code.jquery.com/jquery-latest.min.js"></script>
+			<script type="text/javascript">
           //이메일 입력방식 선택
           $('#selectEmail').change(function () {
             $('#selectEmail option:selected').each(function () {
@@ -212,15 +240,15 @@ pageEncoding="UTF-8"%>
               }
             });
           });
-        </script> 
-    
-	<%-- 푸터임 --%>
-	<jsp:include page="footer.jsp" />
-	<%-- 푸터라고 --%> 
-  </div>
-  <!-- END fh5co-page --> 
-</div>
-<!-- END fh5co-wrapper --> 
+        </script>
+
+			<%-- 푸터임 --%>
+			<jsp:include page="footer.jsp" />
+			<%-- 푸터라고 --%>
+		</div>
+		<!-- END fh5co-page -->
+	</div>
+	<!-- END fh5co-wrapper -->
 
 	<script
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -329,14 +357,14 @@ pageEncoding="UTF-8"%>
       }
     </script>
 
-<!-- Bootstrap core JavaScript--> 
-<script src="vendor/jquery/jquery.min.js"></script> 
-<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script> 
+	<!-- Bootstrap core JavaScript-->
+	<script src="vendor/jquery/jquery.min.js"></script>
+	<script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-<!-- Core plugin JavaScript--> 
-<script src="vendor/jquery-easing/jquery.easing.min.js"></script> 
+	<!-- Core plugin JavaScript-->
+	<script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
-<!-- Custom scripts for all pages--> 
-<script src="js/sb-admin-2.min.js"></script>
+	<!-- Custom scripts for all pages-->
+	<script src="js/sb-admin-2.min.js"></script>
 </body>
 </html>
