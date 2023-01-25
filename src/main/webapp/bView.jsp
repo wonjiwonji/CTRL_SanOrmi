@@ -100,7 +100,7 @@
         </div>
 
         <section>
-        <c:forEach var="bvo" items="${bbvo}">
+        <c:forEach var="bvo" items="${vbvo}">
             <div class="mb-3">
                 <label for="name">작성자:</label>
                 <div class="border bg-light rounded p-2" >${bvo.bId }</div>
