@@ -292,9 +292,9 @@
 	<div id="mg-fh5co-wrapper">
 		<div id="fh5co-page">
 
-			<%-- 헤더임 --%>
+			<%-- 헤더시작 --%>
 			<jsp:include page="header.jsp" />
-			<%-- 헤더라고 --%>
+			<%-- 헤더끝 --%>
 
 			<!-- end:header-top -->
 
@@ -582,9 +582,10 @@
 			</div>
 		</div>
 	</div>
-	<!-- 푸터임 -->
+	
+	<%-- 푸터시작 --%>
 	<jsp:include page="footer.jsp" />
-	<!-- 푸터라고 -->
+	<%-- 푸터끝 --%>
+	
 </body>
-
 </html>

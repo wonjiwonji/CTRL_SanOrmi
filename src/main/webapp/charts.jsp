@@ -132,7 +132,7 @@
               <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <span class="mr-2 d-none d-lg-inline text-gray-600 small">Admin</span>
-                  <img class="img-profile rounded-circle" src="img/undraw_profile.svg" alt="사람그림" />
+                  <img class="img-profile rounded-circle" src="img/undraw_profile.svg" alt="관리자 초상화" />
                 </a>
                 <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -248,7 +248,7 @@
             <button class="btn btn-secondary" type="button" data-dismiss="modal">
               취소
             </button>
-            <a class="btn btn-primary" href="main.do">로그아웃</a>
+            <a class="btn btn-primary" href="logout.do">로그아웃</a>
           </div>
         </div>
       </div>
