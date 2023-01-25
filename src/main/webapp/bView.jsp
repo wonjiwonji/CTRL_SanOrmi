@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
   <head>
@@ -92,30 +94,30 @@
         <h2>B_TLTLE</h2>
         <hr>
         <div class="mb-3 mt-3 clearfix">
-            <span class="float-start me-2">B_NUM: 34</span>
-            <span class="float-end ms-4">B_DATE: 2021-10-21 13:33:23</span>
-            <span class="float-end">B_CNT: 8</span>
+            <span class="float-start me-2">${bNum }</span>
+            <span class="float-end ms-4">${bDate }</span>
+            <span class="float-end">${bCnt }</span>
         </div>
 
         <section>
+        <c:forEach var="bvo" items="${bbvo}">
             <div class="mb-3">
                 <label for="name">작성자:</label>
-                <div class="border bg-light rounded p-2" >${data.writer}</div>
+                <div class="border bg-light rounded p-2" >${bvo.qId }</div>
             </div>    
             <div class="mb-3 mt-3">
                 <label for="subject">제목:</label>
-                <div class="border bg-light rounded p-2" >${data.title}</div>
+                <div class="border bg-light rounded p-2" >${bvo.qTitle }</div>
             </div>    
             <div class="mb-3 mt-3">
                 <label for="content">내용:</label>
-                <div  class="border bg-light rounded p-2">${data.content}</div>
+                <div  class="border bg-light rounded p-2">${bvo.qContent }</div>
             </div>    
-
             <a class="btn btn-outline-dark" href="#">수정</a>
             <a class="btn btn-outline-dark" href="#">목록</a>
             <button type="button" class="btn btn-outline-dark">삭제</button>
             <a class="btn btn-outline-dark" href="#">작성</a>
-
+		</c:forEach>
         </section>
             <!-- 댓글시작 -->
             <jsp:include page="comment.jsp"/>

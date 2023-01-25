@@ -232,7 +232,7 @@
                     <img
                       class="rounded-circle"
                       src="img/undraw_profile_1.svg"
-                      alt="..."
+                      alt="초상화1"
                     />
                     <div class="status-indicator bg-success"></div>
                   </div>
@@ -249,7 +249,7 @@
                     <img
                       class="rounded-circle"
                       src="img/undraw_profile_2.svg"
-                      alt="..."
+                      alt="초상화2"
                     />
                     <div class="status-indicator"></div>
                   </div>
@@ -266,7 +266,7 @@
                     <img
                       class="rounded-circle"
                       src="img/undraw_profile_3.svg"
-                      alt="..."
+                      alt="초상화3"
                     />
                     <div class="status-indicator bg-warning"></div>
                   </div>
@@ -321,7 +321,7 @@
                   <img
                     class="img-profile rounded-circle"
                     src="img/undraw_profile.svg"
-                    alt="사람그림"
+                    alt="관리자초상화"
                   />
                 </a>
                 <!-- Dropdown - User Information -->
