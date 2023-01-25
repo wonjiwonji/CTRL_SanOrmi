@@ -11,25 +11,29 @@ public class JoinKakaoAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("main.jsp");
+		forward.setPath("main.do");
 		forward.setRedirect(true);
 
 		MemberDAO mdao=new MemberDAO();
 		MemberVO mvo=new MemberVO();
 
-		mvo.setId(request.getParameter("mEmail"));
-		mvo.setmName(request.getParameter("mName"));
-		mvo.setmEmail(request.getParameter("mEmail"));
+		mvo.setId(request.getParameter("account_email"));
+		mvo.setmName(request.getParameter("profile_nickname"));
+		mvo.setmEmail(request.getParameter("account_email"));
 
 		if(mdao.selectOneMember(mvo)==null) {
 			mdao.insertKakaoMember(mvo);
 			mdao.loginMember(mvo);
+			request.getSession().setAttribute("id", mvo.getId());
+			System.out.println(mvo);
 
 		} else {
 			mdao.loginMember(mvo);
+			request.getSession().setAttribute("id", mvo.getId());
+			System.out.println(mvo);
 		}
+		
 
-		System.out.println(mvo);
 
 		return forward;
 	}

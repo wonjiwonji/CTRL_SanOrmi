@@ -11,7 +11,7 @@ public class LoginAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("main.jsp");
+		forward.setPath("main.do");
 		forward.setRedirect(false);
 		
 		MemberDAO mdao=new MemberDAO();
@@ -24,7 +24,7 @@ public class LoginAction implements Action {
 		MemberVO member=mdao.loginMember(mvo);
 		
 		request.getSession().setAttribute("id", member.getId());
-		request.getSession().setAttribute("mName", member.getmName());
+//		request.getSession().setAttribute("mName", member.getmName());
 //		request.getSession().setAttribute("mAddress", member.getmAddress());
 //		request.getSession().setAttribute("mEmail", member.getmEmail());
 //		request.getSession().setAttribute("mBanCnt", member.getmBanCnt());

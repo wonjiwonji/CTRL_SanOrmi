@@ -120,7 +120,7 @@
                               console.log(kakao_account);
                             },
                           });
-                          //window.location.href='main.do' //리다이렉트 주소
+                          window.location.href='joinKakao.do' //리다이렉트 주소
                         },
                         fail: function (error) {
                           console.log(error);	// 실패하면 콘솔에 error 메세지
@@ -169,7 +169,7 @@
                   <div id="naver_id_login" style="display: flex; justify-content: center;"></div>
                   <!-- //네이버 로그인 버튼 노출 영역 --> 
                 <script type="text/javascript">
-  					var naver_id_login = new naver_id_login("dClwkVzJ3MRBP_IElx5I", "http://localhost:8088/ctrl/main.jsp");
+  					var naver_id_login = new naver_id_login("dClwkVzJ3MRBP_IElx5I", "joinNaver.do");
   					var state = naver_id_login.getUniqState();
   					naver_id_login.setButton("green", 3, 60);
   					naver_id_login.setDomain("http://localhost:8088");

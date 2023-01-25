@@ -193,6 +193,7 @@ public class QNADAO {
 				// B_DATE
 				qna.setqCnt(rs.getInt("Q_CNT")); // 게시글 조회수 저장
 				qna.setcCnt(rs.getInt("C_CNT")); // 댓글 수 저장
+				System.out.println("모델 "+qna);
 				qs.setQna(qna); // setQna 해줌
 
 				pstmt = conn.prepareStatement(SELECTALL_QCOMMENT); // SELECTALL_QCOMMENT; 댓글 전체 보기

@@ -24,6 +24,8 @@ public class QViewAction implements Action {
 		
 		qvo.setqNum(Integer.parseInt(request.getParameter("qNum")));
 		
+		System.out.println("로그1: "+qvo);
+		
 		qbvo=qdao.selectOneQNA(qvo);
 		qdao.updatebCnt(qvo);
 		
