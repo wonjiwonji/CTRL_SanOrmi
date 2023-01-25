@@ -41,11 +41,11 @@
          
          
          <tbody id="cmt_list">
-            <c:forEach var="dto" items="${cmt_List }">
+            <c:forEach var="vo" items="${selectBs }">
                <tr>
-                  <td>${dto.bcID }</td>
-                  <td>${dto.bcContent }</td>
-                  <td>${dto.bcDate }</td>
+                  <td>${vo.bcID }</td>
+                  <td>${vo.bcContent }</td>
+                  <td>${vo.bcDate }</td>
                </tr>
             </c:forEach>
 

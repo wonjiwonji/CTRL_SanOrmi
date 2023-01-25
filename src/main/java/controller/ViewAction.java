@@ -10,7 +10,9 @@ public class ViewAction implements Action {
 		ActionForward forward=new ActionForward();
 		forward.setPath("/view.jsp");
 		forward.setRedirect(false);
-
+		
+		
+		
 		return forward;
 	}
 
