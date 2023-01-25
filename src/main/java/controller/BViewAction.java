@@ -20,14 +20,15 @@ public class BViewAction implements Action {
 		BoardDAO bdao = new BoardDAO();
 		BoardVO bvo = new BoardVO();
 		ArrayList<BoardSet> bbvo = new ArrayList<BoardSet>();
-		BoardVO vbvo = new BoardVO();
 		
 		bvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
 		
 		bbvo=bdao.selectOneBoard(bvo);
 		bdao.updatebCnt(bvo);
 		
-		request.getSession().setAttribute("vbvo", vbvo);
+		System.out.println(bbvo);
+		
+		request.getSession().setAttribute("bbvo", bbvo);
 		
 		return forward;
 	}
