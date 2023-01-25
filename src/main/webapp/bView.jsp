@@ -100,7 +100,7 @@
         </div>
 
         <section>
-        <c:forEach var="boardSet" items="${vbvo}">
+        <c:forEach var="boardSet" items="${bbvo}">
         <c:set var="board" value="${boardSet.board}" />
             <div class="mb-3">
                 <label for="name">작성자:</label>
