@@ -120,7 +120,7 @@
                               console.log(kakao_account);
                             },
                           });
-                          window.location.href='joinKakao.do' //리다이렉트 주소
+                          //window.location.href='joinKakao.do' //리다이렉트 주소
                         },
                         fail: function (error) {
                           console.log(error);	// 실패하면 콘솔에 error 메세지
