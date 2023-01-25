@@ -111,8 +111,8 @@
             </div>    
             <div class="mb-3 mt-3">
                 <label for="content">내용:</label>
-                <div  class="border bg-light rounded p-2">${bvo.bContent }</div>
-            </div>    
+                <div class="border bg-light rounded p-2">${bvo.bContent }</div>
+            </div>
             <a class="btn btn-outline-dark" href="#">수정</a>
             <a class="btn btn-outline-dark" href="#">목록</a>
             <button type="button" class="btn btn-outline-dark">삭제</button>
