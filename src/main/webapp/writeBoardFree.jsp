@@ -65,13 +65,13 @@ pageEncoding="UTF-8"%>
     <![endif]-->
     <!-- link end -->
   </head>
-  <!-- 
+
   <script>
   $(document).ready(function(){
 	  $('#content').summernote();
   });
   </script>
-   -->
+
   <body>
 
 	<%-- 헤더임 --%>
