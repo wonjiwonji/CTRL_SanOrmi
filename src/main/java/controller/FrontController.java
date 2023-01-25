@@ -313,9 +313,16 @@ public class FrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/view.do")) {
+		else if(command.equals("/bView.do")) {
 			try {
 				forward=new BViewAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/qView.do")) {
+			try {
+				forward=new QViewAction().execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

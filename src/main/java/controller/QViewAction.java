@@ -15,7 +15,7 @@ public class QViewAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("/qview.jsp");
+		forward.setPath("/qView.jsp");
 		forward.setRedirect(false);
 		
 		QNADAO qdao = new QNADAO();

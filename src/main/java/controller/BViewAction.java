@@ -14,7 +14,7 @@ public class BViewAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("/bview.jsp");
+		forward.setPath("/bView.jsp");
 		forward.setRedirect(false);
 		
 		BoardDAO bdao = new BoardDAO();
