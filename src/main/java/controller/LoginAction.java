@@ -24,6 +24,7 @@ public class LoginAction implements Action {
 		MemberVO member=mdao.loginMember(mvo);
 		
 		request.getSession().setAttribute("id", member.getId());
+		request.getSession().setAttribute("mPw", member.getmPw());
 //		request.getSession().setAttribute("mName", member.getmName());
 //		request.getSession().setAttribute("mAddress", member.getmAddress());
 //		request.getSession().setAttribute("mEmail", member.getmEmail());

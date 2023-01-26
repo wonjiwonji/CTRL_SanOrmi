@@ -176,11 +176,11 @@
                   <div id="naver_id_login" style="display: flex; justify-content: center;"></div>
                   <!-- //네이버 로그인 버튼 노출 영역 --> 
                 <script type="text/javascript">
-  					var naver_id_login = new naver_id_login("dClwkVzJ3MRBP_IElx5I", "http://localhost:8088/ctrl/joinNaver.do");
+  					var naver_id_login = new naver_id_login("dClwkVzJ3MRBP_IElx5I", "http://localhost:8088/ctrl/naverOK.jsp");
   					var state = naver_id_login.getUniqState();
   					naver_id_login.setButton("green", 3, 60);
   					naver_id_login.setDomain("http://localhost:8088");
-  					naver_id_login.setState(state);
+   					naver_id_login.setState(state);
   					naver_id_login.init_naver_id_login();
   				</script>
                 </form>

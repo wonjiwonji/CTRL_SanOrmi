@@ -123,11 +123,11 @@
 												</tr>
 											</thead>
 											<tbody>
-												<c:forEach var="dto" items="${datas }">
+												<c:forEach var="vo" items="${myList}">
 													<tr>
-														<td>${dto.bNum }</td>
-														<td><a href="view.do?bNum=${dto.bNum }">${dto.bTitle }</a></td>
-														<td>${dto.bCnt }</td>
+														<td>${vo.bNum}</td>
+														<td><a href="view.do?bNum=${vo.bNum}">${vo.bTitle}</a></td>
+														<td>${vo.bCnt}</td>
 													</tr>
 												</c:forEach>
 											</tbody>

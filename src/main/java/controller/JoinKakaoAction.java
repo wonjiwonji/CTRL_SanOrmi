@@ -27,11 +27,13 @@ public class JoinKakaoAction implements Action {
 			mdao.insertKakaoMember(mvo);
 			mdao.loginMember(mvo);
 			request.getSession().setAttribute("id", mvo.getId());
+			request.getSession().setAttribute("mPw", mvo.getmPw());
 			System.out.println(mvo);
 
 		} else {
 			mdao.loginMember(mvo);
 			request.getSession().setAttribute("id", mvo.getId());
+			request.getSession().setAttribute("mPw", mvo.getmPw());
 			System.out.println(mvo);
 		}
 
