@@ -119,6 +119,7 @@ pageEncoding="UTF-8"%>
 
         <!-- end:header-top -->
 
+	<div id="mg-fh5co-wrapper">
         <div class="fh5co-hero">
           <div class="toptop"></div>
           <div class="fh5co-cover" data-stellar-background-ratio="0.5">
@@ -285,8 +286,9 @@ pageEncoding="UTF-8"%>
         </div>
       </div>
 
+</div>
       <!--슬라이드배너-->
-
+<a class="mg-text">산책하기 좋은 산</a>
       <div class="slide-wrapper">
         <ul class="slides">
           <li class="li-1">

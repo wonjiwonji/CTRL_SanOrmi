@@ -1778,7 +1778,7 @@ div.cs-select span {
   /* overflow-x: hidden; */
   position: relative;
   background-image: url('../images/backtree.png');
-  background-size: contain;
+  background-size: 100%;
   background-repeat: no-repeat;
 }
 
@@ -2205,6 +2205,17 @@ div.cs-select span {
     height: 200px;
   }
 }
+
+.mg-text {
+    display: block;
+    font-size: 40px;
+    color: seagreen;
+    font-weight: bolder;
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 0;
+	
+}
 /* 여기부터  */
 
 .letsgo {
@@ -2325,7 +2336,7 @@ div.cs-select span {
 
 .slide-wrapper {
   box-sizing: border-box;
-  margin-top: 200px;
+  margin-top: 0;
   margin-bottom: 200px;
   width: 100%;
   height: 800px;

@@ -154,15 +154,13 @@
 					</div>
 					<div class="con">
 						<div class="button_wrap tac">
-							<!— <button type="button" class="delete_btn">닫기</button> 하단 버튼자리 —>
+							 <button type="button" class="delete_btn">닫기</button>
 						</div>
 					</div>
 				</div>
 			</article>
 
-			<%— 푸터임 —%>
 			<jsp:include page="footer.jsp" />
-			<%— 푸터라고 —%>
 
 
 		</div>
