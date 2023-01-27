@@ -352,6 +352,22 @@ public class FrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/withdrawal.do")) {
+			try {
+				forward=new WithdrawalAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/deleteAccount.do")) {
+			try {
+				forward=new DeleteAccountAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		
+		
 		
 		if(forward==null) {
 			forward=new ActionForward();

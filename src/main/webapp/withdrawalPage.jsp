@@ -85,14 +85,17 @@
 									</div>
 
 									<div class="btnbox">
-										<button type="button" onclick="clickEvent();"
+										<button type="button" onclick="removeCheck();"
 											class="join_btn sub" id="btn_regi_submit">회원탈퇴</button>
 
 										<script>
-											function clickEvent(){
-												alert('회원탈퇴가 완료되었습니다.');
-												location.href= "main.do" ;
+											function removeCheck() {
+												if (confirm("정말 탈퇴하시겠습니까?") == true) { //확인
+													location.href = "deleteAccount.do?id=${sessionScope.id}";
+												} else { //취소
+													return false;
 												}
+											}
 										</script>
 
 									</div>
