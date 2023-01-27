@@ -15,17 +15,7 @@
 <!-- 중복 확인 -->
 <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
 
-<!-- 중복 확인 끝 -->
-<!-- 네이버 로그인 API -->
-<script type="text/javascript"
-	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-	charset="utf-8"></script>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
 <script type="text/javascript">
-	var checkSave = null;
-
 	function check(){
 	        //console.log("log");
 	        //변수에 담아주기
@@ -57,7 +47,6 @@
 				if(result==1){
 					$('#checkmsg').html('사용가능한 아이디'); // $('id 속성이 checkmsg인 요소')에 텍스트 추가
 					/* $('#button_joinus').removeAttr("disabled"); */
-					checkSave = id;
 				}	
 				else{
 					$('#checkmsg').html('중복된 아이디');
@@ -65,7 +54,18 @@
 			}
 		})
 	}
+</script>
 
+<!-- 중복 확인 끝 -->
+<!-- 네이버 로그인 API -->
+<script type="text/javascript"
+	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+	charset="utf-8"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<script type="text/javascript">
+      //joinform_check 함수로 유효성 검사
       function joinform_check() {
         //console.log("log");
         //변수에 담아주기
@@ -75,7 +75,6 @@
         var fname = document.getElementById('fname');
         var lname = document.getElementById('lname');
         var email_id = document.getElementById('email_id');
-        
         /* var agree = document.getElementById("agree"); */
 
         if (id.value == '') {
@@ -102,7 +101,7 @@
 				
 				if(result==1){
 					$('#checkmsg').html('사용가능한 아이디'); // $('id 속성이 checkmsg인 요소')에 텍스트 추가
-					var checkSave =$('#id').val();
+					$('#button_joinus').removeAttr("disabled");
 				}	
 				else{
 					$('#checkmsg').html('중복된 아이디');
@@ -157,10 +156,7 @@
             email_id.focus();
             return false;
           }
-	    
-	        console.log(checkSave);
         <!-- 로직추가해야함....
-	    
         if (checkmsg.value == '') {
         	alert('아이디 중복확인을 해주세요.');
             id.focus();
@@ -172,11 +168,15 @@
             return false;
           }
         -->
-        var id = document.getElementById('id');
-        
-        if (!(id.value == checkSave)) {
-        	alert('아이디 중복확인을 해주세요.');
-            return false;
+        if (checkmsg.value == '') {
+        	
+        }
+	
+        if (id != document.getElementById('id')){
+            alert(
+                    '아이디 중복확인이 필요합니다.',
+                  );
+        	return false;
         }
         //입력 값 전송
         document.join_form.submit(); //유효성 검사의 포인트
@@ -291,17 +291,14 @@
 								</div>
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
-										<input type="text" name="mName1" id="fname"
-											class="form-control form-control-user" placeholder="성" required />
+										<input type="text" name="mName2" id="lname"
+											class="form-control form-control-user" placeholder="이름" style="width:590px;" required />
+										
 										<!-- <input type="text" 
                                  id="exampleFirstName" placeholder="FirstName" required /> -->
 									</div>
-									<div class="col-sm-6">
-										<input type="text" name="mName2" id="lname"
-											class="form-control form-control-user" placeholder="이름" required />
 										<!-- <input type="text" class="form-control form-control-user"
                                  id="exampleLastName" placeholder="LastName" required /> -->
-									</div>
 								</div>
 								<!-- </form> -->
 								<!-- 여기임! 뭐냐면,,,,,,,,,, 주소! -->

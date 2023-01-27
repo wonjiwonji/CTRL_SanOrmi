@@ -46,8 +46,8 @@
 
       //이메일 옵션 선택후 주소 자동 완성
       function change_email() {
-        var email_add = document.getElementById('email_add');
-        var email_sel = document.getElementById('email_sel');
+        var email_add = document.getElementById("email_add");
+        var email_sel = document.getElementById("email_sel");
 
         //지금 골라진 옵션의 순서와 값 구하기
         var idx = email_sel.options.selectedIndex;
@@ -131,41 +131,40 @@
 											<input type="text" name="id" value="${sessionScope.id }"
 												id="reg_mb_nick" class="nickname" required maxlength="20"
 												placeholder="ID (변경 불가)" oninput="init_chk_nick();"
-												autocomplete="off" readonly />
+												autocomplete="off" readonly required/>
 										</div>
 									</div>
 									<div class="passwordbox">
 										<label><span> </span>비밀번호</label>
 										<div class="box box2">
 											<input type="password" name="mPw" id="pwd"
-												placeholder="비밀번호 입력" />
+												placeholder="비밀번호 입력" required/>
 										</div>
 										<div class="box box3" style="margin-top: 7px">
 											<input type="password" id="repwd" placeholder="비밀번호 확인"
-												maxlength="20" />
+												maxlength="20" required/>
 										</div>
 									</div>
 									<div class="emailbox">
 										<label><span> </span>이름</label>
 										<div class="box box1">
 											<input type="text" name="mName1" id="fname"
-												class="email_front" placeholder="성" readonly /> <em
-												class="ctm">&nbsp;</em> <input type="text" name="mName2"
-												id="lname" class="email_front" placeholder="이름" readonly />
+												class="email_front" placeholder="이름" readonly required/>
 										</div>
 									</div>
 									<div class="emailbox">
 										<label><span> </span>이메일</label>
 										<div class="box box1">
 											<input type="text" name="mEmail1" id="postal_code"
-												class="email_front" placeholder="이메일 앞자리" /> <em
+												class="email_front" placeholder="이메일 앞자리" required/> <em
 												class="ctm">@</em><input type="text" name="mEmail2" id="str_email02"
-												style="width: 190px" placeholder="이메일 뒷자리" /> <select
+												style="width: 190px" placeholder="이메일 뒷자리" required/> <select
 												style="width: 190px; margin-left: 210px; background-color: rgba(255,255,255,0.5);" name="mEmail2"
+												onchange="change_email();"
 												id="email_add">
-												<option value="1">직접입력</option>
+												<option value="">직접입력</option>
 												<option value="gmail.com">gmail.com</option>
-												<option value="naver.com" selected>naver.com</option>
+												<option value="naver.com">naver.com</option>
 											</select> 
 										</div>
 									</div>

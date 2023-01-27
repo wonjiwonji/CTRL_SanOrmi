@@ -442,7 +442,7 @@ div.btnbox .sub {
 }
 
 .join_section div.center400 form > div.emailbox div.box1 em {
-  display: block;
+  display: inline-block;
   float: left;
   text-align: center;
   line-height: 50px;
@@ -657,12 +657,9 @@ div.btnbox .sub {
 }
 
 #fname {
-	width: 190px;
+	width: 400px;
 	}
-#lname {
-	width: 190px;
-	
-}
+
 .emailbox {
 	margin-top: 70px;
 }
