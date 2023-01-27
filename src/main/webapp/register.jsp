@@ -37,22 +37,19 @@
 	            return false;
 	          }
 	        
-		console.log('로그 1 : check()라는 JS 함수가 연결되었음');
 		var id=$('#id').val(); // $('id 속성이 id인 요소')의 값을 불러올래!
 		$.ajax({
 			type: 'POST',
 			url: 'check',
 			data: {id:id},
 			success: function(result){
-				console.log('로그 2 : 응답받은 데이터( == response.getWriter() == out ) 출력');
-				console.log(result);
 				
 				if(result==1){
-					$('#checkmsg').html('사용가능'); // $('id 속성이 checkmsg인 요소')에 텍스트 추가
-					$('#button_joinus').removeAttr("disabled");
+					$('#checkmsg').html('사용가능한 아이디'); // $('id 속성이 checkmsg인 요소')에 텍스트 추가
+					/* $('#button_joinus').removeAttr("disabled"); */
 				}	
 				else{
-					$('#checkmsg').html('사용불가능');
+					$('#checkmsg').html('중복된 아이디');
 				}
 			}
 		})
@@ -95,22 +92,19 @@
           id.focus();
           return false;
         }
-		console.log('로그 1 : check()라는 JS 함수가 연결되었음');
-		var id=$('#id').val(); // $('id 속성이 id인 요소')의 값을 불러올래!
+        var id=$('#id').val(); // $('id 속성이 id인 요소')의 값을 불러올래!
 		$.ajax({
 			type: 'POST',
 			url: 'check',
 			data: {id:id},
 			success: function(result){
-				console.log('로그 2 : 응답받은 데이터( == response.getWriter() == out ) 출력');
-				console.log(result);
 				
 				if(result==1){
-					$('#checkmsg').html('사용가능'); // $('id 속성이 checkmsg인 요소')에 텍스트 추가
+					$('#checkmsg').html('사용가능한 아이디'); // $('id 속성이 checkmsg인 요소')에 텍스트 추가
 					$('#button_joinus').removeAttr("disabled");
 				}	
 				else{
-					$('#checkmsg').html('사용불가능');
+					$('#checkmsg').html('중복된 아이디');
 				}
 			}
 		})
@@ -177,7 +171,13 @@
         if (checkmsg.value == '') {
         	
         }
-
+	
+        if (id != document.getElementById('id')){
+            alert(
+                    '아이디 중복확인이 필요합니다.',
+                  );
+        	return false;
+        }
         //입력 값 전송
         document.join_form.submit(); //유효성 검사의 포인트
       }
@@ -263,15 +263,12 @@
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="text" class="form-control form-control-user"
-											placeholder="아이디" name="id" id="id" />
+											placeholder="아이디" name="id" id="id" required />
 									</div>
 									<div class="col-sm-6">
 										<button type="button"
 											class="jw jw-btn-success btn-user btn-block" onclick="check();"
 											>
-											<!-- onclick="joinform_check();" -->
-											<!-- onclick="check();" -->
-											<!-- onclick="id_check();" 중복확인 아직 구현하지 않아 404페이지로 돌림 -->
 											중복 확인
 										</button>
 									</div>
@@ -280,13 +277,13 @@
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="password" class="form-control form-control-user"
-											name="mPw" id="pwd" placeholder="비밀번호" />
+											name="mPw" id="pwd" placeholder="비밀번호" required />
 										<!-- <input type="password" class="form-control form-control-user"
                                  id="exampleInputPassword" placeholder="Password" required /> -->
 									</div>
 									<div class="col-sm-6">
 										<input type="password" class="form-control form-control-user"
-											id="repwd" placeholder="비밀번호 재확인" />
+											id="repwd" placeholder="비밀번호 재확인" required />
 										<!-- <input type="password"
                                  id="exampleRepeatPassword" placeholder="Repeat Password"
                                  required /> -->
@@ -295,13 +292,13 @@
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="text" name="mName1" id="fname"
-											class="form-control form-control-user" placeholder="성" />
+											class="form-control form-control-user" placeholder="성" required />
 										<!-- <input type="text" 
                                  id="exampleFirstName" placeholder="FirstName" required /> -->
 									</div>
 									<div class="col-sm-6">
 										<input type="text" name="mName2" id="lname"
-											class="form-control form-control-user" placeholder="이름" />
+											class="form-control form-control-user" placeholder="이름" required />
 										<!-- <input type="text" class="form-control form-control-user"
                                  id="exampleLastName" placeholder="LastName" required /> -->
 									</div>
@@ -360,12 +357,12 @@
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="text" name="mEmail1" id="email_id"
-											class="form-control form-control-user" placeholder="이메일 앞자리" />
+											class="form-control form-control-user" placeholder="이메일 앞자리" required />
 									</div>
 									<div class="col-sm-6">
 										<input type="text" name="mEmail2" id="email_add"
 											class="form-control form-control-user"
-											placeholder="@ 이메일 뒷자리" />
+											placeholder="@ 이메일 뒷자리" required />
 									</div>
 								</div>
 								<div class="form-group">
@@ -384,7 +381,7 @@
 								</div>
 								<div class="join_btn">
 									<button type="button" id="button_joinus" onclick="joinform_check();"
-										class="btn btn-success btn-user btn-block" disabled="" >
+										class="btn btn-success btn-user btn-block">
 										회원 가입</button>
 								</div>
 								<hr />

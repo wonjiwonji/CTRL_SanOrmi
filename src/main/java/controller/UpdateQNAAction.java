@@ -11,8 +11,8 @@ public class UpdateQNAAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("freeBoards.jsp");
-		forward.setRedirect(true);
+		forward.setPath("qView.do");
+		forward.setRedirect(false);
 
 		QNAVO qvo=new QNAVO();
 		QNADAO qdao=new QNADAO();

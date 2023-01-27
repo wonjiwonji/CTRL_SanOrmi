@@ -26,8 +26,6 @@ public class BViewAction implements Action {
 		bbvo=bdao.selectOneBoard(bvo);
 		bdao.updatebCnt(bvo);
 		
-		System.out.println(bbvo);
-		
 		request.getSession().setAttribute("bbvo", bbvo);
 		
 		return forward;

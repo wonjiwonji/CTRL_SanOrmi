@@ -19,11 +19,8 @@ public class FrontController extends HttpServlet {
 
 	private void actionDo(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String uri=request.getRequestURI();
-		System.out.println("uri: "+uri);
 		String cp=request.getContextPath();
-		System.out.println("cp: "+cp);
 		String command=uri.substring(cp.length());
-		System.out.println("command: "+command);
 
 		ActionForward forward=null;
 		if(command.equals("/main.do")) {
@@ -337,6 +334,20 @@ public class FrontController extends HttpServlet {
 		else if(command.equals("/writeBoardQnA.do")) {
 			try {
 				forward=new WriteBoardQnAAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/amendBoardFree.do")) {
+			try {
+				forward=new amendBoardFreeAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/amendBoardQnA.do")) {
+			try {
+				forward=new amendBoardQnAAction().execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

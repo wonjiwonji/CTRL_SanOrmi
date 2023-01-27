@@ -68,12 +68,11 @@
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
 
-<%
+<%-- <%
    String loginUser = (String)session.getAttribute("id");
 
    pageContext.setAttribute("loginUser", loginUser);
-
-%>
+%> --%>
 
 <!--[if lt IE 9]>
       <script src="js/respond.min.js"></script>
@@ -97,16 +96,6 @@
 								class="float-end ms-4">${bDate }</span> <span class="float-end">${bCnt }</span>
 						</div>
 
-					<!-- 잠시 로그인유저와 게시글작성자를 확인 할 부분 (모델로직 확정 전까지, 추후 삭제예정) -->
-
-						<h1>데이터 비교>>>></h1>
-						<h2>
-							세션 로그인 유저 id : <c:out value="${loginUser}" />
-						</h2>
-						<h2>게시글 작성자 id: ${bbvo[0].board.bId}</h2>
-
-					<!-- 잠시 로그인유저와 게시글작성자를 확인 할 부분 (모델로직 확정 전까지, 추후 삭제예정) -->
-
 						<section>
 							<c:forEach var="boardSet" items="${bbvo}">
 								<c:set var="board" value="${boardSet.board}" />
@@ -123,21 +112,16 @@
 									<div class="border bg-light rounded p-2">${board.bContent }</div>
 								</div>
 
-
-
-								<c:set var="writer" value="leesh132" />
-
-
-								<c:if test="${bbvo[0].board.bId == loginUser}"> <!-- 작성자==로그인유저 -->
-									<a class="btn btn-outline-dark" href="#">수정</a>
-									<button type="button" class="btn btn-outline-dark">삭제</button>
+								<c:if test="${bbvo[0].board.bId == sessionScope.id}"> <!-- 작성자==로그인유저 -->
+									<a class="btn btn-outline-dark" href="amendBoardFree.do?bNum=${board.bNum}">수정</a>
+									<a class="btn btn-outline-dark" href="deleteBoard.do?bNum=${board.bNum}">삭제</a>
 								</c:if>
 
-								<c:if test="${bbvo[0].board.bId != loginUser && loginUser != null }"> <!-- 작성자 != 로그인유저 && 로그인 유저 != null -->
-									<a class="btn btn-outline-dark" href="#">신고</a>
+								<c:if test="${bbvo[0].board.bId != sessionScope.id && sessionScope.id != null }"> <!-- 작성자 != 로그인유저 && 로그인 유저 != null -->
+									<a class="btn btn-outline-dark" href="report.do?rId=${sessionScope.id}&bNum=${board.bNum}&rTargetId=${board.bId}">신고</a>
 								</c:if>
 								
-								<a class="btn btn-outline-dark" href="#">목록</a>  <!-- 모든이에게 보이는 행동 -->
+								<a class="btn btn-outline-dark" href="freeBoards.do">목록</a>  <!-- 모든이에게 보이는 행동 -->
 							</c:forEach>
 						</section>
 						<!-- 댓글시작 -->
@@ -153,7 +137,7 @@
 					</div>
 					<div class="con">
 						<div class="button_wrap tac">
-							 <button type="button" class="delete_btn">닫기</button>
+							 <!-- <button type="button" class="delete_btn">닫기</button> -->
 						</div>
 					</div>
 				</div>

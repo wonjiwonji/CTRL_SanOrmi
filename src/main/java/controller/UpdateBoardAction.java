@@ -13,8 +13,8 @@ public class UpdateBoardAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("freeBoards.jsp");
-		forward.setRedirect(true);
+		forward.setPath("bView.do");
+		forward.setRedirect(false);
 
 		BoardVO bvo=new BoardVO();
 		BoardDAO bdao=new BoardDAO();
@@ -23,6 +23,8 @@ public class UpdateBoardAction implements Action {
 		bvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
 
 		bdao.updateBoard(bvo);
+		
+		System.out.println(bvo);
 		return forward;
 	}
 

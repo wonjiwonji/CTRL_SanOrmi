@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회원 가입 성공</title>
+<title>신고 완료</title>
 </head>
 <body>
 	<script type="text/javascript">
-		alert('회원가입 성공');
-		location.href = "loginPage.do";
+		alert('이미 신고하신 게시글입니다.');
+		location.href = "freeBoards.do";
 	</script>
 </body>
 </html>

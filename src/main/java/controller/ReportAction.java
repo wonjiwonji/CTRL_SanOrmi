@@ -13,8 +13,6 @@ public class ReportAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("reportOK.jsp");
-		forward.setRedirect(true);
 
 		ReportVO rvo=new ReportVO();
 		ReportDAO rdao=new ReportDAO();
@@ -25,10 +23,19 @@ public class ReportAction implements Action {
 		MemberVO mvo=new MemberVO();
 		MemberDAO mdao=new MemberDAO();
 		mvo.setId(request.getParameter("id"));
-
-		rdao.insert(rvo);
-		mdao.updateBanCnt(mvo);
+		
+		if(rdao.selectReportCheck(rvo)) {
+			forward.setPath("reportOK.jsp");
+			forward.setRedirect(true);
+			rdao.insert(rvo);
+			mdao.updateBanCnt(mvo);
+			return forward;
+		}
+		
+		forward.setPath("reportNotOK.jsp");
+		forward.setRedirect(true);
 		return forward;
+		
 	}
 
 }

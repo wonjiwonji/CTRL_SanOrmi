@@ -11,7 +11,7 @@ public class InsertBCommentAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("view.do");
+		forward.setPath("bView.do");
 		forward.setRedirect(true);
 
 		BCommentVO bcvo=new BCommentVO();

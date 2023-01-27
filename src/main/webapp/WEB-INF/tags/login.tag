@@ -9,7 +9,7 @@
 	<c:when test="${sessionScope.id != null}">
 		<li><a class="fh5co-sub-ddown sf-with-ul">회원정보</a>
 			<ul class="fh5co-sub-menu">
-				<li><a href="myBoard.do">작성글 확인</a></li>
+				<li><a href="myBoard.do?bId=${sessionScope.id}">작성글 확인</a></li>
 				<li><a href="updateInfo.do">정보 수정</a></li>
 			</ul></li>
 		<li><a href="logout.do">로그아웃</a></li>

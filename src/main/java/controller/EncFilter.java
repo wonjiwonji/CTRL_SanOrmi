@@ -25,7 +25,6 @@ public class EncFilter extends HttpFilter implements Filter {
 	}
 
 	public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain) throws IOException, ServletException {
-		System.out.println("CHECKCHECK");
 		request.setCharacterEncoding(this.encoding);
 		chain.doFilter(request, response);
 	}
