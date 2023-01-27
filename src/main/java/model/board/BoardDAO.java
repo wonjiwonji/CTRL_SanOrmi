@@ -7,7 +7,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 import model.common.JDBCUtil;
-import model.member.MemberVO;
 
 // 시퀀스 넘버 넘겨주세요!
 

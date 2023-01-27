@@ -1,37 +1,37 @@
 package model.news;
 
 public class NewsVO {
-	private String title;
-	private String content;
-	private String date;
+	private String nTitle;
+	private String nContent;
+	private String nDate;
 
-	public String getTitle() {
-		return title;
+	public String getnTitle() {
+		return nTitle;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setnTitle(String nTitle) {
+		this.nTitle = nTitle;
 	}
 
-	public String getContent() {
-		return content;
+	public String getnContent() {
+		return nContent;
 	}
 
-	public void setContent(String content) {
-		this.content = content;
+	public void setnContent(String nContent) {
+		this.nContent = nContent;
 	}
 
-	public String getDate() {
-		return date;
+	public String getnDate() {
+		return nDate;
 	}
 
-	public void setDate(String date) {
-		this.date = date;
+	public void setnDate(String nDate) {
+		this.nDate = nDate;
 	}
 
 	@Override
 	public String toString() {
-		return "NewsVO [title=" + title + ", content=" + content + ", date=" + date + "]";
+		return "NewsVO [nTitle=" + nTitle + ", nContent=" + nContent + ", nDate=" + nDate + "]";
 	}
 
 }
