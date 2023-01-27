@@ -29,10 +29,9 @@ public class BoardDAO {
 			+ "COUNT(BC.BC_NUM) AS C_CNT, B.B_CNT\r\n"
 			+ "FROM BOARD B LEFT JOIN BCOMMENT BC ON B.B_NUM = BC.B_NUM WHERE B.B_NUM =? GROUP BY BC_NUM;";
 	// SELECTALL_BOARD; 게시글 전체보기 쿼리문 ( 게시글 목록 시 나오는 정보 )
-	final String SELECTALL_BOARD = "SELECT B_NUM, B_TITLE, B_CNT, B_ID, B_CONTENT,\r\n "
-			+ "C_CNT FROM BOARD ORDER BY B_NUM DESC";
+	final String SELECTALL_BOARD = "SELECT B_NUM, B_TITLE, B_CNT, B_ID, B_CONTENT, C_CNT FROM BOARD ORDER BY B_NUM DESC";
 	// SELECTALL_MY_PAGE; 내가 쓴 글 전체보기 쿼리문 
-	final String SELECTALL_MY_PAGE = "SELECT B_ID, B_TITLE, B_CONTENT, B_DATE, B_CNT,  C_CNT FROM BOARD  WHERE B_NUM=? ORDER BY B_NUM DESC";
+	final String SELECTALL_MY_PAGE = "SELECT B_NUM, B_TITLE, B_CNT FROM BOARD WHERE B_ID=? ORDER BY B_NUM DESC";
 	
 	// INSERT_BCOMMENT; 댓글 등록 쿼리문
 	final String INSERT_BCOMMENT = "INSERT INTO BCOMMENT (BC_ID, B_NUM,BC_CONTENT,BC_GROUP, BC_DATE) VALUES\r\n"
@@ -63,8 +62,8 @@ public class BoardDAO {
 		try {
 			pstmt = conn.prepareStatement(INSERT_BOARD); // INSERT_BOARD; 게시글 등록
 			// 인자로 받은 bvo에서 필요한 정보 추출
-			pstmt.setString(1, bvo.getbTitle()); // pstmt에 bTitle 저장
-			pstmt.setString(2, bvo.getbContent()); // pstmt에 bContent 저장
+			pstmt.setString(1, bvo.getbContent()); // pstmt에 bContent 저장
+			pstmt.setString(2, bvo.getbTitle()); // pstmt에 bTitle 저장
 			pstmt.setString(3, bvo.getbId()); // pstmt에 bId 저장
 			int res = pstmt.executeUpdate(); // pstmt실행 결과 res에 저장
 			if (res <= 0) { // res가 0보다 같거나 작다면 // 즉, pstmt 실행시키는 것을 실패했다면
@@ -280,21 +279,19 @@ public class BoardDAO {
 
 	
 	// selectAll_MY_PAGE ; 내가 쓴 글 전체 보기 메서드
-	public ArrayList<BoardVO> selectAllMyPage(BoardVO bvo) { // bvo ; bnum필요
+	public ArrayList<BoardVO> selectAllMyPage(BoardVO bvo) { // 내가 쓴 글 전체보기 메서드
 
 		ArrayList<BoardVO> bList = new ArrayList<>(); // <BoardVO> 타입의 ArrayList bList 생성
 		conn = JDBCUtil.connect(); // JDBCUtil 연결
 		try {
 			pstmt = conn.prepareStatement(SELECTALL_MY_PAGE); // SELECTALL_BOARD; 게시글 전체 보기
-			pstmt.setInt(1, bvo.getbNum()); // 작성자
+			pstmt.setString(1, bvo.getbId()); // 작성자
 			ResultSet rs = pstmt.executeQuery(); // 실행결과 rs에 저장
 			while (rs.next()) { // 저장할 정보가 남아있는 동안
 				BoardVO board = new BoardVO(); // 새로운 BoardVO 객체 board 생성
 				board.setbNum(rs.getInt("B_NUM")); // 게시글 번호 저장 
 				board.setbTitle(rs.getString("B_TITLE")); // 게시글 제목 저장
-				board.setbId(rs.getString("B_ID")); // 작성자 저장
 				board.setbCnt(rs.getInt("B_CNT")); // 게시글 조회수 저장
-				board.setcCnt(rs.getInt("C_CNT")); // 댓글 수 저장
 				bList.add(board); // ArrayList bList에 board 값들 add해줌
 
 			}
