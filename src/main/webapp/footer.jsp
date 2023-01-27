@@ -60,9 +60,9 @@
           <div class="col-md-6 col-md-offset-3 text-center">
             <p class="fh5co-social-icons">
               <a href="https://twitter.com/duseoneo"><i class="icon-twitter2"></i></a>
-				<a href="#"><i class="icon-facebook2"></i></a>
+				<a href="https://www.facebook.com/profile.php?id=100017059532699"><i class="icon-facebook2"></i></a>
 				<a href="https://www.instagram.com/duseonoctrl/"><i class="icon-instagram"></i></a>
-				<a href="eltmzm8358.dothome.co.kr"><i class="icon-dribbble2"></i></a>
+				<a href="https://www.knps.or.kr/portal/main.do"><i class="icon-dribbble2"></i></a>
 				<a href="https://www.youtube.com/channel/UC7WZ1ZK1vJlDWIL0CyZbhCg"><i class="icon-youtube"></i></a>
             </p>
             <p>
