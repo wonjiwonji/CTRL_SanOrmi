@@ -89,7 +89,6 @@
 			<article class="view_wrap pd60">
 				<div class="center clearfix">
 					<div class="container mt-3">
-						<h2>B_TLTLE</h2>
 						<hr>
 						<div class="mb-3 mt-3 clearfix">
 							<span class="float-start me-2">${bNum }</span> <span

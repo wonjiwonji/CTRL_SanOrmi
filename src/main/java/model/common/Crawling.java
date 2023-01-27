@@ -31,6 +31,11 @@ public class Crawling {
 		Iterator<Element> itr2 = eles2.iterator();
 		Iterator<Element> itr3 = eles3.iterator();
 		while (itr1.hasNext()) {
+			
+			if(nl.size()==4) {
+				break;
+			}
+			
 			String str1 = itr1.next().text();
 			String str2 = itr2.next().text();
 			String str3 = itr3.next().text();
@@ -41,7 +46,6 @@ public class Crawling {
 			nvo.setDate(str3);
 			nl.add(nvo);
 		}
-		System.out.println(nl);
 
 		return nl;
 
