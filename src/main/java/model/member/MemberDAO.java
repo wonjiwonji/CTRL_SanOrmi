@@ -63,18 +63,19 @@ public class MemberDAO {
 		return true; // true 반환
 	}
 
-	// insertMember ; 회원 가입
-	public boolean insertKakaoMember(MemberVO mvo) { // mvo ; Id, mPw, mName, mEmail 필요
+	// insertKakaoMember ; 카카오 회원 가입
+	public boolean insertKakaoMember(MemberVO mvo) { // mvo ; Id, mName, mEmail 필요
 		conn = JDBCUtil.connect(); // JDBCUtil 연결
 		try {
-			pstmt = conn.prepareStatement(INSERT_KAKAO_MEMBER); // INSERT_MEMBER ; 회원 가입
+			// INSERT_KAKAO_MEMBER ; 카카오 회원 가입
+			pstmt = conn.prepareStatement(INSERT_KAKAO_MEMBER);
 			// 인자로 받은 mvo에서 필요한 정보 추출
 			pstmt.setString(1, mvo.getId()); // pstmt에 id 저장
 			pstmt.setString(2, mvo.getmName()); // pstmt에 mName 저장
 			pstmt.setString(3, mvo.getmEmail()); // pstmt에 mEmail 저장
 
 			int res = pstmt.executeUpdate(); // pstmt실행 결과 res에 저장
-			if (res <= 0) { // res가 0보다 같거나 작다면 // 즉, pstmt 실행시키는 것을 실패했다면
+			if (res <= 0) { // res가 0보다 같거나 작다면 (즉, pstmt 실행시키는 것을 실패했다면)
 				return false; // false 반환
 			}
 		} catch (SQLException e) { // 위 try문 실행 중 에러(SQL) 발생 시
@@ -85,18 +86,19 @@ public class MemberDAO {
 		return true; // true 반환
 	}
 
-	// insertMember ; 회원 가입
-	public boolean insertNaverMember(MemberVO mvo) { // mvo ; Id, mPw, mName, mEmail 필요
+	// insertNaverMember ; 카카오 회원 가입
+	public boolean insertNaverMember(MemberVO mvo) { // mvo ; Id, mName, mEmail 필요
 		conn = JDBCUtil.connect(); // JDBCUtil 연결
 		try {
-			pstmt = conn.prepareStatement(INSERT_NAVER_MEMBER); // INSERT_MEMBER ; 회원 가입
+			// INSERT_NAVER_MEMBER ; 카카오 회원 가입
+			pstmt = conn.prepareStatement(INSERT_NAVER_MEMBER);
 			// 인자로 받은 mvo에서 필요한 정보 추출
 			pstmt.setString(1, mvo.getId()); // pstmt에 id 저장
 			pstmt.setString(2, mvo.getmName()); // pstmt에 mName 저장
 			pstmt.setString(3, mvo.getmEmail()); // pstmt에 mEmail 저장
 
 			int res = pstmt.executeUpdate(); // pstmt실행 결과 res에 저장
-			if (res <= 0) { // res가 0보다 같거나 작다면 // 즉, pstmt 실행시키는 것을 실패했다면
+			if (res <= 0) { // res가 0보다 같거나 작다면 (즉, pstmt 실행시키는 것을 실패했다면)
 				return false; // false 반환
 			}
 		} catch (SQLException e) { // 위 try문 실행 중 에러(SQL) 발생 시
