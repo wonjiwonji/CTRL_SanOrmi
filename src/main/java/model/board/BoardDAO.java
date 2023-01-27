@@ -32,7 +32,7 @@ public class BoardDAO {
 	final String SELECTALL_BOARD = "SELECT B_NUM, B_TITLE, B_CNT, B_ID, B_CONTENT,\r\n "
 			+ "C_CNT FROM BOARD ORDER BY B_NUM DESC";
 	// SELECTALL_MY_PAGE; 내가 쓴 글 전체보기 쿼리문 
-	final String SELECTALL_MY_PAGE = "SELECT B_ID, B_TITLE, B_CONTENT, B_DATE, B_CNT,  C_CNT FROM BOARD  WHERE B_ID=? ORDER BY B_NUM DESC";
+	final String SELECTALL_MY_PAGE = "SELECT B_ID, B_TITLE, B_CONTENT, B_DATE, B_CNT,  C_CNT FROM BOARD  WHERE B_NUM=? ORDER BY B_NUM DESC";
 	
 	// INSERT_BCOMMENT; 댓글 등록 쿼리문
 	final String INSERT_BCOMMENT = "INSERT INTO BCOMMENT (BC_ID, B_NUM,BC_CONTENT,BC_GROUP, BC_DATE) VALUES\r\n"
@@ -280,13 +280,13 @@ public class BoardDAO {
 
 	
 	// selectAll_MY_PAGE ; 내가 쓴 글 전체 보기 메서드
-	public ArrayList<BoardVO> selectAllMyPage(BoardVO bvo) { // 내가 쓴 글 전체보기 메서드
+	public ArrayList<BoardVO> selectAllMyPage(BoardVO bvo) { // bvo ; bnum필요
 
 		ArrayList<BoardVO> bList = new ArrayList<>(); // <BoardVO> 타입의 ArrayList bList 생성
 		conn = JDBCUtil.connect(); // JDBCUtil 연결
 		try {
 			pstmt = conn.prepareStatement(SELECTALL_MY_PAGE); // SELECTALL_BOARD; 게시글 전체 보기
-			pstmt.setString(1, bvo.getbId()); // 작성자
+			pstmt.setInt(1, bvo.getbNum()); // 작성자
 			ResultSet rs = pstmt.executeQuery(); // 실행결과 rs에 저장
 			while (rs.next()) { // 저장할 정보가 남아있는 동안
 				BoardVO board = new BoardVO(); // 새로운 BoardVO 객체 board 생성
