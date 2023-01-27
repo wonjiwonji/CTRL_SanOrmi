@@ -159,14 +159,14 @@
 										<div class="box box1">
 											<input type="text" name="mEmail1" id="postal_code"
 												class="email_front" placeholder="이메일 앞자리" /> <em
-												class="ctm">@</em> <select
-												style="width: 150px; margin-right: auto" name="mEmail2"
+												class="ctm">@</em><input type="text" name="mEmail2" id="str_email02"
+												style="width: 190px" placeholder="이메일 뒷자리" /> <select
+												style="width: 190px; margin-left: 210px; background-color: rgba(255,255,255,0.5);" name="mEmail2"
 												id="email_add">
 												<option value="1">직접입력</option>
 												<option value="gmail.com">gmail.com</option>
 												<option value="naver.com" selected>naver.com</option>
-											</select> <input type="text" name="mEmail2" id="str_email02"
-												style="width: 400px" placeholder="이메일 뒷자리" />
+											</select> 
 										</div>
 									</div>
 									<div class="emailbox">

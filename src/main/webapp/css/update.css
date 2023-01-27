@@ -426,8 +426,8 @@ div.btnbox .sub {
 }
 
 .join_section div.center400 form > div.emailbox div.box1 {
-  position: relative;
-  width: 100%;
+  position: inherit;
+  width: 530px;
 }
 
 .join_section div.center400 form > div.emailbox div.box1 input.email_front {
@@ -453,7 +453,7 @@ div.btnbox .sub {
 }
 
 .join_section div.center400 form > div.emailbox div.box1 select {
-  float: right;
+  
   width: calc(50% - 10px);
 }
 
@@ -650,4 +650,19 @@ div.btnbox .sub {
 }
 @media screen and (max-width:350px){
     .terms_section .terms_content .inner{font-size: 13px; height: 350px;}
+}
+
+#postal_code {
+	width: 190px;
+}
+
+#fname {
+	width: 190px;
+	}
+#lname {
+	width: 190px;
+	
+}
+.emailbox {
+	margin-top: 70px;
 }
