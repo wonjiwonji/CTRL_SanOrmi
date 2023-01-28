@@ -190,6 +190,7 @@ public class MemberDAO {
 			if (rs.next()) { // rs에 정보가 있는 동안
 				data = new MemberVO(); // MemberVO 새로운 객체 data 생성
 				data.setId(rs.getString("ID")); // data에 Id 저장
+				data.setmPw(rs.getString("M_PW")); // data에 비밀번호저장
 				data.setmName(rs.getString("M_NAME")); // 이름
 				data.setmEmail(rs.getString("M_EMAIL")); // 이메일
 				data.setmAddress(rs.getString("M_ADDRESS")); // 주소
