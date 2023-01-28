@@ -1,6 +1,7 @@
 package model.member;
 
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -19,7 +20,7 @@ public class MemberDAO {
 	// INSERT_NAVER_MEMBER ; 네이버 회원 가입
 	final String INSERT_NAVER_MEMBER = "INSERT INTO MEMBER (ID,M_PW,M_NAME,M_EMAIL,M_REGDATE) VALUES(?,'NAVER',?,?,NOW())";
 	// UPDATE_MEMBER ; 회원 정보 변경
-	final String UPDATE_MEMBER = "UPDATE MEMBER SET M_PW=? M_NAME=? M_EMAIL=? M_ADDRESS=? WHERE ID=?";
+	final String UPDATE_MEMBER = "UPDATE MEMBER SET ID=? M_PW=? M_EMAIL=? M_ADDRESS=? M_NAME=? M_REGDATE=? M_BANCNT=? M_BOARDCNT=? WHERE ID=?";
 	// UPDATE_MEMBER_BANCNT ; BAN당할 경우 횟수 ++
 	final String UPDATE_MEMBER_BANCNT = "UPDATE MEMBER SET M_BANCNT = M_BANCNT+1 WHERE ID=?";
 	// UPDATE_MEMBER_BOARDCNT ; 본인이 쓴 게시글 갯수 추가 -> 커뮤니티왕!!!
@@ -114,11 +115,16 @@ public class MemberDAO {
 		conn = JDBCUtil.connect(); // JDBCUtil 연결
 		try {
 			pstmt = conn.prepareStatement(UPDATE_MEMBER); // UPDATE_MEMBER ; 회원 정보 변경
-			pstmt.setString(1, mvo.getmPw()); // 비밀번호
-			pstmt.setString(2, mvo.getmName()); // 이름
+			pstmt.setString(1, mvo.getId()); // 아이디
+			pstmt.setString(2, mvo.getmPw()); // 비밀번호
 			pstmt.setString(3, mvo.getmEmail()); // 이메일
 			pstmt.setString(4, mvo.getmAddress()); // 주소 (API를 사용해 입력받은 값)
-			pstmt.setString(5, mvo.getId()); // ID
+			pstmt.setString(5, mvo.getmName()); // 이름
+			pstmt.setDate(6, (Date) mvo.getmDate()); // 가입일
+			pstmt.setInt(7, mvo.getmBanCnt()); // 벤카운트
+			pstmt.setInt(8, mvo.getmBoardCnt()); // 보드카운트
+			
+			pstmt.setString(9, mvo.getId()); // ID
 			pstmt.executeUpdate(); // 실행
 		} catch (SQLException e) {
 			e.printStackTrace();
