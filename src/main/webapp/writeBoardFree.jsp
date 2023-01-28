@@ -82,7 +82,7 @@ pageEncoding="UTF-8"%>
       <div class="center">
         <h2>작성</h2>
         <hr/>
-        <form action="insertBoard.do">
+        <form action="insertBoard.do" style="display: inline;">
           <div>
             <label for="name">작성자:</label>
             <!-- <span class= "form-control" name="bId">${sessionScope.id }</span> -->
@@ -97,8 +97,8 @@ pageEncoding="UTF-8"%>
             <textarea class="form-control" rows="5" id="content" placeholder="내용을 입력하세요" name="bContent"></textarea>
           </div>
           <button type="submit" class="btncolor">작성완료</button>
-          <button class="btncolor2" href="freeBoards.do">목록</button>
         </form>
+          <button class="btncolor2" onclick="location.href='freeBoards.do'">목록</button>
       </div>
     </section>
 
