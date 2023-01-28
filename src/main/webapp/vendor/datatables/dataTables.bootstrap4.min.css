@@ -64,30 +64,12 @@ div.dataTables_wrapper div.dataTables_processing {
   text-align: center;
   padding: 1em 0;
 }
-table.dataTable > thead > tr > th:active,
-table.dataTable > thead > tr > td:active {
-  outline: none;
-}
-table.dataTable > thead > tr > th:not(.sorting_disabled),
-table.dataTable > thead > tr > td:not(.sorting_disabled) {
-  padding-right: 30px;
-}
-table.dataTable > thead .sorting,
-table.dataTable > thead .sorting_asc,
 table.dataTable > thead .sorting_desc,
-table.dataTable > thead .sorting_asc_disabled,
 table.dataTable > thead .sorting_desc_disabled {
-  cursor: pointer;
   position: relative;
 }
-table.dataTable > thead .sorting:before,
-table.dataTable > thead .sorting:after,
-table.dataTable > thead .sorting_asc:before,
-table.dataTable > thead .sorting_asc:after,
 table.dataTable > thead .sorting_desc:before,
 table.dataTable > thead .sorting_desc:after,
-table.dataTable > thead .sorting_asc_disabled:before,
-table.dataTable > thead .sorting_asc_disabled:after,
 table.dataTable > thead .sorting_desc_disabled:before,
 table.dataTable > thead .sorting_desc_disabled:after {
   position: absolute;
@@ -95,20 +77,10 @@ table.dataTable > thead .sorting_desc_disabled:after {
   display: block;
   opacity: 0.3;
 }
-.sorting_con::before {
-  right: 1em;
-  content: '↑';
-}
-.sorting_con::after {
-  right: 0.5em;
-  content: '↓';
-}
-table.dataTable > thead .sorting_asc:before,
-table.dataTable > thead .sorting_desc:after {
+table.dataTable > thead .sorting_desc {
   opacity: 1;
 }
-table.dataTable > thead .sorting_asc_disabled:before,
-table.dataTable > thead .sorting_desc_disabled:after {
+table.dataTable > thead .sorting_desc_disabled {
   opacity: 0;
 }
 div.dataTables_scrollHead table.dataTable {
@@ -149,11 +121,11 @@ div.dataTables_scrollFoot > .dataTables_scrollFootInner > table {
     justify-content: center !important;
   }
 }
+table.dataTable.table-sm .sorting:before,
+table.dataTable.table-sm .sorting_desc:before,
 table.dataTable.table-sm > thead > tr > th:not(.sorting_disabled) {
   padding-right: 20px;
 }
-table.dataTable.table-sm .sorting:before,
-table.dataTable.table-sm .sorting_asc:before,
 table.dataTable.table-sm .sorting_desc:before {
   top: 5px;
   right: 0.85em;
@@ -186,6 +158,7 @@ div.dataTables_scrollHead table.table-bordered {
 div.table-responsive > div.dataTables_wrapper > div.row {
   margin: 0;
 }
+
 div.table-responsive
   > div.dataTables_wrapper
   > div.row
