@@ -112,7 +112,7 @@
 							<div>
 								<div class="card-body">
 									<div class="table-responsive">
-										<table class="table" id="dataTable" width="100%"
+										<table class="table" id="dataTables" width="100%"
 											cellspacing="0"
 											style="font-family: Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-weight: 400; line-height: 1.5;">
 											<thead>
