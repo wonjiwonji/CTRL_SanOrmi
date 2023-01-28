@@ -27,7 +27,7 @@ public class JoinNaverAction implements Action {
 			mdao.insertNaverMember(mvo);
 			mdao.loginMember(mvo);
 			request.getSession().setAttribute("id", mvo.getId());
-			request.getSession().setAttribute("mPw", mvo.getmPw());		
+			request.getSession().setAttribute("mPw", mvo.getmPw());
 			System.out.println(mvo);
 		} else {
 			mdao.loginMember(mvo);

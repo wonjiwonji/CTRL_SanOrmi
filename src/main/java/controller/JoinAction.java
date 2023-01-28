@@ -24,7 +24,7 @@ public class JoinAction implements Action {
 		
 		mvo.setId(request.getParameter("id"));
 		mvo.setmPw(request.getParameter("mPw"));
-		mvo.setmName("mName");
+		mvo.setmName(request.getParameter("mName"));
 		mvo.setmAddress(mAddress);
 		mvo.setmEmail(mEmail);
 		

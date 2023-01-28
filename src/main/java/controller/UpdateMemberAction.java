@@ -36,12 +36,6 @@ public class UpdateMemberAction implements Action {
 		mvo.setmBanCnt(me.getmBanCnt());
 		mvo.setmBoardCnt(me.getmBoardCnt());
 
-		System.out.println(mvo);
-		
-		if(mvo.getmAddress()==null) {
-			mvo.setmAddress(me.getmAddress());
-		}
-		
 		if(mvo.getmAddress()==null) {
 			mvo.setmAddress(me.getmAddress());
 		}
@@ -54,7 +48,6 @@ public class UpdateMemberAction implements Action {
 			mvo.setmEmail(me.getmEmail());
 		}
 		
-		System.out.println(mvo);
 		mdao.updateMember(mvo);
 		
 		return forward;
