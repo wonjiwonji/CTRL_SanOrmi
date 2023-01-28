@@ -133,7 +133,6 @@
                     <th class="sorting_con">아이디</th>
                     <th class="sorting_con">이메일</th>
                     <th class="sorting_con">이름</th>
-                    <th class="sorting_con">비밀번호</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -142,7 +141,6 @@
                     <td><a href="manageMemDetail.do?id=${vo.id }">${vo.id }</a></td>
                     <td>${vo.mEmail }</td>
                     <td>${vo.mName }</td>
-                    <td>${vo.mPw }</td>
                   </tr>
                   </c:forEach>
                 </tbody>
