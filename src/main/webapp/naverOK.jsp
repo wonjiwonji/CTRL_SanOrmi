@@ -20,9 +20,6 @@
     const email=naver_id_login.getProfileData('email');
     const name=naver_id_login.getProfileData('name');
     
-    console.log(email);
-    console.log(name);
-    
     location.href="joinNaver.do?name=" + name + "&email=" + email; //리다이렉트 주소
   }
 </script>

@@ -16,7 +16,7 @@
 				<li><a href="updateInfo.do?id=${sessionScope.id}">정보 수정</a></li>
 				</c:if>
 			</ul></li>
-		<li><a href="logout.do">로그아웃</a></li>
+		<li><a href="logout.do?mPw=${sessionScope.mPw}">로그아웃</a></li>
 	</c:when>
 	<c:otherwise>
 		<li><a class="fh5co-sub-ddown sf-with-ul">로그인/회원가입</a>

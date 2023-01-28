@@ -1,5 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+	
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,11 +72,55 @@
 						<section class="join_section pdt60">
 							<h2 class="join_title">회원 탈퇴</h2>
 							<p class="join_desc mt">Withdrawal</p>
+
+<c:choose>
+	<c:when test="${(fn:contains(sessionScope.mPw, 'KAKAO'))}">
+		<a href="javascript:kakaoDelete();"> <img src="./img/kakao_login_large_narrow5.png" style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block;" alt="카카오 로고"/> </a> 
+												<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+										<script>
+				// SDK를 초기화 합니다. 사용할 앱 키(javascript) 입력합니다.
+					window.Kakao.init('78892b6e583dfe48cb2d2caf38da1114');
+                 // SDK 초기화 여부를 판단합니다. true가 나온다면 정상 작동
+                    console.log(Kakao.isInitialized());
+
+                      // 카카오 로그인 함수 생성
+                    function kakaoDelete() {
+                     	Kakao.Auth.login({
+                        success: function (authObj) {
+                          Kakao.API.request({
+                            // 사용자 정보 가져오기
+                         	url: '/v1/user/unlink',
+                           // 연결 끊기(회원탈퇴)
+                            success: (response) => {
+                              
+                          	location.href="deleteAccount.do"; //리다이렉트 주소
+                            },
+                          });
+                        },
+                        fail: function (error) {
+                          console.log(error);	// 실패하면 콘솔에 error 메세지
+                        },
+                      });
+                    }
+                    </script>
+		
+		
+	</c:when>
+	<c:when test="${(fn:contains(sessionScope.mPw, 'NAVER'))}">
+		<p>네이버</p>
+			if(pw.includes('NAVER')){
+		$(document).ready(function(){
+			window.open= "https://nid.naver.com/nidlogin.logout";
+			window.close;
+			})
+		alert('네이버 회원 탈퇴');
+		location.href = "main.do";
+		}
+	</c:when>
+	<c:otherwise>
 							<div class="center400 pdb60">
 								<form name="join_form" id="fregister" method="post"
-									autocomplete="off" action="updateMember.do">
-									<!-- <form name="fregister" id="fregister" method="post"
-                           autocomplete="off"> -->
+									autocomplete="off" action="deleteAccount.do">
 									<div class="Idbox">
 										<label><span> </span>아이디</label>
 										<div class="box">
@@ -85,7 +132,8 @@
 									</div>
 
 									<div class="btnbox">
-										<button type="button" onclick="removeCheck();"
+										<button type="button"
+											onclick="removeCheck();"
 											class="join_btn sub" id="btn_regi_submit">회원탈퇴</button>
 
 										<script>
@@ -97,10 +145,20 @@
 												}
 											}
 										</script>
-
+										
 									</div>
 								</form>
 							</div>
+	</c:otherwise>
+	
+</c:choose>
+
+
+
+
+
+
+
 						</section>
 					</div>
 				</div>

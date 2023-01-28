@@ -359,9 +359,23 @@ public class FrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
+		else if(command.equals("/withdrawalOK.do")) {
+			try {
+				forward=new WithdrawalOKAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
 		else if(command.equals("/deleteAccount.do")) {
 			try {
 				forward=new DeleteAccountAction().execute(request, response);
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+		}
+		else if(command.equals("/logoutSNS.do")) {
+			try {
+				forward=new LogoutSNSAction().execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

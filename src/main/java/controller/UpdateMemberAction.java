@@ -48,6 +48,7 @@ public class UpdateMemberAction implements Action {
 			mvo.setmEmail(me.getmEmail());
 		}
 		
+		System.out.println(mvo);
 		mdao.updateMember(mvo);
 		
 		return forward;

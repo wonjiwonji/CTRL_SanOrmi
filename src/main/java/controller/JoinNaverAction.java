@@ -20,20 +20,17 @@ public class JoinNaverAction implements Action {
 		mvo.setId(request.getParameter("email"));
 		mvo.setmName(request.getParameter("name"));
 		mvo.setmEmail(request.getParameter("email"));
-		
-		System.out.println(mvo);
+		mvo.setmPw("NAVER");
 		
 		if(mdao.selectOneMember(mvo)==null) {
 			mdao.insertNaverMember(mvo);
 			mdao.loginMember(mvo);
 			request.getSession().setAttribute("id", mvo.getId());
 			request.getSession().setAttribute("mPw", mvo.getmPw());
-			System.out.println(mvo);
 		} else {
 			mdao.loginMember(mvo);
 			request.getSession().setAttribute("id", mvo.getId());
 			request.getSession().setAttribute("mPw", mvo.getmPw());
-			System.out.println(mvo);
 		}
 
 		return forward;
