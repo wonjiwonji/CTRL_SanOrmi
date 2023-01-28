@@ -354,12 +354,13 @@
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="text" name="mEmail1" id="email_id"
-											class="form-control form-control-user" placeholder="이메일 앞자리" required />
+											class="form-control form-control-user" style="width:270px;" placeholder="이메일 앞자리" required />
 									</div>
+									<em class="ctm2">@</em>
 									<div class="col-sm-6">
 										<input type="text" name="mEmail2" id="email_add"
 											class="form-control form-control-user"
-											placeholder="@ 이메일 뒷자리" required />
+											style="width:270px; margin-left: 8px" placeholder="이메일 뒷자리" required />
 									</div>
 								</div>
 								<div class="form-group">

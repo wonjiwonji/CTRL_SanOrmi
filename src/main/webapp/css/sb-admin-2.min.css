@@ -10365,3 +10365,8 @@ footer.sticky-footer .copyright {
 body.sidebar-toggled footer.sticky-footer {
   width: 100%;
 }
+.ctm2 {
+    position: absolute;
+    margin-left: 292px;
+    margin-top: 10px !important;
+}
