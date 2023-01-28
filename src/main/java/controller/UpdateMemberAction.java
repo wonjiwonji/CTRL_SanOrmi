@@ -29,13 +29,32 @@ public class UpdateMemberAction implements Action {
 		
 		mvo.setmPw(request.getParameter("mPw"));
 		mvo.setmName(request.getParameter("mName"));
-		mvo.setmEmail(request.getParameter(mEmail));
-		mvo.setmAddress(request.getParameter(mAddress));
+		mvo.setmEmail(mEmail);
+		mvo.setmAddress(mAddress);
+		
+		mvo.setmDate(me.getmDate());
+		mvo.setmBanCnt(me.getmBanCnt());
+		mvo.setmBoardCnt(me.getmBoardCnt());
+
+		System.out.println(mvo);
 		
 		if(mvo.getmAddress()==null) {
 			mvo.setmAddress(me.getmAddress());
 		}
 		
+		if(mvo.getmAddress()==null) {
+			mvo.setmAddress(me.getmAddress());
+		}
+		
+		if(mvo.getmName()==null) {
+			mvo.setmName(me.getmName());
+		}
+		
+		if(mvo.getmEmail()==null) {
+			mvo.setmEmail(me.getmEmail());
+		}
+		
+		System.out.println(mvo);
 		mdao.updateMember(mvo);
 		
 		return forward;

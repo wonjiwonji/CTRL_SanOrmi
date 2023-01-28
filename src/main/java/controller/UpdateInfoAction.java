@@ -21,19 +21,30 @@ public class UpdateInfoAction implements Action {
 		mvo.setId(request.getParameter("id"));
 		me=mdao.selectOneMember(mvo);
 		
+		String mName=me.getmName();
 		String mEmail=me.getmEmail();
 		String mAddress=me.getmAddress();
 		
+		String mEmail1 = "";
+		String mEmail2 = "";
+		String mAddress1 = "";
+		String mAddress2 = "";
+		String mAddress3 = "";
+		
+		if(mEmail.contains("#")) {
 		String[] arrayE = mEmail.split("#");
-		String mEmail1 = arrayE[0];
-		String mEmail2 = arrayE[1];
+		mEmail1 = arrayE[0];
+		mEmail2 = arrayE[1];
+		}
 		
+		if(mAddress.contains("#")) {
 		String[] arrayA = mAddress.split("#");
-		String mAddress1 = arrayA[0];
-		String mAddress2 = arrayA[1];
-		String mAddress3 = arrayA[2];
+		mAddress1 = arrayA[0];
+		mAddress2 = arrayA[1];
+		mAddress3 = arrayA[2];
+		}
 		
-		
+		request.getSession().setAttribute("mName", mName);
 		request.getSession().setAttribute("mEmail1", mEmail1);
 		request.getSession().setAttribute("mEmail2", mEmail2);
 		request.getSession().setAttribute("mAddress1", mAddress1);

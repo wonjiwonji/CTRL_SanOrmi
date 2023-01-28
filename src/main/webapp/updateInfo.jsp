@@ -131,48 +131,51 @@
 											<input type="text" name="id" value="${sessionScope.id }"
 												id="reg_mb_nick" class="nickname" required maxlength="20"
 												placeholder="ID (변경 불가)" oninput="init_chk_nick();"
-												autocomplete="off" readonly required/>
+												autocomplete="off" readonly required />
 										</div>
 									</div>
 									<div class="passwordbox">
 										<label><span> </span>비밀번호</label>
 										<div class="box box2">
 											<input type="password" name="mPw" id="pwd"
-												placeholder="비밀번호 입력" required/>
+												placeholder="비밀번호 입력" required />
 										</div>
 										<div class="box box3" style="margin-top: 7px">
 											<input type="password" id="repwd" placeholder="비밀번호 확인"
-												maxlength="20" required/>
+												maxlength="20" required />
 										</div>
 									</div>
 									<div class="emailbox">
 										<label><span> </span>이름</label>
 										<div class="box box1">
-											<input type="text" name="mName1" id="fname"
-												class="email_front" placeholder="이름" readonly required/>
+											<input type="text" name="mName" id="fname"
+												class="email_front" placeholder="이름" value="${mName}"
+												required />
 										</div>
 									</div>
 									<div class="emailbox">
 										<label><span> </span>이메일</label>
 										<div class="box box1">
-											<input type="text" name="mEmail1" id="postal_code"
-												class="email_front" placeholder="이메일 앞자리" required/> <em
-												class="ctm">@</em><input type="text" name="mEmail2" id="str_email02"
-												style="width: 190px" placeholder="이메일 뒷자리" required/> <select
-												style="width: 190px; margin-left: 210px; background-color: rgba(255,255,255,0.5);" name="mEmail2"
-												onchange="change_email();"
-												id="email_add">
+											<input type="text" name="mEmail1" value="${mEmail1}"
+												id="postal_code" class="email_front" placeholder="이메일 앞자리"
+												required /> <em class="ctm">@</em><input type="text"
+												name="mEmail2" value="${mEmail2}" id="str_email02"
+												style="width: 190px" placeholder="이메일 뒷자리" required /> <select
+												style="width: 190px; margin-left: 210px; background-color: rgba(255, 255, 255, 0.5);"
+												name="mEmail2" onchange="change_email();" id="email_add">
 												<option value="">직접입력</option>
-												<option value="gmail.com">gmail.com</option>
-												<option value="naver.com">naver.com</option>
-											</select> 
+												<option value="naver.com">네이버</option>
+												<option value="gmail.com">지메일</option>
+												<option value="nate.com">네이트</option>
+											</select>
 										</div>
 									</div>
 									<div class="emailbox">
 										<label><span> </span>주소 (선택 사항)</label>
 										<div class="box box1">
 											<input type="text" class="email_front" id="sample2_postcode"
-												name="mAddress1" placeholder="우편번호" /> <em class="ctm">&nbsp;</em>
+												name="mAddress1" value="${mAddress1}" placeholder="우편번호" />
+											<em class="ctm">&nbsp;</em>
 											<button type="button" onclick="openAddressAPI()"
 												class="adress_btn" value="우편번호 찾기"
 												style="background: #858796; color: #fff; height: 46px; padding: 0px 15px;">
@@ -182,12 +185,13 @@
 									<div class="adressbox">
 										<div class="box box2">
 											<input type="text" id="sample2_address" name="mAddress2"
-												class="form-control form-control-user" placeholder="기본 주소" />
+												value="${mAddress2}" class="form-control form-control-user"
+												placeholder="기본 주소" />
 										</div>
 										<div class="box box3" style="margin-top: 7px">
 											<input type="text" id="sample2_detailAddress"
-												name="mAddress3" class="form-control form-control-user"
-												placeholder="상세 주소" />
+												name="mAddress3" value="${mAddress3}"
+												class="form-control form-control-user" placeholder="상세 주소" />
 										</div>
 									</div>
 									<!-- iOS에서는 position:fixed 버그가 있음, 적용하는 사이트에 맞게 position:absolute 등을 이용하여 top,left값 조정 필요 -->
