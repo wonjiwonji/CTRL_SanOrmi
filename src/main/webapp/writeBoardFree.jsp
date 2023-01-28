@@ -68,16 +68,16 @@ pageEncoding="UTF-8"%>
 
   <script>
   $(document).ready(function(){
-	  $('#content').summernote();
+     $('#content').summernote();
   });
   </script>
 
   <body>
 
-	<%-- 헤더임 --%>
-	<jsp:include page="header.jsp"/>
-	<%-- 헤더라고 --%>
-	
+   <%-- 헤더임 --%>
+   <jsp:include page="header.jsp"/>
+   <%-- 헤더라고 --%>
+   
     <section class="write_content pd60">
       <div class="center">
         <h2>작성</h2>
@@ -90,7 +90,7 @@ pageEncoding="UTF-8"%>
           </div>
           <div class="mb-3 mt-3">
             <label for="subject">제목:</label>
-            <input type="text" class="form-control" id="subject	" placeholder="제목을 입력하세요" name="bTitle" required />
+            <input type="text" class="form-control" id="subject   " placeholder="제목을 입력하세요" name="bTitle" required />
           </div>
           <div class="mb-3 mt-3">
             <label for="content">내용:</label>
@@ -105,8 +105,8 @@ pageEncoding="UTF-8"%>
     <!-- center -->
   </body>
 
-	<%-- 푸터임 --%>
-	<jsp:include page="footer.jsp"/>
-	<%-- 푸터라고 --%>
+   <%-- 푸터임 --%>
+   <jsp:include page="footer.jsp"/>
+   <%-- 푸터라고 --%>
 
 </html>
