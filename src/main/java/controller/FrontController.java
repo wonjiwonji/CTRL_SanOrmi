@@ -67,7 +67,7 @@ public class FrontController extends HttpServlet {
 		}
 		else if(command.equals("/updateMember.do")) {
 			try {
-				forward=new DeleteBoardAction().execute(request, response);
+				forward=new UpdateMemberAction().execute(request, response);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}

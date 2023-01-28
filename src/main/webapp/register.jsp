@@ -12,10 +12,20 @@
 
 <title>회원 가입 페이지</title>
 
+<!-- 네이버 로그인 API -->
+<script type="text/javascript"
+	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+	charset="utf-8"></script>
+<script type="text/javascript"
+	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <!-- 중복 확인 -->
-<script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.min.js"
+	integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+	crossorigin="anonymous"></script>
 
 <script type="text/javascript">
+var checkSave = null;
+	
 	function check(){
 	        //console.log("log");
 	        //변수에 담아주기
@@ -46,7 +56,7 @@
 				
 				if(result==1){
 					$('#checkmsg').html('사용가능한 아이디'); // $('id 속성이 checkmsg인 요소')에 텍스트 추가
-					/* $('#button_joinus').removeAttr("disabled"); */
+					checkSave = id;
 				}	
 				else{
 					$('#checkmsg').html('중복된 아이디');
@@ -54,17 +64,7 @@
 			}
 		})
 	}
-</script>
 
-<!-- 중복 확인 끝 -->
-<!-- 네이버 로그인 API -->
-<script type="text/javascript"
-	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-	charset="utf-8"></script>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<script type="text/javascript">
       //joinform_check 함수로 유효성 검사
       function joinform_check() {
         //console.log("log");
@@ -101,7 +101,7 @@
 				
 				if(result==1){
 					$('#checkmsg').html('사용가능한 아이디'); // $('id 속성이 checkmsg인 요소')에 텍스트 추가
-					$('#button_joinus').removeAttr("disabled");
+					var checkSave=$('#id').val();
 				}	
 				else{
 					$('#checkmsg').html('중복된 아이디');
@@ -168,15 +168,12 @@
             return false;
           }
         -->
-        if (checkmsg.value == '') {
-        	
-        }
 	
-        if (id != document.getElementById('id')){
-            alert(
-                    '아이디 중복확인이 필요합니다.',
-                  );
-        	return false;
+		var id = document.getElementById('id');
+        
+        if (!(id.value == checkSave)) {
+        	alert('아이디 중복확인을 해주세요.');
+            return false;
         }
         //입력 값 전송
         document.join_form.submit(); //유효성 검사의 포인트
@@ -238,16 +235,17 @@
 <body class="bg-gradient-success">
 
 	<%-- 헤더임 --%>
-	<jsp:include page="header.jsp"/>
+	<jsp:include page="header.jsp" />
 	<%-- 헤더라고 --%>
 
 	<div class="container">
 		<div class="card o-hidden border-0 shadow-lg my-5">
 			<div class="card-body p-0">
 				<!-- Nested Row within Card Body -->
-<% //TODO %>
-				<form class="user" name="join_form" action="join.do"
-					method="post">
+				<%
+				//TODO
+				%>
+				<form class="user" name="join_form" action="join.do" method="post">
 					<div class="row">
 						<!-- <div class="col-lg-5 d-none d-lg-block bg-register-image"></div> -->
 						<div class="col-lg-5 d-none d-lg-block">
@@ -267,12 +265,12 @@
 									</div>
 									<div class="col-sm-6">
 										<button type="button"
-											class="jw jw-btn-success btn-user btn-block" onclick="check();"
-											>
-											중복 확인
-										</button>
+											class="jw jw-btn-success btn-user btn-block"
+											onclick="check();">중복 확인</button>
 									</div>
-									<div><p id="checkmsg"></p></div>
+									<div>
+										<p id="checkmsg"></p>
+									</div>
 								</div>
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
@@ -292,12 +290,13 @@
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="text" name="mName2" id="lname"
-											class="form-control form-control-user" placeholder="이름" style="width:590px;" required />
-										
+											class="form-control form-control-user" placeholder="이름"
+											style="width: 590px;" required />
+
 										<!-- <input type="text" 
                                  id="exampleFirstName" placeholder="FirstName" required /> -->
 									</div>
-										<!-- <input type="text" class="form-control form-control-user"
+									<!-- <input type="text" class="form-control form-control-user"
                                  id="exampleLastName" placeholder="LastName" required /> -->
 								</div>
 								<!-- </form> -->
@@ -378,16 +377,16 @@
 									</select> <br />
 								</div>
 								<div class="join_btn">
-									<button type="button" id="button_joinus" onclick="joinform_check();"
-										class="btn btn-success btn-user btn-block">
-										회원 가입</button>
+									<button type="button" id="button_joinus"
+										onclick="joinform_check();"
+										class="btn btn-success btn-user btn-block">회원 가입</button>
 								</div>
 								<hr />
 								<!--<a href="javascript:kakaoLogin();"> <img
 									src="./img/kakao_login_medium_wide.png"
 									style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block;" />
 								</a> -->
-<!--
+								<!--
 								<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 								<script>
                     window.Kakao.init('78892b6e583dfe48cb2d2caf38da1114');
@@ -418,11 +417,11 @@
                     }
                   </script>
                    -->
-								
+
 								<!-- 네이버 로그아웃 -->
 								<!-- 로그인 다시 시도하고 싶을 때 밑의 주소 복붙해서 로그아웃하면 됨 -->
 								<!-- http://nid.naver.com/nidlogin.logout -->
-								
+
 								<!-- 네이버 로그인 버튼 노출 영역 -->
 								<!--<div id="naver_id_login" style="display: flex; justify-content: center;"></div> -->
 								<!-- //네이버 로그인 버튼 노출 영역 -->
@@ -464,7 +463,7 @@
 	<script src="js/sb-admin-2.min.js"></script>
 
 	<%-- 푸터임 --%>
-	<jsp:include page="footer.jsp"/>
+	<jsp:include page="footer.jsp" />
 	<%-- 푸터라고 --%>
 
 	<script

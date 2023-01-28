@@ -17,21 +17,18 @@ public class JoinAction implements Action {
 		MemberDAO mdao=new MemberDAO();
 		MemberVO mvo=new MemberVO();
 		
-		String mName=request.getParameter("mName1")+request.getParameter("mName2");
-		String mEmail=request.getParameter("mEmail1")+request.getParameter("mEmail2");
+		String mEmail=request.getParameter("mEmail1")+"#"+request.getParameter("mEmail2");
 		String mAddress=request.getParameter("mAddress1")
-				+" "+request.getParameter("mAddress2")
-				+" "+request.getParameter("mAddress3");
+				+"#"+request.getParameter("mAddress2")
+				+"#"+request.getParameter("mAddress3");
 		
 		mvo.setId(request.getParameter("id"));
 		mvo.setmPw(request.getParameter("mPw"));
-		mvo.setmName(mName);
+		mvo.setmName("mName");
 		mvo.setmAddress(mAddress);
 		mvo.setmEmail(mEmail);
 		
 		mdao.insertMember(mvo);
-		
-		System.out.println(mvo);
 		
 		return forward;
 	}

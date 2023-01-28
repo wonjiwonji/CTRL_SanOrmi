@@ -16,18 +16,27 @@ public class UpdateMemberAction implements Action {
 		
 		MemberDAO mdao=new MemberDAO();
 		MemberVO mvo=new MemberVO();
-		mvo.setmPw(request.getParameter("mPw"));
-		mvo.setmName(request.getParameter("mName"));
-		mvo.setmEmail(request.getParameter("mEmail"));
-		mvo.setmAddress(request.getParameter("mAddress"));
+		MemberVO me=new MemberVO();
+		
 		mvo.setId(request.getParameter("id"));
 		
-		System.out.println(mvo);
+		me=mdao.selectOneMember(mvo);
+		
+		String mEmail=request.getParameter("mEmail1")+"#"+request.getParameter("mEmail2");
+		String mAddress=request.getParameter("mAddress1")
+				+"#"+request.getParameter("mAddress2")
+				+"#"+request.getParameter("mAddress3");
+		
+		mvo.setmPw(request.getParameter("mPw"));
+		mvo.setmName(request.getParameter("mName"));
+		mvo.setmEmail(request.getParameter(mEmail));
+		mvo.setmAddress(request.getParameter(mAddress));
+		
+		if(mvo.getmAddress()==null) {
+			mvo.setmAddress(me.getmAddress());
+		}
 		
 		mdao.updateMember(mvo);
-		
-		request.getSession().setAttribute("id", mvo.getId());
-		request.getSession().setAttribute("mName", mvo.getmName());
 		
 		return forward;
 	}

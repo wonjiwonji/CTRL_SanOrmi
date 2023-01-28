@@ -13,7 +13,7 @@
 				<li><a href="myBoard.do?bId=${sessionScope.id}">작성글 확인</a></li>
 				<li><a href="withdrawal.do">회원탈퇴</a></li>
 				<c:if test="${!(fn:contains(sessionScope.id, '@'))}">
-				<li><a href="updateInfo.do">정보 수정</a></li>
+				<li><a href="updateInfo.do?id=${sessionScope.id}">정보 수정</a></li>
 				</c:if>
 			</ul></li>
 		<li><a href="logout.do">로그아웃</a></li>
