@@ -24,7 +24,6 @@ public class LoginAction implements Action {
 		if(member!=null) {
 			request.getSession().setAttribute("id", member.getId());
 			request.getSession().setAttribute("mPw", member.getmPw());
-			System.out.println(member);
 			return forward;
 		} else {
 			return forward;

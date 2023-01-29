@@ -17,7 +17,7 @@ public class JoinNaverAction implements Action {
 		MemberDAO mdao=new MemberDAO();
 		MemberVO mvo=new MemberVO();
 
-		mvo.setId(request.getParameter("email"));
+		mvo.setId("(N)"+request.getParameter("email"));
 		mvo.setmName(request.getParameter("name"));
 		mvo.setmEmail(request.getParameter("email"));
 		mvo.setmPw("NAVER");

@@ -11,13 +11,6 @@
 <meta name="author" content="" />
 <title>로그인 페이지</title>
 
-<!-- 네이버 로그인 js -->
-<script type="text/javascript"
-	src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
-	charset="utf-8"></script>
-<script type="text/javascript"
-	src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="./images/favicon.ico" />
 
@@ -197,32 +190,28 @@
 
 
 
-
-
-
-										<!-- <ul>
-						<li>
-							아래와같이 아이디를 꼭 써준다. <a id="naverIdLogin_loginButton"
-							href="javascript:void(0)"> <span>네이버 로그인</span></a>
-						</li>
-							<li onclick="naverLogout(); return false;"><a
-							href="javascript:void(0)"> <span>네이버 로그아웃</span>
-							</a></li>
-						</ul> -->
-
-										<!-- 네이버 로그아웃 -->
-										<!-- http://nid.naver.com/nidlogin.logout  -->
-
+										<!-- 네이버 js -->
+										<script type="text/javascript"
+											src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
+											charset="utf-8"></script>
+										<script type="text/javascript"
+											src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+										
 										<!-- 네이버 로그인 버튼 노출 영역 -->
 										<div id="naver_id_login"
 											style="display: flex; justify-content: center;"></div>
-										<!-- //네이버 로그인 버튼 노출 영역 -->
+											
 										<script type="text/javascript">
-  					var naver_id_login = new naver_id_login("dClwkVzJ3MRBP_IElx5I", "http://localhost:8088/ctrl/naverOK.jsp");
+										var clientID = 'dClwkVzJ3MRBP_IElx5I'; // 네아로 클라이언트 아이디
+									  	var callbackURL = 'http://localhost:8088/ctrl/naverOK.jsp'; // 네아로에서 설정한 CallBack URL 
+									  	var siteURL = 'http://localhost:8088';  // 네아로에서 설정한 사이트 URL 
+										
+  					var naver_id_login = new naver_id_login(clientID, callbackURL);
   					var state = naver_id_login.getUniqState();
   					naver_id_login.setButton("green", 3, 60);
-  					naver_id_login.setDomain("http://localhost:8088");
+  					naver_id_login.setDomain(siteURL);
    					naver_id_login.setState(state);
+   					//naver_id_login.setPopup();
   					naver_id_login.init_naver_id_login();
   				</script>
 									</form>
