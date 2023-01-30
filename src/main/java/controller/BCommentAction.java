@@ -9,7 +9,7 @@ import model.board.BoardDAO;
 import model.board.BoardSet;
 import model.board.BoardVO;
 
-public class CommentAction implements Action {
+public class BCommentAction implements Action {
 
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
