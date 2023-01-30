@@ -50,7 +50,7 @@ public class BoardDAO {
    // DELETE_BCCOMMENT; 대댓글 삭제 쿼리문 ( 대댓글만 삭제 )
    final String DELETE_BCCOMMENT = "DELETE FROM BCOMMENT WHERE BC_NUM=?";
    // SELECTALL_BCOMMENT; 댓글 전체보기 쿼리문 ( 게시글에 대한 댓글 전체 보기 )
-   final String SELECTALL_BCOMMENT = "SELECT BC_CONTENT, BC_GROUP, BC_DATE, BC_ID FROM BCOMMENT WHERE B_NUM=? AND BC_SQE=0";
+   final String SELECTALL_BCOMMENT = "SELECT BC_NUM, BC_CONTENT, BC_GROUP, BC_DATE, BC_ID FROM BCOMMENT WHERE B_NUM=? AND BC_SQE=0";
    // SELECTALL_BCCOMMENT; 대댓글 전체보기 쿼리문 ( 게시글에 대한 대댓글 전체 보기 )
    final String SELECTALL_BCCOMMENT = "SELECT BC_CONTENT,BC_GROUP, BC_DATE,BC_SQE,BC_ID FROM BCOMMENT WHERE B_NUM=? AND BC_SQE>0 AND BC_GROUP=?";
    // SELECTONE ; 댓글 삭제를 위해 BC_NUM을 이용하여 BC_NUM, BC_GROUP, BC_SQE를 조회
@@ -232,6 +232,7 @@ public class BoardDAO {
             while (rs2.next()) { // 저장할 정보가 남아있는 동안
                BCommentVO bcomment = new BCommentVO(); // BCommentVO 객체 bcomment 생성
 
+               bcomment.setBcNum(rs2.getInt("BC_NUM"));
                bcomment.setBcContent(rs2.getString("BC_CONTENT")); // 댓글 내용 저장
                bcomment.setBcID(rs2.getString("BC_ID")); // 댓글 작성자 저장
                bcomment.setBcGroup(bvo.getBcvo().getBcGroup()); // 댓글 그룹 저장
