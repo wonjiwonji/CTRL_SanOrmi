@@ -19,14 +19,17 @@ public class BoardDAO {
    // UPDATE_BOARD; 게시글 수정 쿼리문
    final String UPDATE_BOARD = "UPDATE BOARD SET B_TITLE=?,B_CONTENT=? WHERE B_NUM=?";
    
-   // UPDATE_BOARD_CNT; 게시글 조회수+ 쿼리문
-   final String UPDATE_BOARD_CNT = "UPDATE BOARD SET B_CNT = B_CNT+1 WHERE B_NUM=?";
+   // UPDATE_BOARD_BCNT; 게시글 조회수+ 쿼리문
+   final String UPDATE_BOARD_BCNT = "UPDATE BOARD SET B_CNT = B_CNT+1 WHERE B_NUM=?";
+   // UPDATE_BOARD_CCNT; 게시글 조회수+ 쿼리문
+   final String UPDATE_BOARD_CCNT = "UPDATE BOARD B\r\n"
+   		+ "SET B.C_CNT  = (SELECT COUNT(BC.BC_NUM) FROM BCOMMENT BC	WHERE BC.B_NUM = B.B_NUM )\r\n"
+   		+ "WHERE B.B_NUM = 15;";
+   
    // DELETE_BOARD; 게시글 삭제 쿼리문
    final String DELETE_BOARD = "DELETE FROM BOARD WHERE B_NUM=?";
    // SELECTONE_BOARD; 게시글 상세보기 쿼리문 (게시글 하나 클릭 시 나오는 정보)
-   final String SELECTONE_BOARD = "SELECT B_ID, B.B_TITLE, B.B_CONTENT, B.B_DATE,\r\n "
-         + "COUNT(BC.BC_NUM) AS C_CNT, B.B_CNT\r\n"
-         + "FROM BOARD B LEFT JOIN BCOMMENT BC ON B.B_NUM = BC.B_NUM WHERE B.B_NUM =? GROUP BY BC_NUM;";
+   final String SELECTONE_BOARD = "SELECT B_ID, B_TITLE, B_CONTENT, B_DATE, C_CNT, B_CNT FROM BOARD WHERE B_NUM =15";
    // SELECTALL_BOARD; 게시글 전체보기 쿼리문 ( 게시글 목록 시 나오는 정보 )
    final String SELECTALL_BOARD = "SELECT B_NUM, B_TITLE, B_CNT, B_ID, B_CONTENT, C_CNT FROM BOARD ORDER BY B_NUM DESC";
    // SELECTALL_MY_PAGE; 내가 쓴 글 전체보기 쿼리문 
@@ -149,7 +152,7 @@ public class BoardDAO {
    public boolean updatebCnt(BoardVO bvo) { // bvo ; bNum 필요
       conn = JDBCUtil.connect(); // JDBCUtil 연결
       try {
-         pstmt = conn.prepareStatement(UPDATE_BOARD_CNT); // UPDATE_BOARD_CNT ; 게시글 조회수 변경
+         pstmt = conn.prepareStatement(UPDATE_BOARD_BCNT); // UPDATE_BOARD_BCNT ; 게시글 조회수 변경
          pstmt.setInt(1, bvo.getbNum()); // 게시글 번호
          pstmt.executeUpdate(); // 실행
       } catch (SQLException e) {
@@ -159,6 +162,22 @@ public class BoardDAO {
       JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
       return true;
    }
+   
+   // updatebCnt ; 게시글 조회수 변경
+   public boolean updatecCnt(BoardVO bvo) { // bvo ; bNum 필요
+      conn = JDBCUtil.connect(); // JDBCUtil 연결
+      try {
+         pstmt = conn.prepareStatement(UPDATE_BOARD_CCNT); // UPDATE_BOARD_BCNT ; 게시글 조회수 변경
+         pstmt.setInt(1, bvo.getbNum()); // 게시글 번호
+         pstmt.executeUpdate(); // 실행
+      } catch (SQLException e) {
+         e.printStackTrace();
+         return false;
+      }
+      JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
+      return true;
+   }
+   
 
    // deleteBoard; 게시글 삭제
    public boolean deleteBoard(BoardVO bvo) { // bvo; bNum 필요
