@@ -130,7 +130,7 @@
 							</c:forEach>
 						</section>
 						<!-- 댓글시작 -->
-						<jsp:include page="comment.jsp" />
+						<jsp:include page="qComment.jsp" />
 						<!-- 댓글끝 -->
 					</div>
 				</div>
