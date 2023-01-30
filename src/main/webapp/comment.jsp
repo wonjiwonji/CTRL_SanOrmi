@@ -20,8 +20,7 @@
          <%-- 현재 게시글의 번호를 value="1" 에 넣어주세요--%>
 
          <input type="hidden" class="form-control" id="input_writer"
-            name="bcID" value="leesh132">
-         <%-- 세션의 로그인 유저 아이디를 value="leesh132" 에 넣어주세요--%>
+            name="bcID">
          <input type="text" class="form-control" id="input_comment"
             name="bcContent">
          <button type="submit" class="btn btn-outline-primary"

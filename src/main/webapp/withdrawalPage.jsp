@@ -130,7 +130,7 @@
 
 										<div class="btnbox">
 											<button type="button"
-												onclick="naverLogout(); action(); return false;"
+												onclick="naverLogout(); return false;"
 												class="join_btn sub">회원탈퇴</button>
 
 											<button type="button" onclick="cancle();"
@@ -158,6 +158,9 @@ function naverLogout() {
 	setTimeout(function() {
 		closePopUp();
 		}, 100);
+	
+	action();
+	
 }
 
 function action() {
