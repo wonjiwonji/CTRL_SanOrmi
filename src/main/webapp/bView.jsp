@@ -165,13 +165,7 @@
 												<td>${bcList.bcContent}</td>
 												<td>${bcList.bcDate}</td>
 												<td>댓글 달기</td>
-												<td>
-												${sessionScope.id}
-												${bcList.bcID}
-												</td>
-												<c:if test="${sessionScope.id} == ${bcList.bcID}">
-													<td>삭제</td>
-												</c:if>
+												<td><a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}">삭제</a></td>
 											</tr>
 										</c:forEach>
 									</tbody>
