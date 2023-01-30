@@ -15,14 +15,13 @@ public class InsertBCommentAction implements Action {
 		BCommentVO bcvo=new BCommentVO();
 		BoardDAO bdao=new BoardDAO();
 
-
-		forward.setPath("bView.do");
-		forward.setRedirect(true);
+		forward.setPath("/bView.do");
+		forward.setRedirect(false);
 
 		bcvo.setBcID(request.getParameter("bcID"));
 		bcvo.setBcContent(request.getParameter("bcContent"));
 		bcvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
-
+		
 		bdao.insertBComment(bcvo);
 		return forward;
 

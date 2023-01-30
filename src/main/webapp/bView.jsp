@@ -92,8 +92,8 @@
 					<div class="container mt-3">
 						<hr>
 						<div class="mb-3 mt-3 clearfix">
-							<span class="float-start me-2">${bNum }</span> <span
-								class="float-end ms-4">${bDate }</span> <span class="float-end">${bCnt }</span>
+							<span class="float-start me-2">${bbvo[0].board.bNum }번 글</span> <span
+								class="float-end ms-4">${bbvo[0].board.bDate }</span> <span class="float-end">${bCnt }</span>
 						</div>
 
 						<section>
@@ -126,13 +126,13 @@
 						</section>
 <div class="container my-3 border rounded">
    <div class="mb-3 mt-3">
-      <label>댓글: <span id="cmt_cnt"></span> 개
+      <label>댓글: <span id="cmt_cnt">${bbvo[0].board.cCnt}</span> 개
       </label>
       <form action="insertBComment.do" class="input-group my-2">
          <input type="hidden" class="form-control" id="input_cmt_num"
-            name="bNum" value="1">
+            name="bNum" value="${bbvo[0].board.bNum}">
          <input type="hidden" class="form-control" id="input_writer"
-            name="bcID">
+            name="bcID" value="${sessionScope.id}">
          <input type="text" class="form-control" id="input_comment"
             name="bcContent">
          <button type="submit" class="btn btn-outline-primary"
@@ -147,13 +147,14 @@
             </tr>
          </thead>
          <tbody id="cmt_list">
-            <c:forEach var="vo" items="${selectBs }">
+<%--             <c:forEach var="boardSet" items="${bbvo}">
+            <c:set var="bcList" value="${boardSet.bcList}" />
                <tr>
-                  <td>${vo.bcID }</td>
-                  <td>${vo.bcContent }</td>
-                  <td>${vo.bcDate }</td>
+                  <td>${bbvo[0].bcList.bcID }</td>
+                  <td>${bcList.bcContent }</td>
+                  <td>${bcList.bcDate }</td>
                </tr>
-            </c:forEach>
+            </c:forEach> --%>
          </tbody>
       </table>
    </div>

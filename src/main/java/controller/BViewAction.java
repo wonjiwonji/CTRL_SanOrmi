@@ -28,6 +28,8 @@ public class BViewAction implements Action {
 		
 		request.getSession().setAttribute("bbvo", bbvo);
 		
+		System.out.println(bbvo);
+		
 		return forward;
 	}
 
