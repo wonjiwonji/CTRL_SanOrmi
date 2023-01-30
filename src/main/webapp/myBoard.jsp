@@ -101,7 +101,7 @@
 						</div>
 					</div>
 				</div>
-				<div style="padding: 0px 200px 50px">
+				<div style="padding: 0px 200px 100px">
 					<div class="bottom">
 						<ul class="list_wrap">
 							<div class="left_top_02">

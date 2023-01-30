@@ -21,16 +21,20 @@
 				<div id="fh5co-contact" class="fh5co-section-gray">
 					<div class="container">
 						<section class="join_section pdt60">
-							<h2 class="join_title">로그아웃</h2>
-							<p class="join_desc mt">Logout</p>
+							<h2 class="join_title"
+								style="font-size: 27px; font-weight: 700; margin-bottom: 10px; text-align: center;">로그아웃</h2>
+							<p class="join_desc mt"
+								style="font-size: 12px; font-weight: 700; margin-bottom: 20px; text-align: center;">Logout</p>
 
 							<c:choose>
 								<c:when test="${(fn:contains(sessionScope.mPw, 'KAKAO'))}">
-									<a href="javascript:kakaoLogout();"> <img
-										src="./img/kakao_login_large_narrow5.png"
-										style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block;"
-										alt="카카오 로고" />
-									</a>
+									<button onclick="kakaoLogout(); action(); return false;"
+										class="kakao_logout"
+										style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #FEE500; text-align: center; font-size: large; font-weight: bold;">
+										<a> <img src="./img/kakao.png" /></a> 카카오 로그아웃
+									</button>
+
+
 									<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 									<script>
 				// SDK를 초기화 합니다. 사용할 앱 키(javascript) 입력합니다.
@@ -67,20 +71,25 @@
 										<form name="join_form" id="fregister" method="post"
 											autocomplete="off">
 											<div class="Idbox">
-												<label><span> </span>아이디</label>
+												<label
+													style="display: block; font-size: 14px; font-weight: 700; margin-bottom: 10px;"><span>
+												</span>아이디</label>
 												<div class="box">
 													<input type="text" name="id" value="${sessionScope.id }"
-														id="reg_mb_nick" class="nickname" required maxlength="20"
-														placeholder="ID (변경 불가)" oninput="init_chk_nick();"
-														autocomplete="off" readonly />
+														id="reg_mb_nick" class="nickname"
+														style="margin-bottom:20px; display: block; width: 100%; height: 50px; box-sizing: border-box; padding: 0 15px; border: 1px solid #dadde0; border-radius: 4px; box-shadow: 2px 2px 5px rgb(0 0 0/ 10%); font-size: 14px; font-weight: 500; transition: border-color 0.3s;"
+														required maxlength="20" placeholder="ID (변경 불가)"
+														oninput="init_chk_nick();" autocomplete="off" readonly />
 												</div>
 											</div>
 										</form>
 
 										<div class="btnbox">
-											<button type="button"
-												onclick="naverLogout(); action(); return false;"
-												class="join_btn sub">로그아웃</button>
+										
+										<button onclick="naverLogout(); action(); return false;"
+										class="naver_logout" 	style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #03C75A; text-align: center; font-size: large; font-weight: bold; color: white;">
+										<a> <img src="./img/btnG_아이콘사각.png" style="width: 70px; height: 60px;"/></a> 네이버 로그아웃
+										</button>
 										</div>
 									</div>
 

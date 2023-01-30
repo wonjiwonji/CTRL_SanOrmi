@@ -1,655 +1,715 @@
 @charset "UTF-8";
 
 @media screen and (max-width: 850px) {
-  .join_section.myinfo {
-    background-color: transparent;
-  }
+	.join_section.myinfo {
+		background-color: transparent;
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .join_section.myinfo {
-    background-color: transparent;
-    padding-top: 0;
-  }
+	.join_section.myinfo {
+		background-color: transparent;
+		padding-top: 0;
+	}
 }
 
 @media screen and (max-width: 850px) {
-  .join_section.myinfo div.center400 {
-    width: 100%;
-    max-width: 400px;
-    background-color: transparent;
-    border-radius: 0;
-    padding-top: 0;
-  }
+	.join_section.myinfo div.center400 {
+		width: 100%;
+		max-width: 400px;
+		background-color: transparent;
+		border-radius: 0;
+		padding-top: 0;
+	}
 }
 
 @media screen and (max-width: 850px) {
-  .join_section.myinfo div.center400 form {
-    width: 100%;
-    max-width: 100%;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
+	.join_section.myinfo div.center400 form {
+		width: 100%;
+		max-width: 100%;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
 }
 
 @media screen and (max-width: 850px) {
-  .join_section {
-    background-color: #f5f6f7;
-  }
+	.join_section {
+		background-color: #f5f6f7;
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .join_section {
-    background-color: #f5f6f7;
-    padding-top: 30px;
-  }
+	.join_section {
+		background-color: #f5f6f7;
+		padding-top: 30px;
+	}
 }
 
 .join_section h2.join_title {
-  font-size: 27px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  text-align: center;
+	font-size: 27px;
+	font-weight: 700;
+	margin-bottom: 10px;
+	text-align: center;
 }
 
 @media screen and (max-width: 850px) {
-  .join_section h2.join_title {
-    font-size: 25px;
-    margin-bottom: 25px;
-  }
+	.join_section h2.join_title {
+		font-size: 25px;
+		margin-bottom: 25px;
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .join_section h2.join_title {
-    font-size: 22px;
-    margin-bottom: 20px;
-  }
+	.join_section h2.join_title {
+		font-size: 22px;
+		margin-bottom: 20px;
+	}
 }
 
 .join_section p.join_desc {
-  font-size: 12px;
-  font-weight: 700;
-  margin-bottom: 20px;
-  text-align: center;
+	font-size: 12px;
+	font-weight: 700;
+	margin-bottom: 20px;
+	text-align: center;
 }
 
 @media screen and (max-width: 850px) {
-  .join_section p.join_desc {
-    color: #dadde0;
-    font-weight: 900;
-    font-size: 45px;
-    margin-bottom: 0;
-  }
+	.join_section p.join_desc {
+		color: #dadde0;
+		font-weight: 900;
+		font-size: 45px;
+		margin-bottom: 0;
+	}
 }
 
 @media screen and (max-width: 600px) {
-  .join_section p.join_desc {
-    font-size: 35px;
-  }
+	.join_section p.join_desc {
+		font-size: 35px;
+	}
 }
 
 @media screen and (max-width: 850px) {
-  .join_section div.center400 {
-    width: 100%;
-    max-width: 100%;
-    background-color: #FFF;
-    border-radius: 40px 40px 0 0;
-    padding-top: 110px;
-  }
+	.join_section div.center400 {
+		width: 100%;
+		max-width: 100%;
+		background-color: #FFF;
+		border-radius: 40px 40px 0 0;
+		padding-top: 110px;
+	}
 }
 
 @media screen and (max-width: 850px) {
-  .join_section div.center400 form {
-    width: 95%;
-    max-width: 400px;
-    margin: 0 auto;
-    box-sizing: border-box;
-  }
+	.join_section div.center400 form {
+		width: 95%;
+		max-width: 400px;
+		margin: 0 auto;
+		box-sizing: border-box;
+	}
 }
 
-.join_section div.center400 form > div {
-  box-sizing: border-box;
-  margin-bottom: 20px;
+.join_section div.center400 form>div {
+	box-sizing: border-box;
+	margin-bottom: 20px;
 }
 
-.join_section div.center400 form > div > label {
-  display: block;
-  font-size: 14px;
-  font-weight: 700;
-  margin-bottom: 10px;
+.join_section div.center400 form>div>label {
+	display: block;
+	font-size: 14px;
+	font-weight: 700;
+	margin-bottom: 10px;
 }
 
-.join_section div.center400 form > div > label span {
-  display: inline-block;
-  width: 15px;
-  height: 15px;
-  vertical-align: top;
-  margin-right: 5px;
+.join_section div.center400 form>div>label span {
+	display: inline-block;
+	width: 15px;
+	height: 15px;
+	vertical-align: top;
+	margin-right: 5px;
 }
 
-.join_section div.center400 form > div > label span svg {
-  display: block;
-  max-width: 100%;
+.join_section div.center400 form>div>label span svg {
+	display: block;
+	max-width: 100%;
 }
 
-.join_section div.center400 form > div > label span svg.send {
-  transform: rotate(-90deg);
+.join_section div.center400 form>div>label span svg.send {
+	transform: rotate(-90deg);
 }
 
-.join_section div.center400 form > div > p.req {
-  margin-bottom: 10px;
-  font-size: 12px;
-  font-weight: 700;
+.join_section div.center400 form>div>p.req {
+	margin-bottom: 10px;
+	font-size: 12px;
+	font-weight: 700;
 }
 
-.join_section div.center400 form > div > p.req > b.right {
-  float: right;
-  font-size: 14px;
-  font-weight: 700;
-  margin-top: -5px;
+.join_section div.center400 form>div>p.req>b.right {
+	float: right;
+	font-size: 14px;
+	font-weight: 700;
+	margin-top: -5px;
 }
 
-.join_section div.center400 form > div > p.req > b.right input {
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  vertical-align: middle;
-  width: 18px;
-  height: 18px;
-  margin-right: 5px;
-  margin-top: -4px;
+.join_section div.center400 form>div>p.req>b.right input {
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	vertical-align: middle;
+	width: 18px;
+	height: 18px;
+	margin-right: 5px;
+	margin-top: -4px;
 }
 
-.join_section div.center400 form > div > div.box {
-  height: 50px;
+.join_section div.center400 form>div>div.box {
+	height: 50px;
 }
 
-.join_section div.center400 form > div > div.box > input, .join_section div.center400 form > div > div.box > select {
-  display: block;
-  width: 100%;
-  height: 50px;
-  box-sizing: border-box;
-  padding: 0 15px;
-  border: 1px solid #dadde0;
-  border-radius: 4px;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-  font-size: 14px;
-  font-weight: 500;
-  transition: border-color 0.3s;
+.join_section div.center400 form>div>div.box>input, .join_section div.center400 form>div>div.box>select
+	{
+	display: block;
+	width: 100%;
+	height: 50px;
+	box-sizing: border-box;
+	padding: 0 15px;
+	border: 1px solid #dadde0;
+	border-radius: 4px;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+	font-size: 14px;
+	font-weight: 500;
+	transition: border-color 0.3s;
 }
 
-.join_section div.center400 form > div > div.box > input::placeholder, .join_section div.center400 form > div > div.box > select::placeholder {
-  font-size: 14px;
-  font-weight: 500;
+.join_section div.center400 form>div>div.box>input::placeholder,
+	.join_section div.center400 form>div>div.box>select::placeholder {
+	font-size: 14px;
+	font-weight: 500;
 }
 
-.join_section div.center400 form > div > div.box > input.ph_color::placeholder, .join_section div.center400 form > div > div.box > select.ph_color::placeholder {
-  color: #1cc88a;
+.join_section div.center400 form>div>div.box>input.ph_color::placeholder,
+	.join_section div.center400 form>div>div.box>select.ph_color::placeholder
+	{
+	color: #1cc88a;
 }
 
-.join_section div.center400 form > div > div.box.active > input, .join_section div.center400 form > div > div.box.active > select {
-  border-color: #1cc88a;
+.join_section div.center400 form>div>div.box.active>input, .join_section div.center400 form>div>div.box.active>select
+	{
+	border-color: #1cc88a;
 }
 
 div.emailbox .adress_btn {
-   display: block;
-  cursor: pointer;
-   /* width: 100%; */ 
-  height: 50px;
-  font-size: 15px;
-  background-color: #858796;
-  color: #FFF;
-  font-weight: 500;
-  text-align: center;
-  line-height: 48px;
-  box-sizing: border-box;
-  border: 1px solid #858796;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
+	display: block;
+	cursor: pointer;
+	/* width: 100%; */
+	height: 50px;
+	font-size: 15px;
+	background-color: #858796;
+	color: #FFF;
+	font-weight: 500;
+	text-align: center;
+	line-height: 48px;
+	box-sizing: border-box;
+	border: 1px solid #858796;
+	border-radius: 4px;
+	transition: background-color 0.3s, color 0.3s;
 }
+
 div.btnbox .sub {
-  display: block;
-  cursor: pointer;
-  width: 100%;
-  height: 50px;
-  font-size: 15px;
-  background-color: #1cc88a;
-  color: #FFF;
-  font-weight: 500;
-  text-align: center;
-  line-height: 48px;
-  box-sizing: border-box;
-  border: 1px solid #1cc88a;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s;
+	display: block;
+	cursor: pointer;
+	width: 100%;
+	height: 50px;
+	font-size: 15px;
+	background-color: #1cc88a;
+	color: #FFF;
+	font-weight: 500;
+	text-align: center;
+	line-height: 48px;
+	box-sizing: border-box;
+	border: 1px solid #1cc88a;
+	border-radius: 4px;
+	transition: background-color 0.3s, color 0.3s;
 }
 
 @media screen and (min-width: 850px) {
-  div.btnbox .sub:hover {
-    background-color: #FFF;
-    color: #1cc88a;
-  }
+	div.btnbox .sub:hover {
+		background-color: #FFF;
+		color: #1cc88a;
+	}
 }
 
-.join_section div.center400 form > div.loginbox {
-  border: 1px solid #dadde0;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+.join_section div.center400 form>div.loginbox {
+	border: 1px solid #dadde0;
+	border-radius: 4px;
+	overflow: hidden;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.join_section div.center400 form > div.loginbox > div.box {
-  position: relative;
+.join_section div.center400 form>div.loginbox>div.box {
+	position: relative;
 }
 
-.join_section div.center400 form > div.loginbox > div.box > input {
-  padding-right: 45px;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
+.join_section div.center400 form>div.loginbox>div.box>input {
+	padding-right: 45px;
+	border: none;
+	box-shadow: none;
+	border-radius: 0;
 }
 
-.join_section div.center400 form > div.loginbox > div.box > input.login_pw {
-  border-top: 1px solid #dadde0;
+.join_section div.center400 form>div.loginbox>div.box>input.login_pw {
+	border-top: 1px solid #dadde0;
 }
 
-.join_section div.center400 form > div.loginbox > div.box > span {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  display: block;
-  width: 15px;
-  height: 15px;
+.join_section div.center400 form>div.loginbox>div.box>span {
+	position: absolute;
+	right: 15px;
+	top: 50%;
+	transform: translateY(-50%);
+	display: block;
+	width: 15px;
+	height: 15px;
 }
 
-.join_section div.center400 form > div.loginbox > div.box > span svg {
-  display: block;
-  max-width: 100%;
-  fill: #555;
+.join_section div.center400 form>div.loginbox>div.box>span svg {
+	display: block;
+	max-width: 100%;
+	fill: #555;
 }
 
-.join_section div.center400 form > div.findbox {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 50px;
+.join_section div.center400 form>div.findbox {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 50px;
 }
 
-.join_section div.center400 form > div.findbox a, .join_section div.center400 form > div.findbox button, .join_section div.center400 form > div.findbox input {
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
-  transition: color 0.3s;
+.join_section div.center400 form>div.findbox a, .join_section div.center400 form>div.findbox button,
+	.join_section div.center400 form>div.findbox input {
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
+	transition: color 0.3s;
 }
 
 @media screen and (min-width: 850px) {
-  .join_section div.center400 form > div.findbox a:hover, .join_section div.center400 form > div.findbox button:hover, .join_section div.center400 form > div.findbox input:hover {
-    color: #1cc88a;
-  }
+	.join_section div.center400 form>div.findbox a:hover, .join_section div.center400 form>div.findbox button:hover,
+		.join_section div.center400 form>div.findbox input:hover {
+		color: #1cc88a;
+	}
 }
 
-.join_section div.center400 form > div.findbox a.find_btn, .join_section div.center400 form > div.findbox a.non_btn, .join_section div.center400 form > div.findbox button.find_btn, .join_section div.center400 form > div.findbox button.non_btn, .join_section div.center400 form > div.findbox input.find_btn, .join_section div.center400 form > div.findbox input.non_btn {
-  position: relative;
-  margin-left: 20px;
+.join_section div.center400 form>div.findbox a.find_btn, .join_section div.center400 form>div.findbox a.non_btn,
+	.join_section div.center400 form>div.findbox button.find_btn,
+	.join_section div.center400 form>div.findbox button.non_btn,
+	.join_section div.center400 form>div.findbox input.find_btn,
+	.join_section div.center400 form>div.findbox input.non_btn {
+	position: relative;
+	margin-left: 20px;
 }
 
-.join_section div.center400 form > div.findbox a.find_btn::before, .join_section div.center400 form > div.findbox a.non_btn::before, .join_section div.center400 form > div.findbox button.find_btn::before, .join_section div.center400 form > div.findbox button.non_btn::before, .join_section div.center400 form > div.findbox input.find_btn::before, .join_section div.center400 form > div.findbox input.non_btn::before {
-  content: '•';
-  position: absolute;
-  left: -11px;
-  display: block;
-  color: #333 !important;
+.join_section div.center400 form>div.findbox a.find_btn::before,
+	.join_section div.center400 form>div.findbox a.non_btn::before,
+	.join_section div.center400 form>div.findbox button.find_btn::before,
+	.join_section div.center400 form>div.findbox button.non_btn::before,
+	.join_section div.center400 form>div.findbox input.find_btn::before,
+	.join_section div.center400 form>div.findbox input.non_btn::before {
+	content: '•';
+	position: absolute;
+	left: -11px;
+	display: block;
+	color: #333 !important;
 }
 
-.join_section div.center400 form > div.sns_loginbox {
-  padding-top: 20px;
+.join_section div.center400 form>div.sns_loginbox {
+	padding-top: 20px;
 }
 
-.join_section div.center400 form > div.sns_loginbox h3 {
-  text-align: center;
-  font-size: 12px;
-  color: #7e7e7e;
-  margin-bottom: 15px;
+.join_section div.center400 form>div.sns_loginbox h3 {
+	text-align: center;
+	font-size: 12px;
+	color: #7e7e7e;
+	margin-bottom: 15px;
 }
 
-.join_section div.center400 form > div.sns_loginbox ul {
-  display: block;
-  width: 100%;
-  text-align: center;
+.join_section div.center400 form>div.sns_loginbox ul {
+	display: block;
+	width: 100%;
+	text-align: center;
 }
 
-.join_section div.center400 form > div.sns_loginbox ul li {
-  display: inline-block;
-  margin: 0 7px;
+.join_section div.center400 form>div.sns_loginbox ul li {
+	display: inline-block;
+	margin: 0 7px;
 }
 
-.join_section div.center400 form > div.sns_loginbox ul li a {
-  position: relative;
-  display: block;
-  width: 50px;
-  height: 50px;
-  border-radius: 100%;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+.join_section div.center400 form>div.sns_loginbox ul li a {
+	position: relative;
+	display: block;
+	width: 50px;
+	height: 50px;
+	border-radius: 100%;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.join_section div.center400 form > div.sns_loginbox ul li a.facebook_btn {
-  background-color: #3b5998;
+.join_section div.center400 form>div.sns_loginbox ul li a.facebook_btn {
+	background-color: #3b5998;
 }
 
-.join_section div.center400 form > div.sns_loginbox ul li a.kakao_btn {
-  background-color: #ffeb00;
+.join_section div.center400 form>div.sns_loginbox ul li a.kakao_btn {
+	background-color: #ffeb00;
 }
 
-.join_section div.center400 form > div.sns_loginbox ul li a span {
-  display: block;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 30px;
-  height: 30px;
-  transform: translate(-50%, -50%);
+.join_section div.center400 form>div.sns_loginbox ul li a span {
+	display: block;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	width: 30px;
+	height: 30px;
+	transform: translate(-50%, -50%);
 }
 
-.join_section div.center400 form > div.sns_loginbox ul li a span svg {
-  display: block;
-  max-width: 100%;
+.join_section div.center400 form>div.sns_loginbox ul li a span svg {
+	display: block;
+	max-width: 100%;
 }
 
-.join_section div.center400 form > div.sns_loginbox ul li a span svg.facebook_logo {
-  fill: #FFF;
+.join_section div.center400 form>div.sns_loginbox ul li a span svg.facebook_logo
+	{
+	fill: #FFF;
 }
 
-.join_section div.center400 form > div.find_emailbox > div.box > input::placeholder {
-  font-weight: 700;
-  color: #1cc88a;
+.join_section div.center400 form>div.find_emailbox>div.box>input::placeholder
+	{
+	font-weight: 700;
+	color: #1cc88a;
 }
 
-.join_section div.center400 form > div.termsbox > label {
-  font-size: 18px;
+.join_section div.center400 form>div.termsbox>label {
+	font-size: 18px;
 }
 
-.join_section div.center400 form > div.termsbox div.box {
-  height: auto;
-  padding: 20px;
-  border: 1px solid #dadde0;
+.join_section div.center400 form>div.termsbox div.box {
+	height: auto;
+	padding: 20px;
+	border: 1px solid #dadde0;
 }
 
-.join_section div.center400 form > div.termsbox div.box > div {
-  display: flex;
-  align-items: center;
+.join_section div.center400 form>div.termsbox div.box>div {
+	display: flex;
+	align-items: center;
 }
 
-.join_section div.center400 form > div.termsbox div.box > div input[type=checkbox] {
-  display: inline-block;
-  margin-right: 5px;
+.join_section div.center400 form>div.termsbox div.box>div input[type=checkbox]
+	{
+	display: inline-block;
+	margin-right: 5px;
 }
 
-.join_section div.center400 form > div.termsbox div.box > div.all {
-  position: relative;
-  box-sizing: border-box;
-  padding-bottom: 20px;
-  margin-bottom: 20px;
+.join_section div.center400 form>div.termsbox div.box>div.all {
+	position: relative;
+	box-sizing: border-box;
+	padding-bottom: 20px;
+	margin-bottom: 20px;
 }
 
-.join_section div.center400 form > div.termsbox div.box > div.all::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #dadde0;
+.join_section div.center400 form>div.termsbox div.box>div.all::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #dadde0;
 }
 
-.join_section div.center400 form > div.termsbox div.box > div.all label {
-  font-size: 14px;
-  font-weight: 700;
-  color: #1cc88a;
+.join_section div.center400 form>div.termsbox div.box>div.all label {
+	font-size: 14px;
+	font-weight: 700;
+	color: #1cc88a;
 }
 
-.join_section div.center400 form > div.termsbox div.box > div.each.each1 {
-  margin-bottom: 10px;
+.join_section div.center400 form>div.termsbox div.box>div.each.each1 {
+	margin-bottom: 10px;
 }
 
-.join_section div.center400 form > div.termsbox div.box > div.each button {
-  font-size: 14px;
-  font-weight: 500;
+.join_section div.center400 form>div.termsbox div.box>div.each button {
+	font-size: 14px;
+	font-weight: 500;
 }
 
-.join_section div.center400 form > div.termsbox div.box > div.each strong {
-  display: inline-block;
-  margin-top: 1px;
-  font-size: 10px;
-  font-weight: 700;
-  margin-left: 5px;
+.join_section div.center400 form>div.termsbox div.box>div.each strong {
+	display: inline-block;
+	margin-top: 1px;
+	font-size: 10px;
+	font-weight: 700;
+	margin-left: 5px;
 }
 
-.join_section div.center400 form > div.emailbox div.box1 {
-  position: inherit;
-  width: 530px;
+.join_section div.center400 form>div.emailbox div.box1 {
+	position: inherit;
+	width: 530px;
 }
 
-.join_section div.center400 form > div.emailbox div.box1 input.email_front {
-  float: left;
-  width: calc(50% - 10px);
+.join_section div.center400 form>div.emailbox div.box1 input.email_front
+	{
+	float: left;
+	width: calc(50% - 10px);
 }
 
-.join_section div.center400 form > div.emailbox div.box1 input.email_back_direct {
-  display: none;
-  float: right;
-  width: calc(50% - 10px);
+.join_section div.center400 form>div.emailbox div.box1 input.email_back_direct
+	{
+	display: none;
+	float: right;
+	width: calc(50% - 10px);
 }
 
-.join_section div.center400 form > div.emailbox div.box1 em {
-  display: inline-block;
-  float: left;
-  text-align: center;
-  line-height: 50px;
-  width: 20px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #8b8b8b;
+.join_section div.center400 form>div.emailbox div.box1 em {
+	display: inline-block;
+	float: left;
+	text-align: center;
+	line-height: 50px;
+	width: 20px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #8b8b8b;
 }
 
-.join_section div.center400 form > div.emailbox div.box1 select {
-  
-  width: calc(50% - 10px);
+.join_section div.center400 form>div.emailbox div.box1 select {
+	width: calc(50% - 10px);
 }
 
-.join_section div.center400 form > div.passwordbox .box2 {
-  height: auto;
+.join_section div.center400 form>div.passwordbox .box2 {
+	height: auto;
 }
 
-.join_section div.center400 form > div.passwordbox .box2 input.password_re {
-  margin-top: 5px;
+.join_section div.center400 form>div.passwordbox .box2 input.password_re
+	{
+	margin-top: 5px;
 }
 
-.join_section div.center400 form > div.receivebox > div > input {
-  width: 18px;
-  height: 18px;
-  margin-top: -4px;
-  vertical-align: middle;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+.join_section div.center400 form>div.receivebox>div>input {
+	width: 18px;
+	height: 18px;
+	margin-top: -4px;
+	vertical-align: middle;
+	box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.join_section div.center400 form > div.receivebox > div > label {
-  position: relative;
-  font-size: 14px;
-  font-weight: 700;
+.join_section div.center400 form>div.receivebox>div>label {
+	position: relative;
+	font-size: 14px;
+	font-weight: 700;
 }
 
-.join_section div.center400 form > div.receivebox > div > label::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  display: block;
-  width: 100%;
-  height: 1px;
-  background-color: #1cc88a;
+.join_section div.center400 form>div.receivebox>div>label::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #1cc88a;
 }
 
-.join_section div.center400 form > div.receivebox > div small {
-  font-size: 14px;
-  font-weight: 500;
-  color: #999;
+.join_section div.center400 form>div.receivebox>div small {
+	font-size: 14px;
+	font-weight: 500;
+	color: #999;
 }
 
 @media screen and (max-width: 450px) {
-  .join_section div.center400 form > div.receivebox > div small {
-    font-size: 13px;
-  }
+	.join_section div.center400 form>div.receivebox>div small {
+		font-size: 13px;
+	}
 }
 
 @media screen and (max-width: 450px) {
-  .join_section div.center400 form > div.receivebox > div small {
-    font-size: 12px;
-  }
+	.join_section div.center400 form>div.receivebox>div small {
+		font-size: 12px;
+	}
 }
 
 @media screen and (max-width: 370px) {
-  .join_section div.center400 form > div.receivebox > div small {
-    display: block;
-    margin-top: 5px;
-    line-height: 130%;
-    font-size: 12px;
-  }
+	.join_section div.center400 form>div.receivebox>div small {
+		display: block;
+		margin-top: 5px;
+		line-height: 130%;
+		font-size: 12px;
+	}
 }
 
-.join_section div.center400 form > div.receivebox > div .withdrawal_btn {
-  margin-top: 15px;
-  position: relative;
-  float: right;
-  display: block;
-  font-size: 14px;
-  font-weight: 500;
+.join_section div.center400 form>div.receivebox>div .withdrawal_btn {
+	margin-top: 15px;
+	position: relative;
+	float: right;
+	display: block;
+	font-size: 14px;
+	font-weight: 500;
 }
 
 @media screen and (max-width: 450px) {
-  .join_section div.center400 form > div.receivebox > div .withdrawal_btn {
-    font-size: 13px;
-  }
+	.join_section div.center400 form>div.receivebox>div .withdrawal_btn {
+		font-size: 13px;
+	}
 }
 
-.join_section div.center400 form > div.receivebox > div .withdrawal_btn::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -3px;
-  background-color: #1cc88a;
-  display: block;
-  width: 100%;
-  height: 1px;
+.join_section div.center400 form>div.receivebox>div .withdrawal_btn::before
+	{
+	content: '';
+	position: absolute;
+	left: 0;
+	bottom: -3px;
+	background-color: #1cc88a;
+	display: block;
+	width: 100%;
+	height: 1px;
 }
 
-.join_section div.center400 form > div.wd_textbox .wd_desc {
-  font-size: 14px;
-  font-weight: 500;
-  color: #999;
+.join_section div.center400 form>div.wd_textbox .wd_desc {
+	font-size: 14px;
+	font-weight: 500;
+	color: #999;
 }
 
-.join_section div.center400 form > div.wd_textbox .wd_desc:nth-last-of-type(1) {
-  margin-top: 5px;
+.join_section div.center400 form>div.wd_textbox .wd_desc:nth-last-of-type(1)
+	{
+	margin-top: 5px;
 }
 
-.join_section div.center400 form > div.wd_textbox .wd_desc span {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  transform: translateY(1px);
+.join_section div.center400 form>div.wd_textbox .wd_desc span {
+	display: inline-block;
+	width: 12px;
+	height: 12px;
+	transform: translateY(1px);
 }
 
-.join_section div.center400 form > div.wd_textbox .wd_desc span svg {
-  display: block;
-  max-width: 100%;
+.join_section div.center400 form>div.wd_textbox .wd_desc span svg {
+	display: block;
+	max-width: 100%;
 }
 
 /* 비회원구매 */
-.nonmem_section{
-    margin-top: 20px;
-    border-top: 1px solid #BFBFC0;
+.nonmem_section {
+	margin-top: 20px;
+	border-top: 1px solid #BFBFC0;
 }
-.nonmem_section .join_title.mb25{margin-bottom: 25px;}
-.nonmem_section .descbox{
-    margin-top: 20px;
-    margin-bottom: 50px;
+
+.nonmem_section .join_title.mb25 {
+	margin-bottom: 25px;
 }
-.nonmem_section .descbox > p{font-weight: 700; margin-bottom: 15px; line-height: 150%;}
-.nonmem_section .descbox label{font-size: 14px;}
+
+.nonmem_section .descbox {
+	margin-top: 20px;
+	margin-bottom: 50px;
+}
+
+.nonmem_section .descbox>p {
+	font-weight: 700;
+	margin-bottom: 15px;
+	line-height: 150%;
+}
+
+.nonmem_section .descbox label {
+	font-size: 14px;
+}
 
 /* 이용약관, 개인정보보호정책 */
-.terms_section h2{
-    box-sizing: border-box;
-    padding-bottom: 50px;
-    margin-bottom: 30px !important;
-    border-bottom: 1px solid #DDD;
+.terms_section h2 {
+	box-sizing: border-box;
+	padding-bottom: 50px;
+	margin-bottom: 30px !important;
+	border-bottom: 1px solid #DDD;
 }
-.terms_section .terms_tab{
-    margin-bottom: 30px;
+
+.terms_section .terms_tab {
+	margin-bottom: 30px;
 }
-.terms_section .terms_tab li{
-    float: left;
-    width: 50%;
+
+.terms_section .terms_tab li {
+	float: left;
+	width: 50%;
 }
-.terms_section .terms_tab li a{
-    display: block;
-    width: 100%;
-    height: 50px;
-    line-height: 48px;
-    text-align: center;
-    font-size: 18px;
-    box-sizing: border-box;
-    border: 1px solid #DDD;
-    border-bottom: 2px solid #0567bb;
+
+.terms_section .terms_tab li a {
+	display: block;
+	width: 100%;
+	height: 50px;
+	line-height: 48px;
+	text-align: center;
+	font-size: 18px;
+	box-sizing: border-box;
+	border: 1px solid #DDD;
+	border-bottom: 2px solid #0567bb;
 }
-.terms_section .terms_tab li a.active{
-    color: #FFF;
-    font-weight: 700;
-    background-color: #0567bb;
+
+.terms_section .terms_tab li a.active {
+	color: #FFF;
+	font-weight: 700;
+	background-color: #0567bb;
 }
-.terms_section .terms_content{
-    box-sizing: border-box;
-    padding: 15px 0;
-    border-top: 2px solid #DDD;
-    border-bottom: 2px solid #DDD;
+
+.terms_section .terms_content {
+	box-sizing: border-box;
+	padding: 15px 0;
+	border-top: 2px solid #DDD;
+	border-bottom: 2px solid #DDD;
 }
-.terms_section .terms_content .inner{
-    border: 1px solid #DDD;
-    box-sizing: border-box;
-    padding: 15px;
-    line-height: 150%;
-    font-size: 15px;
-    height: 600px;
-    overflow-y: auto;
+
+.terms_section .terms_content .inner {
+	border: 1px solid #DDD;
+	box-sizing: border-box;
+	padding: 15px;
+	line-height: 150%;
+	font-size: 15px;
+	height: 600px;
+	overflow-y: auto;
 }
-@media screen and (max-width:850px){
-    .terms_section .terms_tab li a{font-size: 16px;}
-    .terms_section .terms_content .inner{font-size: 14px; height: 550px;}
+
+@media screen and (max-width:850px) {
+	.terms_section .terms_tab li a {
+		font-size: 16px;
+	}
+	.terms_section .terms_content .inner {
+		font-size: 14px;
+		height: 550px;
+	}
 }
-@media screen and (max-width:600px){
-    .terms_section h2{
-        padding-bottom: 35px;
-        margin-bottom: 20px !important;
-    }
-    .terms_section .terms_tab{
-        margin-bottom: 20px;
-    }
-    .terms_section .terms_tab li a{
-        height: 40px;
-        line-height: 38px;
-        font-size: 14px;
-    }
-    .terms_section .terms_content{
-        padding: 10px 0;
-    }
-    .terms_section .terms_content .inner{font-size: 13px; height: 450px;}
+
+@media screen and (max-width:600px) {
+	.terms_section h2 {
+		padding-bottom: 35px;
+		margin-bottom: 20px !important;
+	}
+	.terms_section .terms_tab {
+		margin-bottom: 20px;
+	}
+	.terms_section .terms_tab li a {
+		height: 40px;
+		line-height: 38px;
+		font-size: 14px;
+	}
+	.terms_section .terms_content {
+		padding: 10px 0;
+	}
+	.terms_section .terms_content .inner {
+		font-size: 13px;
+		height: 450px;
+	}
 }
-@media screen and (max-width:450px){
-    .terms_section .terms_content .inner{font-size: 13px; height: 400px;}
+
+@media screen and (max-width:450px) {
+	.terms_section .terms_content .inner {
+		font-size: 13px;
+		height: 400px;
+	}
 }
-@media screen and (max-width:350px){
-    .terms_section .terms_content .inner{font-size: 13px; height: 350px;}
+
+@media screen and (max-width:350px) {
+	.terms_section .terms_content .inner {
+		font-size: 13px;
+		height: 350px;
+	}
 }
 
 #postal_code {
@@ -658,8 +718,9 @@ div.btnbox .sub {
 
 #fname {
 	width: 400px;
-	}
+}
 
 .emailbox {
 	margin-top: 70px;
 }
+

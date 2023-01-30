@@ -153,14 +153,15 @@ section.test_section{height: 2000px; background-color: yellowgreen;}
 }
 
 .pdt60{
-    padding-top: 60px;
+       padding-top: 110px;
     box-sizing: border-box;
+    padding-bottom: 110px;
 }
 @media screen and (max-width:850px){
     .pdt60{padding-top: 50px;}
 }
 .pdb60{
-    padding-bottom: 60px;
+    padding-bottom: 110px;
     box-sizing: border-box;
 }
 @media screen and (max-width:850px){

@@ -75,11 +75,11 @@
 
 							<c:choose>
 								<c:when test="${(fn:contains(sessionScope.mPw, 'KAKAO'))}">
-									<a href="javascript:kakaoDelete();"> <img
-										src="./img/kakao_login_large_narrow5.png"
-										style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block;"
-										alt="카카오 로고" />
-									</a>
+									<button onclick="kakaoLogout(); action(); return false;"
+										class="kakao_logout"
+										style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #FEE500; text-align: center; font-size: large; font-weight: bold;">
+										<a> <img src="./img/kakao.png" /></a> 카카오 회원탈퇴
+									</button>
 									<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 									<script>
 				// SDK를 초기화 합니다. 사용할 앱 키(javascript) 입력합니다.
@@ -130,7 +130,9 @@
 
 										<div class="btnbox">
 											<button type="button" onclick="check(); return false;"
-												class="join_btn sub">회원탈퇴</button>
+												style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #03C75A; text-align: center; font-size: large; font-weight: bold; color: white;">
+											<a> <img src="./img/btnG_아이콘사각.png" style="width: 70px; height: 60px;"/></a> 네이버 회원탈퇴
+												</button>
 
 										</div>
 									</div>

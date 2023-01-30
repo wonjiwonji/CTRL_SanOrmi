@@ -68,10 +68,10 @@
 							<!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div> -->
 							<div class="col-lg-6 d-none d-lg-block">
 								<img src="./images/m1.jpg"
-									style="height: 462px; width: 450px; display: flex" alt="그" />
+									style="height: 515px; width: 535px; display: flex" alt="그" />
 							</div>
 							<div class="col-lg-6">
-								<div class="p-5">
+								<div class="p-5" style="margin-right: 25px;">
 									<div class="text-center">
 										<h1 class="h4 text-gray-900 mb-4">로그인</h1>
 									</div>

@@ -250,7 +250,7 @@ var checkSave = null;
 						<!-- <div class="col-lg-5 d-none d-lg-block bg-register-image"></div> -->
 						<div class="col-lg-5 d-none d-lg-block">
 							<img src="./images/m2.jpg"
-								style="height: 100%; width: 420px; display: flex" alt="학그림" />
+								style="height: 100%; width: 470px; display: flex" alt="학그림" />
 						</div>
 						<div class="col-lg-7">
 							<div class="p-5">
