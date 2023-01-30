@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -118,7 +120,7 @@ pageEncoding="UTF-8"%>
 	<%-- 헤더라고 --%>
 
         <!-- end:header-top -->
-
+<div>
 	<div id="mg-fh5co-wrapper">
         <div class="fh5co-hero">
           <div class="toptop"></div>
@@ -433,249 +435,41 @@ pageEncoding="UTF-8"%>
       <!-- 게시글 시작 -->
       <hr />
       <br />
+	  <div>
       <div style="margin-top: -10%">
         <div class="boximpo2">
           <div class="bottom">
             <ul class="list_wrap">
+              <div>
               <div class="left_top_02" style="text-align: center">
                 <h3 class="sub_title" style="color: green">커뮤니티 TOP5</h3>
               </div>
-              <li class="clearfix first_li" style="background-color: #1cc88a">
-                <div class="mobile_wrap">
-                  <div class="left_top" style="color: black">
-                    <div class="mobile_hide">순번</div>
-                    <div>
-                      <div>제목</div>
-                    </div>
-                  </div>
-                  <div class="right_bottom mobile_hide" style="color: black">
-                    <!--<div>작성자</div>-->
-
-                    <div>작성일</div>
-                    <div>조회수</div>
-                  </div>
-                </div>
-              </li>
-              <li class="clearfix">
-                <div class="mobile_wrap">
-                  <div class="left_top">
-                    <div class="mobile_hide">273</div>
-                    <div class="top_wrap">
-                      <div class="top_mobile">
-                        <a
-                          href="https://www.monak.kr/community/view.php?idx=435&amp;g=free"
-                        >
-                          <span class="list_com_pc"> 설악산 vs 도봉산 </span
-                          ><span class="list_com">
-                            <span class="pc_hide">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="9"
-                                height="9"
-                                viewBox="0 0 9 9"
-                              >
-                                <image
-                                  id="벡터_고급_개체_복사_14"
-                                  data-name="벡터 고급 개체 복사 12"
-                                  width="9"
-                                  height="9"
-                                  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAQAAABKmM6bAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQflAgQKJyMKyqJnAAAAgklEQVQI103NoQ4BcQCA8d/dbZIJ4gVTZLP/beYFTPUGEqJH8AZeQlJU08ULKonZtCuITDDHt33b176I0DI3UFfYmOfHKPRsVX256yfpWtOPinYsk1t4mGDsJovCScNTUnpO0sJQTOksue7Tg64auJjmywhCrGNlZ5S//lahFWafegOCvB6fLjVy5wAAAABJRU5ErkJggg=="
-                                ></image>
-                              </svg>
-                            </span>
-                            1<span class="mobile_hide">+</span>
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="right_bottom">
-                    <div>2022-11-25</div>
-                    <div><i class="far fa-eye"></i> 32</div>
-                  </div>
-                </div>
-                <div class="list_comment">
-                  <span class="list_com_mobile"></span>
-                </div>
-              </li>
-              <li class="clearfix">
-                <div class="mobile_wrap">
-                  <div class="left_top">
-                    <div class="mobile_hide">271</div>
-                    <div class="top_wrap">
-                      <div class="top_mobile">
-                        <a
-                          href="https://www.monak.kr/community/view.php?idx=433&amp;g=free"
-                        >
-                          <span class="list_com_pc">
-                            등산복 수요조사！ 많은 참여부탁드립니다!! </span
-                          ><span class="list_com">
-                            <span class="pc_hide">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="9"
-                                height="9"
-                                viewBox="0 0 9 9"
-                              >
-                                <image
-                                  id="벡터_고급_개체_복사_15"
-                                  data-name="벡터 고급 개체 복사 12"
-                                  width="9"
-                                  height="9"
-                                  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAQAAABKmM6bAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQflAgQKJyMKyqJnAAAAgklEQVQI103NoQ4BcQCA8d/dbZIJ4gVTZLP/beYFTPUGEqJH8AZeQlJU08ULKonZtCuITDDHt33b176I0DI3UFfYmOfHKPRsVX256yfpWtOPinYsk1t4mGDsJovCScNTUnpO0sJQTOksue7Tg64auJjmywhCrGNlZ5S//lahFWafegOCvB6fLjVy5wAAAABJRU5ErkJggg=="
-                                ></image>
-                              </svg>
-                            </span>
-                            0<span class="mobile_hide">+</span>
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="right_bottom">
-                    <div>2022-11-11</div>
-                    <div><i class="far fa-eye"></i> 55</div>
-                  </div>
-                </div>
-                <div class="list_comment">
-                  <span class="list_com_mobile"></span>
-                </div>
-              </li>
-              <li class="clearfix">
-                <div class="mobile_wrap">
-                  <div class="left_top">
-                    <div class="mobile_hide">270</div>
-                    <div class="top_wrap">
-                      <div class="top_mobile">
-                        <a
-                          href="https://www.monak.kr/community/view.php?idx=432&amp;g=free"
-                        >
-                          <span class="list_com_pc">
-                            옛날에 주인공이 줄타고 등산하는 애니메이션 제목
-                            아시는분? </span
-                          ><span class="list_com">
-                            <span class="pc_hide">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="9"
-                                height="9"
-                                viewBox="0 0 9 9"
-                              >
-                                <image
-                                  id="벡터_고급_개체_복사_17"
-                                  data-name="벡터 고급 개체 복사 12"
-                                  width="9"
-                                  height="9"
-                                  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAQAAABKmM6bAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQflAgQKJyMKyqJnAAAAgklEQVQI103NoQ4BcQCA8d/dbZIJ4gVTZLP/beYFTPUGEqJH8AZeQlJU08ULKonZtCuITDDHt33b176I0DI3UFfYmOfHKPRsVX256yfpWtOPinYsk1t4mGDsJovCScNTUnpO0sJQTOksue7Tg64auJjmywhCrGNlZ5S//lahFWafegOCvB6fLjVy5wAAAABJRU5ErkJggg=="
-                                ></image>
-                              </svg>
-                            </span>
-                            2<span class="mobile_hide">+</span>
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="right_bottom">
-                    <div>2022-10-11</div>
-                    <div><i class="far fa-eye"></i> 52</div>
-                  </div>
-                </div>
-                <div class="list_comment">
-                  <span class="list_com_mobile"></span>
-                </div>
-              </li>
-              <li class="clearfix">
-                <div class="mobile_wrap">
-                  <div class="left_top">
-                    <div class="mobile_hide">269</div>
-                    <div class="top_wrap">
-                      <div class="top_mobile">
-                        <a
-                          href="https://www.monak.kr/community/view.php?idx=431&amp;g=free"
-                        >
-                          <span class="list_com_pc">
-                            올해 등산로 시즌평가하자면 </span
-                          ><span class="list_com">
-                            <span class="pc_hide">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="9"
-                                height="9"
-                                viewBox="0 0 9 9"
-                              >
-                                <image
-                                  id="벡터_고급_개체_복사_18"
-                                  data-name="벡터 고급 개체 복사 12"
-                                  width="9"
-                                  height="9"
-                                  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAQAAABKmM6bAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQflAgQKJyMKyqJnAAAAgklEQVQI103NoQ4BcQCA8d/dbZIJ4gVTZLP/beYFTPUGEqJH8AZeQlJU08ULKonZtCuITDDHt33b176I0DI3UFfYmOfHKPRsVX256yfpWtOPinYsk1t4mGDsJovCScNTUnpO0sJQTOksue7Tg64auJjmywhCrGNlZ5S//lahFWafegOCvB6fLjVy5wAAAABJRU5ErkJggg=="
-                                ></image>
-                              </svg>
-                            </span>
-                            0<span class="mobile_hide">+</span>
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="right_bottom">
-                    <div>2022-09-28</div>
-                    <div><i class="far fa-eye"></i> 48</div>
-                  </div>
-                </div>
-                <div class="list_comment">
-                  <span class="list_com_mobile"></span>
-                </div>
-              </li>
-              <li class="clearfix">
-                <div class="mobile_wrap">
-                  <div class="left_top">
-                    <div class="mobile_hide">268</div>
-                    <div class="top_wrap">
-                      <div class="top_mobile">
-                        <a
-                          href="https://www.monak.kr/community/view.php?idx=430&amp;g=free"
-                        >
-                          <span class="list_com_pc">
-                            북한산 등반해볼까합니다.. </span
-                          ><span class="list_com">
-                            <span class="pc_hide">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                xmlns:xlink="http://www.w3.org/1999/xlink"
-                                width="9"
-                                height="9"
-                                viewBox="0 0 9 9"
-                              >
-                                <image
-                                  id="벡터_고급_개체_복사_19"
-                                  data-name="벡터 고급 개체 복사 12"
-                                  width="9"
-                                  height="9"
-                                  xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAJCAQAAABKmM6bAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QAAKqNIzIAAAAJcEhZcwAACxIAAAsSAdLdfvwAAAAHdElNRQflAgQKJyMKyqJnAAAAgklEQVQI103NoQ4BcQCA8d/dbZIJ4gVTZLP/beYFTPUGEqJH8AZeQlJU08ULKonZtCuITDDHt33b176I0DI3UFfYmOfHKPRsVX256yfpWtOPinYsk1t4mGDsJovCScNTUnpO0sJQTOksue7Tg64auJjmywhCrGNlZ5S//lahFWafegOCvB6fLjVy5wAAAABJRU5ErkJggg=="
-                                ></image>
-                              </svg>
-                            </span>
-                            <span class="mobile_hide">+</span>
-                          </span>
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="right_bottom">
-                    <div>2022-09-14</div>
-                    <div><i class="far fa-eye"></i> 71</div>
-                  </div>
-                </div>
-              </li>
-              <div class="list_comment">
-                <span class="list_com_mobile"></span>
-              </div>
+				<div class="card-body">
+					<div class="table-responsive">
+						<table class="table" id="dataTable" width="100%" cellspacing="0"
+							style="font-family: Nunito, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'; font-weight: 400; line-height: 1.5;">
+								<thead>
+									<tr>
+										<th>순번</th>
+										<th>제목</th>
+										<th>작성자</th>
+										<th>조회수</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="vo" items="${bList}">
+										<tr>
+											<td>${vo.bNum }</td>
+											<td><a href="bView.do?bNum=${vo.bNum }">${vo.bTitle }</a></td>
+											<td>${vo.bId }</td>
+											<td>${vo.bCnt }</td>
+										</tr>
+									</c:forEach>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
             </ul>
           </div>
         </div>
