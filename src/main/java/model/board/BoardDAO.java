@@ -24,7 +24,7 @@ public class BoardDAO {
    // UPDATE_BOARD_CCNT; 게시글 조회수+ 쿼리문
    final String UPDATE_BOARD_CCNT = "UPDATE BOARD B\r\n"
    		+ "SET B.C_CNT  = (SELECT COUNT(BC.BC_NUM) FROM BCOMMENT BC	WHERE BC.B_NUM = B.B_NUM )\r\n"
-   		+ "WHERE B.B_NUM = 15;";
+   		+ "WHERE B.B_NUM = ?;";
    
    // DELETE_BOARD; 게시글 삭제 쿼리문
    final String DELETE_BOARD = "DELETE FROM BOARD WHERE B_NUM=?";
