@@ -25,7 +25,6 @@ public class BoardDAO {
    final String UPDATE_BOARD_CCNT = "UPDATE BOARD B\r\n"
    		+ "SET B.C_CNT  = (SELECT COUNT(BC.BC_NUM) FROM BCOMMENT BC	WHERE BC.B_NUM = B.B_NUM )\r\n"
    		+ "WHERE B.B_NUM = ?;";
-   
    // DELETE_BOARD; 게시글 삭제 쿼리문
    final String DELETE_BOARD = "DELETE FROM BOARD WHERE B_NUM=?";
    // SELECTONE_BOARD; 게시글 상세보기 쿼리문 (게시글 하나 클릭 시 나오는 정보)
@@ -50,11 +49,11 @@ public class BoardDAO {
    // DELETE_BCCOMMENT; 대댓글 삭제 쿼리문 ( 대댓글만 삭제 )
    final String DELETE_BCCOMMENT = "DELETE FROM BCOMMENT WHERE BC_NUM=?";
    // SELECTALL_BCOMMENT; 댓글 전체보기 쿼리문 ( 게시글에 대한 댓글 전체 보기 )
-   final String SELECTALL_BCOMMENT = "SELECT BC_NUM, BC_CONTENT, BC_GROUP, BC_DATE, BC_ID FROM BCOMMENT WHERE B_NUM=? AND BC_SQE=0";
-   // SELECTALL_BCCOMMENT; 대댓글 전체보기 쿼리문 ( 게시글에 대한 대댓글 전체 보기 )
-   final String SELECTALL_BCCOMMENT = "SELECT BC_CONTENT,BC_GROUP, BC_DATE,BC_SQE,BC_ID FROM BCOMMENT WHERE B_NUM=? AND BC_SQE>0 AND BC_GROUP=?";
    // SELECTONE ; 댓글 삭제를 위해 BC_NUM을 이용하여 BC_NUM, BC_GROUP, BC_SQE를 조회
    final String SELECTONE = "SELECT BC_NUM, BC_GROUP, BC_SQE FROM BCOMMENT WHERE BC_NUM = ?";
+   final String SELECTALL_BCOMMENT = "SELECT BC_NUM, BC_CONTENT, BC_GROUP, BC_DATE, BC_ID FROM BCOMMENT WHERE B_NUM=? AND BC_SQE=0";
+   // SELECTALL_BCCOMMENT; 대댓글 전체보기 쿼리문 ( 게시글에 대한 대댓글 전체 보기 )
+   final String SELECTALL_BCCOMMENT = "SELECT BC_NUM, BC_CONTENT,BC_GROUP, BC_DATE,BC_SQE,BC_ID FROM BCOMMENT WHERE B_NUM=? AND BC_SQE>0 AND BC_GROUP=?";
 
    // SELECTALL_TOP5; 커뮤니티 TOP5
    final String SELECTALL_TOP5 = "SELECT B_NUM, B_TITLE, B_DATE, B_CNT FROM BOARD ORDER BY B_CNT DESC LIMIT 0,5";
@@ -232,7 +231,7 @@ public class BoardDAO {
             while (rs2.next()) { // 저장할 정보가 남아있는 동안
                BCommentVO bcomment = new BCommentVO(); // BCommentVO 객체 bcomment 생성
 
-               bcomment.setBcNum(rs2.getInt("BC_NUM"));
+               bcomment.setBcNum(rs2.getInt("BC_NUM")); // BC_NUM 출력하진 않지만 추후 기능 사용 시 필요
                bcomment.setBcContent(rs2.getString("BC_CONTENT")); // 댓글 내용 저장
                bcomment.setBcID(rs2.getString("BC_ID")); // 댓글 작성자 저장
                bcomment.setBcGroup(bvo.getBcvo().getBcGroup()); // 댓글 그룹 저장
@@ -250,6 +249,7 @@ public class BoardDAO {
                while (rs3.next()) { // 저장할 정보가 남아 있는 동안
                   BCCommentVO bccomment = new BCCommentVO(); // BCCommentVO 객체 bccomment생성
 
+                  bccomment.setBccNum(rs3.getInt("BC_NUM")); // BC_NUM 출력하진 않지만 추후 기능 사용 시 필요
                   bccomment.setBccContent(rs3.getString("BC_CONTENT")); // 대댓글 내용 저장
                   bccomment.setBccID(rs3.getString("BC_ID")); // 대댓글 작성자 저장
                   bccomment.setbNum(bvo.getbNum()); // 게시글 번호 저장
