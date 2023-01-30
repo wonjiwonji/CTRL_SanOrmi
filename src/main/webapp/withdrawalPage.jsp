@@ -129,12 +129,8 @@
 										</form>
 
 										<div class="btnbox">
-											<button type="button"
-												onclick="naverLogout(); return false;"
+											<button type="button" onclick="check(); return false;"
 												class="join_btn sub">회원탈퇴</button>
-
-											<button type="button" onclick="cancle();"
-												class="join_btn sub">탈퇴취소</button>
 
 										</div>
 									</div>
@@ -163,12 +159,16 @@ function naverLogout() {
 	
 }
 
-function action() {
-	location.href = "deleteAccount.do?id=${sessionScope.id}"; //리다이렉트 주소
+function check() {
+	if (confirm("정말 탈퇴하시겠습니까?") == true) { //확인
+		naverLogout();
+	} else { //취소
+		return false;
+	}
 }
 
-function cancle() {
-	location.href = "main.do"; //리다이렉트 주소
+function action() {
+	location.href = "deleteAccount.do?id=${sessionScope.id}"; //리다이렉트 주소
 }
 
 </script>
