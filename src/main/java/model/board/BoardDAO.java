@@ -29,7 +29,7 @@ public class BoardDAO {
    // DELETE_BOARD; 게시글 삭제 쿼리문
    final String DELETE_BOARD = "DELETE FROM BOARD WHERE B_NUM=?";
    // SELECTONE_BOARD; 게시글 상세보기 쿼리문 (게시글 하나 클릭 시 나오는 정보)
-   final String SELECTONE_BOARD = "SELECT B_ID, B_TITLE, B_CONTENT, B_DATE, C_CNT, B_CNT FROM BOARD WHERE B_NUM =15";
+   final String SELECTONE_BOARD = "SELECT B_ID, B_TITLE, B_CONTENT, B_DATE, C_CNT, B_CNT FROM BOARD WHERE B_NUM =?";
    // SELECTALL_BOARD; 게시글 전체보기 쿼리문 ( 게시글 목록 시 나오는 정보 )
    final String SELECTALL_BOARD = "SELECT B_NUM, B_TITLE, B_CNT, B_ID, B_CONTENT, C_CNT FROM BOARD ORDER BY B_NUM DESC";
    // SELECTALL_MY_PAGE; 내가 쓴 글 전체보기 쿼리문 
@@ -167,7 +167,7 @@ public class BoardDAO {
    public boolean updatecCnt(BoardVO bvo) { // bvo ; bNum 필요
       conn = JDBCUtil.connect(); // JDBCUtil 연결
       try {
-         pstmt = conn.prepareStatement(UPDATE_BOARD_CCNT); // UPDATE_BOARD_BCNT ; 게시글 조회수 변경
+         pstmt = conn.prepareStatement(UPDATE_BOARD_CCNT); // UPDATE_BOARD_CCNT ; 게시글 조회수 변경
          pstmt.setInt(1, bvo.getbNum()); // 게시글 번호
          pstmt.executeUpdate(); // 실행
       } catch (SQLException e) {
