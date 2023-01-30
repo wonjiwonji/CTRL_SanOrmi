@@ -14,7 +14,7 @@ public class QCommentAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("/comment.jsp");
+		forward.setPath("/qComment.jsp");
 		forward.setRedirect(false);
 		
 		QNADAO qdao=new QNADAO();

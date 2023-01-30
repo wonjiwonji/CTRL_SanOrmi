@@ -14,7 +14,7 @@ public class BCommentAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("/comment.jsp");
+		forward.setPath("/bComment.jsp");
 		forward.setRedirect(false);
 		
 		BoardDAO bdao=new BoardDAO();
