@@ -83,9 +83,9 @@ public class BoardDAO {
       try {
          pstmt = conn.prepareStatement(INSERT_BCOMMENT); // INSERT_BCOMMENT; 댓글 등록
          // 인자로 받은 bcvo에서 필요한 정보 추출
-         pstmt.setString(1, bcvo.getBcContent()); // pstmt에 bcContent 저장
+         pstmt.setString(1, bcvo.getBcID()); // pstmt에 bcId 저장
          pstmt.setInt(2, bcvo.getbNum()); // pstmt에 bNum 저장
-         pstmt.setString(3, bcvo.getBcID()); // pstmt에 bcId 저장
+         pstmt.setString(3, bcvo.getBcContent()); // pstmt에 bcContent 저장
 
          int res = pstmt.executeUpdate(); // pstmt실행 결과 res에 저장
          if (res <= 0) { // res가 0보다 같거나 작다면 // 즉, pstmt 실행시키는 것을 실패했다면
