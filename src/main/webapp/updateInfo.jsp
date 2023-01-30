@@ -159,15 +159,18 @@
 											<input type="text" name="mEmail1" value="${mEmail1}"
 												id="postal_code" class="email_front" placeholder="이메일 앞자리"
 												required /> <em class="ctm">@</em><input type="text"
-												name="mEmail2" value="${mEmail2}" id="str_email02"
-												style="width: 190px" placeholder="이메일 뒷자리" required /> <select
+												name="mEmail2" value="${mEmail2}" id="email_add"
+												style="width: 190px" placeholder="이메일 뒷자리" required /> 
+												
+												<select
 												style="width: 190px; margin-left: 210px; background-color: rgba(255, 255, 255, 0.5);"
-												name="mEmail2" onchange="change_email();" id="email_add">
+												name="email_sel" id="email_sel" onchange="change_email();" id="email_add">
 												<option value="">직접입력</option>
 												<option value="naver.com">네이버</option>
 												<option value="gmail.com">지메일</option>
 												<option value="nate.com">네이트</option>
 											</select>
+											
 										</div>
 									</div>
 									<div class="emailbox">
