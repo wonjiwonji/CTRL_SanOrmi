@@ -238,7 +238,8 @@ var checkSave = null;
 	<jsp:include page="header.jsp" />
 	<%-- 헤더라고 --%>
 
-	<div class="container">
+	<div class="container"style="padding-top: 50px;
+    padding-bottom: 50px;">
 		<div class="card o-hidden border-0 shadow-lg my-5">
 			<div class="card-body p-0">
 				<!-- Nested Row within Card Body -->

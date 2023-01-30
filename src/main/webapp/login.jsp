@@ -60,14 +60,14 @@
 	<div class="container">
 		<!-- Outer Row -->
 		<div class="row justify-content-center">
-			<div class="col-xl-10 col-lg-12 col-md-9">
+			<div class="col-xl-10 col-lg-12 col-md-9" style="">
 				<div class="card o-hidden border-0 shadow-lg my-5">
 					<div class="card-body p-0">
 						<!-- Nested Row within Card Body -->
 						<div class="row">
 							<!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div> -->
-							<div class="col-lg-6 d-none d-lg-block">
-								<img src="./images/m1.jpg"
+							<div class="col-lg-6 d-none d-lg-block" >
+								<img src="./images/m1.png"
 									style="height: 515px; width: 535px; display: flex" alt="그" />
 							</div>
 							<div class="col-lg-6">
@@ -98,11 +98,9 @@
 										<hr />
 
 										<!-- 카카오 로그인 js 연결 및 버튼 생성 -->
-										<a href="javascript:kakaoLogin();"> <img
-											src="./img/kakao_login_large_narrow5.png"
-											style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block;"
-											alt="카카오 로고" />
-										</a>
+										<button type="button" onclick="javascript:kakaoLogin();" style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #FEE500; text-align: center; font-size: large; font-weight: bold;">
+										<a> <img src="./img/kakao.png" /></a> 카카오 로그인
+										</button>
 										<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 										<script>
 								// SDK를 초기화 합니다. 사용할 앱 키(javascript) 입력합니다.
