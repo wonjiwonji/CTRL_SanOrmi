@@ -457,7 +457,7 @@ pageEncoding="UTF-8"%>
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach var="vo" items="${bList}">
+									<c:forEach var="vo" items="${best5}">
 										<tr>
 											<td>${vo.bNum }</td>
 											<td><a href="bView.do?bNum=${vo.bNum }">${vo.bTitle }</a></td>
