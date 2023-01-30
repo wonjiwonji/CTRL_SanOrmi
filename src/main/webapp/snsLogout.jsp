@@ -72,8 +72,8 @@
 											autocomplete="off">
 											<div class="Idbox">
 												<label
-													style="display: block; font-size: 14px; font-weight: 700; margin-bottom: 10px;"><span>
-												</span>아이디</label>
+													style="display: block; font-size: 14px; font-weight: 700; margin-bottom: 10px;">
+												<span>아이디</span></label>
 												<div class="box">
 													<input type="text" name="id" value="${sessionScope.id }"
 														id="reg_mb_nick" class="nickname"
@@ -85,25 +85,14 @@
 										</form>
 
 										<div class="btnbox">
-										
-										<button onclick="naverLogout(); action(); return false;"
-										class="naver_logout" 	style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #03C75A; text-align: center; font-size: large; font-weight: bold; color: white;">
-										<a> <img src="./img/btnG_아이콘사각.png" style="width: 70px; height: 60px;"/></a> 네이버 로그아웃
-										</button>
+											<button type="button" onclick="check(); return false;"
+												style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #03C75A; text-align: center; font-size: large; font-weight: bold; color: white;">
+											<a> <img src="./img/btnG_아이콘사각.png" style="width: 70px; height: 60px;"/></a> 네이버 로그아웃
+												</button>
+
 										</div>
 									</div>
 
-
-									<!-- 	
-			<ul>
-				<li onclick="naverLogout(); action();"><a
-					href="javascript:void(0)"> <span>네이버 로그아웃</span>
-				</a></li>
-			</ul>
- -->
-
-
-									<!-- 네이버 스크립트 -->
 									<script
 										src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.2.js"
 										charset="utf-8"></script>
@@ -123,6 +112,15 @@ function naverLogout() {
 	setTimeout(function() {
 		closePopUp();
 		}, 100);
+	action();
+}
+
+function check() {
+	if (confirm("로그아웃 하시겠습니까?") == true) { //확인
+		naverLogout();
+	} else { //취소
+		return false;
+	}
 }
 
 function action() {

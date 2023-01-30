@@ -38,7 +38,8 @@
 	href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300"
 	rel="stylesheet" type="text/css" />
 
-<script src="https://kit.fontawesome.com/51772bd9bd.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/51772bd9bd.js"
+	crossorigin="anonymous"></script>
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css" />
 <!-- Icomoon Icon Fonts-->
@@ -93,7 +94,8 @@
 						<hr>
 						<div class="mb-3 mt-3 clearfix">
 							<span class="float-start me-2">${bbvo[0].board.bNum }번 글</span> <span
-								class="float-end ms-4">${bbvo[0].board.bDate }</span> <span class="float-end">${bCnt }</span>
+								class="float-end ms-4">${bbvo[0].board.bDate }</span> <span
+								class="float-end">${bCnt }</span>
 						</div>
 
 						<section>
@@ -112,53 +114,70 @@
 									<div class="border bg-light rounded p-2">${board.bContent }</div>
 								</div>
 
-								<c:if test="${bbvo[0].board.bId == sessionScope.id}"> <!-- 작성자==로그인유저 -->
-									<a class="btn btn-outline-dark" href="amendBoardFree.do?bNum=${board.bNum}">수정</a>
-									<a class="btn btn-outline-dark" href="deleteBoard.do?bNum=${board.bNum}">삭제</a>
+								<c:if test="${bbvo[0].board.bId == sessionScope.id}">
+									<!-- 작성자==로그인유저 -->
+									<a class="btn btn-outline-dark"
+										href="amendBoardFree.do?bNum=${board.bNum}">수정</a>
+									<a class="btn btn-outline-dark"
+										href="deleteBoard.do?bNum=${board.bNum}">삭제</a>
 								</c:if>
 
-								<c:if test="${bbvo[0].board.bId != sessionScope.id && sessionScope.id != null }"> <!-- 작성자 != 로그인유저 && 로그인 유저 != null -->
-									<a class="btn btn-outline-dark" href="report.do?rId=${sessionScope.id}&bNum=${board.bNum}&rTargetId=${board.bId}">신고</a>
+								<c:if
+									test="${bbvo[0].board.bId != sessionScope.id && sessionScope.id != null }">
+									<!-- 작성자 != 로그인유저 && 로그인 유저 != null -->
+									<a class="btn btn-outline-dark"
+										href="report.do?rId=${sessionScope.id}&bNum=${board.bNum}&rTargetId=${board.bId}">신고</a>
 								</c:if>
-								
-								<a class="btn btn-outline-dark" href="freeBoards.do">목록</a>  <!-- 모든이에게 보이는 행동 -->
+
+								<a class="btn btn-outline-dark" href="freeBoards.do">목록</a>
+								<!-- 모든이에게 보이는 행동 -->
 							</c:forEach>
 						</section>
-<div class="container my-3 border rounded">
-   <div class="mb-3 mt-3">
-      <label>댓글: <span id="cmt_cnt">${bbvo[0].board.cCnt}</span> 개
-      </label>
-      <form action="insertBComment.do" class="input-group my-2">
-         <input type="hidden" class="form-control" id="input_cmt_num"
-            name="bNum" value="${bbvo[0].board.bNum}">
-         <input type="hidden" class="form-control" id="input_writer"
-            name="bcID" value="${sessionScope.id}">
-         <input type="text" class="form-control" id="input_comment"
-            name="bcContent">
-         <button type="submit" class="btn btn-outline-primary"
-            id="btn_comment">작성</button>
-      </form>
-      <table class="table table-hover mt-3" id="cmt_table">
-         <thead>
-            <tr>
-               <th style="width: 16.66%">작성자</th>
-               <th>내용</th>
-               <th style="width: 16.66%">작성일</th>
-            </tr>
-         </thead>
-         <tbody id="cmt_list">
-<%--             <c:forEach var="boardSet" items="${bbvo}">
-            <c:set var="bcList" value="${boardSet.bcList}" />
-               <tr>
-                  <td>${bbvo[0].bcList.bcID }</td>
-                  <td>${bcList.bcContent }</td>
-                  <td>${bcList.bcDate }</td>
-               </tr>
-            </c:forEach> --%>
-         </tbody>
-      </table>
-   </div>
-</div>
+						<div class="container my-3 border rounded">
+							<div class="mb-3 mt-3">
+								<label>댓글: <span id="cmt_cnt">${bbvo[0].board.cCnt}</span>
+									개
+								</label>
+								<form action="insertBComment.do" class="input-group my-2">
+									<input type="hidden" class="form-control" id="input_cmt_num"
+										name="bNum" value="${bbvo[0].board.bNum}"> <input
+										type="hidden" class="form-control" id="input_writer"
+										name="bcID" value="${sessionScope.id}"> <input
+										type="text" class="form-control" id="input_comment"
+										name="bcContent">
+									<button type="submit" class="btn btn-outline-primary"
+										id="btn_comment">작성</button>
+								</form>
+								<table class="table table-hover mt-3" id="cmt_table">
+									<thead>
+										<tr>
+											<th style="width: 16.66%">작성자</th>
+											<th>내용</th>
+											<th style="width: 16.66%">작성일</th>
+											<th style="width: 6.66%">댓글 달기</th>
+											<th style="width: 6.66%">삭제</th>
+										</tr>
+									</thead>
+									<tbody id="cmt_list">
+										<c:forEach var="bcList" items="${bcList}">
+											<tr>
+												<td>${bcList.bcID}</td>
+												<td>${bcList.bcContent}</td>
+												<td>${bcList.bcDate}</td>
+												<td>댓글 달기</td>
+												<td>
+												${sessionScope.id}
+												${bcList.bcID}
+												</td>
+												<c:if test="${sessionScope.id} == ${bcList.bcID}">
+													<td>삭제</td>
+												</c:if>
+											</tr>
+										</c:forEach>
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- center -->
@@ -169,7 +188,7 @@
 					</div>
 					<div class="con">
 						<div class="button_wrap tac">
-							 <!-- <button type="button" class="delete_btn">닫기</button> -->
+							<!-- <button type="button" class="delete_btn">닫기</button> -->
 						</div>
 					</div>
 				</div>

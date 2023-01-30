@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.board.BCommentVO;
 import model.board.BoardDAO;
+import model.board.BoardVO;
 
 public class InsertBCommentAction implements Action {
 
@@ -13,6 +14,7 @@ public class InsertBCommentAction implements Action {
 		ActionForward forward=new ActionForward();
 
 		BCommentVO bcvo=new BCommentVO();
+		BoardVO bvo=new BoardVO();
 		BoardDAO bdao=new BoardDAO();
 
 		forward.setPath("/bView.do");
@@ -22,7 +24,10 @@ public class InsertBCommentAction implements Action {
 		bcvo.setBcContent(request.getParameter("bcContent"));
 		bcvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
 		
+		bvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
+		
 		bdao.insertBComment(bcvo);
+		bdao.updatecCnt(bvo);
 		return forward;
 
 	}

@@ -10,7 +10,6 @@ public class LogoutAction implements Action {
 		ActionForward forward=new ActionForward();
 		
 		String pw=request.getParameter("mPw");
-		System.out.println(pw);
 		
 		if(pw.equals("NAVER")) {
 			forward.setPath("snsLogout.jsp");

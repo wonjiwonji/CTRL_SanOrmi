@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.board.BCommentVO;
 import model.board.BoardDAO;
 import model.board.BoardSet;
 import model.board.BoardVO;
@@ -19,6 +20,7 @@ public class BViewAction implements Action {
 		
 		BoardDAO bdao = new BoardDAO();
 		BoardVO bvo = new BoardVO();
+		ArrayList<BCommentVO> bcList = new ArrayList<BCommentVO>();
 		ArrayList<BoardSet> bbvo = new ArrayList<BoardSet>();
 		
 		bvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
@@ -26,9 +28,10 @@ public class BViewAction implements Action {
 		bbvo=bdao.selectOneBoard(bvo);
 		bdao.updatebCnt(bvo);
 		
-		request.getSession().setAttribute("bbvo", bbvo);
+		bcList=bbvo.get(0).getBcList();
 		
-		System.out.println(bbvo);
+		request.getSession().setAttribute("bbvo", bbvo);
+		request.getSession().setAttribute("bcList", bcList);
 		
 		return forward;
 	}

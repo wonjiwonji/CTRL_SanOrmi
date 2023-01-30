@@ -8,8 +8,8 @@ public class LogoutSNSAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("main.do");
-		forward.setRedirect(true);
+		forward.setPath("logoutOK.jsp");
+		forward.setRedirect(false);
 
 		request.getSession().invalidate();
 

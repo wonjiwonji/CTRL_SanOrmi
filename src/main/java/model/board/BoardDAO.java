@@ -31,7 +31,7 @@ public class BoardDAO {
    // SELECTONE_BOARD; 게시글 상세보기 쿼리문 (게시글 하나 클릭 시 나오는 정보)
    final String SELECTONE_BOARD = "SELECT B_ID, B.B_TITLE, B.B_CONTENT, B.B_DATE, COUNT(BC.BC_NUM) AS C_CNT, B.B_CNT\r\n"
    		+ "FROM BOARD B LEFT JOIN BCOMMENT BC ON B.B_NUM = BC.B_NUM\r\n"
-   		+ "WHERE B.B_NUM = ? GROUP BY BC_NUM";
+   		+ "WHERE B.B_NUM = ?";
    // SELECTALL_BOARD; 게시글 전체보기 쿼리문 ( 게시글 목록 시 나오는 정보 )
    final String SELECTALL_BOARD = "SELECT B_NUM, B_TITLE, B_CNT, B_ID, B_CONTENT, C_CNT FROM BOARD ORDER BY B_NUM DESC";
    // SELECTALL_MY_PAGE; 내가 쓴 글 전체보기 쿼리문 
