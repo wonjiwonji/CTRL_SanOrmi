@@ -19,7 +19,7 @@ public class InsertBCommentAction implements Action {
 		
 		System.out.println(bcvo);
 		
-		if(bcvo.getBcID()!=null) {
+		if(bcvo.getBcID()!="") {
 			forward.setPath("bView.do");
 			forward.setRedirect(true);
 			
