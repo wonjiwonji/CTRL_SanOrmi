@@ -8,6 +8,7 @@
 <head>
 <meta charset="UTF-8">
 <title>로그아웃</title>
+<link rel="icon" href="images/favicon.ico" />
 </head>
 <body>
 	<div id="fh5co-wrapper">

@@ -13,6 +13,7 @@
 <meta name="description" content="" />
 <meta name="author" content="" />
 <title>회원 탈퇴</title>
+<link rel="icon" href="images/favicon.ico" />
 
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="./images/favicon.ico" />
