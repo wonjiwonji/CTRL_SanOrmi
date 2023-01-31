@@ -72,14 +72,6 @@
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
 
-<script>
-	$(function (){
-		$("#btn_toggle").click(function (){
-	  	$("#Toggle").toggle();
-	  });
-	});
-</script>
-
 <style>
 #btn_toggle{
   font-size:14px;
@@ -93,6 +85,7 @@
 #Toggle{
   font-size:14px;
   color: #666;
+  display: block;
 }
 
 #deleteButton{
@@ -205,7 +198,7 @@
 												</td>
 												<td>
 												<a><button id="btn_toggle">답글달기</button></a>
-													<div id="Toggle" style="display:none">
+													<div id="Toggle">
 													<form action="insertBCComment.do" class="input-group my-2">
 															<input type="hidden" name="bccGroup" value="${bcList.bcGroup}">
 															<input type="hidden" class="form-control"
@@ -226,7 +219,7 @@
 												<td>
 												<c:choose>
 												<c:when test="${sessionScope.id == bccList.bccID}">
-												<a href="deleteBComment.do?bccNum=${bccList.bccNum}&bNum=${bccList.bNum}"><button id="deleteButton">삭제</button></a>
+												<a href="deleteBComment.do?bcNum=bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bccNum=${bccList.bccNum}&bcGroup=${bcList.bcGroup}"><button id="deleteButton">삭제</button></a>
 												</c:when>
 												<c:when test="${sessionScope.id == 'admin' }">
 												<a href="deleteBComment.do?bccNum=${bccList.bccNum}&bNum=${bccList.bNum}"><button id="deleteButton">삭제</button></a>

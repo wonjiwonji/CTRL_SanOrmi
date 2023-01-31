@@ -19,20 +19,19 @@ public class DeleteBCommentAction implements Action {
 		BoardDAO bdao=new BoardDAO();
 		BoardVO bvo = new BoardVO();
 		
-		int bNum = Integer.parseInt(request.getParameter("bNum"));
-		int bcNum = Integer.parseInt(request.getParameter("bcNum"));
+		String bNum = request.getParameter("bNum");
 		
-		if(bNum != 0) {
-			bvo.setbNum(bNum);
+		if(bNum != null) {
+			bvo.setbNum(Integer.parseInt(bNum));
 		}
 		
-		if(bcNum != 0) {
-			bcvo.setBcNum(bcNum);
+		if(request.getParameter("bcNum") != null) {
+			bcvo.setBcNum(Integer.parseInt(request.getParameter("bcNum")));
+		} else {
+			bcvo.setBcNum(Integer.parseInt(request.getParameter("bccNum")));
 		}
 		
 		BCommentVO dbcvo=bdao.selectOne(bcvo);
-		
-		System.out.println(dbcvo.getBcSQE());
 		
 		bdao.deleteBComment(dbcvo);
 		return forward;
