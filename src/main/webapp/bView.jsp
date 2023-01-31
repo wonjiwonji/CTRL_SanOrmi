@@ -8,6 +8,8 @@
 <meta charset="UTF-8" />
 <title>게시글</title>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="./images/favicon.ico" />
 
@@ -70,16 +72,40 @@
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
 
-<%-- <%
-   String loginUser = (String)session.getAttribute("id");
+<script>
+	$(function (){
+		$("#btn_toggle").click(function (){
+	  	$("#Toggle").toggle();
+	  });
+	});
+</script>
 
-   pageContext.setAttribute("loginUser", loginUser);
-%> --%>
+<style>
+#btn_toggle{
+  font-size:14px;
+  padding:10px 15px;
+  border:1px solid #ddd;
+  background-color:#0a76b7;
+  border-radius:5px;
+  color:#fff;
+  font-weight:bold;
+}
+#Toggle{
+  font-size:14px;
+  color: #666;
+}
 
-<!--[if lt IE 9]>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-<!-- link end -->
+#deleteButton{
+  font-size:14px;
+  padding:10px 15px;
+  border:1px solid #ddd;
+  background-color:#0a76b7;
+  border-radius:5px;
+  color:#fff;
+  font-weight:bold;
+}
+</style>
+
 </head>
 <body>
 	<div id="fh5co-wrapper">
@@ -164,10 +190,39 @@
 												<td>${bcList.bcID}</td>
 												<td>${bcList.bcContent}</td>
 												<td>${bcList.bcDate}</td>
-												<td>댓글 달기</td>
-												<td><a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}">삭제</a></td>
+												<td>
+												<a><button id="btn_toggle">답글달기</button></a>
+													<div id="Toggle" style="display:none"><form action="insertBCComment.do" class="input-group my-2">
+															<input type="hidden" class="form-control"
+																id="input_cmt_num" name="bNum"
+																value="${bbvo[0].board.bNum}"> <input
+																type="hidden" class="form-control" id="input_writer"
+																name="bcID" value="${sessionScope.id}"> <input
+																type="text" class="form-control" id="input_comment"
+																name="bcContent">
+																<button type="submit" class="btn btn-outline-primary"
+																id="btn_comment">작성</button>
+														</form>
+														</div>
+												</td>
+												
+												<td>
+												<c:choose>
+												<c:when test="${sessionScope.id == bcList.bcID}">
+												<a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}"><button id="deleteButton">삭제</button></a>
+												</c:when>
+												<c:when test="${sessionScope.id == 'admin' }">
+												<a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}"><button id="deleteButton">삭제</button></a>
+												</c:when>
+												<c:otherwise>
+												<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
+												</c:otherwise>
+												</c:choose>
+												</td>
+												
 											</tr>
 										</c:forEach>
+
 									</tbody>
 								</table>
 							</div>
@@ -193,10 +248,10 @@
 
 		</div>
 	</div>
-	
-	
-	
-	
-	
+
+
+
+
+
 </body>
 </html>
