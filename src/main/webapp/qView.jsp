@@ -38,7 +38,8 @@
 	href="https://fonts.googleapis.com/css?family=Open+Sans:400,700,300"
 	rel="stylesheet" type="text/css" />
 
-<script src="https://kit.fontawesome.com/51772bd9bd.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/51772bd9bd.js"
+	crossorigin="anonymous"></script>
 <!-- Animate.css -->
 <link rel="stylesheet" href="css/animate.css" />
 <!-- Icomoon Icon Fonts-->
@@ -75,6 +76,34 @@
     <![endif]-->
 <!-- link end -->
 
+<style>
+#btn_toggle {
+	font-size: 14px;
+	padding: 10px 15px;
+	border: 1px solid #ddd;
+	background-color: #1cc88a;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: bold;
+}
+
+#Toggle {
+	font-size: 14px;
+	color: #666;
+	display: block;
+}
+
+#deleteButton {
+	font-size: 14px;
+	padding: 10px 15px;
+	border: 1px solid #ddd;
+	background-color: #1cc88a;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: bold;
+}
+</style>
+
 </head>
 <body>
 	<div id="fh5co-wrapper">
@@ -110,10 +139,13 @@
 									<div class="border bg-light rounded p-2">${qna.qContent }</div>
 								</div>
 
-								<c:if test="${qbvo[0].qna.qId == sessionScope.id || 'admin' == sessionScope.id}">
+								<c:if
+									test="${qbvo[0].qna.qId == sessionScope.id || 'admin' == sessionScope.id}">
 									<!-- 작성자==로그인유저 -->
-									<a class="btn btn-outline-dark" href="amendBoardQnA.do?qNum=${qna.qNum}">수정</a>
-									<a class="btn btn-outline-dark" href="deleteQNA.do?qNum=${qna.qNum}">삭제</a>
+									<a class="btn btn-outline-dark"
+										href="amendBoardQnA.do?qNum=${qna.qNum}">수정</a>
+									<a class="btn btn-outline-dark"
+										href="deleteQNA.do?qNum=${qna.qNum}">삭제</a>
 								</c:if>
 
 								<%-- 			qna는 신고 없음					
@@ -128,7 +160,7 @@
 								<a class="btn btn-outline-dark" href="qna.do">목록</a>
 								<!-- 모든이에게 보이는 행동 -->
 
-				</c:forEach>
+							</c:forEach>
 						</section>
 						<div class="container my-3 border rounded">
 							<div class="mb-3 mt-3">
@@ -141,9 +173,12 @@
 										type="hidden" class="form-control" id="input_writer"
 										name="qcID" value="${sessionScope.id}"> <input
 										type="text" class="form-control" id="input_comment"
-										name="qcContent" required>
+										name="qcContent" required
+										style="display: inline-block; width: 1000px;">
+
 									<button type="submit" class="btn btn-outline-primary"
-										id="btn_comment">작성</button>
+										id="btn_comment"
+										style="background-color: #1cc88a; color: white; font-weight: bold; margin-left: 20px; border-radius: 5px;">작성</button>
 								</form>
 								<table class="table table-hover mt-3" id="cmt_table">
 									<thead>
@@ -151,7 +186,6 @@
 											<th style="width: 16.66%">작성자</th>
 											<th>내용</th>
 											<th style="width: 16.66%">작성일</th>
-											<th style="width: 6.66%">댓글 달기</th>
 											<th style="width: 6.66%">삭제</th>
 										</tr>
 									</thead>
@@ -161,58 +195,63 @@
 												<td>${qcList.qcID}</td>
 												<td>${qcList.qcContent}</td>
 												<td>${qcList.qcDate}</td>
-												<td>
-												<c:choose>
-												<c:when test="${sessionScope.id == qcList.qcID}">
-												<a href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qcGroup=${qcList.qcGroup}"><button id="deleteButton">삭제</button></a>
-												</c:when>
-												<c:when test="${sessionScope.id == 'admin' }">
-												<a href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qcGroup=${qcList.qcGroup}"><button id="deleteButton">삭제</button></a>
-												</c:when>
-												<c:otherwise>
-												<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
-												</c:otherwise>
-												</c:choose>
-												</td>
-												<td>
-												<a><button id="btn_toggle">답글달기</button></a>
+												<td><c:choose>
+														<c:when test="${sessionScope.id == qcList.qcID}">
+															<a
+																href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qcGroup=${qcList.qcGroup}"><button
+																	id="deleteButton">삭제</button></a>
+														</c:when>
+														<c:when test="${sessionScope.id == 'admin' }">
+															<a
+																href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qcGroup=${qcList.qcGroup}"><button
+																	id="deleteButton">삭제</button></a>
+														</c:when>
+														<c:otherwise>
+															<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
+														</c:otherwise>
+													</c:choose></td>
+												<tr>
+												<td colspan="5">
 													<div id="Toggle">
-													<form action="insertQCComment.do" class="input-group my-2">
-															<input type="hidden" name="qccGroup" value="${qcList.qcGroup}">
-															<input type="hidden" class="form-control"
-																id="input_cmt_num" name="qNum"
+														<form action="insertQCComment.do" class="input-group my-2">
+															<input type="hidden" name="qccGroup"
+																value="${qcList.qcGroup}"> <input type="hidden"
+																class="form-control" id="input_cmt_num" name="qNum"
 																value="${qbvo[0].qna.qNum}"> <input
 																type="hidden" class="form-control" id="input_writer"
 																name="qccID" value="${sessionScope.id}"> <input
 																type="text" class="form-control" id="input_comment"
-																name="qccContent" required>
-																<button type="submit" class="btn btn-outline-primary"
-																id="btn_comment">작성</button>
+																name="qccContent" required style="display: inline-block; width: 85%;">
+															<button type="submit" class="btn btn-outline-primary"
+																id="btn_comment" style="background-color: #1cc88a; color: white; font-weight: bold; margin-left: 20px; border-radius: 5px;">답글 작성</button>
 														</form>
-														<c:forEach var="qccList" items="${qcList.qccList}">
-														<tr>
-														<td>${qccList.qccID}</td>
-														<td>${qccList.qccContent}</td>
-														<td>${qccList.qccDate}</td>
-												<td>
-												<c:choose>
-												<c:when test="${sessionScope.id == qccList.qccID}">
-												<a href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qccNum=${qccList.qccNum}&qcGroup=${qcList.qcGroup}"><button id="deleteButton">삭제</button></a>
-												</c:when>
-												<c:when test="${sessionScope.id == 'admin' }">
-												<a href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qccNum=${qccList.qccNum}&qcGroup=${qcList.qcGroup}"><button id="deleteButton">삭제</button></a>
-												</c:when>
-												<c:otherwise>
-												<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
-												</c:otherwise>
-												</c:choose>
-												</td>
-														</tr>
-														</c:forEach>
 														</div>
-												</td>
-												
-											</tr>
+														</td>
+														</tr> 
+														<c:forEach var="qccList" items="${qcList.qccList}">
+															<tr>
+																<td>${qccList.qccID}</td>
+																<td>${qccList.qccContent}</td>
+																<td>${qccList.qccDate}</td>
+																<td><c:choose>
+																		<c:when test="${sessionScope.id == qccList.qccID}">
+																			<a
+																				href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qccNum=${qccList.qccNum}&qcGroup=${qcList.qcGroup}"><button
+																					id="deleteButton">삭제</button></a>
+																		</c:when>
+																		<c:when test="${sessionScope.id == 'admin' }">
+																			<a
+																				href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qccNum=${qccList.qccNum}&qcGroup=${qcList.qcGroup}"><button
+																					id="deleteButton">삭제</button></a>
+																		</c:when>
+																		<c:otherwise>
+																			<a href="deleteCheckNo.jsp"><button
+																					id="deleteButton">삭제</button></a>
+																		</c:otherwise>
+																	</c:choose></td>
+															</tr>
+														</c:forEach>
+
 										</c:forEach>
 
 									</tbody>

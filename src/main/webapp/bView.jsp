@@ -71,13 +71,7 @@
 
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
-<script>
-	$(function (){
-		$("#btn_toggle").click(function (){
-	  	$("#Toggle").toggle();
-	  });
-	});
-</script>
+
 <style>
 #btn_toggle{
   font-size:14px;
@@ -179,7 +173,6 @@
 											<th style="width: 16.66%">작성자</th>
 											<th>내용</th>
 											<th style="width: 16.66%">작성일</th>
-											<th style="width: 6.66%">댓글 달기</th>
 											<th style="width: 6.66%">삭제</th>
 										</tr>
 									</thead>
@@ -203,8 +196,26 @@
 												</c:choose>
 												</td>
 												
-												<td>
-												<a><button id="btn_toggle">답글달기</button></a>
+												<tr>
+												<td colspan="5">
+												<div id="Toggle" >
+												<form action="insertBCComment.do" class="input-group my-2">
+															<input type="hidden" name="bccGroup" value="${bcList.bcGroup}">
+															<input type="hidden" class="form-control"
+																id="input_cmt_num" name="bNum"
+																value="${bbvo[0].board.bNum}"> <input
+																type="hidden" class="form-control" id="input_writer"
+																name="bccID" value="${sessionScope.id}"> 
+																<input
+																type="text" class="form-control" id="input_comment"
+																name="bccContent" required style="display: inline-block; width: 85%;">
+																<button type="submit" class="btn btn-outline-primary"
+																id="btn_comment" style="background-color: #1cc88a; color: white; font-weight: bold; margin-left: 20px; border-radius: 5px;">답글 작성</button>
+																
+														</form>
+														</div>
+														</td>
+														</tr>
 													<div>
 													
 														
@@ -233,29 +244,8 @@
 														
 														</c:forEach>
 														</div>
-												</td>
 												
-											</tr>
-														<tr>
-												<td colspan="5">
-												<div id="Toggle" style="display:none">
-												<form action="insertBCComment.do" class="input-group my-2">
-															<input type="hidden" name="bccGroup" value="${bcList.bcGroup}">
-															<input type="hidden" class="form-control"
-																id="input_cmt_num" name="bNum"
-																value="${bbvo[0].board.bNum}"> <input
-																type="hidden" class="form-control" id="input_writer"
-																name="bccID" value="${sessionScope.id}"> 
-																<input
-																type="text" class="form-control" id="input_comment"
-																name="bccContent" required style="display: inline-block; width: 1000px;">
-																<button type="submit" class="btn btn-outline-primary"
-																id="btn_comment" style="background-color: #1cc88a; color: white; font-weight: bold; margin-left: 20px; border-radius: 5px;">작성</button>
-														</form>
-														</div>
-																
-														</td>
-														</tr>
+			
 										</c:forEach>
 
 
