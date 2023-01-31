@@ -135,7 +135,6 @@
                           	location.href="joinKakao.do?name=" + name + "&email=" + email; //리다이렉트 주소
                             },
                           });
-                         // window.location.href='joinKakao.do'; //리다이렉트 주소
                         },
                         fail: function (error) {
                           console.log(error);	// 실패하면 콘솔에 error 메세지
@@ -168,26 +167,6 @@
                   </script>
 
 
-
-
-
-
-										<!--                   <script type="text/javascript">
-  var naver_id_login = new naver_id_login("YOUR_CLIENT_ID", "YOUR_CALLBACK_URL");
-  // 접근 토큰 값 출력
-  var userToken = naver_id_login.oauthParams.access_token);
-  // 네이버 사용자 프로필 조회
-  naver_id_login.get_naver_userprofile("naverSignInCallback()");
-  // 네이버 사용자 프로필 조회 이후 프로필 정보를 처리할 callback function
-  function naverSignInCallback() {
-    alert(naver_id_login.getProfileData('email'));
-    alert(naver_id_login.getProfileData('nickname'));
-    alert(naver_id_login.getProfileData('age'));
-  }
-</script> -->
-
-
-
 										<!-- 네이버 js -->
 										<script type="text/javascript"
 											src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js"
@@ -214,9 +193,6 @@
   				</script>
 									</form>
 									<hr />
-									<!-- <div class="text-center">
-                <a class="small" href="forgot-password.html">비밀번호 찾기</a>
-                </div> -->
 									<div class="text-center">
 										<a class="small" href="agree.do">회원가입</a>
 									</div>

@@ -21,10 +21,10 @@ public class BViewAction implements Action {
 		
 		BoardDAO bdao = new BoardDAO();
 		BoardVO bvo = new BoardVO();
-		ArrayList<BCommentVO> bcList = new ArrayList<BCommentVO>();
-		ArrayList<ArrayList<BCCommentVO>> bccList = new ArrayList<ArrayList<BCCommentVO>>();
-		ArrayList<BCCommentVO> bccListSample = new ArrayList<BCCommentVO>();
 		ArrayList<BoardSet> bbvo = new ArrayList<BoardSet>();
+		ArrayList<BCommentVO> bcList = new ArrayList<BCommentVO>();
+		ArrayList<BCCommentVO> bccListSample = new ArrayList<BCCommentVO>();
+		ArrayList<ArrayList<BCCommentVO>> bccList = new ArrayList<ArrayList<BCCommentVO>>();
 		
 		bvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
 		

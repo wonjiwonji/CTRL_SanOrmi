@@ -212,12 +212,6 @@ function action() {
 
 							</c:choose>
 
-
-
-
-
-
-
 						</section>
 					</div>
 				</div>

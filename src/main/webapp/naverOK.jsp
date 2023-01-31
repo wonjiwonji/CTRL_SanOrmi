@@ -26,7 +26,6 @@
 </script>
 
 <script type="text/javascript">
-	/*세팅 사이트에 맞게 설정하세요*/
 	var clientID = 'dClwkVzJ3MRBP_IElx5I'; // 네아로 클라이언트 아이디
 	var callbackURL = 'http://localhost:8088/ctrl/naverOK.jsp'; // 네아로에서 설정한 CallBack URL 
 	var siteURL = 'http://localhost:8088'; // 네아로에서 설정한 사이트 URL 
@@ -68,13 +67,6 @@
 			const name = naver_id_login.getProfileData('name');
 
 			location.href = "joinNaver.do?name=" + name + "&email=" + email; //리다이렉트 주소
-			
-			/* if (typeof value == 'undefined') {
-				value = '알수없음';
-			}
-			$('.result', opener.document).append(
-					'<tr><th>' + des + '(' + key + ')</th><td>' + value
-							+ '</td></tr>'); */
 		});
 
 		window.self.close();
