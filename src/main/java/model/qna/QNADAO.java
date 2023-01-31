@@ -251,7 +251,7 @@ public class QNADAO {
 						qccomment.setqNum(qvo.getqNum()); // 게시글 번호 저장
 						qccomment.setQccSqe(rs3.getInt("QC_SQE")); // 대댓글 시퀀스 저장
 						qccomment.setQccGroup(qcomment.getQcGroup()); // 대댓글 그룹 저장
-						qccomment.setQccDate(rs3.getDate("BC_DATE")); // 대댓글 작성일 저장
+						qccomment.setQccDate(rs3.getDate("QC_DATE")); // 대댓글 작성일 저장 
 
 						qccList.add(qccomment); // qccList에 위의 값들을 add해줌
 					}
