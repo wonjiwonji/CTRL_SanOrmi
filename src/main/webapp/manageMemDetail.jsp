@@ -127,6 +127,7 @@
         
         <!-- Content Row -->
         <form action="controller.jsp" method="post" name="form">
+        
           <div class="row"> 
             <!-- Earnings (Monthly) Card Example -->
             <div class="col-xl-3 col-md-6 mb-4">
@@ -138,7 +139,7 @@
                             class="text-xs font-weight-bold text-success text-uppercase mb-1"
                           > 아이디 </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${id } </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${smvo.id} </div>
                         <br />
                       </div>
                     </div>
@@ -157,7 +158,7 @@
                             class="text-xs font-weight-bold text-primary text-uppercase mb-1"
                           > 이름 </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${mName } </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${smvo.mName} </div>
                         <br />
                       </div>
                     </div>
@@ -174,7 +175,7 @@
                     <div class="col mr-2">
                       <div class="text-xs font-weight-bold text-info text-uppercase mb-1"> 이메일 </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${mEmail } </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${smvo.mEmail} </div>
                         <br />
                       </div>
                     </div>
@@ -193,7 +194,7 @@
                             class="text-xs font-weight-bold text-warning text-uppercase mb-1"
                           > 주소 </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${mAddress } </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${smvo.mAddress} </div>
                         <br />
                       </div>
                     </div>
@@ -212,7 +213,7 @@
                             class="text-xs font-weight-bold text-success text-uppercase mb-1"
                           > 가입일자 </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        <div class="h5 mb-0 font-weight-bold text-gray-800">${mDate } </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800">${smvo.mDate} </div>
                         <br />
                       </div>
                     </div>
@@ -229,7 +230,7 @@
                             class="text-xs font-weight-bold text-warning text-uppercase mb-1"
                           > 경고 횟수 </div>
                       <div class="h5 mb-0 font-weight-bold text-gray-800">
-                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${mBan } </div>
+                        <div class="h5 mb-0 font-weight-bold text-gray-800"> ${smvo.mBanCnt} </div>
                         <br />
                       </div>
                     </div>
@@ -239,6 +240,7 @@
             </div>
           </div>
           <!-- Content Row -->
+          
         </form>
         <div class="row"> 
           <!-- Content Row -->
