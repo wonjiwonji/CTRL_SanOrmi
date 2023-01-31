@@ -168,15 +168,26 @@ body::-webkit-scrollbar-thumb {
     		// [캔버스 크기를 부모 컨테이너 크기에 맞춥니다 : 부모 크기 % 지정 (반응형)]
     		canvas.height = height;
     		canvas.width = width;
-
+    		
+    		var list1 = new Array(); list1.push("${kingId1}");
+    		var list2 = new Array(); list2.push("${kingId2}");
+    		var list3 = new Array(); list3.push("${kingId3}");
+    		var list4 = new Array(); list4.push("${kingId4}");
+    		var list5 = new Array(); list5.push("${kingId5}");
+    		var list6 = new Array(); list6.push("${kingBc1}");
+    		var list7 = new Array(); list7.push("${kingBc2}");
+    		var list8 = new Array(); list8.push("${kingBc3}");
+    		var list9 = new Array(); list9.push("${kingBc4}");
+    		var list10 = new Array(); list10.push("${kingBc5}");
+    		
     		// [차트 그리기 실시]
     		myChart = new Chart(ctx, {
     			type: 'bar', // [차트 타입 지정]
     			data: {
-    				labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple'], // [데이터 라벨 (제목)]
+    				labels: [list1[0], list2[0], list3[0], list4[0], list5[0]], // [데이터 라벨 (제목)]
     				datasets: [{
-    					label: '# of Votes', // [데이터 시트 제목]
-    					data: [26, 19, 23, 5, 2], // [데이터 : Red ~ purple]
+    					label: 'CommunityKing', // [데이터 시트 제목]
+    					data: [list6[0], list7[0], list8[0], list9[0], list10[0]], // [데이터 : Red ~ purple]
     					backgroundColor: [ // [막대 배경 색상 : Red ~ purple ]
     						'rgba(255, 99, 132, 0.4)',
     						'rgba(54, 162, 235, 0.4)',
