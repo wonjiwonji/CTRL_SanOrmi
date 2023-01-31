@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>탈퇴 완료</title>
+<title>로그아웃 완료</title>
 </head>
 <body>
 	<script type="text/javascript">

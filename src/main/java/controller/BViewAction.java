@@ -45,8 +45,6 @@ public class BViewAction implements Action {
 				request.getSession().setAttribute("bccList", bccList);
 			}
 		}
-		
 		return forward;
 	}
-
 }

@@ -76,7 +76,7 @@
 
 							<c:choose>
 								<c:when test="${(fn:contains(sessionScope.mPw, 'KAKAO'))}">
-									<button onclick="kakaoLogout(); action(); return false;"
+									<button onclick="kakaoDelete(); return false;"
 										class="kakao_logout"
 										style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #FEE500; text-align: center; font-size: large; font-weight: bold;">
 										<a> <img src="./img/kakao.png" /></a> 카카오 회원탈퇴
@@ -98,7 +98,7 @@
                            // 연결 끊기(회원탈퇴)
                             success: (response) => {
                               
-                          	location.href="deleteAccount.do"; //리다이렉트 주소
+                          	action(); //리다이렉트 주소
                             },
                           });
                         },
@@ -107,6 +107,11 @@
                         },
                       });
                     }
+                     
+                    function action() {
+                    	location.href = "deleteAccount.do?id=${sessionScope.id}"; //리다이렉트 주소
+                    }
+                      
                     </script>
 
 
@@ -159,7 +164,6 @@ function naverLogout() {
 		}, 100);
 	
 	action();
-	
 }
 
 function check() {

@@ -374,8 +374,6 @@ public class FrontController extends HttpServlet {
 			}
 		}
 		
-		
-		
 		if(forward==null) {
 			forward=new ActionForward();
 			forward.setPath("/error404.jsp");
@@ -383,11 +381,9 @@ public class FrontController extends HttpServlet {
 		}
 
 		if(forward.isRedirect()) {
-			System.out.println("redirect");
 			response.sendRedirect(forward.getPath());
 		}
 		else {
-			System.out.println("forward");
 			RequestDispatcher dispatcher=request.getRequestDispatcher(forward.getPath());
 			dispatcher.forward(request, response);
 		}
