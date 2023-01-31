@@ -320,29 +320,7 @@ public class BoardDAO {
       return bList; // ArrayList bList 반환
    }
 
-   // selectOne ; 댓글 삭제를 위해 BC_NUM을 이용하여 BC_NUM, BC_GROUP, BC_SQE를 조회
-//   public BCommentVO selectOne(BCommentVO bcvo) { // bcvo ; bcNum 필요
-//      BCommentVO data = null;
-//      conn = JDBCUtil.connect(); // JDBCUtil 연결
-//      try {
-//         pstmt = conn.prepareStatement(SELECTONE); // SELECTONE ; 댓글 삭제를 위해 BC_NUM을 이용하여 BC_NUM, BC_GROUP, BC_SQE를 조회
-//         pstmt.setInt(1, bcvo.getBcNum()); // 댓글 번호
-//         ResultSet rs = pstmt.executeQuery(); // pstmt 실행, 실행한 결과 rs에 저장
-//         if (rs.next()) { // rs에 정보가 있는 동안
-//            data = new BCommentVO(); // BCommentVO 새로운 객체 data 생성
-//            data.setBcNum(rs.getInt("BC_NUM")); // 댓글 번호
-//            data.setBcGroup(rs.getInt("BC_GROUP")); // 댓글 그룹
-//            data.setBcSQE(rs.getInt("BC_SQE")); // 댓글 시퀀스
-//         }
-//      } catch (SQLException e) {
-//         e.printStackTrace();
-//      }
-//      JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
-//      return data; // data 리턴
-//   }
-
    public boolean deleteBComment(BCommentVO bcvo) { // bcvo; selectOne을 실행한 return 값 필요
-      System.out.println("  로그 : deleteBComment 들어옴");
       conn = JDBCUtil.connect(); // JDBCUtil 연결
       try {
          pstmt = conn.prepareStatement(DELETE_BCOMMENT); // DELETE_BCOMMENT; 댓글 삭제
@@ -361,8 +339,6 @@ public class BoardDAO {
    }
 
    public boolean deleteBCComment(BCCommentVO bccvo) {
-      System.out.println("  로그 : deleteBCComment 들어옴");
-
       conn = JDBCUtil.connect(); // JDBCUtil 연결
       try {
          pstmt = conn.prepareStatement(DELETE_BCCOMMENT); // DELETE_BCOMMENT; 댓글 삭제

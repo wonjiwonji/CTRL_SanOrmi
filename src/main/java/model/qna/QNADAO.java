@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import model.board.BoardVO;
 import model.common.JDBCUtil;
 
 // 시퀀스 넘버 넘겨주세요!
@@ -39,15 +38,13 @@ public class QNADAO {
 			+ "FROM QCOMMENT QCC GROUP BY QC_GROUP HAVING QC_GROUP = ?) , NOW() );";
 
 	// DELETE_QCOMMENT; 댓글 삭제 쿼리문 ( 대댓글 까지 같이 삭제 )
-	final String DELETE_QCOMMENT = "DELETE FROM QCOMMENT WHERE QC_GROUP = ?";
+	final String DELETE_QCOMMENT = "DELETE FROM QCOMMENT WHERE QC_GROUP = ? AND Q_NUM = ?";
 	// DELETE_QCCOMMENT; 대댓글 삭제 쿼리문 ( 대댓글만 삭제 )
 	final String DELETE_QCCOMMENT = "DELETE FROM QCOMMENT WHERE QC_NUM=?";
 	// SELECTALL_QCOMMENT; 댓글 전체보기 쿼리문 ( 게시글에 대한 댓글 전체 보기 )
 	final String SELECTALL_QCOMMENT = "SELECT QC_CONTENT, QC_GROUP, QC_DATE, QC_ID FROM QCOMMENT WHERE Q_NUM=? AND QC_SQE=0";
 	// SELECTALL_QCCOMMENT; 대댓글 전체보기 쿼리문 ( 게시글에 대한 대댓글 전체 보기 )
 	final String SELECTALL_QCCOMMENT = "SELECT QC_CONTENT,QC_GROUP, QC_DATE,QC_SQE,QC_ID FROM QCOMMENT WHERE Q_NUM=? AND QC_SQE>0 AND QC_GROUP=?";
-	// SELECTONE ; 댓글 삭제를 위해 QC_NUM을 이용하여 QC_NUM, QC_GROUP, QC_SQE를 조회
-	final String SELECTONE = "SELECT QC_NUM, QC_GROUP, QC_SQE FROM QCOMMENT WHERE QC_NUM = ?";
 
 	// insertQNA; QNA 게시글 등록 메서드
 	public boolean insertQNA(QNAVO qvo) { // qvo; qTitle, qContent, qId 필요
@@ -272,37 +269,13 @@ public class QNADAO {
 		return qList; // ArrayList qList 반환
 	}
 
-	// selectOne ; 댓글 삭제를 위해 QC_NUM을 이용하여 QC_NUM, QC_GROUP, QC_SQE를 조회
-	public QCommentVO selectOne(QCommentVO qcvo) { // qcvo ; qcNum 필요
-		QCommentVO data = null;
-		conn = JDBCUtil.connect(); // JDBCUtil 연결
-		try {
-			pstmt = conn.prepareStatement(SELECTONE); // SELECTONE ; 댓글 삭제를 위해 QC_NUM을 이용하여 QC_NUM, QC_GROUP, QC_SQE를 조회
-			pstmt.setInt(1, qcvo.getQcNum()); // 댓글 번호
-			ResultSet rs = pstmt.executeQuery(); // pstmt 실행, 실행한 결과 rs에 저장
-			if (rs.next()) { // rs에 정보가 있는 동안
-				data = new QCommentVO(); // QCommentVO 새로운 객체 data 생성
-				data.setQcNum(rs.getInt("QC_NUM")); // 댓글 번호
-				data.setQcGroup(rs.getInt("QC_GROUP")); // 댓글 그룹
-				data.setQcSQE(rs.getInt("QC_SQE")); // 댓글 시퀀스
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
-		return data; // data 리턴
-	}
 
 	public boolean deleteQComment(QCommentVO qcvo) { // qcvo; selectOne을 실행한 return 값 필요
 		conn = JDBCUtil.connect(); // JDBCUtil 연결
 		try {
-			if (qcvo.getQccvo().getQccSqe() > 0) {// qccvo에 있는 qccSqe가 0보다 크다면
-				pstmt = conn.prepareStatement(DELETE_QCCOMMENT); // DELETE_QCCOMMENT; 대댓글 삭제
-				pstmt.setInt(1, qcvo.getQcNum());// pstmt에 qcNum 저장
-			} else { // qccSqe가 0보다 크지 않다면
-				pstmt = conn.prepareStatement(DELETE_QCOMMENT);// DELETE_QCOMMENT; 댓글 삭제
-				pstmt.setInt(1, qcvo.getQcGroup());// pstmt에 qcGroup 저장
-			}
+			pstmt = conn.prepareStatement(DELETE_QCOMMENT);// DELETE_QCOMMENT; 댓글 삭제
+			pstmt.setInt(1, qcvo.getQcGroup());// pstmt에 qcGroup 저장
+			pstmt.setInt(2, qcvo.getqNum());
 			int res = pstmt.executeUpdate(); // pstmt실행 결과 res에 저장
 			if (res <= 0) { // res가 0보다 같거나 작다면 // 즉, pstmt 실행시키는 것을 실패했다면
 				return false; // false 반환
@@ -314,5 +287,21 @@ public class QNADAO {
 		JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
 		return true; // true 반환
 	}
-
+	
+	public boolean deleteQCComment(QCCommentVO qccvo) { // qcvo; selectOne을 실행한 return 값 필요
+		conn = JDBCUtil.connect(); // JDBCUtil 연결
+		try {
+			pstmt = conn.prepareStatement(DELETE_QCCOMMENT); // DELETE_QCCOMMENT; 대댓글 삭제
+			pstmt.setInt(1, qccvo.getQccNum());// pstmt에 qcNum 저장
+			int res = pstmt.executeUpdate(); // pstmt실행 결과 res에 저장
+			if (res <= 0) { // res가 0보다 같거나 작다면 // 즉, pstmt 실행시키는 것을 실패했다면
+				return false; // false 반환
+			}
+		} catch (SQLException e) { // 위 try문 실행 중 에러(SQL) 발생 시
+			e.printStackTrace(); // 무슨 에러인지 출력
+			return false; // false 반환
+		}
+		JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
+		return true; // true 반환
+	}
 }
