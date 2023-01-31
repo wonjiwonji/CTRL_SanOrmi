@@ -553,7 +553,7 @@
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">
-              로그아웃 하시겠습니까?
+             로그아웃 하시겠습니까?
             </h5>
             <button
               class="close"
@@ -576,7 +576,7 @@
             >
               취소
             </button>
-            <a class="btn btn-primary" href="logout.do">로그아웃</a>
+            <a class="btn btn-primary" href="logout.do?mPw=${sessionScope.mPw}">로그아웃</a>
           </div>
         </div>
       </div>

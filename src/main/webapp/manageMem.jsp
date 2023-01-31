@@ -179,7 +179,7 @@
       <div class="modal-body"> 현재 세션을 종료할 준비가 되었으면 아래에서 "로그아웃"을 선택하십시오.</div>
       <div class="modal-footer">
         <button class="btn btn-secondary" type="button" data-dismiss="modal">취소</button>
-        <a class="btn btn-primary" href="main.do">로그아웃</a> </div>
+        <a class="btn btn-primary" href="logout.do?mPw=${sessionScope.mPw}">로그아웃</a> </div>
     </div>
   </div>
 </div>
