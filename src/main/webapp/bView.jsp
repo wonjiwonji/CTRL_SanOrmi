@@ -165,7 +165,19 @@
 												<td>${bcList.bcContent}</td>
 												<td>${bcList.bcDate}</td>
 												<td>댓글 달기</td>
-												<td><a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}">삭제</a></td>
+												<td>
+												<c:choose>
+												<c:when test="${sessionScope.id == bcList.bcID}">
+												<a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}">삭제</a>
+												</c:when>
+												<c:when test="${sessionScope.id == 'admin' }">
+												<a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}">삭제</a>
+												</c:when>
+												<c:otherwise>
+												<a href="deleteCheckNo.jsp">삭제</a>
+												</c:otherwise>
+												</c:choose>
+												</td>
 											</tr>
 										</c:forEach>
 									</tbody>
