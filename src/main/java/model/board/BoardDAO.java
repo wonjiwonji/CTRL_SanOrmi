@@ -234,7 +234,7 @@ public class BoardDAO {
                bcomment.setBcNum(rs2.getInt("BC_NUM")); // BC_NUM 출력하진 않지만 추후 기능 사용 시 필요
                bcomment.setBcContent(rs2.getString("BC_CONTENT")); // 댓글 내용 저장
                bcomment.setBcID(rs2.getString("BC_ID")); // 댓글 작성자 저장
-               bcomment.setBcGroup(bvo.getBcvo().getBcGroup()); // 댓글 그룹 저장
+               bcomment.setBcGroup(rs2.getInt("BC_GROUP")); // 댓글 그룹 저장
                bcomment.setbNum(bvo.getbNum()); // 게시글 번호 저장
                bcomment.setBcDate(rs2.getDate("BC_DATE")); // 댓글 작성일 저장
                bcList.add(bcomment); // 위에서 저장한 값들을 배열리스트 bcList에 add해줌

@@ -192,14 +192,16 @@
 												<td>${bcList.bcDate}</td>
 												<td>
 												<a><button id="btn_toggle">답글달기</button></a>
-													<div id="Toggle" style="display:none"><form action="insertBCComment.do" class="input-group my-2">
+													<div id="Toggle" style="display:none">
+													<form action="insertBCComment.do" class="input-group my-2">
+															<input type="hidden" name="bccGroup" value="${bcList.bcGroup}">
 															<input type="hidden" class="form-control"
 																id="input_cmt_num" name="bNum"
 																value="${bbvo[0].board.bNum}"> <input
 																type="hidden" class="form-control" id="input_writer"
-																name="bcID" value="${sessionScope.id}"> <input
+																name="bccID" value="${sessionScope.id}"> <input
 																type="text" class="form-control" id="input_comment"
-																name="bcContent">
+																name="bccContent">
 																<button type="submit" class="btn btn-outline-primary"
 																id="btn_comment">작성</button>
 														</form>

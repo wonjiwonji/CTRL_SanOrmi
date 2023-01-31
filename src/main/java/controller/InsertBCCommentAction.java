@@ -11,16 +11,19 @@ public class InsertBCCommentAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("view.do");
-		forward.setRedirect(true);
+		forward.setPath("/bView.do");
+		forward.setRedirect(false);
 
 		BCCommentVO bccvo=new BCCommentVO();
 		BoardDAO bdao=new BoardDAO();
+		
 		bccvo.setBccID(request.getParameter("bccID"));
 		bccvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
 		bccvo.setBccContent(request.getParameter("bccContent"));
 		bccvo.setBccGroup(Integer.parseInt(request.getParameter("bccGroup")));
 
+		System.out.println("객체1: "+bccvo);
+		
 		bdao.insertBCComment(bccvo);
 		return forward;
 	}

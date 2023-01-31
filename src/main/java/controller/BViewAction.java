@@ -31,11 +31,14 @@ public class BViewAction implements Action {
 		bdao.updatebCnt(bvo);
 		
 		bcList=bbvo.get(0).getBcList();
-		bccList=bcList.get(0).getBccList();
+		System.out.println(bcList);
+		System.out.println(bbvo.get(0).getBcList().get(0).getBcGroup());
+		bbvo.get(0).getBcList().get(0).getBcGroup();
+		//bccList=bcList.get(0).getBccList();
 		
 		request.getSession().setAttribute("bbvo", bbvo);
 		request.getSession().setAttribute("bcList", bcList);
-		request.getSession().setAttribute("bccList", bccList);
+		//request.getSession().setAttribute("bccList", bccList);
 		
 		return forward;
 	}

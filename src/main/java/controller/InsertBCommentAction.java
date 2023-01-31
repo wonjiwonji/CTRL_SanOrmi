@@ -12,13 +12,12 @@ public class InsertBCommentAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
+		forward.setPath("/bView.do");
+		forward.setRedirect(false);
 
 		BCommentVO bcvo=new BCommentVO();
 		BoardVO bvo=new BoardVO();
 		BoardDAO bdao=new BoardDAO();
-
-		forward.setPath("/bView.do");
-		forward.setRedirect(false);
 
 		bcvo.setBcID(request.getParameter("bcID"));
 		bcvo.setBcContent(request.getParameter("bcContent"));
