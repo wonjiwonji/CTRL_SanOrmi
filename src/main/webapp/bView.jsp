@@ -133,7 +133,7 @@
 									<div class="border bg-light rounded p-2">${board.bContent }</div>
 								</div>
 
-								<c:if test="${bbvo[0].board.bId == sessionScope.id}">
+								<c:if test="${bbvo[0].board.bId == sessionScope.id || 'admin' == sessionScope.id}">
 									<!-- 작성자==로그인유저 -->
 									<a class="btn btn-outline-dark"
 										href="amendBoardFree.do?bNum=${board.bNum}">수정</a>

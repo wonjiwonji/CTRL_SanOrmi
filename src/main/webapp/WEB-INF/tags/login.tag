@@ -5,7 +5,7 @@
 <c:choose>
 	<c:when test="${sessionScope.id == 'admin'}">
 		<li><a href="adminPage.do">관리자 페이지</a></li>
-		<li><a href="logout.do">로그아웃</a></li>
+		<li><a href="logout.do?mPw=${sessionScope.mPw}">로그아웃</a></li>
 	</c:when>
 	<c:when test="${sessionScope.id != null}">
 		<li><a class="fh5co-sub-ddown sf-with-ul">회원정보</a>

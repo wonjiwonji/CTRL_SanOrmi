@@ -110,7 +110,7 @@
 									<div class="border bg-light rounded p-2">${qna.qContent }</div>
 								</div>
 
-								<c:if test="${qbvo[0].qna.qId == sessionScope.id}">
+								<c:if test="${qbvo[0].qna.qId == sessionScope.id || 'admin' == sessionScope.id}">
 									<!-- 작성자==로그인유저 -->
 									<a class="btn btn-outline-dark" href="amendBoardQnA.do?qNum=${qna.qNum}">수정</a>
 									<a class="btn btn-outline-dark" href="deleteQNA.do?qNum=${qna.qNum}">삭제</a>
