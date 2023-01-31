@@ -18,37 +18,36 @@ public class BoardDAO {
    final String INSERT_BOARD = "INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES(?,?,?, NOW())";
    // UPDATE_BOARD; 게시글 수정 쿼리문
    final String UPDATE_BOARD = "UPDATE BOARD SET B_TITLE=?,B_CONTENT=? WHERE B_NUM=?";
-   
+
    // UPDATE_BOARD_BCNT; 게시글 조회수+ 쿼리문
    final String UPDATE_BOARD_BCNT = "UPDATE BOARD SET B_CNT = B_CNT+1 WHERE B_NUM=?";
    // UPDATE_BOARD_CCNT; 게시글 조회수+ 쿼리문
    final String UPDATE_BOARD_CCNT = "UPDATE BOARD B\r\n"
-   		+ "SET B.C_CNT  = (SELECT COUNT(BC.BC_NUM) FROM BCOMMENT BC	WHERE BC.B_NUM = B.B_NUM )\r\n"
-   		+ "WHERE B.B_NUM = ?;";
+         + "SET B.C_CNT  = (SELECT COUNT(BC.BC_NUM) FROM BCOMMENT BC   WHERE BC.B_NUM = B.B_NUM )\r\n"
+         + "WHERE B.B_NUM = ?;";
    // DELETE_BOARD; 게시글 삭제 쿼리문
    final String DELETE_BOARD = "DELETE FROM BOARD WHERE B_NUM=?";
    // SELECTONE_BOARD; 게시글 상세보기 쿼리문 (게시글 하나 클릭 시 나오는 정보)
    final String SELECTONE_BOARD = "SELECT B_ID, B.B_TITLE, B.B_CONTENT, B.B_DATE, COUNT(BC.BC_NUM) AS C_CNT, B.B_CNT\r\n"
-   		+ "FROM BOARD B LEFT JOIN BCOMMENT BC ON B.B_NUM = BC.B_NUM\r\n"
-   		+ "WHERE B.B_NUM = ?";
+         + "FROM BOARD B LEFT JOIN BCOMMENT BC ON B.B_NUM = BC.B_NUM\r\n" + "WHERE B.B_NUM = ?";
    // SELECTALL_BOARD; 게시글 전체보기 쿼리문 ( 게시글 목록 시 나오는 정보 )
    final String SELECTALL_BOARD = "SELECT B_NUM, B_TITLE, B_CNT, B_ID, B_CONTENT, C_CNT FROM BOARD ORDER BY B_NUM DESC";
-   // SELECTALL_MY_PAGE; 내가 쓴 글 전체보기 쿼리문 
+   // SELECTALL_MY_PAGE; 내가 쓴 글 전체보기 쿼리문
    final String SELECTALL_MY_PAGE = "SELECT B_NUM, B_TITLE, B_CNT FROM BOARD WHERE B_ID=? ORDER BY B_NUM DESC";
-   
+
    // INSERT_BCOMMENT; 댓글 등록 쿼리문
    final String INSERT_BCOMMENT = "INSERT INTO BCOMMENT (BC_ID, B_NUM,BC_CONTENT,BC_GROUP, BC_DATE)\r\n"
-   		+ "VALUES (?,?,?,(SELECT COALESCE(MAX(BC_GROUP),0)+1 FROM BCOMMENT AS BC_GROUP WHERE B_NUM = ? ),NOW());";
+         + "VALUES (?,?,?,(SELECT COALESCE(MAX(BC_GROUP),0)+1 FROM BCOMMENT AS BC_GROUP WHERE B_NUM = ? ),NOW());";
    // INSERT_BCCOMMENT; 대댓글 등록 쿼리문
    final String INSERT_BCCOMMENT = "INSERT INTO BCOMMENT (BC_ID, B_NUM,BC_CONTENT,BC_GROUP,BC_SQE, BC_DATE)\r\n"
-   		+ "VALUES(?,?,?,?,(SELECT COALESCE(MAX(BCC.BC_SQE),0)+1 FROM BCOMMENT AS BCC WHERE B_NUM=? GROUP BY BC_GROUP HAVING BC_GROUP = ?), NOW() )";
+         + "VALUES(?,?,?,?,(SELECT COALESCE(MAX(BCC.BC_SQE),0)+1 FROM BCOMMENT AS BCC WHERE B_NUM=? GROUP BY BC_GROUP HAVING BC_GROUP = ?), NOW() )";
    // DELETE_BCOMMENT; 댓글 삭제 쿼리문 ( 대댓글 까지 같이 삭제 )
-   final String DELETE_BCOMMENT = "DELETE FROM BCOMMENT WHERE BC_GROUP = ?";
+   final String DELETE_BCOMMENT = "DELETE FROM BCOMMENT WHERE BC_GROUP = ? AND B_NUM = ?";
    // DELETE_BCCOMMENT; 대댓글 삭제 쿼리문 ( 대댓글만 삭제 )
    final String DELETE_BCCOMMENT = "DELETE FROM BCOMMENT WHERE BC_NUM=?";
-   // SELECTALL_BCOMMENT; 댓글 전체보기 쿼리문 ( 게시글에 대한 댓글 전체 보기 )
    // SELECTONE ; 댓글 삭제를 위해 BC_NUM을 이용하여 BC_NUM, BC_GROUP, BC_SQE를 조회
-   final String SELECTONE = "SELECT BC_NUM, BC_GROUP, BC_SQE FROM BCOMMENT WHERE BC_NUM = ?";
+   // final String SELECTONE = "SELECT BC_NUM, BC_GROUP, BC_SQE FROM BCOMMENT WHERE BC_NUM = ?";
+   // SELECTALL_BCOMMENT; 댓글 전체보기 쿼리문 ( 게시글에 대한 댓글 전체 보기 )
    final String SELECTALL_BCOMMENT = "SELECT BC_NUM, BC_CONTENT, BC_GROUP, BC_DATE, BC_ID FROM BCOMMENT WHERE B_NUM=? AND BC_SQE=0";
    // SELECTALL_BCCOMMENT; 대댓글 전체보기 쿼리문 ( 게시글에 대한 대댓글 전체 보기 )
    final String SELECTALL_BCCOMMENT = "SELECT BC_NUM, BC_CONTENT,BC_GROUP, BC_DATE,BC_SQE,BC_ID FROM BCOMMENT WHERE B_NUM=? AND BC_SQE>0 AND BC_GROUP=?";
@@ -56,7 +55,6 @@ public class BoardDAO {
    // SELECTALL_TOP5; 커뮤니티 TOP5
    final String SELECTALL_TOP5 = "SELECT B_NUM, B_TITLE, B_DATE, B_CNT FROM BOARD ORDER BY B_CNT DESC LIMIT 0,5";
 
-   
    // insertBoard; 게시글 등록 메서드
    public boolean insertBoard(BoardVO bvo) { // bvo; bTitle, bContent, bId 필요
       conn = JDBCUtil.connect(); // JDBCUtil 연결
@@ -147,8 +145,7 @@ public class BoardDAO {
       JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
       return true; // true 반환
    }
-   
-   
+
    // updatebCnt ; 게시글 조회수 변경
    public boolean updatebCnt(BoardVO bvo) { // bvo ; bNum 필요
       conn = JDBCUtil.connect(); // JDBCUtil 연결
@@ -163,7 +160,7 @@ public class BoardDAO {
       JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
       return true;
    }
-   
+
    // updatebCnt ; 게시글 조회수 변경
    public boolean updatecCnt(BoardVO bvo) { // bvo ; bNum 필요
       conn = JDBCUtil.connect(); // JDBCUtil 연결
@@ -178,7 +175,6 @@ public class BoardDAO {
       JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
       return true;
    }
-   
 
    // deleteBoard; 게시글 삭제
    public boolean deleteBoard(BoardVO bvo) { // bvo; bNum 필요
@@ -245,8 +241,9 @@ public class BoardDAO {
                pstmt.setInt(2, bcomment.getBcGroup()); // pstmt에 bcGroup저장
                ResultSet rs3 = pstmt.executeQuery(); // 실행결과 rs3에 저장
 
-               ArrayList<BCCommentVO> bccList = new ArrayList<BCCommentVO>(); // <BCCommentVO> 타입의 ArrayList bccList 생성
-               
+               ArrayList<BCCommentVO> bccList = new ArrayList<BCCommentVO>(); // <BCCommentVO> 타입의 ArrayList
+                                                               // bccList 생성
+
                while (rs3.next()) { // 저장할 정보가 남아 있는 동안
                   BCCommentVO bccomment = new BCCommentVO(); // BCCommentVO 객체 bccomment생성
 
@@ -284,7 +281,7 @@ public class BoardDAO {
          ResultSet rs = pstmt.executeQuery(); // 실행결과 rs에 저장
          while (rs.next()) { // 저장할 정보가 남아있는 동안
             BoardVO board = new BoardVO(); // 새로운 BoardVO 객체 board 생성
-            board.setbNum(rs.getInt("B_NUM")); // 게시글 번호 저장 
+            board.setbNum(rs.getInt("B_NUM")); // 게시글 번호 저장
             board.setbTitle(rs.getString("B_TITLE")); // 게시글 제목 저장
             board.setbId(rs.getString("B_ID")); // 작성자 저장
             board.setbCnt(rs.getInt("B_CNT")); // 게시글 조회수 저장
@@ -299,7 +296,6 @@ public class BoardDAO {
       return bList; // ArrayList bList 반환
    }
 
-   
    // selectAll_MY_PAGE ; 내가 쓴 글 전체 보기 메서드
    public ArrayList<BoardVO> selectAllMyPage(BoardVO bvo) { // 내가 쓴 글 전체보기 메서드
 
@@ -311,7 +307,7 @@ public class BoardDAO {
          ResultSet rs = pstmt.executeQuery(); // 실행결과 rs에 저장
          while (rs.next()) { // 저장할 정보가 남아있는 동안
             BoardVO board = new BoardVO(); // 새로운 BoardVO 객체 board 생성
-            board.setbNum(rs.getInt("B_NUM")); // 게시글 번호 저장 
+            board.setbNum(rs.getInt("B_NUM")); // 게시글 번호 저장
             board.setbTitle(rs.getString("B_TITLE")); // 게시글 제목 저장
             board.setbCnt(rs.getInt("B_CNT")); // 게시글 조회수 저장
             bList.add(board); // ArrayList bList에 board 값들 add해줌
@@ -323,37 +319,35 @@ public class BoardDAO {
       JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
       return bList; // ArrayList bList 반환
    }
+
    // selectOne ; 댓글 삭제를 위해 BC_NUM을 이용하여 BC_NUM, BC_GROUP, BC_SQE를 조회
-   public BCommentVO selectOne(BCommentVO bcvo) { // bcvo ; bcNum 필요
-      BCommentVO data = null;
-      conn = JDBCUtil.connect(); // JDBCUtil 연결
-      try {
-         pstmt = conn.prepareStatement(SELECTONE); // SELECTONE ; 댓글 삭제를 위해 BC_NUM을 이용하여 BC_NUM, BC_GROUP, BC_SQE를 조회
-         pstmt.setInt(1, bcvo.getBcNum()); // 댓글 번호
-         ResultSet rs = pstmt.executeQuery(); // pstmt 실행, 실행한 결과 rs에 저장
-         if (rs.next()) { // rs에 정보가 있는 동안
-            data = new BCommentVO(); // BCommentVO 새로운 객체 data 생성
-            data.setBcNum(rs.getInt("BC_NUM")); // 댓글 번호
-            data.setBcGroup(rs.getInt("BC_GROUP")); // 댓글 그룹
-            data.setBcSQE(rs.getInt("BC_SQE")); // 댓글 시퀀스
-         }
-      } catch (SQLException e) {
-         e.printStackTrace();
-      }
-      JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
-      return data; // data 리턴
-   }
+//   public BCommentVO selectOne(BCommentVO bcvo) { // bcvo ; bcNum 필요
+//      BCommentVO data = null;
+//      conn = JDBCUtil.connect(); // JDBCUtil 연결
+//      try {
+//         pstmt = conn.prepareStatement(SELECTONE); // SELECTONE ; 댓글 삭제를 위해 BC_NUM을 이용하여 BC_NUM, BC_GROUP, BC_SQE를 조회
+//         pstmt.setInt(1, bcvo.getBcNum()); // 댓글 번호
+//         ResultSet rs = pstmt.executeQuery(); // pstmt 실행, 실행한 결과 rs에 저장
+//         if (rs.next()) { // rs에 정보가 있는 동안
+//            data = new BCommentVO(); // BCommentVO 새로운 객체 data 생성
+//            data.setBcNum(rs.getInt("BC_NUM")); // 댓글 번호
+//            data.setBcGroup(rs.getInt("BC_GROUP")); // 댓글 그룹
+//            data.setBcSQE(rs.getInt("BC_SQE")); // 댓글 시퀀스
+//         }
+//      } catch (SQLException e) {
+//         e.printStackTrace();
+//      }
+//      JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
+//      return data; // data 리턴
+//   }
 
    public boolean deleteBComment(BCommentVO bcvo) { // bcvo; selectOne을 실행한 return 값 필요
+      System.out.println("  로그 : deleteBComment 들어옴");
       conn = JDBCUtil.connect(); // JDBCUtil 연결
       try {
-         if (bcvo.getBccvo().getBccSqe() > 0) { // bccvo에 있는 bccSqe가 0보다 크다면
-            pstmt = conn.prepareStatement(DELETE_BCCOMMENT); // DELETE_BCCOMMENT; 대댓글 삭제
-            pstmt.setInt(1, bcvo.getBcNum()); // pstmt에 bcNum 저장
-         } else { // bccSqe가 0보다 크지 않다면
-            pstmt = conn.prepareStatement(DELETE_BCOMMENT); // DELETE_BCOMMENT; 댓글 삭제
-            pstmt.setInt(1, bcvo.getBcGroup()); // pstmt에 bcGroup 저장
-         }
+         pstmt = conn.prepareStatement(DELETE_BCOMMENT); // DELETE_BCOMMENT; 댓글 삭제
+         pstmt.setInt(1, bcvo.getBcGroup());
+         pstmt.setInt(2, bcvo.getbNum());
          int res = pstmt.executeUpdate(); // pstmt실행 결과 res에 저장
          if (res <= 0) { // res가 0보다 같거나 작다면 // 즉, pstmt 실행시키는 것을 실패했다면
             return false; // false 반환
@@ -365,8 +359,26 @@ public class BoardDAO {
       JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
       return true; // true 반환
    }
-   
-   
+
+   public boolean deleteBCComment(BCCommentVO bccvo) {
+      System.out.println("  로그 : deleteBCComment 들어옴");
+
+      conn = JDBCUtil.connect(); // JDBCUtil 연결
+      try {
+         pstmt = conn.prepareStatement(DELETE_BCCOMMENT); // DELETE_BCOMMENT; 댓글 삭제
+         pstmt.setInt(1, bccvo.getBccNum());
+         int res = pstmt.executeUpdate(); // pstmt실행 결과 res에 저장
+         if (res <= 0) { // res가 0보다 같거나 작다면 // 즉, pstmt 실행시키는 것을 실패했다면
+            return false; // false 반환
+         }
+      } catch (SQLException e) { // 위 try문 실행 중 에러(SQL) 발생 시
+         e.printStackTrace(); // 무슨 에러인지 출력
+         return false; // false 반환
+      }
+      JDBCUtil.disconnect(conn, pstmt); // JDBCUtil 연결 해제
+      return true; // true 반환
+   }
+
    public ArrayList<BoardVO> selectAllTop5() {
       ArrayList<BoardVO> datas = new ArrayList<BoardVO>(); // 실행 결과 담을 BoardVO 타입 배열리스트 datas 생성
       conn = JDBCUtil.connect(); // JDBCUtil 연결
@@ -379,7 +391,7 @@ public class BoardDAO {
             data.setbTitle(rs.getString("B_TITLE")); // 게시글 제목
             data.setbDate(rs.getDate("B_Date")); // 게시글 작성일
             data.setbCnt(rs.getInt("B_CNT")); // 게시글 조회수
-            
+
             datas.add(data); // datas배열리스트에 data객체 추가
          }
       } catch (SQLException e) {

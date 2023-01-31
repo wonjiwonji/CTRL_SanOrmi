@@ -3,6 +3,7 @@ package controller;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.board.BCCommentVO;
 import model.board.BCommentVO;
 import model.board.BoardDAO;
 import model.board.BoardVO;
@@ -16,24 +17,27 @@ public class DeleteBCommentAction implements Action {
 		forward.setRedirect(false);
 
 		BCommentVO bcvo=new BCommentVO();
+		BCCommentVO bccvo=new BCCommentVO();
 		BoardDAO bdao=new BoardDAO();
 		BoardVO bvo = new BoardVO();
 		
-		String bNum = request.getParameter("bNum");
+		String bNumSample = request.getParameter("bNum");
 		
-		if(bNum != null) {
-			bvo.setbNum(Integer.parseInt(bNum));
-		}
+			int bNum=Integer.parseInt(bNumSample);
+			bvo.setbNum(bNum);
 		
-		if(request.getParameter("bcNum") != null) {
+		if(request.getParameter("bccNum") == null) {
 			bcvo.setBcNum(Integer.parseInt(request.getParameter("bcNum")));
+			bcvo.setBcGroup(Integer.parseInt(request.getParameter("bcGroup")));
+			bcvo.setbNum(bNum);
+			bdao.deleteBComment(bcvo);
 		} else {
-			bcvo.setBcNum(Integer.parseInt(request.getParameter("bccNum")));
+			bccvo.setBccNum(Integer.parseInt(request.getParameter("bccNum")));
+			bdao.deleteBCComment(bccvo);
 		}
 		
-		BCommentVO dbcvo=bdao.selectOne(bcvo);
+//		BCommentVO dbcvo=bdao.selectOne(bcvo);
 		
-		bdao.deleteBComment(dbcvo);
 		return forward;
 	}
 

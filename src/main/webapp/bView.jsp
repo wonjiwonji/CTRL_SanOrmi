@@ -186,7 +186,7 @@
 												<td>
 												<c:choose>
 												<c:when test="${sessionScope.id == bcList.bcID}">
-												<a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}"><button id="deleteButton">삭제</button></a>
+												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bcGroup=${bcList.bcGroup}"><button id="deleteButton">삭제</button></a>
 												</c:when>
 												<c:when test="${sessionScope.id == 'admin' }">
 												<a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}"><button id="deleteButton">삭제</button></a>
