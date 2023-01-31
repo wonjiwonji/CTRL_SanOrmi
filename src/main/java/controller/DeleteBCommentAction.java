@@ -36,8 +36,6 @@ public class DeleteBCommentAction implements Action {
 			bdao.deleteBCComment(bccvo);
 		}
 		
-//		BCommentVO dbcvo=bdao.selectOne(bcvo);
-		
 		return forward;
 	}
 

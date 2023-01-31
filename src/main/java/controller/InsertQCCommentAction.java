@@ -11,8 +11,8 @@ public class InsertQCCommentAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("view.do");
-		forward.setRedirect(true);
+		forward.setPath("/bView.do");
+		forward.setRedirect(false);
 
 		QCCommentVO qccvo=new QCCommentVO();
 		QNADAO qdao=new QNADAO();

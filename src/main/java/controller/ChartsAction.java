@@ -21,10 +21,6 @@ public class ChartsAction implements Action {
 		
 		kinglist=mdao.selectAllCommunityKing();
 		
-		for(int i=0; i<kinglist.size(); i++) {
-			System.out.println(kinglist.get(i));
-		}
-		
 		request.getSession().setAttribute("kinglist", kinglist);
 		
 		return forward;

@@ -128,42 +128,97 @@
 								<a class="btn btn-outline-dark" href="qna.do">목록</a>
 								<!-- 모든이에게 보이는 행동 -->
 
-							</c:forEach>
+				</c:forEach>
 						</section>
-<div class="container my-3 border rounded">
-   <div class="mb-3 mt-3">
-      <label>댓글: <span id="cmt_cnt"></span> 개
-      </label>
-      <form action="insertBComment.do" class="input-group my-2">
-         <input type="hidden" class="form-control" id="input_cmt_num"
-            name="bNum" value="1">
-         <input type="hidden" class="form-control" id="input_writer"
-            name="bcID">
-         <input type="text" class="form-control" id="input_comment"
-            name="bcContent">
-         <button type="submit" class="btn btn-outline-primary"
-            id="btn_comment">작성</button>
-      </form>
-      <table class="table table-hover mt-3" id="cmt_table">
-         <thead>
-            <tr>
-               <th style="width: 16.66%">작성자</th>
-               <th>내용</th>
-               <th style="width: 16.66%">작성일</th>
-            </tr>
-         </thead>
-         <tbody id="cmt_list">
-            <c:forEach var="vo" items="${selectBs }">
-               <tr>
-                  <td>${vo.bcID }</td>
-                  <td>${vo.bcContent }</td>
-                  <td>${vo.bcDate }</td>
-               </tr>
-            </c:forEach>
-         </tbody>
-      </table>
-   </div>
-</div>
+						<div class="container my-3 border rounded">
+							<div class="mb-3 mt-3">
+								<label>댓글: <span id="cmt_cnt">${qbvo[0].qna.cCnt}</span>
+									개
+								</label>
+								<form action="insertQComment.do" class="input-group my-2">
+									<input type="hidden" class="form-control" id="input_cmt_num"
+										name="qNum" value="${qbvo[0].qna.qNum}"> <input
+										type="hidden" class="form-control" id="input_writer"
+										name="qcID" value="${sessionScope.id}"> <input
+										type="text" class="form-control" id="input_comment"
+										name="qcContent">
+									<button type="submit" class="btn btn-outline-primary"
+										id="btn_comment">작성</button>
+								</form>
+								<table class="table table-hover mt-3" id="cmt_table">
+									<thead>
+										<tr>
+											<th style="width: 16.66%">작성자</th>
+											<th>내용</th>
+											<th style="width: 16.66%">작성일</th>
+											<th style="width: 6.66%">댓글 달기</th>
+											<th style="width: 6.66%">삭제</th>
+										</tr>
+									</thead>
+									<tbody id="cmt_list">
+										<c:forEach var="qcList" items="${qcList}">
+											<tr>
+												<td>${qcList.qcID}</td>
+												<td>${qcList.qcContent}</td>
+												<td>${qcList.qcDate}</td>
+												<td>
+												<c:choose>
+												<c:when test="${sessionScope.id == qcList.qcID}">
+												<a href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qcGroup=${qcList.qcGroup}"><button id="deleteButton">삭제</button></a>
+												</c:when>
+												<c:when test="${sessionScope.id == 'admin' }">
+												<a href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qcGroup=${qcList.qcGroup}"><button id="deleteButton">삭제</button></a>
+												</c:when>
+												<c:otherwise>
+												<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
+												</c:otherwise>
+												</c:choose>
+												</td>
+												<td>
+												<a><button id="btn_toggle">답글달기</button></a>
+													<div id="Toggle">
+													<form action="insertQCComment.do" class="input-group my-2">
+															<input type="hidden" name="qccGroup" value="${qcList.qcGroup}">
+															<input type="hidden" class="form-control"
+																id="input_cmt_num" name="qNum"
+																value="${qbvo[0].qna.qNum}"> <input
+																type="hidden" class="form-control" id="input_writer"
+																name="qccID" value="${sessionScope.id}"> <input
+																type="text" class="form-control" id="input_comment"
+																name="qccContent">
+																<button type="submit" class="btn btn-outline-primary"
+																id="btn_comment">작성</button>
+														</form>
+														<c:forEach var="qccList" items="${qcList.qccList}">
+														<tr>
+														<td>${qccList.qccID}</td>
+														<td>${qccList.qccContent}</td>
+														<td>${qccList.qccDate}</td>
+												<td>
+												<c:choose>
+												<c:when test="${sessionScope.id == qccList.qccID}">
+												<a href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qccNum=${qccList.qccNum}&qcGroup=${qcList.qcGroup}"><button id="deleteButton">삭제</button></a>
+												</c:when>
+												<c:when test="${sessionScope.id == 'admin' }">
+												<a href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qccNum=${qccList.qccNum}&qcGroup=${qcList.qcGroup}"><button id="deleteButton">삭제</button></a>
+												</c:when>
+												<c:otherwise>
+												<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
+												</c:otherwise>
+												</c:choose>
+												</td>
+														</tr>
+														</c:forEach>
+														</div>
+												</td>
+												
+											</tr>
+										</c:forEach>
+
+									</tbody>
+								</table>
+							</div>
+						</div>
 					</div>
 				</div>
 				<!-- center -->
