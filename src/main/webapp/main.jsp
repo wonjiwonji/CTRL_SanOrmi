@@ -663,7 +663,7 @@ pageEncoding="UTF-8"%>
     <script src="js/selectFx.js"></script>
     <!-- Google Map -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDNQ2LqJuAHzxOIdkBWyvDaqlxKhLUBBcA&callback=initMap&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuYIdumyBuSyjdOXeWTh5CnO8wBL9haYY&callback=initMap&v=weekly"
       defer
     ></script>
     <script src="js/google_mainmap.js"></script>
