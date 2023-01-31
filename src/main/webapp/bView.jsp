@@ -71,13 +71,19 @@
 
 <!-- Modernizr JS -->
 <script src="js/modernizr-2.6.2.min.js"></script>
-
+<script>
+	$(function (){
+		$("#btn_toggle").click(function (){
+	  	$("#Toggle").toggle();
+	  });
+	});
+</script>
 <style>
 #btn_toggle{
   font-size:14px;
   padding:10px 15px;
   border:1px solid #ddd;
-  background-color:#0a76b7;
+  background-color:#1cc88a;
   border-radius:5px;
   color:#fff;
   font-weight:bold;
@@ -92,7 +98,7 @@
   font-size:14px;
   padding:10px 15px;
   border:1px solid #ddd;
-  background-color:#0a76b7;
+  background-color:#1cc88a;
   border-radius:5px;
   color:#fff;
   font-weight:bold;
@@ -163,9 +169,9 @@
 										type="hidden" class="form-control" id="input_writer"
 										name="bcID" value="${sessionScope.id}"> <input
 										type="text" class="form-control" id="input_comment"
-										name="bcContent" required>
+										name="bcContent" required  style="display: inline-block; width: 1000px;" >
 									<button type="submit" class="btn btn-outline-primary"
-										id="btn_comment">작성</button>
+										id="btn_comment" style="background-color: #1cc88a; color: white; font-weight: bold; margin-left: 20px; border-radius: 5px;">작성</button>
 								</form>
 								<table class="table table-hover mt-3" id="cmt_table">
 									<thead>
@@ -196,21 +202,12 @@
 												</c:otherwise>
 												</c:choose>
 												</td>
+												
 												<td>
 												<a><button id="btn_toggle">답글달기</button></a>
-													<div id="Toggle">
-													<form action="insertBCComment.do" class="input-group my-2">
-															<input type="hidden" name="bccGroup" value="${bcList.bcGroup}">
-															<input type="hidden" class="form-control"
-																id="input_cmt_num" name="bNum"
-																value="${bbvo[0].board.bNum}"> <input
-																type="hidden" class="form-control" id="input_writer"
-																name="bccID" value="${sessionScope.id}"> <input
-																type="text" class="form-control" id="input_comment"
-																name="bccContent" required>
-																<button type="submit" class="btn btn-outline-primary"
-																id="btn_comment">작성</button>
-														</form>
+													<div>
+													
+														
 														<c:forEach var="bccList" items="${bcList.bccList}">
 														<tr>
 														<td>${bccList.bccID}</td>
@@ -228,14 +225,39 @@
 												<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
 												</c:otherwise>
 												</c:choose>
+											
 												</td>
+												
+												
 														</tr>
+														
 														</c:forEach>
 														</div>
 												</td>
 												
 											</tr>
+														<tr>
+												<td colspan="5">
+												<div id="Toggle" style="display:none">
+												<form action="insertBCComment.do" class="input-group my-2">
+															<input type="hidden" name="bccGroup" value="${bcList.bcGroup}">
+															<input type="hidden" class="form-control"
+																id="input_cmt_num" name="bNum"
+																value="${bbvo[0].board.bNum}"> <input
+																type="hidden" class="form-control" id="input_writer"
+																name="bccID" value="${sessionScope.id}"> 
+																<input
+																type="text" class="form-control" id="input_comment"
+																name="bccContent" required style="display: inline-block; width: 1000px;">
+																<button type="submit" class="btn btn-outline-primary"
+																id="btn_comment" style="background-color: #1cc88a; color: white; font-weight: bold; margin-left: 20px; border-radius: 5px;">작성</button>
+														</form>
+														</div>
+																
+														</td>
+														</tr>
 										</c:forEach>
+
 
 									</tbody>
 								</table>
