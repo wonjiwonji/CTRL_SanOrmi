@@ -14,8 +14,7 @@ import model.news.NewsVO;
 public class Crawling {
 
 	public void sample() {
-		System.out.println("  로그 : Crawling.sample() 시작");
-		
+
 		// 크롤링 할 url
 		final String url = "http://www.ohmynews.com/NWS_Web/Tag/index.aspx?tag=%eb%93%b1%ec%82%b0";
 		Document doc = null; // url로 읽은 값 저장할 곳
@@ -33,7 +32,7 @@ public class Crawling {
 		Elements eles1 = doc.select("li>div>div>dl>dt>a"); // 뉴스 제목
 		Elements eles2 = doc.select("li>div>div>dl>dd>a"); // 뉴스 내용
 		Elements eles3 = doc.select("li>div>div>p"); // 뉴스 날짜
-		
+
 		// 각 요소를 이터레이터에 저장
 		Iterator<Element> itr1 = eles1.iterator(); // 뉴스 제목
 		Iterator<Element> itr2 = eles2.iterator(); // 뉴스 내용
@@ -46,7 +45,7 @@ public class Crawling {
 			String str3 = itr3.next().text(); // 뉴스 날짜
 			str3 = str3.substring(str3.length() - 14, str3.length());
 			// 날짜 부분만 자르기! (뒤에서부터 14자)
-			
+
 			nvo = new NewsVO(); // 뉴스 VO 객체 생성
 			nvo.setnTitle(str1); // 제목 저장
 			nvo.setnContent(str2); // 내용 저장
@@ -54,8 +53,5 @@ public class Crawling {
 			ndao.insertNews(nvo);// insertNews 실행 -> DB에 저장
 			cnt++; // 크롤링 횟수 ++
 		}
-		System.out.println("  로그 : 크롤링 완료");
 	}
-
-
 }

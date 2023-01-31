@@ -37,13 +37,11 @@ public class BoardDAO {
    final String SELECTALL_MY_PAGE = "SELECT B_NUM, B_TITLE, B_CNT FROM BOARD WHERE B_ID=? ORDER BY B_NUM DESC";
    
    // INSERT_BCOMMENT; 댓글 등록 쿼리문
-   final String INSERT_BCOMMENT = "INSERT INTO BCOMMENT (BC_ID, B_NUM,BC_CONTENT,BC_GROUP, BC_DATE) VALUES\r\n"
-         + "(?,?,?,(SELECT COALESCE(MAX(BC_GROUP),0)+1 FROM BCOMMENT AS BC_GROUP),NOW())";
+   final String INSERT_BCOMMENT = "INSERT INTO BCOMMENT (BC_ID, B_NUM,BC_CONTENT,BC_GROUP, BC_DATE)\r\n"
+   		+ "VALUES (?,?,?,(SELECT COALESCE(MAX(BC_GROUP),0)+1 FROM BCOMMENT AS BC_GROUP WHERE B_NUM = ? ),NOW());";
    // INSERT_BCCOMMENT; 대댓글 등록 쿼리문
    final String INSERT_BCCOMMENT = "INSERT INTO BCOMMENT (BC_ID, B_NUM,BC_CONTENT,BC_GROUP,BC_SQE, BC_DATE)\r\n"
-         + "VALUES(?,?,?,?,\r\n"
-         + "(SELECT COALESCE(MAX(BCC.BC_SQE),0)+1 FROM BCOMMENT BCC GROUP BY BC_GROUP HAVING BC_GROUP = ?),\r\n"
-         + "NOW() );";
+   		+ "VALUES(?,?,?,?,(SELECT COALESCE(MAX(BCC.BC_SQE),0)+1 FROM BCOMMENT AS BCC WHERE B_NUM=? GROUP BY BC_GROUP HAVING BC_GROUP = ?), NOW() )";
    // DELETE_BCOMMENT; 댓글 삭제 쿼리문 ( 대댓글 까지 같이 삭제 )
    final String DELETE_BCOMMENT = "DELETE FROM BCOMMENT WHERE BC_GROUP = ?";
    // DELETE_BCCOMMENT; 대댓글 삭제 쿼리문 ( 대댓글만 삭제 )
@@ -90,6 +88,7 @@ public class BoardDAO {
          pstmt.setString(1, bcvo.getBcID()); // pstmt에 bcId 저장
          pstmt.setInt(2, bcvo.getbNum()); // pstmt에 bNum 저장
          pstmt.setString(3, bcvo.getBcContent()); // pstmt에 bcContent 저장
+         pstmt.setInt(4, bcvo.getbNum()); // pstmt에 bNum 저장
 
          int res = pstmt.executeUpdate(); // pstmt실행 결과 res에 저장
          if (res <= 0) { // res가 0보다 같거나 작다면 // 즉, pstmt 실행시키는 것을 실패했다면
@@ -114,7 +113,8 @@ public class BoardDAO {
          pstmt.setInt(2, bccvo.getbNum()); // pstmt에 bNum 저장
          pstmt.setString(3, bccvo.getBccContent()); // pstmt에 bccContent 저장
          pstmt.setInt(4, bccvo.getBccGroup()); // pstmt에 bccGroup 저장
-         pstmt.setInt(5, bccvo.getBccGroup());
+         pstmt.setInt(5, bccvo.getbNum()); // pstmt에 bNum 저장
+         pstmt.setInt(6, bccvo.getBccGroup());
          int res = pstmt.executeUpdate(); // pstmt실행 결과 res에 저장
          if (res <= 0) { // res가 0보다 같거나 작다면 // 즉, pstmt 실행시키는 것을 실패했다면
             return false; // false 반환
@@ -225,6 +225,7 @@ public class BoardDAO {
 
             pstmt = conn.prepareStatement(SELECTALL_BCOMMENT); // SELECTALL_BCOMMENT; 댓글 전체 보기
             pstmt.setInt(1, bvo.getbNum()); // pstmt에 bNum 저장
+//            System.out.println("Ddd"+bvo.getbNum());
             ResultSet rs2 = pstmt.executeQuery(); // 실행결과 rs2에 저장
 
             ArrayList<BCommentVO> bcList = new ArrayList<BCommentVO>(); // <BCommentVO> 타입의 ArrayList bcList 생성
@@ -238,18 +239,15 @@ public class BoardDAO {
                bcomment.setbNum(bvo.getbNum()); // 게시글 번호 저장
                bcomment.setBcDate(rs2.getDate("BC_DATE")); // 댓글 작성일 저장
                bcList.add(bcomment); // 위에서 저장한 값들을 배열리스트 bcList에 add해줌
-               
+
                pstmt = conn.prepareStatement(SELECTALL_BCCOMMENT); // SELECTALL_BCCOMMENT; 대댓글 전체보기
                pstmt.setInt(1, bvo.getbNum()); // pstmt에 bNum 저장
-               pstmt.setInt(2, bvo.getBcvo().getBcGroup()); // pstmt에 bcGroup저장
+               pstmt.setInt(2, bcomment.getBcGroup()); // pstmt에 bcGroup저장
                ResultSet rs3 = pstmt.executeQuery(); // 실행결과 rs3에 저장
 
-               System.out.println("!@#@ㅃㅇㅉㄸ@#ㄹㅃㅉㅁㄴㅇㅉ@ㅃㄴㅉㅇㄹㄸㅆㄲㅃㅉㅁㅇ");
+               ArrayList<BCCommentVO> bccList = new ArrayList<BCCommentVO>(); // <BCCommentVO> 타입의 ArrayList bccList 생성
                
-               ArrayList<BCCommentVO> bccList = new ArrayList<BCCommentVO>(); // <BCCommentVO> 타입의 ArrayList
-                                                               // bccList 생성
                while (rs3.next()) { // 저장할 정보가 남아 있는 동안
-            	   System.out.println("이게 된다면 좋겠습니다 로그");
                   BCCommentVO bccomment = new BCCommentVO(); // BCCommentVO 객체 bccomment생성
 
                   bccomment.setBccNum(rs3.getInt("BC_NUM")); // BC_NUM 출력하진 않지만 추후 기능 사용 시 필요
@@ -257,7 +255,7 @@ public class BoardDAO {
                   bccomment.setBccID(rs3.getString("BC_ID")); // 대댓글 작성자 저장
                   bccomment.setbNum(bvo.getbNum()); // 게시글 번호 저장
                   bccomment.setBccSqe(rs3.getInt("BC_SQE")); // 대댓글 시퀀스 저장
-                  bccomment.setBccGroup(bvo.getBcvo().getBcGroup()); // 대댓글 그룹 저장
+                  bccomment.setBccGroup(bcomment.getBcGroup()); // 대댓글 그룹 저장
                   bccomment.setBccDate(rs3.getDate("BC_DATE")); // 대댓글 작성일 저장
                   bccList.add(bccomment); // 위에서 저장한 값들을 배열리스트 bccList에 add해줌
                }
