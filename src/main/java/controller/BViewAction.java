@@ -22,7 +22,8 @@ public class BViewAction implements Action {
 		BoardDAO bdao = new BoardDAO();
 		BoardVO bvo = new BoardVO();
 		ArrayList<BCommentVO> bcList = new ArrayList<BCommentVO>();
-		ArrayList<BCCommentVO> bccList = new ArrayList<BCCommentVO>();
+		ArrayList<ArrayList<BCCommentVO>> bccList = new ArrayList<ArrayList<BCCommentVO>>();
+		ArrayList<BCCommentVO> bccListSample = new ArrayList<BCCommentVO>();
 		ArrayList<BoardSet> bbvo = new ArrayList<BoardSet>();
 		
 		bvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
@@ -31,17 +32,24 @@ public class BViewAction implements Action {
 		bdao.updatebCnt(bvo);
 		
 		request.getSession().setAttribute("bbvo", bbvo);
-
+		
+		System.out.println(bbvo);
+		
 		if(!bbvo.isEmpty()) {
 			bcList=bbvo.get(0).getBcList();
 			request.getSession().setAttribute("bcList", bcList);
 			
+			System.out.println(bcList);
 			if(!bcList.isEmpty()) {
-				bccList=bcList.get(0).getBccList();
+				for(int i=0; i<bcList.size(); i++) {
+					bccListSample=bcList.get(i).getBccList();
+					bccList.add(bccListSample);
+					System.out.println(bccListSample);
+				}
+				System.out.println(bccList);
 				request.getSession().setAttribute("bccList", bccList);
 			}
 		}
-
 		
 		return forward;
 	}

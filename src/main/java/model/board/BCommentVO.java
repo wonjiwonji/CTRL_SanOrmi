@@ -92,8 +92,9 @@ public class BCommentVO {
 
 	@Override
 	public String toString() {
-		return "BCommentVO [bcNum=" + bcNum + ", bcID=" + bcID + ", bcContent=" + bcContent + ", bNum=" + bNum
-				+ ", bcGroup=" + bcGroup + ", bcDate=" + bcDate + ", bcSQE=" + bcSQE + "]";
+		return "BCommentVO [bccvo=" + bccvo + ", bcNum=" + bcNum + ", bcID=" + bcID + ", bcContent=" + bcContent
+				+ ", bNum=" + bNum + ", bcGroup=" + bcGroup + ", bcDate=" + bcDate + ", bcSQE=" + bcSQE + ", bccList="
+				+ bccList + "]";
 	}
-
+	
 }
