@@ -14,6 +14,13 @@ public class InsertQCommentAction implements Action {
 		forward.setPath("/qView.do");
 		forward.setRedirect(false);
 
+		if(request.getParameter("qcID")=="") {
+			forward.setPath("/loginNo.jsp");
+			forward.setRedirect(false);
+
+			return forward;
+		}
+		
 		QCommentVO qcvo=new QCommentVO();
 		QNADAO qdao=new QNADAO();
 		qcvo.setQcContent(request.getParameter("qcContent"));

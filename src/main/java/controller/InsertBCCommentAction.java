@@ -13,6 +13,13 @@ public class InsertBCCommentAction implements Action {
 		ActionForward forward=new ActionForward();
 		forward.setPath("/bView.do");
 		forward.setRedirect(false);
+		
+		if(request.getParameter("bccID")=="") {
+			forward.setPath("/loginNo.jsp");
+			forward.setRedirect(false);
+
+			return forward;
+		}
 
 		BCCommentVO bccvo=new BCCommentVO();
 		BoardDAO bdao=new BoardDAO();

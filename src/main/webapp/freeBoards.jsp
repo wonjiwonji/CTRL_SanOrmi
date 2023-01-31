@@ -141,10 +141,7 @@
 					</div>
 					<!-- /.container-fluid -->
 					<div class="button_wrap clearfix">
-						<!--<button type="button" class="delete_btn">삭제하기</button>-->
-						<!-- <a href="#" class="list_btn">목록보기</a> -->
 						<a href="writeBoardFree.do?id=${sessionScope.id}" class="write_btn m_write_btn">작성하기</a>
-						<!-- <a href="#" class="modify_btn">수정하기</a> -->
 					</div>
 				</div>
 			</div>

@@ -1,6 +1,5 @@
 package controller;
 
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,7 +10,7 @@ public class WriteBoardFreeAction implements Action {
 		ActionForward forward=new ActionForward();
 		
 		if(request.getParameter("id")=="") {
-			forward.setPath("/login.jsp");
+			forward.setPath("/loginNo.jsp");
 			forward.setRedirect(false);
 
 			return forward;

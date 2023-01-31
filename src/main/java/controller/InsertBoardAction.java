@@ -15,6 +15,13 @@ public class InsertBoardAction implements Action {
 		ActionForward forward=new ActionForward();
 		forward.setPath("freeBoards.do");
 		forward.setRedirect(true);
+		
+		if(request.getParameter("bId")=="") {
+			forward.setPath("/loginNo.jsp");
+			forward.setRedirect(false);
+
+			return forward;
+		}
 
 		BoardVO bvo=new BoardVO();
 		BoardDAO bdao=new BoardDAO();

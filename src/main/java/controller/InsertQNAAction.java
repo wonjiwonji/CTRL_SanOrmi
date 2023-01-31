@@ -13,7 +13,14 @@ public class InsertQNAAction implements Action {
 		ActionForward forward=new ActionForward();
 		forward.setPath("qna.do");
 		forward.setRedirect(true);
+		
+		if(request.getParameter("qId")=="") {
+			forward.setPath("/loginNo.jsp");
+			forward.setRedirect(false);
 
+			return forward;
+		}
+		
 		QNAVO qvo=new QNAVO();
 		QNADAO qdao=new QNADAO();
 		qvo.setqTitle(request.getParameter("qTitle"));

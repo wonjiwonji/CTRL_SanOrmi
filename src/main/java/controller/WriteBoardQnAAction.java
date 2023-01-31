@@ -10,7 +10,7 @@ public class WriteBoardQnAAction implements Action {
 		ActionForward forward=new ActionForward();
 		
 		if(request.getParameter("id")=="") {
-			forward.setPath("/login.jsp");
+			forward.setPath("/loginNo.jsp");
 			forward.setRedirect(false);
 
 			return forward;
