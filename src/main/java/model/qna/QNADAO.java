@@ -35,12 +35,11 @@ public class QNADAO {
 	final String SELECTALL_MY_PAGE = "SELECT Q_NUM, Q_TITLE, Q_CNT FROM QNA WHERE Q_ID=? ORDER BY Q_NUM DESC";
 
 	// INSERT_QCOMMENT; 댓글 등록 쿼리문
-	final String INSERT_QCOMMENT = "INSERT INTO QCOMMENT (QC_ID, Q_NUM,QC_CONTENT,BC_GROUP, QC_DATE)\r\n"
+	final String INSERT_QCOMMENT = "INSERT INTO QCOMMENT (QC_ID, Q_NUM,QC_CONTENT,QC_GROUP, QC_DATE)\r\n"
 			+ "VALUES (?,?,?,(SELECT COALESCE(MAX(QC_GROUP),0)+1 FROM QCOMMENT AS QC_GROUP WHERE Q_NUM = ? ),NOW());";
 	// INSERT_QCCOMMENT; 대댓글 등록 쿼리문
 	final String INSERT_QCCOMMENT = "INSERT INTO QCOMMENT (QC_ID, Q_NUM,QC_CONTENT,QC_GROUP,QC_SQE, QC_DATE)\r\n"
 			+ "VALUES(?,?,?,?,(SELECT COALESCE(MAX(QCC.QC_SQE),0)+1 FROM QCOMMENT AS QCC WHERE Q_NUM=? GROUP BY QC_GROUP HAVING QC_GROUP = ?), NOW() )";
-
 	// DELETE_QCOMMENT; 댓글 삭제 쿼리문 ( 대댓글 까지 같이 삭제 )
 	final String DELETE_QCOMMENT = "DELETE FROM QCOMMENT WHERE QC_GROUP = ? AND Q_NUM = ?";
 	// DELETE_QCCOMMENT; 대댓글 삭제 쿼리문 ( 대댓글만 삭제 )
@@ -214,7 +213,7 @@ public class QNADAO {
 				qna.setqTitle(rs.getString("Q_TITLE")); // 게시글 제목 저장
 				qna.setqContent(rs.getString("Q_CONTENT")); // 게시글 내용 저장
 				qna.setqDate(rs.getDate("Q_DATE")); // 게시글 작성일 저장
-				// B_DATE
+				
 				qna.setqCnt(rs.getInt("Q_CNT")); // 게시글 조회수 저장
 				qna.setcCnt(rs.getInt("C_CNT")); // 댓글 수 저장
 				System.out.println("모델 " + qna);
