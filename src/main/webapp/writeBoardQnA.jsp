@@ -92,7 +92,7 @@ pageEncoding="UTF-8"%>
           </div>
           <div class="mb-3 mt-3">
             <label for="content">내용:</label>
-            <textarea class="form-control" rows="5" id="content" placeholder="내용을 입력하세요" name="qContent"></textarea>
+            <textarea class="form-control" rows="5" id="content" placeholder="내용을 입력하세요" name="qContent" required></textarea>
           </div>
           <button type="submit" class="btncolor">작성완료</button>
         </form>

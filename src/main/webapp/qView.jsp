@@ -141,7 +141,7 @@
 										type="hidden" class="form-control" id="input_writer"
 										name="qcID" value="${sessionScope.id}"> <input
 										type="text" class="form-control" id="input_comment"
-										name="qcContent">
+										name="qcContent" required>
 									<button type="submit" class="btn btn-outline-primary"
 										id="btn_comment">작성</button>
 								</form>
@@ -185,7 +185,7 @@
 																type="hidden" class="form-control" id="input_writer"
 																name="qccID" value="${sessionScope.id}"> <input
 																type="text" class="form-control" id="input_comment"
-																name="qccContent">
+																name="qccContent" required>
 																<button type="submit" class="btn btn-outline-primary"
 																id="btn_comment">작성</button>
 														</form>

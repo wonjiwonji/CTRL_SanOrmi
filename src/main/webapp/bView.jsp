@@ -163,7 +163,7 @@
 										type="hidden" class="form-control" id="input_writer"
 										name="bcID" value="${sessionScope.id}"> <input
 										type="text" class="form-control" id="input_comment"
-										name="bcContent">
+										name="bcContent" required>
 									<button type="submit" class="btn btn-outline-primary"
 										id="btn_comment">작성</button>
 								</form>
@@ -207,7 +207,7 @@
 																type="hidden" class="form-control" id="input_writer"
 																name="bccID" value="${sessionScope.id}"> <input
 																type="text" class="form-control" id="input_comment"
-																name="bccContent">
+																name="bccContent" required>
 																<button type="submit" class="btn btn-outline-primary"
 																id="btn_comment">작성</button>
 														</form>
