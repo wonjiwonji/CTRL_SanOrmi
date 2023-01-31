@@ -19,7 +19,7 @@ public class InsertBCCommentAction implements Action {
 		
 		bccvo.setBccID(request.getParameter("bccID"));
 		bccvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
-		bccvo.setBccContent(request.getParameter("bccContent"));
+		bccvo.setBccContent("ㄴ[답글]  " + request.getParameter("bccContent"));
 		bccvo.setBccGroup(Integer.parseInt(request.getParameter("bccGroup")));
 
 		bdao.insertBCComment(bccvo);

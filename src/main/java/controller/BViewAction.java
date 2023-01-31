@@ -32,20 +32,16 @@ public class BViewAction implements Action {
 		bdao.updatebCnt(bvo);
 		
 		request.getSession().setAttribute("bbvo", bbvo);
-		System.out.println(bbvo);
 		
 		if(!bbvo.isEmpty()) {
 			bcList=bbvo.get(0).getBcList();
 			request.getSession().setAttribute("bcList", bcList);
 			
-			System.out.println(bcList);
 			if(!bcList.isEmpty()) {
 				for(int i=0; i<bcList.size(); i++) {
 					bccListSample=bcList.get(i).getBccList();
 					bccList.add(bccListSample);
-					System.out.println(bccListSample);
 				}
-				System.out.println(bccList);
 				request.getSession().setAttribute("bccList", bccList);
 			}
 		}

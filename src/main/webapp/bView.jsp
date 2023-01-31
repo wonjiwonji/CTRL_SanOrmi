@@ -191,6 +191,19 @@
 												<td>${bcList.bcContent}</td>
 												<td>${bcList.bcDate}</td>
 												<td>
+												<c:choose>
+												<c:when test="${sessionScope.id == bcList.bcID}">
+												<a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}"><button id="deleteButton">삭제</button></a>
+												</c:when>
+												<c:when test="${sessionScope.id == 'admin' }">
+												<a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}"><button id="deleteButton">삭제</button></a>
+												</c:when>
+												<c:otherwise>
+												<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
+												</c:otherwise>
+												</c:choose>
+												</td>
+												<td>
 												<a><button id="btn_toggle">답글달기</button></a>
 													<div id="Toggle" style="display:none">
 													<form action="insertBCComment.do" class="input-group my-2">
@@ -210,23 +223,22 @@
 														<td>${bccList.bccID}</td>
 														<td>${bccList.bccContent}</td>
 														<td>${bccList.bccDate}</td>
-														</tr>
-														</c:forEach>
-														</div>
-												</td>
-												
 												<td>
 												<c:choose>
-												<c:when test="${sessionScope.id == bcList.bcID}">
-												<a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}"><button id="deleteButton">삭제</button></a>
+												<c:when test="${sessionScope.id == bccList.bccID}">
+												<a href="deleteBComment.do?bccNum=${bccList.bccNum}&bNum=${bccList.bNum}"><button id="deleteButton">삭제</button></a>
 												</c:when>
 												<c:when test="${sessionScope.id == 'admin' }">
-												<a href="deleteBComment.do?bcNum=${bcList.bcNum}&bNum=${bcList.bNum}"><button id="deleteButton">삭제</button></a>
+												<a href="deleteBComment.do?bccNum=${bccList.bccNum}&bNum=${bccList.bNum}"><button id="deleteButton">삭제</button></a>
 												</c:when>
 												<c:otherwise>
 												<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
 												</c:otherwise>
 												</c:choose>
+												</td>
+														</tr>
+														</c:forEach>
+														</div>
 												</td>
 												
 											</tr>
