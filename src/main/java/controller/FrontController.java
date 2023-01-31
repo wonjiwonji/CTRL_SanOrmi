@@ -219,20 +219,6 @@ public class FrontController extends HttpServlet {
 				e.printStackTrace();
 			}
 		}
-		else if(command.equals("/bcomment.do")) {
-			try {
-				forward=new BCommentAction().execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		else if(command.equals("/qcomment.do")) {
-			try {
-				forward=new QCommentAction().execute(request, response);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
 		else if(command.equals("/forgot.do")) {
 			try {
 				forward=new ForgotAction().execute(request, response);

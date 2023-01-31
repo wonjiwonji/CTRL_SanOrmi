@@ -24,7 +24,6 @@ public class UpdateBoardAction implements Action {
 
 		bdao.updateBoard(bvo);
 		
-		System.out.println(bvo);
 		return forward;
 	}
 

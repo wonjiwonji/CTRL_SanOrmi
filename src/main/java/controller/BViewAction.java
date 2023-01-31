@@ -32,7 +32,6 @@ public class BViewAction implements Action {
 		bdao.updatebCnt(bvo);
 		
 		request.getSession().setAttribute("bbvo", bbvo);
-		
 		System.out.println(bbvo);
 		
 		if(!bbvo.isEmpty()) {

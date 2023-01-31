@@ -238,15 +238,18 @@ public class BoardDAO {
                bcomment.setbNum(bvo.getbNum()); // 게시글 번호 저장
                bcomment.setBcDate(rs2.getDate("BC_DATE")); // 댓글 작성일 저장
                bcList.add(bcomment); // 위에서 저장한 값들을 배열리스트 bcList에 add해줌
-
+               
                pstmt = conn.prepareStatement(SELECTALL_BCCOMMENT); // SELECTALL_BCCOMMENT; 대댓글 전체보기
                pstmt.setInt(1, bvo.getbNum()); // pstmt에 bNum 저장
                pstmt.setInt(2, bvo.getBcvo().getBcGroup()); // pstmt에 bcGroup저장
                ResultSet rs3 = pstmt.executeQuery(); // 실행결과 rs3에 저장
 
+               System.out.println("!@#@ㅃㅇㅉㄸ@#ㄹㅃㅉㅁㄴㅇㅉ@ㅃㄴㅉㅇㄹㄸㅆㄲㅃㅉㅁㅇ");
+               
                ArrayList<BCCommentVO> bccList = new ArrayList<BCCommentVO>(); // <BCCommentVO> 타입의 ArrayList
                                                                // bccList 생성
                while (rs3.next()) { // 저장할 정보가 남아 있는 동안
+            	   System.out.println("이게 된다면 좋겠습니다 로그");
                   BCCommentVO bccomment = new BCCommentVO(); // BCCommentVO 객체 bccomment생성
 
                   bccomment.setBccNum(rs3.getInt("BC_NUM")); // BC_NUM 출력하진 않지만 추후 기능 사용 시 필요
