@@ -24,7 +24,7 @@ public class InsertBoardAction implements Action {
 		
 		MemberVO mvo=new MemberVO();
 		MemberDAO mdao=new MemberDAO();
-		mvo.setId(request.getParameter("id"));
+		mvo.setId(request.getParameter("bId"));
 		
 		bdao.insertBoard(bvo);
 		mdao.updateMBoardCnt(mvo);

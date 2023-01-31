@@ -20,7 +20,11 @@ public class ChartsAction implements Action {
 		ArrayList<MemberVO> kinglist=new ArrayList<MemberVO>();
 		
 		kinglist=mdao.selectAllCommunityKing();
-
+		
+		for(int i=0; i<kinglist.size(); i++) {
+			System.out.println(kinglist.get(i));
+		}
+		
 		request.getSession().setAttribute("kinglist", kinglist);
 		
 		return forward;

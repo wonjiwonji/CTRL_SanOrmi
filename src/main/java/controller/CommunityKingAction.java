@@ -20,7 +20,7 @@ public class CommunityKingAction implements Action {
 		ArrayList<MemberVO> kinglist=new ArrayList<MemberVO>();
 		
 		kinglist=mdao.selectAllCommunityKing();
-
+		
 		request.getSession().setAttribute("kinglist", kinglist);
 		
 		return forward;

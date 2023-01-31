@@ -19,8 +19,8 @@ public class DeleteQCommentAction implements Action {
 		
 		qcvo.setQcNum(Integer.parseInt(request.getParameter("qcNum")));
 
-		QCommentVO dqcvo=qdao.selectOne(qcvo);
-		qdao.deleteQComment(dqcvo);
+//		QCommentVO dqcvo=qdao.selectOne(qcvo);
+//		qdao.deleteQComment(dqcvo);
 		return forward;
 	}
 
