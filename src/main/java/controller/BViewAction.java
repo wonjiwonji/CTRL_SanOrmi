@@ -30,15 +30,18 @@ public class BViewAction implements Action {
 		bbvo=bdao.selectOneBoard(bvo);
 		bdao.updatebCnt(bvo);
 		
-		bcList=bbvo.get(0).getBcList();
-		System.out.println(bcList);
-		System.out.println(bbvo.get(0).getBcList().get(0).getBcGroup());
-		bbvo.get(0).getBcList().get(0).getBcGroup();
-		//bccList=bcList.get(0).getBccList();
-		
 		request.getSession().setAttribute("bbvo", bbvo);
-		request.getSession().setAttribute("bcList", bcList);
-		//request.getSession().setAttribute("bccList", bccList);
+
+		if(!bbvo.isEmpty()) {
+			bcList=bbvo.get(0).getBcList();
+			request.getSession().setAttribute("bcList", bcList);
+			
+			if(!bcList.isEmpty()) {
+				bccList=bcList.get(0).getBccList();
+				request.getSession().setAttribute("bccList", bccList);
+			}
+		}
+
 		
 		return forward;
 	}

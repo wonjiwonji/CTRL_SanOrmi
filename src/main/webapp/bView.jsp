@@ -205,6 +205,13 @@
 																<button type="submit" class="btn btn-outline-primary"
 																id="btn_comment">작성</button>
 														</form>
+														<c:forEach var="bccList" items="${bcList.bccList}">
+														<tr>
+														<td>${bccList.bccID}</td>
+														<td>${bccList.bccContent}</td>
+														<td>${bccList.bccDate}</td>
+														</tr>
+														</c:forEach>
 														</div>
 												</td>
 												

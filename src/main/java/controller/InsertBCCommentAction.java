@@ -22,8 +22,6 @@ public class InsertBCCommentAction implements Action {
 		bccvo.setBccContent(request.getParameter("bccContent"));
 		bccvo.setBccGroup(Integer.parseInt(request.getParameter("bccGroup")));
 
-		System.out.println("객체1: "+bccvo);
-		
 		bdao.insertBCComment(bccvo);
 		return forward;
 	}
