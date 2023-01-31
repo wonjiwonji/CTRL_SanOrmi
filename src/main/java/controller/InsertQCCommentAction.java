@@ -23,9 +23,10 @@ public class InsertQCCommentAction implements Action {
 
 		QCCommentVO qccvo=new QCCommentVO();
 		QNADAO qdao=new QNADAO();
+		
 		qccvo.setQccID(request.getParameter("qccID"));
 		qccvo.setqNum(Integer.parseInt(request.getParameter("qNum")));
-		qccvo.setQccContent(request.getParameter("qccContent"));
+		qccvo.setQccContent("ㄴ[답글]  " + request.getParameter("qccContent"));
 		qccvo.setQccGroup(Integer.parseInt(request.getParameter("qccGroup")));
 
 		qdao.insertQCComment(qccvo);

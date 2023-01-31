@@ -33,7 +33,6 @@ public class InsertBCommentAction implements Action {
 		bvo.setbNum(Integer.parseInt(request.getParameter("bNum")));
 		
 		bdao.insertBComment(bcvo);
-		bdao.updatecCnt(bvo);
 		return forward;
 
 	}

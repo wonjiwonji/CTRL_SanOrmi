@@ -53,5 +53,4 @@ public class UpdateInfoAction implements Action {
 		
 		return forward;
 	}
-
 }

@@ -5,6 +5,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.qna.QCommentVO;
 import model.qna.QNADAO;
+import model.qna.QNAVO;
 
 public class InsertQCommentAction implements Action {
 
@@ -22,13 +23,18 @@ public class InsertQCommentAction implements Action {
 		}
 		
 		QCommentVO qcvo=new QCommentVO();
+		QNAVO qvo=new QNAVO();
 		QNADAO qdao=new QNADAO();
+
+		qcvo.setQcID(request.getParameter("qcID"));
 		qcvo.setQcContent(request.getParameter("qcContent"));
 		qcvo.setqNum(Integer.parseInt(request.getParameter("qNum")));
-		qcvo.setQcID(request.getParameter("qcID"));
-
+		
+		qvo.setqNum(Integer.parseInt(request.getParameter("qNum")));
+		
 		qdao.insertQComment(qcvo);
 		return forward;
+		
 	}
 
 }
