@@ -420,7 +420,8 @@ pageEncoding="UTF-8"%>
       </script>
 
       <!-- 칸 시작 -->
-      <div class="centers">
+      <a class="mg-text">내 주변 지도보기</a>
+      <div class="centers" style="margin-top:100px;">
         <div class="letsgo">
           <img src="./images/LetsGo.png" alt="앞으로가는사진" />
         </div>
@@ -442,7 +443,7 @@ pageEncoding="UTF-8"%>
             <ul class="list_wrap">
               <div>
               <div class="left_top_02" style="text-align: center">
-                <h3 class="sub_title" style="color: green">커뮤니티 TOP5</h3>
+                <h3 class="sub_title" style="color: green; margin-bottom:50px;">커뮤니티 TOP5</h3>
               </div>
 				<div class="card-body">
 					<div class="table-responsive">
@@ -481,7 +482,7 @@ pageEncoding="UTF-8"%>
           <div class="boximpo2">
             <div class="bottom">
               <div class="left_top_02" style="text-align: center">
-                <h3 class="sub_title" style="color: green">등산 관련 NEWS</h3>
+                <h3 class="sub_title" style="color: green; margin-bottom:50px;">등산 관련 NEWS</h3>
                 <hr />
               </div>
               <div
