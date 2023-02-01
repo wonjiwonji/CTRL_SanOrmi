@@ -29,6 +29,38 @@ INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('지팡이','산 올
 INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('조심하세요','요즘 산에서 범죄가 많다고 해요 다들 조심하세요','iku135',NOW());
 INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산불..','제발 다들 산을 아껴주셨으면 좋겠네요.. 마음이 아파요..','jiwon',NOW());
 INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산냄새','저는 산냄새가 너무 좋아요 푸릇푸릇~한 냄새? 다들 아시죠?','wupee7273',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산오르미 개발자','혹시 천재??? 닮고싶다...','jiwon',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('저의 꿈은','산오르미처럼 멋진 홈페이지를 만드는 것입니다.','iku135',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('무등산','정상에서 사진찍으면 완전 잘나와요','wupee7273',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('여러분 그 산 알아요?','그 대둔산이라고 묵밥 완전 맛있는곳 있는데 짱이에요 진짜 ','apple',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('사람들이','이제야 산의 진가를 알아보네요','hwan',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('등산대란','인가요? 사람이 너무 많아서 힘드네여 ㅠ','apple',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('우리집 뒷산','풍경 진짜 이뻐요 댓글달면 어딘지 알려드림','hwan',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산새','산새소리 진짜 듣기 좋지 않아요? 저는 녹음도 했어요','iku135',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('제발..','산에서 이상한 짓 하지마세요..','jiwon',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('점점','산을 다깎아버려서 산이 사라지고 있어요..','wupee7273',NOW());
+
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산 올라가다','다람쥐 봤어요! 졸귀탱~~!','jiwon',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('꿩','꿩 봤어요 손이 꿩꿩꿩 발이 꿩꿩꿩!','iku135',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('뒤질래?','진짜 죽여버린다 ','wupee7273',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산에서','코딩하면 진짜 잘됩니다','apple',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('다들 산탈때','무슨노래 들으세요? 저는 뉴진스의 hypeboy요','hwan',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산타다 힘들면','코딩해보세요 더힘들지 썅','apple',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('오르막길 꿀팁','오르막길 갈때 뒤로걸어가면 안힘들어요','hwan',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('다리 부러짐..','산에서 뛰어다니다가 다리 부러졌어요 다들 조심하세요ㅠㅠ','iku135',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('설악산','흔들바위가 떨어졌대요!!!','jiwon',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('백두산만큼','키가 커지고 싶다..','wupee7273',NOW());
+
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('오등완!','오늘도 등산 완료~~!','jiwon',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산공기','아 산공기 마렵다.','iku135',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('바람막이','산탈때 바람막이 뭐가 좋을까요? 내 바람막이는 바람을 안막아..','wupee7273',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('솔직히','산 정상에서 라면 끓여먹고 싶지 않나요? 나만그래?','apple',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산타고 건강이','진짜 좋아졌어요 한 10년은 젊어진듯','hwan',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('이런 커뮤','진짜 좋네요 외롭지도 않고 정보도 많고 ','apple',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('사람 살려','살려주세요 산에있는 벌레가 너무 무서워요','hwan',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('이제야 알겠네요','산 싫어했는데 다니다보니 사랑하게 됐어요 이제야 산타는 이유를 알겠네요','iku135',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산모기','산모기 진짜 지독한거 알죠 저 퉁퉁 부었어요 다들 긴팔 긴바지 필수!','jiwon',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('아 상쾌해~!','아침부터 산에 왔는데 너무 상쾌해요!!!','wupee7273',NOW());
 
 
 
