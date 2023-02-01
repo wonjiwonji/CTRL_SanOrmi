@@ -19,7 +19,7 @@ public class ManageMemAction implements Action {
 		ArrayList<MemberVO> mList = new ArrayList<MemberVO>();
 		MemberDAO mdao = new MemberDAO();
 		
-		mList=mdao.selectAllMember();
+		mList=mdao.selectAllMember(null);
 
 		request.getSession().setAttribute("mList", mList);
 		

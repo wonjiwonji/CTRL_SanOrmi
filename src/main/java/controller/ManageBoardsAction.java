@@ -19,7 +19,7 @@ public class ManageBoardsAction implements Action {
 		ArrayList<ReportVO> rList = new ArrayList<ReportVO>();
 		ReportDAO rdao = new ReportDAO();
 		
-		rList=rdao.selectAll();
+		rList=rdao.selectAll(null);
 
 		request.getSession().setAttribute("rList", rList);
 		

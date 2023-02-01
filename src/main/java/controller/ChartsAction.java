@@ -31,7 +31,7 @@ public class ChartsAction implements Action {
 		int kingBc4=0;
 		int kingBc5=0;
 		
-		kinglist=mdao.selectAllCommunityKing();
+		kinglist=mdao.selectAllCommunityKing(null);
 		
 		if(kinglist.size()==5) {
 		kingId1=kinglist.get(0).getId();

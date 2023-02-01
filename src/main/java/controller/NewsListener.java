@@ -20,7 +20,7 @@ public class NewsListener implements ServletContextListener {
 		NewsDAO ndao = new NewsDAO();
 		Crawling cl = new Crawling();
 		
-		if (ndao.selectAllNews().size() < 4) {
+		if (ndao.selectAllNews(null).size() < 4) {
 			cl.sample();
 		}
 

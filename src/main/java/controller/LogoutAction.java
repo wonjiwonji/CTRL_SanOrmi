@@ -12,12 +12,12 @@ public class LogoutAction implements Action {
 		String pw=request.getParameter("mPw");
 		
 		if(pw.equals("NAVER")) {
-			forward.setPath("snsLogout.jsp");
-			forward.setRedirect(false);
+			forward.setPath("LogoutSNS.do");
+			forward.setRedirect(true);
 		}
 		else if(pw.equals("KAKAO")) {
-			forward.setPath("snsLogout.jsp");
-			forward.setRedirect(false);
+			forward.setPath("LogoutSNS.do");
+			forward.setRedirect(true);
 		}
 		else {
 			forward.setPath("main.do");

@@ -19,7 +19,7 @@ public class CommunityKingAction implements Action {
 		MemberDAO mdao=new MemberDAO();
 		ArrayList<MemberVO> kinglist=new ArrayList<MemberVO>();
 		
-		kinglist=mdao.selectAllCommunityKing();
+		kinglist=mdao.selectAllCommunityKing(null);
 		
 		request.getSession().setAttribute("kinglist", kinglist);
 		
