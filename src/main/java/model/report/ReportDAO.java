@@ -126,6 +126,8 @@ public class ReportDAO {
 				data.setrId(rs.getString("R.R_ID")); // 신고자 아이디
 				data.setrTargetId(rs.getString("R.R_TARGETID")); // 작성자 아이디
 				data.setrTitle(rs.getString("B.B_DATE")); // 작성 일자
+				
+				datas.add(data);
 			}
 
 		} catch (SQLException e) {

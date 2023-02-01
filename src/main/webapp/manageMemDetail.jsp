@@ -120,7 +120,7 @@
                 class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"
                 ><i class="fas fa-download fa-sm text-white-50"></i> 돌아가기</a
               > <a
-                href="deleteMember.do?id=${smvo.id }&id=${mvo.id}"
+                href="deleteMemberAdmin.do?id=${smvo.id }"
                 class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
                 ><i class="fas fa-download fa-sm text-white-50"></i> 삭제하기</a
               > </div>

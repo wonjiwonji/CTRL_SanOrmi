@@ -15,8 +15,8 @@ public class AcceptReportAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("manageBoards.jsp");
-		forward.setRedirect(true);
+		forward.setPath("/manageBoards.jsp");
+		forward.setRedirect(false);
 		
 		BoardVO bvo=new BoardVO();
 		BoardDAO bdao=new BoardDAO();
