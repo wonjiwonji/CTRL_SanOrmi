@@ -76,7 +76,7 @@
 
 							<c:choose>
 								<c:when test="${(fn:contains(sessionScope.mPw, 'KAKAO'))}">
-									<button onclick="kakaoDelete(); return false;"
+									<button onclick="checking(); return false;"
 										class="kakao_logout"
 										style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #FEE500; text-align: center; font-size: large; font-weight: bold;">
 										<a> <img src="./img/kakao.png" /></a> 카카오 회원탈퇴
@@ -87,7 +87,7 @@
 					window.Kakao.init('78892b6e583dfe48cb2d2caf38da1114');
                  // SDK 초기화 여부를 판단합니다. true가 나온다면 정상 작동
                     console.log(Kakao.isInitialized());
-
+					
                       // 카카오 로그인 함수 생성
                     function kakaoDelete() {
                      	Kakao.Auth.login({
@@ -112,6 +112,14 @@
                     	location.href = "deleteAccount.do?id=${sessionScope.id}"; //리다이렉트 주소
                     }
                       
+                    function checking() {
+                    	if (confirm("정말 탈퇴하시겠습니까?") == true) { //확인
+                    		kakaoDelete();
+                    	} else { //취소
+                    		return false;
+                    	}
+                    }
+                    
                     </script>
 
 

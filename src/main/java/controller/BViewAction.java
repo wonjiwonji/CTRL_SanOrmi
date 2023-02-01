@@ -33,6 +33,8 @@ public class BViewAction implements Action {
 		
 		request.getSession().setAttribute("bbvo", bbvo);
 		
+		System.out.println(bbvo);
+		
 		if(!bbvo.isEmpty()) {
 			bcList=bbvo.get(0).getBcList();
 			request.getSession().setAttribute("bcList", bcList);
