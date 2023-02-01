@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>    
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="jay" tagdir="/WEB-INF/tags" %> 
+<%@ taglib prefix="btn" tagdir="/WEB-INF/tags" %> 
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -64,7 +64,7 @@
               <li><a href="myeongsan.do">명산 소개</a></li>
               <li><a href="qna.do">자주 묻는 질문</a></li>
               <li><a href="freeBoards.do">커뮤니티</a></li>
-              <jay:login />
+              <btn:login />
                 <ul class="fh5co-sub-menu">
                   <li><a href="myBoard.do">작성글 확인</a></li>
                   <li><a href="updateInfo.do">회원정보 수정</a></li>
