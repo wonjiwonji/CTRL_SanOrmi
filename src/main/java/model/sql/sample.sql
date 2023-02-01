@@ -69,6 +69,30 @@ INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('탈퇴문의','탈퇴
 INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('재가입','탈퇴 후 바로 재가입이 가능할까요?','iku135',NOW());
 INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('댓글 삭제','제 게시글에 달린 남의 댓글을 지우고싶은데 방법이 없을까요?','wupee7273',NOW());
 
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('명산소개','명산소개 지도 역할은 무엇인가요?','apple',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('비밀번호 변경','비밀번호 어디서 바꾸나요?','wupee7273',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('신고 방법','신고하는 방법 좀 알려주세요','apple',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('신고 처리','신고하면 어떻게 처리되나요?','jiwon',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('커뮤니티왕 누적','커뮤니티왕 누적인가요? 기간이 있나요? ','jiwon',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('댓글 삭제','댓글 삭제하면 다른사람이 쓴 대댓글은 어떻게 되나요?','iku135',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('산오르미 이용하면 무엇이 좋은가요?','산오르미 이용하면 좋은점 알려주세요!','hwan',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('SNS 가입','SNS 가입 시 이용 못하는 기능이 있나요?','apple',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('회원가입 주소','주소 입력 안하면 어떻게 되나요?','iku135',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('커뮤니티 공개 범위','커뮤니티 공개 범위가 어떻게 되나요?','wupee7273',NOW());
+
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('상품 구매','등산 용품 구매도 가능한가요?','apple',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('산 추천','명산소개 산 말고 다른 산도 추천해주세요','wupee7273',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('신고당한 사람','신고 당하면 어떻게 되나요?','apple',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('잘못 신고','잘못 신고하면 어떻게 되나요?','jiwon',NOW());
+
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('사이트를 이렇게 잘 만든 비법은?','제발 좀 알려주세용','jiwon',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('산오르미 웹페이지 특장점?','있나요','iku135',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('앞으로 추가할 기능?','추가되는 기능 있나요?','hwan',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('SNS 회원 탈퇴 어떻게 하나요?','SNS 가입 시 회원 탈퇴 어떻게 하나요','apple',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('회원 가입 시 동의 받는 이유','이유가 따로 있나요','iku135',NOW());
+INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('추천 사용 매뉴얼','있나요?','wupee7273',NOW());
+
+
 
 --QCOMMENT
 --댓글
