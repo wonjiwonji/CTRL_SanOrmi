@@ -84,7 +84,6 @@ INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('상품 구매','등�
 INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('산 추천','명산소개 산 말고 다른 산도 추천해주세요','wupee7273',NOW());
 INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('신고당한 사람','신고 당하면 어떻게 되나요?','apple',NOW());
 INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('잘못 신고','잘못 신고하면 어떻게 되나요?','jiwon',NOW());
-
 INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('사이트를 이렇게 잘 만든 비법은?','제발 좀 알려주세용','jiwon',NOW());
 INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('산오르미 웹페이지 특장점?','있나요','iku135',NOW());
 INSERT INTO QNA (Q_TITLE, Q_CONTENT, Q_ID, Q_DATE) VALUES('앞으로 추가할 기능?','추가되는 기능 있나요?','hwan',NOW());
