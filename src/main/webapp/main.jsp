@@ -452,7 +452,7 @@ pageEncoding="UTF-8"%>
 									<tr>
 										<th>순번</th>
 										<th>제목</th>
-										<th>작성자</th>
+										<th>작성일</th>
 										<th>조회수</th>
 									</tr>
 								</thead>
@@ -461,7 +461,7 @@ pageEncoding="UTF-8"%>
 										<tr>
 											<td>${vo.bNum }</td>
 											<td><a href="bView.do?bNum=${vo.bNum }">${vo.bTitle }</a></td>
-											<td>${vo.bId }</td>
+											<td>${vo.bDate }</td>
 											<td>${vo.bCnt }</td>
 										</tr>
 									</c:forEach>
@@ -663,7 +663,7 @@ pageEncoding="UTF-8"%>
     <script src="js/selectFx.js"></script>
     <!-- Google Map -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAuYIdumyBuSyjdOXeWTh5CnO8wBL9haYY&callback=initMap&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=&callback=initMap&v=weekly"
       defer
     ></script>
     <script src="js/google_mainmap.js"></script>

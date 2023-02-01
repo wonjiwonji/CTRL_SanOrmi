@@ -134,13 +134,14 @@ pageEncoding="UTF-8"%>
                     <th class="sorting_con">순번</th>
                     <th class="sorting_con">제목</th>
                     <th class="sorting_con">작성자</th>
+
                   </tr>
                 </thead>
                 <tbody>
                 <c:forEach var="vo" items="${rList}">
                   <tr>
-                    <td>${vo.rNum }</td>
-                    <td><a href="manageBoardsDetail.do?rNum=${vo.rNum }">${vo.rTitle }</a></td>
+                    <td>${vo.rId }</td>
+                    <td><a href="manageBoardsDetail.do?rNum=${vo.bNum }">${vo.rTitle }</a></td>
                     <td>${vo.rTargetId }</td>
                   </tr>
                   </c:forEach>

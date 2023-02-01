@@ -124,7 +124,7 @@ public class ReportDAO {
 				data.setrNum(rs.getInt("R.R_NUM")); // 신고 번호
 				data.setrTitle(rs.getString("B.B_TITLE")); // 게시글 제목
 				data.setrId(rs.getString("R.R_ID")); // 신고자 아이디
-				data.setrTargetId(rs.getString("R.R_TARGITID")); // 작성자 아이디
+				data.setrTargetId(rs.getString("R.R_TARGETID")); // 작성자 아이디
 				data.setrTitle(rs.getString("B.B_DATE")); // 작성 일자
 			}
 

@@ -7,7 +7,7 @@ function initMap(){
    );
    
    new google.maps.Marker(
-      {position:les, map:map, label:"즐겁고 신나는곳"}
+      {position:les, map:map, label:"기준 위치"}
    );
 }
 initMap();

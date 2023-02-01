@@ -229,12 +229,12 @@
                 ><i class="fas fa-download fa-sm text-white-50"></i> 돌아가기</a
               >
               <a
-                href="cancleReport.do"
+                href="cancleReport.do?rNum=${rvo.rNum }"
                 class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm"
                 ><i class="fas fa-download fa-sm text-white-50"></i> 철회하기</a
               >
               <a
-                href="acceptReport.do"
+                href="acceptReport.do?rNum=${rvo.rNum }&bNum=${bvo.bNum}"
                 class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
                 ><i class="fas fa-download fa-sm text-white-50"></i> 삭제하기</a
               >
@@ -256,7 +256,7 @@
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              ${bNum }
+                              ${rvo.bNum }
                             </div>
                             <br />
                           </div>
@@ -279,7 +279,7 @@
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              ${bId }
+                              ${rvo.bId }
                             </div>
                             <br />
                           </div>
@@ -303,7 +303,7 @@
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              ${bCnt }
+                              ${rvo.bCnt }
                             </div>
                             <br />
                           </div>
@@ -324,7 +324,7 @@
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              ${bTitle }
+                              ${rvo.bTitle }
                             </div>
                             <br />
                           </div>
@@ -359,7 +359,7 @@
                   >
                     내용
                   </div>
-                  ${bContent }
+                  ${rvo.bContent }
 					<br />
                 </div>
               </div>

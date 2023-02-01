@@ -25,5 +25,4 @@
 				<li><a href="agree.do">회원가입</a></li>
 			</ul></li>
 	</c:otherwise>
-	
 </c:choose>

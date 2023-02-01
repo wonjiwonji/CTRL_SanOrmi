@@ -154,8 +154,7 @@
 						</section>
 						<div class="container my-3 border rounded">
 							<div class="mb-3 mt-3">
-								<label>댓글: <span id="cmt_cnt">${bbvo[0].board.cCnt}</span>
-									개
+								<label>댓글: <span id="cmt_cnt">${bbvo[0].board.cCnt}</span>개
 								</label>
 								<form action="insertBComment.do" class="input-group my-2">
 									<input type="hidden" class="form-control" id="input_cmt_num"
@@ -165,7 +164,8 @@
 										type="text" class="form-control" id="input_comment"
 										name="bcContent" required  style="display: inline-block; width: 1000px;" >
 									<button type="submit" class="btn btn-outline-primary"
-										id="btn_comment" style="background-color: #1cc88a; color: white; font-weight: bold; margin-left: 20px; border-radius: 5px;">작성</button>
+										id="btn_comment" style="background-color: #1cc88a; color: white; 
+										font-weight: bold; margin-left: 20px; border-radius: 5px;">작성</button>
 								</form>
 								<table class="table table-hover mt-3" id="cmt_table">
 									<thead>
@@ -185,10 +185,12 @@
 												<td>
 												<c:choose>
 												<c:when test="${sessionScope.id == bcList.bcID}">
-												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bcGroup=${bcList.bcGroup}"><button id="deleteButton">삭제</button></a>
+												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bcGroup=${bcList.bcGroup}">
+												<button id="deleteButton">삭제</button></a>
 												</c:when>
 												<c:when test="${sessionScope.id == 'admin' }">
-												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bcGroup=${bcList.bcGroup}"><button id="deleteButton">삭제</button></a>
+												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bcGroup=${bcList.bcGroup}">
+												<button id="deleteButton">삭제</button></a>
 												</c:when>
 												<c:otherwise>
 												<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
@@ -210,7 +212,8 @@
 																type="text" class="form-control" id="input_comment"
 																name="bccContent" required style="display: inline-block; width: 85%;">
 																<button type="submit" class="btn btn-outline-primary"
-																id="btn_comment" style="background-color: #1cc88a; color: white; font-weight: bold; margin-left: 20px; border-radius: 5px;">답글 작성</button>
+																id="btn_comment" style="background-color: #1cc88a; color: white; 
+																font-weight: bold; margin-left: 20px; border-radius: 5px;">답글 작성</button>
 																
 														</form>
 														</div>
@@ -227,10 +230,12 @@
 												<td>
 												<c:choose>
 												<c:when test="${sessionScope.id == bccList.bccID}">
-												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bccNum=${bccList.bccNum}&bcGroup=${bcList.bcGroup}"><button id="deleteButton">삭제</button></a>
+												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bccNum=${bccList.bccNum}&bcGroup=${bcList.bcGroup}">
+												<button id="deleteButton">삭제</button></a>
 												</c:when>
 												<c:when test="${sessionScope.id == 'admin' }">
-												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bccNum=${bccList.bccNum}&bcGroup=${bcList.bcGroup}"><button id="deleteButton">삭제</button></a>
+												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bccNum=${bccList.bccNum}&bcGroup=${bcList.bcGroup}">
+												<button id="deleteButton">삭제</button></a>
 												</c:when>
 												<c:otherwise>
 												<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
