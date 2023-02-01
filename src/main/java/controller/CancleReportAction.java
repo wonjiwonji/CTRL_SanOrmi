@@ -13,7 +13,7 @@ public class CancleReportAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("manageBoards.jsp");
+		forward.setPath("manageBoards.do");
 		forward.setRedirect(true);
 
 		ReportVO rvo=new ReportVO();
