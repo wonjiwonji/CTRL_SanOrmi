@@ -4,26 +4,19 @@ import java.util.ArrayList;
 import java.util.Date;
 
 public class BCommentVO {
-	private BCCommentVO bccvo; // BCCommentVO
+
 	private int bcNum; // 댓글 번호
 	private String bcID; // 댓글 작성자
-	private String bcContent; // 댓글 내용
 	private int bNum; // 게시글 번호
+	private String bcContent; // 댓글 내용
 	private int bcGroup; // 댓글 그룹
-	private Date bcDate; // 댓글 작성일
 	private int bcSQE; // 댓글 시퀀스 (0)
+	private Date bcDate; // 댓글 작성일
+	private BCCommentVO bccvo; // BCCommentVO
 	private ArrayList<BCCommentVO> bccList; // ArrayList<BCCommentVO>
 
 	public BCommentVO() {
 		this.bccvo = new BCCommentVO();
-	}
-
-	public ArrayList<BCCommentVO> getBccList() {
-		return bccList;
-	}
-
-	public void setBccList(ArrayList<BCCommentVO> bccList) {
-		this.bccList = bccList;
 	}
 
 	public int getBcNum() {
@@ -42,14 +35,6 @@ public class BCommentVO {
 		this.bcID = bcID;
 	}
 
-	public String getBcContent() {
-		return bcContent;
-	}
-
-	public void setBcContent(String bcContent) {
-		this.bcContent = bcContent;
-	}
-
 	public int getbNum() {
 		return bNum;
 	}
@@ -58,12 +43,28 @@ public class BCommentVO {
 		this.bNum = bNum;
 	}
 
+	public String getBcContent() {
+		return bcContent;
+	}
+
+	public void setBcContent(String bcContent) {
+		this.bcContent = bcContent;
+	}
+
 	public int getBcGroup() {
 		return bcGroup;
 	}
 
 	public void setBcGroup(int bcGroup) {
 		this.bcGroup = bcGroup;
+	}
+
+	public int getBcSQE() {
+		return bcSQE;
+	}
+
+	public void setBcSQE(int bcSQE) {
+		this.bcSQE = bcSQE;
 	}
 
 	public Date getBcDate() {
@@ -82,19 +83,19 @@ public class BCommentVO {
 		this.bccvo = bccvo;
 	}
 
-	public int getBcSQE() {
-		return bcSQE;
+	public ArrayList<BCCommentVO> getBccList() {
+		return bccList;
 	}
 
-	public void setBcSQE(int bcSQE) {
-		this.bcSQE = bcSQE;
+	public void setBccList(ArrayList<BCCommentVO> bccList) {
+		this.bccList = bccList;
 	}
 
 	@Override
 	public String toString() {
-		return "BCommentVO [bccvo=" + bccvo + ", bcNum=" + bcNum + ", bcID=" + bcID + ", bcContent=" + bcContent
-				+ ", bNum=" + bNum + ", bcGroup=" + bcGroup + ", bcDate=" + bcDate + ", bcSQE=" + bcSQE + ", bccList="
+		return "BCommentVO [bcNum=" + bcNum + ", bcID=" + bcID + ", bNum=" + bNum + ", bcContent=" + bcContent
+				+ ", bcGroup=" + bcGroup + ", bcSQE=" + bcSQE + ", bcDate=" + bcDate + ", bccvo=" + bccvo + ", bccList="
 				+ bccList + "]";
 	}
-	
+
 }

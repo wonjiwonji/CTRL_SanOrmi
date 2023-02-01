@@ -3,10 +3,11 @@ package model.board;
 import java.util.Date;
 
 public class BCCommentVO {
+	
 	private int bccNum; // 대댓글 번호
 	private String bccID; // 대댓글 작성자
-	private String bccContent; // 대댓글 내용
 	private int bNum; // 게시글 번호
+	private String bccContent; // 대댓글 내용
 	private int bccGroup; // 대댓글 그룹
 	private int bccSqe; // 대댓글 시퀀스
 	private Date bccDate; // 대댓글 작성일
@@ -27,20 +28,20 @@ public class BCCommentVO {
 		this.bccID = bccID;
 	}
 
-	public String getBccContent() {
-		return bccContent;
-	}
-
-	public void setBccContent(String bccContent) {
-		this.bccContent = bccContent;
-	}
-
 	public int getbNum() {
 		return bNum;
 	}
 
 	public void setbNum(int bNum) {
 		this.bNum = bNum;
+	}
+
+	public String getBccContent() {
+		return bccContent;
+	}
+
+	public void setBccContent(String bccContent) {
+		this.bccContent = bccContent;
 	}
 
 	public int getBccGroup() {
@@ -59,8 +60,6 @@ public class BCCommentVO {
 		this.bccSqe = bccSqe;
 	}
 
-	
-
 	public Date getBccDate() {
 		return bccDate;
 	}
@@ -71,9 +70,8 @@ public class BCCommentVO {
 
 	@Override
 	public String toString() {
-		return "BCCommentVO [bccNum=" + bccNum + ", bccID=" + bccID + ", bccContent=" + bccContent + ", bNum=" + bNum
+		return "BCCommentVO [bccNum=" + bccNum + ", bccID=" + bccID + ", bNum=" + bNum + ", bccContent=" + bccContent
 				+ ", bccGroup=" + bccGroup + ", bccSqe=" + bccSqe + ", bccDate=" + bccDate + "]";
 	}
-
 
 }

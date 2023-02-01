@@ -3,8 +3,8 @@ package model.board;
 import java.util.ArrayList;
 
 public class BoardSet {
-	
-	private BoardVO board; // BoardVO	
+
+	private BoardVO board; // BoardVO
 	private ArrayList<BCommentVO> bcList; // ArrayList<BCommentVO>
 
 	public BoardVO getBoard() {
@@ -27,8 +27,5 @@ public class BoardSet {
 	public String toString() {
 		return "BoardSet [board=" + board + ", bcList=" + bcList + "]";
 	}
-
-
-
 
 }
