@@ -18,8 +18,6 @@ public class AcceptReportAction implements Action {
 		forward.setPath("manageBoards.jsp");
 		forward.setRedirect(true);
 		
-		MemberDAO mdao=new MemberDAO();
-		MemberVO mvo=new MemberVO();
 		BoardVO bvo=new BoardVO();
 		BoardDAO bdao=new BoardDAO();
 		ReportVO rvo=new ReportVO();
