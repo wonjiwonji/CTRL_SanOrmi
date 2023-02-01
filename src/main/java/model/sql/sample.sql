@@ -19,6 +19,17 @@ INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('야호!','산 정�
 INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('등산할때','뱀 조심하세요 여러분','iku135',NOW());
 INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산오르미','여기 괜찮네요 동호회가입보다 좋은듯','jiwon',NOW());
 INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('등산 에티켓','담배는 NO 쓰레기 NO 우리 잘 지켜봐요','wupee7273',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('여러분','다들 한달에 몇번 등산하세요?','jiwon',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('등산 꿀팁','등산 꿀팁있나요?','iku135',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('키야 역시','산타고 내려와서 먹는 막걸리가 최고야!','wupee7273',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('초콜릿팝니다','단돈 49900원에 맛있는 초콜릿을 팔아요','apple',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('<오픈이벤트>술술','술술 오픈이벤트! 소주 한병 5000->3000 많이들 찾아주세요~','hwan',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('아 **','욕하고싶은 하루인데여','apple',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('지팡이','산 올라갈때 쓸 지팡이 추천해주세요','hwan',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('조심하세요','요즘 산에서 범죄가 많다고 해요 다들 조심하세요','iku135',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산불..','제발 다들 산을 아껴주셨으면 좋겠네요.. 마음이 아파요..','jiwon',NOW());
+INSERT INTO BOARD (B_TITLE, B_CONTENT, B_ID, B_DATE) VALUES('산냄새','저는 산냄새가 너무 좋아요 푸릇푸릇~한 냄새? 다들 아시죠?','wupee7273',NOW());
+
 
 
 --BCOMMENT
