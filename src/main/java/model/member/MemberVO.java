@@ -9,7 +9,7 @@ public class MemberVO {
 	private String mEmail; // 이메일
 	private String mAddress; // 주소
 	private String mName; // 이름
-	private Date mDate; // 가입 일자
+	private Date mDate; // 가입 일자 (M_REGDATE)
 	private int mBanCnt; // 벤 당한 횟수
 	private int mBoardCnt; // 게시글 작성 횟수 (잔여 게시글 기준)
 

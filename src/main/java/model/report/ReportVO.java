@@ -1,10 +1,12 @@
 package model.report;
 
 public class ReportVO {
+
 	private int rNum; // 신고 번호 (PK)
 	private int bNum; // 게시글 번호
 	private String rId; // 신고자 아이디
 	private String rTargetId; // 작성자 아이디
+
 	private String rTitle; // 게시글 제목 (DB에는 없음)
 	private String rContent; // 게시글 내용 (DB에는 없음)
 
@@ -58,7 +60,8 @@ public class ReportVO {
 
 	@Override
 	public String toString() {
-		return "ReportVO [rNum=" + rNum + ", bNum=" + bNum + ", rId=" + rId + ", rTargetId=" + rTargetId + "]";
+		return "ReportVO [rNum=" + rNum + ", bNum=" + bNum + ", rId=" + rId + ", rTargetId=" + rTargetId + ", rTitle="
+				+ rTitle + ", rContent=" + rContent + "]";
 	}
 
 }

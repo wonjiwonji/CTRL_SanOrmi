@@ -1,9 +1,18 @@
 package model.news;
 
 public class NewsVO {
-	private String nTitle;
-	private String nContent;
-	private String nDate;
+	private int nSqe; // 시퀀스
+	private String nTitle; // 제목
+	private String nContent; // 내용
+	private String nDate; // 작성일
+
+	public int getnSqe() {
+		return nSqe;
+	}
+
+	public void setnSqe(int nSqe) {
+		this.nSqe = nSqe;
+	}
 
 	public String getnTitle() {
 		return nTitle;
@@ -31,7 +40,7 @@ public class NewsVO {
 
 	@Override
 	public String toString() {
-		return "NewsVO [nTitle=" + nTitle + ", nContent=" + nContent + ", nDate=" + nDate + "]";
+		return "NewsVO [nSqe=" + nSqe + ", nTitle=" + nTitle + ", nContent=" + nContent + ", nDate=" + nDate + "]";
 	}
 
 }
