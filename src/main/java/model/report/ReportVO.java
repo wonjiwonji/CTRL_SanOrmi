@@ -1,5 +1,7 @@
 package model.report;
 
+import java.util.Date;
+
 public class ReportVO {
 
 	private int rNum; // 신고 번호 (PK)
@@ -9,6 +11,7 @@ public class ReportVO {
 
 	private String rTitle; // 게시글 제목 (DB에는 없음)
 	private String rContent; // 게시글 내용 (DB에는 없음)
+	private Date rDate; // 게시글 작성 일자 (DB에는 없음)
 
 	public int getrNum() {
 		return rNum;
@@ -56,6 +59,14 @@ public class ReportVO {
 
 	public void setrContent(String rContent) {
 		this.rContent = rContent;
+	}
+
+	public Date getrDate() {
+		return rDate;
+	}
+
+	public void setrDate(Date rDate) {
+		this.rDate = rDate;
 	}
 
 	@Override
