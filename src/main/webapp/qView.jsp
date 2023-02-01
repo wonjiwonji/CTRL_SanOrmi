@@ -109,9 +109,9 @@
 	<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 
-			<%-- 헤더임 --%>
+			<%-- 헤더시작 --%>
 			<jsp:include page="header.jsp" />
-			<%-- 헤더라고 --%>
+			<%-- 헤더끝 --%>
 
 			<article class="view_wrap pd60">
 				<div class="center clearfix">
@@ -210,7 +210,7 @@
 															<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
 														</c:otherwise>
 													</c:choose></td>
-												<tr>
+											<tr>
 												<td colspan="5">
 													<div id="Toggle">
 														<form action="insertQCComment.do" class="input-group my-2">
@@ -221,36 +221,39 @@
 																type="hidden" class="form-control" id="input_writer"
 																name="qccID" value="${sessionScope.id}"> <input
 																type="text" class="form-control" id="input_comment"
-																name="qccContent" required style="display: inline-block; width: 85%;">
+																name="qccContent" required
+																style="display: inline-block; width: 85%;">
 															<button type="submit" class="btn btn-outline-primary"
-																id="btn_comment" style="background-color: #1cc88a; color: white; font-weight: bold; margin-left: 20px; border-radius: 5px;">답글 작성</button>
+																id="btn_comment"
+																style="background-color: #1cc88a; color: white; font-weight: bold; margin-left: 20px; border-radius: 5px;">답글
+																작성</button>
 														</form>
-														</div>
-														</td>
-														</tr> 
-														<c:forEach var="qccList" items="${qcList.qccList}">
-															<tr>
-																<td>${qccList.qccID}</td>
-																<td>${qccList.qccContent}</td>
-																<td>${qccList.qccDate}</td>
-																<td><c:choose>
-																		<c:when test="${sessionScope.id == qccList.qccID}">
-																			<a
-																				href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qccNum=${qccList.qccNum}&qcGroup=${qcList.qcGroup}"><button
-																					id="deleteButton">삭제</button></a>
-																		</c:when>
-																		<c:when test="${sessionScope.id == 'admin' }">
-																			<a
-																				href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qccNum=${qccList.qccNum}&qcGroup=${qcList.qcGroup}"><button
-																					id="deleteButton">삭제</button></a>
-																		</c:when>
-																		<c:otherwise>
-																			<a href="deleteCheckNo.jsp"><button
-																					id="deleteButton">삭제</button></a>
-																		</c:otherwise>
-																	</c:choose></td>
-															</tr>
-														</c:forEach>
+													</div>
+												</td>
+											</tr>
+											<c:forEach var="qccList" items="${qcList.qccList}">
+												<tr>
+													<td>${qccList.qccID}</td>
+													<td>${qccList.qccContent}</td>
+													<td>${qccList.qccDate}</td>
+													<td><c:choose>
+															<c:when test="${sessionScope.id == qccList.qccID}">
+																<a
+																	href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qccNum=${qccList.qccNum}&qcGroup=${qcList.qcGroup}"><button
+																		id="deleteButton">삭제</button></a>
+															</c:when>
+															<c:when test="${sessionScope.id == 'admin' }">
+																<a
+																	href="deleteQComment.do?qNum=${qcList.qNum}&qcNum=${qcList.qcNum}&qccNum=${qccList.qccNum}&qcGroup=${qcList.qcGroup}"><button
+																		id="deleteButton">삭제</button></a>
+															</c:when>
+															<c:otherwise>
+																<a href="deleteCheckNo.jsp"><button
+																		id="deleteButton">삭제</button></a>
+															</c:otherwise>
+														</c:choose></td>
+												</tr>
+											</c:forEach>
 
 										</c:forEach>
 
@@ -274,9 +277,9 @@
 				</div>
 			</article>
 
-			<%-- 푸터임 --%>
+			<%-- 푸터시작 --%>
 			<jsp:include page="footer.jsp" />
-			<%-- 푸터라고 --%>
+			<%-- 푸터끝 --%>
 
 		</div>
 	</div>

@@ -582,10 +582,10 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<%-- 푸터시작 --%>
 	<jsp:include page="footer.jsp" />
 	<%-- 푸터끝 --%>
-	
+
 </body>
 </html>

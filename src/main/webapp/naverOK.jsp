@@ -62,7 +62,7 @@
 	function naverSignInCallback() {
 		$.each(resKey, function(key, des) {
 			var value = naver_id_login.getProfileData(key);
-			
+
 			const email = naver_id_login.getProfileData('email');
 			const name = naver_id_login.getProfileData('name');
 

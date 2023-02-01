@@ -63,9 +63,9 @@
 	<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 
-			<%-- 헤더임 --%>
+			<%-- 헤더시작 --%>
 			<jsp:include page="header.jsp" />
-			<%-- 헤더라고 --%>
+			<%-- 헤더끝 --%>
 
 			<div id="main">
 				<div id="fh5co-contact" class="fh5co-section-gray">
@@ -145,8 +145,9 @@
 										<div class="btnbox">
 											<button type="button" onclick="check(); return false;"
 												style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #03C75A; text-align: center; font-size: large; font-weight: bold; color: white;">
-											<a> <img src="./img/btnG_아이콘사각.png" style="width: 70px; height: 60px;"/></a> 네이버 회원탈퇴
-												</button>
+												<a> <img src="./img/btnG_아이콘사각.png"
+													style="width: 70px; height: 60px;" /></a> 네이버 회원탈퇴
+											</button>
 
 										</div>
 									</div>
@@ -230,9 +231,9 @@ function action() {
 			</div>
 			<!-- div id="main" 끝 -->
 
-			<%-- 푸터임 --%>
+			<%-- 푸터시작 --%>
 			<jsp:include page="footer.jsp" />
-			<%-- 푸터라고 --%>
+			<%-- 푸터끝 --%>
 		</div>
 		<!-- END fh5co-page -->
 	</div>

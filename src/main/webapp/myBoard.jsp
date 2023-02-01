@@ -80,9 +80,9 @@
 
 <body id="page-top">
 
-	<%-- 헤더임 --%>
+	<%-- 헤더시작 --%>
 	<jsp:include page="header.jsp" />
-	<%-- 헤더라고 --%>
+	<%-- 헤더끝 --%>
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -145,9 +145,9 @@
 				</div>
 			</div>
 
-			<%-- 푸터임 --%>
+			<%-- 푸터시작 --%>
 			<jsp:include page="footer.jsp" />
-			<%-- 푸터라고 --%>
+			<%-- 푸터끝 --%>
 
 		</div>
 		<!-- End of Content Wrapper -->

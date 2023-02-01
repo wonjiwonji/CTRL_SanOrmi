@@ -283,7 +283,7 @@
                     <img
                       class="rounded-circle"
                       src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
-                      alt="..."
+                      alt="개 사진"
                     />
                     <div class="status-indicator bg-success"></div>
                   </div>
@@ -442,20 +442,6 @@
                     style="min-width: 100%; max-width: 100%"
                   >
                     <!-- Bar Chart -->
-                    <div class="card shadow mb-4">
-                      <div class="card-header py-3">
-                        <h6 class="m-0 font-weight-bold text-dark">
-                          커뮤니티왕
-                        </h6>
-                      </div>
-                      <div class="card-body">
-                        <div class="chart-bar">
-                          <canvas id="myBarChart"></canvas>
-                        </div>
-                        <hr />
-                        커뮤니티에 작성한 글 개수
-                      </div>
-                    </div>
                   </div>
                   <!-- chart-bar는 js > demo에 있음 -->
                 </div>
@@ -474,7 +460,7 @@
                         class="img-fluid px-3 px-sm-4 mt-3 mb-4"
                         style="width: 25rem"
                         src="img/undraw_posting_photo.svg"
-                        alt="..."
+                        alt="메인페이지사진"
                       />
                     </div>
                     <p>

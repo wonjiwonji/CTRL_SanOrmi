@@ -234,12 +234,11 @@ var checkSave = null;
 
 <body class="bg-gradient-success">
 
-	<%-- 헤더임 --%>
+	<%-- 헤더시작 --%>
 	<jsp:include page="header.jsp" />
-	<%-- 헤더라고 --%>
+	<%-- 헤더끝 --%>
 
-	<div class="container"style="padding-top: 50px;
-    padding-bottom: 50px;">
+	<div class="container" style="padding-top: 50px; padding-bottom: 50px;">
 		<div class="card o-hidden border-0 shadow-lg my-5">
 			<div class="card-body p-0">
 				<!-- Nested Row within Card Body -->
@@ -354,13 +353,15 @@ var checkSave = null;
 								<div class="form-group row">
 									<div class="col-sm-6 mb-3 mb-sm-0">
 										<input type="text" name="mEmail1" id="email_id"
-											class="form-control form-control-user" style="width:270px;" placeholder="이메일 앞자리" required />
+											class="form-control form-control-user" style="width: 270px;"
+											placeholder="이메일 앞자리" required />
 									</div>
 									<em class="ctm2">@</em>
 									<div class="col-sm-6">
 										<input type="text" name="mEmail2" id="email_add"
 											class="form-control form-control-user"
-											style="width:270px; margin-left: 8px" placeholder="이메일 뒷자리" required />
+											style="width: 270px; margin-left: 8px" placeholder="이메일 뒷자리"
+											required />
 									</div>
 								</div>
 								<div class="form-group">
@@ -463,9 +464,9 @@ var checkSave = null;
 	<!-- Custom scripts for all pages-->
 	<script src="js/sb-admin-2.min.js"></script>
 
-	<%-- 푸터임 --%>
+	<%-- 푸터시작 --%>
 	<jsp:include page="footer.jsp" />
-	<%-- 푸터라고 --%>
+	<%-- 푸터끝 --%>
 
 	<script
 		src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>

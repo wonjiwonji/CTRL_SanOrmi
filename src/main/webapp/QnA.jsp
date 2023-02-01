@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>   
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -73,9 +73,9 @@
 
 <body id="page-top">
 
-	<%-- 헤더임 --%>
+	<%-- 헤더시작 --%>
 	<jsp:include page="header.jsp" />
-	<%-- 헤더라고 --%>
+	<%-- 헤더끝 --%>
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -131,14 +131,15 @@
 					</div>
 					<!-- /.container-fluid -->
 					<div class="button_wrap clearfix">
-						<a href="writeBoardQnA.do?id=${sessionScope.id}" class="write_btn m_write_btn">작성하기</a>
+						<a href="writeBoardQnA.do?id=${sessionScope.id}"
+							class="write_btn m_write_btn">작성하기</a>
 					</div>
 				</div>
 			</div>
 
-			<%-- 푸터임 --%>
+			<%-- 푸터시작 --%>
 			<jsp:include page="footer.jsp" />
-			<%-- 푸터라고 --%>
+			<%-- 푸터끝 --%>
 
 		</div>
 		<!-- End of Content Wrapper -->

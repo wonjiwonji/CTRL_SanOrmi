@@ -110,9 +110,9 @@
 	<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 
-			<%-- 헤더임 --%>
+			<%-- 헤더시작 --%>
 			<jsp:include page="header.jsp" />
-			<%-- 헤더라고 --%>
+			<%-- 헤더끝 --%>
 
 			<div id="main">
 				<div id="fh5co-contact" class="fh5co-section-gray">
@@ -160,17 +160,16 @@
 												id="postal_code" class="email_front" placeholder="이메일 앞자리"
 												required /> <em class="ctm">@</em><input type="text"
 												name="mEmail2" value="${mEmail2}" id="email_add"
-												style="width: 190px" placeholder="이메일 뒷자리" required /> 
-												
-												<select
+												style="width: 190px" placeholder="이메일 뒷자리" required /> <select
 												style="width: 190px; margin-left: 210px; background-color: rgba(255, 255, 255, 0.5);"
-												name="email_sel" id="email_sel" onchange="change_email();" id="email_add">
+												name="email_sel" id="email_sel" onchange="change_email();"
+												id="email_add">
 												<option value="">직접입력</option>
 												<option value="naver.com">네이버</option>
 												<option value="gmail.com">지메일</option>
 												<option value="nate.com">네이트</option>
 											</select>
-											
+
 										</div>
 									</div>
 									<div class="emailbox">
@@ -205,18 +204,6 @@
 											style="cursor: pointer; position: absolute; right: -3px; top: -3px; z-index: 1;"
 											onclick="closeDaumPostcode()" alt="닫기 버튼" />
 									</div>
-
-									<!-- 주소 끝 -->
-									<!--
-                <div class="receivebox">
-                  <label><span> </span>메일수신</label>
-                  <div>
-                    <input type="checkbox" name="mb_mailling" id="mb_mailling1" value="1" />
-                    <i></i>
-                    <label for="mb_mailling1" class="txc1">수신동의</label>
-                    <small class="ctm">※ 수신 설정시 다양한 등산 정보를 받아 보실 수 있습니다.</small> </div>
-                </div>
-                -->
 									<div class="btnbox">
 										<button type="button" onclick="joinform_check();"
 											class="join_btn sub" id="btn_regi_submit">회원 정보 수정</button>
@@ -248,9 +235,9 @@
           });
         </script>
 
-			<%-- 푸터임 --%>
+			<%-- 푸터시작--%>
 			<jsp:include page="footer.jsp" />
-			<%-- 푸터라고 --%>
+			<%-- 푸터끝 --%>
 		</div>
 		<!-- END fh5co-page -->
 	</div>

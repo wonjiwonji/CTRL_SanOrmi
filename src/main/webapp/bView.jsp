@@ -8,7 +8,8 @@
 <meta charset="UTF-8" />
 <title>게시글</title>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="./images/favicon.ico" />
@@ -73,29 +74,30 @@
 <script src="js/modernizr-2.6.2.min.js"></script>
 
 <style>
-#btn_toggle{
-  font-size:14px;
-  padding:10px 15px;
-  border:1px solid #ddd;
-  background-color:#1cc88a;
-  border-radius:5px;
-  color:#fff;
-  font-weight:bold;
-}
-#Toggle{
-  font-size:14px;
-  color: #666;
-  display: block;
+#btn_toggle {
+	font-size: 14px;
+	padding: 10px 15px;
+	border: 1px solid #ddd;
+	background-color: #1cc88a;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: bold;
 }
 
-#deleteButton{
-  font-size:14px;
-  padding:10px 15px;
-  border:1px solid #ddd;
-  background-color:#1cc88a;
-  border-radius:5px;
-  color:#fff;
-  font-weight:bold;
+#Toggle {
+	font-size: 14px;
+	color: #666;
+	display: block;
+}
+
+#deleteButton {
+	font-size: 14px;
+	padding: 10px 15px;
+	border: 1px solid #ddd;
+	background-color: #1cc88a;
+	border-radius: 5px;
+	color: #fff;
+	font-weight: bold;
 }
 </style>
 
@@ -104,9 +106,10 @@
 	<div id="fh5co-wrapper">
 		<div id="fh5co-page">
 
-			<%-- 헤더임 --%>
+			<%-- 헤더시작 --%>
 			<jsp:include page="header.jsp" />
-			<%-- 헤더라고 --%>
+			<%-- 헤더끝 --%>
+
 			<article class="view_wrap pd60">
 				<div class="center clearfix">
 					<div class="container mt-3">
@@ -133,7 +136,8 @@
 									<div class="border bg-light rounded p-2">${board.bContent }</div>
 								</div>
 
-								<c:if test="${bbvo[0].board.bId == sessionScope.id || 'admin' == sessionScope.id}">
+								<c:if
+									test="${bbvo[0].board.bId == sessionScope.id || 'admin' == sessionScope.id}">
 									<!-- 작성자==로그인유저 -->
 									<a class="btn btn-outline-dark"
 										href="amendBoardFree.do?bNum=${board.bNum}">수정</a>
@@ -162,10 +166,11 @@
 										type="hidden" class="form-control" id="input_writer"
 										name="bcID" value="${sessionScope.id}"> <input
 										type="text" class="form-control" id="input_comment"
-										name="bcContent" required  style="display: inline-block; width: 1000px;" >
+										name="bcContent" required
+										style="display: inline-block; width: 1000px;">
 									<button type="submit" class="btn btn-outline-primary"
-										id="btn_comment" style="background-color: #1cc88a; color: white; 
-										font-weight: bold; margin-left: 20px; border-radius: 5px;">작성</button>
+										id="btn_comment"
+										style="background-color: #1cc88a; color: white; font-weight: bold; margin-left: 20px; border-radius: 5px;">작성</button>
 								</form>
 								<table class="table table-hover mt-3" id="cmt_table">
 									<thead>
@@ -182,78 +187,79 @@
 												<td>${bcList.bcID}</td>
 												<td>${bcList.bcContent}</td>
 												<td>${bcList.bcDate}</td>
-												<td>
-												<c:choose>
-												<c:when test="${sessionScope.id == bcList.bcID}">
-												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bcGroup=${bcList.bcGroup}">
-												<button id="deleteButton">삭제</button></a>
-												</c:when>
-												<c:when test="${sessionScope.id == 'admin' }">
-												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bcGroup=${bcList.bcGroup}">
-												<button id="deleteButton">삭제</button></a>
-												</c:when>
-												<c:otherwise>
-												<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
-												</c:otherwise>
-												</c:choose>
-												</td>
-												
-												<tr>
+												<td><c:choose>
+														<c:when test="${sessionScope.id == bcList.bcID}">
+															<a
+																href="deleteBComment.do?bNum=${bcList.bNum}&
+												bcNum=${bcList.bcNum}&bcGroup=${bcList.bcGroup}">
+																<button id="deleteButton">삭제</button>
+															</a>
+														</c:when>
+														<c:when test="${sessionScope.id == 'admin' }">
+															<a
+																href="deleteBComment.do?bNum=${bcList.bNum}
+												&bcNum=${bcList.bcNum}&bcGroup=${bcList.bcGroup}">
+																<button id="deleteButton">삭제</button>
+															</a>
+														</c:when>
+														<c:otherwise>
+															<a href="deleteCheckNo.jsp">
+																<button id="deleteButton">삭제</button>
+															</a>
+														</c:otherwise>
+													</c:choose></td>
+											<tr>
 												<td colspan="5">
-												<div id="Toggle" >
-												<form action="insertBCComment.do" class="input-group my-2">
-															<input type="hidden" name="bccGroup" value="${bcList.bcGroup}">
-															<input type="hidden" class="form-control"
-																id="input_cmt_num" name="bNum"
+													<div id="Toggle">
+														<form action="insertBCComment.do" class="input-group my-2">
+															<input type="hidden" name="bccGroup"
+																value="${bcList.bcGroup}"> <input type="hidden"
+																class="form-control" id="input_cmt_num" name="bNum"
 																value="${bbvo[0].board.bNum}"> <input
 																type="hidden" class="form-control" id="input_writer"
-																name="bccID" value="${sessionScope.id}"> 
-																<input
+																name="bccID" value="${sessionScope.id}"> <input
 																type="text" class="form-control" id="input_comment"
-																name="bccContent" required style="display: inline-block; width: 85%;">
-																<button type="submit" class="btn btn-outline-primary"
-																id="btn_comment" style="background-color: #1cc88a; color: white; 
-																font-weight: bold; margin-left: 20px; border-radius: 5px;">답글 작성</button>
-																
+																name="bccContent" required
+																style="display: inline-block; width: 85%;">
+															<button type="submit" class="btn btn-outline-primary"
+																id="btn_comment"
+																style="background-color: #1cc88a; color: white; font-weight: bold; margin-left: 20px; border-radius: 5px;">답글
+																작성</button>
 														</form>
-														</div>
-														</td>
-														</tr>
-													<div>
-													
-														
-														<c:forEach var="bccList" items="${bcList.bccList}">
-														<tr>
+													</div>
+												</td>
+											</tr>
+											<div>
+
+
+												<c:forEach var="bccList" items="${bcList.bccList}">
+													<tr>
 														<td>${bccList.bccID}</td>
 														<td>${bccList.bccContent}</td>
 														<td>${bccList.bccDate}</td>
-												<td>
-												<c:choose>
-												<c:when test="${sessionScope.id == bccList.bccID}">
-												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bccNum=${bccList.bccNum}&bcGroup=${bcList.bcGroup}">
-												<button id="deleteButton">삭제</button></a>
-												</c:when>
-												<c:when test="${sessionScope.id == 'admin' }">
-												<a href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bccNum=${bccList.bccNum}&bcGroup=${bcList.bcGroup}">
-												<button id="deleteButton">삭제</button></a>
-												</c:when>
-												<c:otherwise>
-												<a href="deleteCheckNo.jsp"><button id="deleteButton">삭제</button></a>
-												</c:otherwise>
-												</c:choose>
-											
-												</td>
-												
-												
-														</tr>
-														
-														</c:forEach>
-														</div>
-												
-			
+														<td><c:choose>
+																<c:when test="${sessionScope.id == bccList.bccID}">
+																	<a
+																		href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bccNum=${bccList.bccNum}&bcGroup=${bcList.bcGroup}">
+																		<button id="deleteButton">삭제</button>
+																	</a>
+																</c:when>
+																<c:when test="${sessionScope.id == 'admin' }">
+																	<a
+																		href="deleteBComment.do?bNum=${bcList.bNum}&bcNum=${bcList.bcNum}&bccNum=${bccList.bccNum}&bcGroup=${bcList.bcGroup}">
+																		<button id="deleteButton">삭제</button>
+																	</a>
+																</c:when>
+																<c:otherwise>
+																	<a href="deleteCheckNo.jsp"><button
+																			id="deleteButton">삭제</button></a>
+																</c:otherwise>
+															</c:choose></td>
+													</tr>
+
+												</c:forEach>
+											</div>
 										</c:forEach>
-
-
 									</tbody>
 								</table>
 							</div>
@@ -274,15 +280,11 @@
 				</div>
 			</article>
 
+			<%-- 푸터시작 --%>
 			<jsp:include page="footer.jsp" />
-
+			<%-- 푸터끝 --%>
 
 		</div>
 	</div>
-
-
-
-
-
 </body>
 </html>

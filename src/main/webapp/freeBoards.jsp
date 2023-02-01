@@ -80,9 +80,9 @@
 
 <body id="page-top">
 
-	<%-- 헤더임 --%>
+	<%-- 헤더시작 --%>
 	<jsp:include page="header.jsp" />
-	<%-- 헤더라고 --%>
+	<%-- 헤더끝 --%>
 
 	<!-- Page Wrapper -->
 	<div id="wrapper">
@@ -141,14 +141,15 @@
 					</div>
 					<!-- /.container-fluid -->
 					<div class="button_wrap clearfix">
-						<a href="writeBoardFree.do?id=${sessionScope.id}" class="write_btn m_write_btn">작성하기</a>
+						<a href="writeBoardFree.do?id=${sessionScope.id}"
+							class="write_btn m_write_btn">작성하기</a>
 					</div>
 				</div>
 			</div>
 
-			<%-- 푸터임 --%>
+			<%-- 푸터시작 --%>
 			<jsp:include page="footer.jsp" />
-			<%-- 푸터라고 --%>
+			<%-- 푸터끝 --%>
 
 		</div>
 		<!-- End of Content Wrapper -->

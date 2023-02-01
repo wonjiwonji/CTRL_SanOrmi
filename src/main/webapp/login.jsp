@@ -53,9 +53,9 @@
 
 <body class="bg-gradient-success">
 
-	<%-- 헤더임 --%>
+	<%-- 헤더시작 --%>
 	<jsp:include page="header.jsp" />
-	<%-- 헤더라고 --%>
+	<%-- 헤더끝 --%>
 
 	<div class="container">
 		<!-- Outer Row -->
@@ -66,9 +66,9 @@
 						<!-- Nested Row within Card Body -->
 						<div class="row">
 							<!-- <div class="col-lg-6 d-none d-lg-block bg-login-image"></div> -->
-							<div class="col-lg-6 d-none d-lg-block" >
+							<div class="col-lg-6 d-none d-lg-block">
 								<img src="./images/m1.png"
-									style="height: 515px; width: 535px; display: flex" alt="그" />
+									style="height: 515px; width: 535px; display: flex" alt="배경사진" />
 							</div>
 							<div class="col-lg-6">
 								<div class="p-5" style="margin-right: 25px;">
@@ -98,8 +98,9 @@
 										<hr />
 
 										<!-- 카카오 로그인 js 연결 및 버튼 생성 -->
-										<button type="button" onclick="javascript:kakaoLogin();" style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #FEE500; text-align: center; font-size: large; font-weight: bold;">
-										<a> <img src="./img/kakao.png" /></a> 카카오 로그인
+										<button type="button" onclick="javascript:kakaoLogin();"
+											style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #FEE500; text-align: center; font-size: large; font-weight: bold;">
+											<a> <img src="./img/kakao.png" /></a> 카카오 로그인
 										</button>
 										<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 										<script>
@@ -141,29 +142,6 @@
                         },
                       });
                     }
-                  	
-                  //토큰 가져오기 (콘솔로 정보 보기)
-/*                     function selectMyAccessTockenWithKakao() {
-                    	
-                     	var param = {"code" : code}
-                    	
-                    	 	$.ajax({
-                    			url  : '/selectMyAccessTockenWithKakao',
-                    	        type : 'get',
-                    	        data : param,
-                    	        dataType : "JSON", 
-                    	        contentType: "application/x-www-form-urlencoded;charset=utf-8", 
-                    	        success : function(data){
-                    	            
-                    	        	console.log(data);
-                    	        },
-                    	        error: function(xhr, type){ 
-                    		        console.log(xhr); 
-                    		        console.log(type); 
-                    			}
-                    	    })
-                      } */
-                  
                   </script>
 
 
@@ -173,11 +151,11 @@
 											charset="utf-8"></script>
 										<script type="text/javascript"
 											src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-										
+
 										<!-- 네이버 로그인 버튼 노출 영역 -->
 										<div id="naver_id_login"
 											style="display: flex; justify-content: center;"></div>
-											
+
 										<script type="text/javascript">
 										var clientID = 'dClwkVzJ3MRBP_IElx5I'; // 네아로 클라이언트 아이디
 									  	var callbackURL = 'http://localhost:8088/ctrl/naverOK.jsp'; // 네아로에서 설정한 CallBack URL 
@@ -215,9 +193,9 @@
 	<!-- Custom scripts for all pages-->
 	<script src="js/sb-admin-2.min.js"></script>
 
-	<%-- 푸터임 --%>
+	<%-- 푸터시작 --%>
 	<jsp:include page="footer.jsp" />
-	<%-- 푸터라고 --%>
+	<%-- 푸터끝 --%>
 
 </body>
 
