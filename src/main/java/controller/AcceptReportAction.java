@@ -15,22 +15,32 @@ public class AcceptReportAction implements Action {
 	@Override
 	public ActionForward execute(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		ActionForward forward=new ActionForward();
-		forward.setPath("/manageBoards.jsp");
-		forward.setRedirect(false);
+		forward.setPath("manageBoards.do");
+		forward.setRedirect(true);
 		
+		MemberVO mvo=new MemberVO();
+		MemberDAO mdao=new MemberDAO();
 		BoardVO bvo=new BoardVO();
 		BoardDAO bdao=new BoardDAO();
 		ReportVO rvo=new ReportVO();
+		ReportVO rrvo=new ReportVO();
 		ReportDAO rdao=new ReportDAO();
 		
 		rvo.setrNum(Integer.parseInt(request.getParameter("rNum")));
 		
-		rdao.selectOne(rvo);	// 신고번호의 해당 rvo 가져오기
-		bvo.setbNum(rvo.getbNum());	// 신고번호에 해당하는 rvo의 bvo 넘버 가져오기 
+		rrvo=rdao.selectOne(rvo);	// 신고번호의 해당 rvo 가져오기
+		bvo.setbNum(rrvo.getbNum());	// 신고번호에 해당하는 rvo의 bvo 넘버 가져오기 
 		
+		mvo.setId(rrvo.getrTargetId());
 		
-		rdao.delete(rvo);
+		System.out.println("로그rvo : "+rvo);
+		System.out.println("로그rrvo : "+rrvo);
+		System.out.println("로그mvo : "+mvo);
+		System.err.println("로그bvo : "+bvo);
+		
+		rdao.delete(rrvo);
 		bdao.deleteBoard(bvo);
+		mdao.updateBanCnt(mvo);
 		return forward;
 	}
 }
