@@ -229,12 +229,12 @@
                 ><i class="fas fa-download fa-sm text-white-50"></i> 돌아가기</a
               >
               <a
-                href="cancleReport.do?rNum=${rvo.rNum }"
+                href="cancleReport.do?rNum=${srvo.rNum }"
                 class="d-none d-sm-inline-block btn btn-sm btn-info shadow-sm"
                 ><i class="fas fa-download fa-sm text-white-50"></i> 철회하기</a
               >
               <a
-                href="acceptReport.do?rNum=${rvo.rNum }&bNum=${bvo.bNum}"
+                href="acceptReport.do?rNum=${srvo.rNum }&bNum=${srvo.bNum}"
                 class="d-none d-sm-inline-block btn btn-sm btn-danger shadow-sm"
                 ><i class="fas fa-download fa-sm text-white-50"></i> 삭제하기</a
               >
@@ -256,7 +256,7 @@
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              ${rvo.bNum }
+                              ${srvo.bNum }
                             </div>
                             <br />
                           </div>
@@ -279,31 +279,7 @@
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              ${rvo.bId }
-                            </div>
-                            <br />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-                <!-- Pending Requests Card Example -->
-                <div class="col-xl-3 col-md-6 mb-4">
-                  <div class="card border-left-warning shadow h-100 py-2">
-                    <div class="card-body">
-                      <div class="row no-gutters align-items-center">
-                        <div class="col mr-2">
-                          <div
-                            class="text-xs font-weight-bold text-warning text-uppercase mb-1"
-                          >
-                            게시글 조회수
-                          </div>
-                          <div class="h5 mb-0 font-weight-bold text-gray-800">
-                            <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              ${rvo.bCnt }
+                              ${srvo.rTargetId }
                             </div>
                             <br />
                           </div>
@@ -312,6 +288,7 @@
                     </div>
                   </div>
                 </div>
+
                                 <div class="col-xl-3 col-md-6 mb-4">
                   <div class="card border-left-warning shadow h-100 py-2">
                     <div class="card-body">
@@ -324,7 +301,7 @@
                           </div>
                           <div class="h5 mb-0 font-weight-bold text-gray-800">
                             <div class="h5 mb-0 font-weight-bold text-gray-800">
-                              ${rvo.bTitle }
+                              ${srvo.rTitle }
                             </div>
                             <br />
                           </div>
@@ -335,23 +312,7 @@
                 </div>
 				  
               </div>
-<!--
-              <div class="card mb-4 py-3 border-left-primary">
-                <div class="card-body">
-                  <div
-                    class="text-xs font-weight-bold text-primary text-uppercase mb-1"
-                  >
-                    제목
-                  </div>
-                  <div class="h5 mb-0 font-weight-bold text-gray-800">
-                    <div class="h5 mb-0 font-weight-bold text-gray-800">
-                      B_CNT
-                    </div>
-                    <br />
-                  </div>
-                </div>
-              </div>
--->
+
               <div class="card mb-4 py-3 border-left-secondary">
                 <div class="card-body">
                   <div
@@ -359,7 +320,7 @@
                   >
                     내용
                   </div>
-                  ${rvo.bContent }
+                  ${srvo.rContent }
 					<br />
                 </div>
               </div>
