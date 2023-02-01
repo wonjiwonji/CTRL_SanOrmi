@@ -22,10 +22,10 @@ public class ReportDAO {
 
 	// R
 	// SELECTONE_REPORT; 신고글 상세보기
-	final String SELECTONE_REPORT = "SELECT R.R_NUM, R.R_TARGETID , R.R_ID , B.B_TITLE , B.B_CONTENT FROM REPORT R, BOARD B \r\n"
+	final String SELECTONE_REPORT = "SELECT R.R_NUM, R.R_TARGETID , R.R_ID , B.B_TITLE , B.B_CONTENT, B.B_NUM FROM REPORT R, BOARD B \r\n"
 			+ "WHERE R.B_NUM = B.B_NUM AND R.R_NUM = ?";
 	// SELECTALL_REPORT; 신고글 전체보기
-	final String SELECTALL_REPORT = "SELECT R.R_NUM, B.B_TITLE, R.R_ID, R.R_TARGETID, B.B_DATE FROM REPORT R, BOARD B WHERE R.B_NUM = B.B_NUM";
+	final String SELECTALL_REPORT = "SELECT R.R_NUM, B.B_TITLE, R.R_ID, R.R_TARGETID, B.B_DATE, B.B_NUM FROM REPORT R, BOARD B WHERE R.B_NUM = B.B_NUM";
 	// SELECT_REPORT_CHECK; 신고 중복 검사
 	final String SELECT_REPORT_CHECK = "SELECT R_NUM FROM report WHERE R_ID =? AND B_NUM =?";
 
@@ -97,6 +97,7 @@ public class ReportDAO {
 				data.setrId(rs.getString("R.R_ID")); // 신고자 아이디
 				data.setrTitle(rs.getString("B.B_TITLE")); // 게시글 제목
 				data.setrContent(rs.getString("B.B_CONTENT")); // 게시글 내용
+				data.setbNum(rs.getInt("B.B_NUM")); // 게시글 번호
 			}
 
 		} catch (SQLException e) {
@@ -126,6 +127,7 @@ public class ReportDAO {
 				data.setrId(rs.getString("R.R_ID")); // 신고자 아이디
 				data.setrTargetId(rs.getString("R.R_TARGETID")); // 작성자 아이디
 				data.setrDate(rs.getDate("B.B_DATE")); // 작성 일자
+				data.setbNum(rs.getInt("B.B_NUM")); // 게시글 번호
 				
 				datas.add(data);
 			}
