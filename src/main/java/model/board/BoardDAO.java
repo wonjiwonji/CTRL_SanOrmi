@@ -34,7 +34,7 @@ public class BoardDAO {
 
 	// D
 	// DELETE_BOARD; 게시글 삭제 쿼리문
-	final String DELETE_BOARD = "DELTE FROM BOARD WHERE B_NUM=?";
+	final String DELETE_BOARD = "DELETE FROM BOARD WHERE B_NUM=?";
 	// DELETE_BCOMMENT; 댓글 삭제 쿼리문 ( 대댓글까지 같이 삭제 )
 	final String DELETE_BCOMMENT = "DELETE FROM BCOMMENT WHERE BC_GROUP = ? AND B_NUM = ?";
 	// DELETE_BCCOMMENT; 대댓글 삭제 쿼리문 ( 대댓글만 삭제 )
