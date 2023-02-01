@@ -19,7 +19,7 @@ public class MainAction implements Action {
 		ArrayList<BoardVO> best5 = new ArrayList<BoardVO>();
 		BoardDAO bdao=new BoardDAO();
 		
-		best5=bdao.selectAllTop5();
+		best5=bdao.selectAllTop5(null);
 
 		request.getSession().setAttribute("best5", best5);
 		

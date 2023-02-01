@@ -19,7 +19,7 @@ public class FreeBoardsAction implements Action {
 		ArrayList<BoardVO> bList = new ArrayList<>();
 		BoardDAO bdao=new BoardDAO();
 
-		bList=bdao.selectAllBoard();
+		bList=bdao.selectAllBoard(null);
 		
 		request.getSession().setAttribute("bList", bList);
 

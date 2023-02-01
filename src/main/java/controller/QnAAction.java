@@ -19,7 +19,7 @@ public class QnAAction implements Action {
 		ArrayList<QNAVO> qList = new ArrayList<>();
 		QNADAO qdao=new QNADAO();
 
-		qList=qdao.selectAllQNA();
+		qList=qdao.selectAllQNA(null);
 		
 		request.getSession().setAttribute("qList", qList);
 		
