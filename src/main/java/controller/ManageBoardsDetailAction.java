@@ -18,10 +18,10 @@ public class ManageBoardsDetailAction implements Action {
 		ReportVO rvo = new ReportVO();
 		ReportVO srvo = new ReportVO();
 		
-		rvo.setrId(request.getParameter("rId"));
-		// rNum인지 rId인지 확인 필요
+		rvo.setrNum(Integer.parseInt(request.getParameter("rNum")));
 		
 		srvo=rdao.selectOne(rvo);
+		System.out.println(srvo);
 
 		request.getSession().setAttribute("srvo", srvo);
 
