@@ -34,8 +34,6 @@
 										style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #FEE500; text-align: center; font-size: large; font-weight: bold;">
 										<a> <img src="./img/kakao.png" /></a> 카카오 로그아웃
 									</button>
-
-
 									<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 									<script>
 				// SDK를 초기화 합니다. 사용할 앱 키(javascript) 입력합니다.
@@ -52,7 +50,6 @@
                          	url: '/v1/user/logout',
                            // 연결 끊기(회원탈퇴)
                             success: (response) => {
-                              
                           	location.href="logoutSNS.do"; //리다이렉트 주소
                             },
                           });
@@ -64,10 +61,8 @@
                     }
                     </script>
 
-
 								</c:when>
 								<c:when test="${(fn:contains(sessionScope.mPw, 'NAVER'))}">
-
 									<div class="center400 pdb60">
 										<form name="join_form" id="fregister" method="post"
 											autocomplete="off">
@@ -90,7 +85,6 @@
 												style="width: 277.5px; height: 60px; margin: auto; margin-bottom: 5px; display: block; background-color: #03C75A; text-align: center; font-size: large; font-weight: bold; color: white;">
 											<a> <img src="./img/btnG_아이콘사각.png" style="width: 70px; height: 60px;"/></a> 네이버 로그아웃
 												</button>
-
 										</div>
 									</div>
 
@@ -107,7 +101,6 @@ function openPopUp() {
 function closePopUp(){
     logoutPopUp.close();
 }
-
 function naverLogout() {
 	openPopUp();
 	setTimeout(function() {
@@ -115,7 +108,6 @@ function naverLogout() {
 		}, 100);
 	action();
 }
-
 function check() {
 	if (confirm("로그아웃 하시겠습니까?") == true) { //확인
 		naverLogout();
@@ -123,7 +115,6 @@ function check() {
 		return false;
 	}
 }
-
 function action() {
 	location.href="logoutSNS.do"; //리다이렉트 주소
 }

@@ -183,14 +183,14 @@
 									  	var callbackURL = 'http://localhost:8088/ctrl/naverOK.jsp'; // 네아로에서 설정한 CallBack URL 
 									  	var siteURL = 'http://localhost:8088';  // 네아로에서 설정한 사이트 URL 
 										
-  					var naver_id_login = new naver_id_login(clientID, callbackURL);
-  					var state = naver_id_login.getUniqState();
-  					naver_id_login.setButton("green", 3, 60);
-  					naver_id_login.setDomain(siteURL);
-   					naver_id_login.setState(state);
-   					//naver_id_login.setPopup();
-  					naver_id_login.init_naver_id_login();
-  				</script>
+  										var naver_id_login = new naver_id_login(clientID, callbackURL);
+  										var state = naver_id_login.getUniqState();
+  										naver_id_login.setButton("green", 3, 60);
+  										naver_id_login.setDomain(siteURL);
+   										naver_id_login.setState(state);
+   										//naver_id_login.setPopup(); 팝업 사용 시 주석 해제
+  										naver_id_login.init_naver_id_login();
+  										</script>
 									</form>
 									<hr />
 									<div class="text-center">
