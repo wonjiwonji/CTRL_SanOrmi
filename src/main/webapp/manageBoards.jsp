@@ -140,9 +140,9 @@ pageEncoding="UTF-8"%>
                 <tbody>
                 <c:forEach var="vo" items="${rList}">
                   <tr>
-                    <td>${vo.rId }</td>
-                    <td><a href="manageBoardsDetail.do?rNum=${vo.bNum }">${vo.rTitle }</a></td>
-                    <td>${vo.rTargetId }</td>
+                    <td>${vo.rNum}</td>
+                    <td><a href="manageBoardsDetail.do?rNum=${vo.bNum}">${vo.rTitle}</a></td>
+                    <td>${vo.rTargetId}</td>
                   </tr>
                   </c:forEach>
                 </tbody>

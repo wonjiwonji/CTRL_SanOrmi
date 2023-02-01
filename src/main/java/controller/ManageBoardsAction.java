@@ -20,6 +20,7 @@ public class ManageBoardsAction implements Action {
 		ReportDAO rdao = new ReportDAO();
 		
 		rList=rdao.selectAll(null);
+		System.out.println(rList);
 
 		request.getSession().setAttribute("rList", rList);
 		
