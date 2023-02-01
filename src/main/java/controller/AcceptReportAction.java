@@ -33,11 +33,6 @@ public class AcceptReportAction implements Action {
 		
 		mvo.setId(rrvo.getrTargetId());
 		
-		System.out.println("로그rvo : "+rvo);
-		System.out.println("로그rrvo : "+rrvo);
-		System.out.println("로그mvo : "+mvo);
-		System.err.println("로그bvo : "+bvo);
-		
 		rdao.delete(rrvo);
 		bdao.deleteBoard(bvo);
 		mdao.updateBanCnt(mvo);
