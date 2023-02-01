@@ -15,7 +15,6 @@ public class Crawling {
 
 	public void sample() {
 
-		
 		final String url = "http://www.ohmynews.com/NWS_Web/Tag/index.aspx?tag=%eb%93%b1%ec%82%b0"; // 크롤링 할 url
 		
 		Document doc = null; // url로 읽은 값 저장할 곳
