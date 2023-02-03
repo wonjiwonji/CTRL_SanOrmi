@@ -18,7 +18,7 @@ public class LogoutAction implements Action {
 			forward.setPath("snsLogout.jsp");
 			forward.setRedirect(false);
 		}
-		else {
+		else {	
 			forward.setPath("main.do");
 			forward.setRedirect(true);
 			request.getSession().invalidate();
