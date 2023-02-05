@@ -24,5 +24,4 @@ public class DeleteMemberAction implements Action {
 		
 		return forward;
 	}
-
 }

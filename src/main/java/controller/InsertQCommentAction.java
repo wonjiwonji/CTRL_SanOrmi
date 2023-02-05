@@ -34,7 +34,5 @@ public class InsertQCommentAction implements Action {
 		
 		qdao.insertQComment(qcvo);
 		return forward;
-		
 	}
-
 }

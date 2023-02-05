@@ -13,5 +13,4 @@ public class AgreeAction implements Action {
 
 		return forward;
 	}
-
 }
